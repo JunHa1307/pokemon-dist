@@ -46,11 +46,11 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     var isCritical = move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor') && move.timesUsed === 1;
     if (move.named('Weather Ball')) {
         move.type =
-            field.hasWeather('Sun', 'Harsh Sunshine') ? 'Fire'
-                : field.hasWeather('Rain', 'Heavy Rain') ? 'Water'
-                    : field.hasWeather('Sand') ? 'Rock'
-                        : field.hasWeather('Hail') ? 'Ice'
-                            : 'Normal';
+            field.hasWeather('Sun', 'Harsh Sunshine') ? '불꽃'
+                : field.hasWeather('Rain', 'Heavy Rain') ? '물'
+                    : field.hasWeather('Sand') ? '바위'
+                        : field.hasWeather('Hail') ? '얼음'
+                            : '노말';
         desc.weather = field.weather;
         desc.moveType = move.type;
     }
@@ -70,14 +70,14 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     }
     else if (move.named('Nature Power')) {
         if (gen.num === 5) {
-            move.type = 'Ground';
+            move.type = '땅';
         }
         else {
             move.type =
-                field.hasTerrain('Electric') ? 'Electric'
+                field.hasTerrain('전기') ? '전기'
                     : field.hasTerrain('Grassy') ? '풀'
-                        : field.hasTerrain('Misty') ? 'Fairy'
-                            : 'Normal';
+                        : field.hasTerrain('Misty') ? '페어리'
+                            : '노말';
         }
     }
     var isAerilate = false;
@@ -86,24 +86,24 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     var isNormalize = false;
     var noTypeChange = move.named('Judgment', 'Nature Power', 'Techo Blast', 'Natural Gift', 'Weather Ball');
     if (!move.isZ && !noTypeChange) {
-        var normal = move.hasType('Normal');
+        var normal = move.hasType('노말');
         if ((isAerilate = attacker.hasAbility('Aerilate') && normal)) {
-            move.type = 'Flying';
+            move.type = '비행';
         }
         else if ((isPixilate = attacker.hasAbility('Pixilate') && normal)) {
-            move.type = 'Fairy';
+            move.type = '페어리';
         }
         else if ((isRefrigerate = attacker.hasAbility('Refrigerate') && normal)) {
-            move.type = 'Ice';
+            move.type = '얼음';
         }
         else if ((isNormalize = attacker.hasAbility('Normalize'))) {
-            move.type = 'Normal';
+            move.type = '노말';
         }
         if (isPixilate || isRefrigerate || isAerilate || isNormalize) {
             desc.attackerAbility = attacker.ability;
         }
     }
-    if (attacker.hasAbility('Gale Wings') && move.hasType('Flying')) {
+    if (attacker.hasAbility('Gale Wings') && move.hasType('비행')) {
         move.priority = 1;
         desc.attackerAbility = attacker.ability;
     }
@@ -126,7 +126,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     if (typeEffectiveness === 0 && move.named('Thousand Arrows')) {
         typeEffectiveness = 1;
     }
-    else if (typeEffectiveness === 0 && move.hasType('Ground') &&
+    else if (typeEffectiveness === 0 && move.hasType('땅') &&
         defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz')) {
         typeEffectiveness = 1;
     }
@@ -143,29 +143,29 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         return result;
     }
     if ((move.named('Sky Drop') &&
-        (defender.hasType('Flying') || defender.weightkg >= 200 || field.isGravity)) ||
+        (defender.hasType('비행') || defender.weightkg >= 200 || field.isGravity)) ||
         (move.named('Synchronoise') && !defender.hasType(attacker.types[0]) &&
             (!attacker.types[1] || !defender.hasType(attacker.types[1]))) ||
         (move.named('Dream Eater') && !defender.hasStatus('slp'))) {
         return result;
     }
-    if ((field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
-        (field.hasWeather('Heavy Rain') && move.hasType('Fire'))) {
+    if ((field.hasWeather('Harsh Sunshine') && move.hasType('물')) ||
+        (field.hasWeather('Heavy Rain') && move.hasType('불꽃'))) {
         desc.weather = field.weather;
         return result;
     }
-    if (field.hasWeather('Strong Winds') && defender.hasType('Flying') &&
-        gen.types.get((0, util_1.toID)(move.type)).effectiveness['Flying'] > 1) {
+    if (field.hasWeather('Strong Winds') && defender.hasType('비행') &&
+        gen.types.get((0, util_1.toID)(move.type)).effectiveness['비행'] > 1) {
         typeEffectiveness /= 2;
         desc.weather = field.weather;
     }
     if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
         (move.hasType('풀') && defender.hasAbility('Sap Sipper')) ||
-        (move.hasType('Fire') && defender.hasAbility('Flash Fire')) ||
-        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) ||
-        (move.hasType('Electric') &&
+        (move.hasType('불꽃') && defender.hasAbility('Flash Fire')) ||
+        (move.hasType('물') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) ||
+        (move.hasType('전기') &&
             defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
-        (move.hasType('Ground') &&
+        (move.hasType('땅') &&
             !field.isGravity && !move.named('Thousand Arrows') &&
             !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
         (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
@@ -173,12 +173,12 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         desc.defenderAbility = defender.ability;
         return result;
     }
-    if (move.hasType('Ground') && !move.named('Thousand Arrows') &&
+    if (move.hasType('땅') && !move.named('Thousand Arrows') &&
         !field.isGravity && defender.hasItem('Air Balloon')) {
         desc.defenderItem = defender.item;
         return result;
     }
-    if (move.priority > 0 && field.hasTerrain('Psychic') && (0, util_2.isGrounded)(defender, field)) {
+    if (move.priority > 0 && field.hasTerrain('에스퍼') && (0, util_2.isGrounded)(defender, field)) {
         desc.terrain = field.terrain;
         return result;
     }
@@ -300,7 +300,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
                 move.category = 'Special';
                 move.secondaries = true;
                 switch (field.terrain) {
-                    case 'Electric':
+                    case '전기':
                         basePower = 90;
                         desc.moveName = 'Thunderbolt';
                         break;
@@ -349,7 +349,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     }
     else if (attacker.hasAbility('Sand Force') &&
         field.hasWeather('Sand') &&
-        move.hasType('Rock', 'Ground', 'Steel')) {
+        move.hasType('바위', '땅', '강철')) {
         bpMods.push(5325);
         desc.attackerAbility = attacker.ability;
         desc.weather = field.weather;
@@ -359,11 +359,11 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         bpMods.push(4915);
         desc.attackerAbility = attacker.ability;
     }
-    if (defender.hasAbility('Heatproof') && move.hasType('Fire')) {
+    if (defender.hasAbility('Heatproof') && move.hasType('불꽃')) {
         bpMods.push(2048);
         desc.defenderAbility = defender.ability;
     }
-    else if (defender.hasAbility('Dry Skin') && move.hasType('Fire')) {
+    else if (defender.hasAbility('Dry Skin') && move.hasType('불꽃')) {
         bpMods.push(5120);
         desc.defenderAbility = defender.ability;
     }
@@ -393,13 +393,13 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     }
     else if ((attacker.hasItem('Adamant Orb') &&
         attacker.named('Dialga') &&
-        move.hasType('Steel', 'Dragon')) ||
+        move.hasType('강철', '드래곤')) ||
         (attacker.hasItem('Lustrous Orb') &&
             attacker.named('Palkia') &&
-            move.hasType('Water', 'Dragon')) ||
+            move.hasType('물', '드래곤')) ||
         (attacker.hasItem('Griseous Orb') &&
             attacker.named('Giratina-Origin') &&
-            move.hasType('Ghost', 'Dragon'))) {
+            move.hasType('고스트', '드래곤'))) {
         bpMods.push(4915);
         desc.attackerItem = attacker.item;
     }
@@ -444,8 +444,8 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     var isDefenderAura = defender.hasAbility(aura);
     var isUserAuraBreak = attacker.hasAbility('Aura Break') || defender.hasAbility('Aura Break');
     var isFieldAuraBreak = field.isAuraBreak;
-    var isFieldFairyAura = field.isFairyAura && move.type === 'Fairy';
-    var isFieldDarkAura = field.isDarkAura && move.type === 'Dark';
+    var isFieldFairyAura = field.isFairyAura && move.type === '페어리';
+    var isFieldDarkAura = field.isDarkAura && move.type === '악';
     var auraActive = isAttackerAura || isDefenderAura || isFieldFairyAura || isFieldDarkAura;
     var auraBreak = isFieldAuraBreak || isUserAuraBreak;
     if (auraActive) {
@@ -463,14 +463,14 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         }
     }
     if ((0, util_2.isGrounded)(attacker, field)) {
-        if ((field.hasTerrain('Electric') && move.hasType('Electric')) ||
+        if ((field.hasTerrain('전기') && move.hasType('전기')) ||
             (field.hasTerrain('Grassy') && move.hasType('풀'))) {
             bpMods.push(6144);
             desc.terrain = field.terrain;
         }
     }
     if ((0, util_2.isGrounded)(defender, field)) {
-        if ((field.hasTerrain('Misty') && move.hasType('Dragon')) ||
+        if ((field.hasTerrain('Misty') && move.hasType('드래곤')) ||
             (field.hasTerrain('Grassy') && move.named('Bulldoze', 'Earthquake'))) {
             bpMods.push(2048);
             desc.terrain = field.terrain;
@@ -501,21 +501,21 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         desc.attackerAbility = attacker.ability;
     }
     var atMods = [];
-    if (defender.hasAbility('Thick Fat') && move.hasType('Fire', 'Ice')) {
+    if (defender.hasAbility('Thick Fat') && move.hasType('불꽃', '얼음')) {
         atMods.push(2048);
         desc.defenderAbility = defender.ability;
     }
     if ((attacker.hasAbility('Guts') && attacker.status && move.category === 'Physical') ||
         (attacker.curHP() <= attacker.maxHP() / 3 &&
             ((attacker.hasAbility('Overgrow') && move.hasType('풀')) ||
-                (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
-                (attacker.hasAbility('Torrent') && move.hasType('Water')) ||
-                (attacker.hasAbility('Swarm') && move.hasType('Bug')))) ||
+                (attacker.hasAbility('Blaze') && move.hasType('불꽃')) ||
+                (attacker.hasAbility('Torrent') && move.hasType('물')) ||
+                (attacker.hasAbility('Swarm') && move.hasType('벌레')))) ||
         (move.category === 'Special' && attacker.abilityOn && attacker.hasAbility('Plus', 'Minus'))) {
         atMods.push(6144);
         desc.attackerAbility = attacker.ability;
     }
-    else if (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) {
+    else if (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('불꽃')) {
         atMods.push(6144);
         desc.attackerAbility = 'Flash Fire';
     }
@@ -582,7 +582,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         defense = defender.stats[defenseStat];
         desc.defenseBoost = defender.boosts[defenseStat];
     }
-    if (field.hasWeather('Sand') && defender.hasType('Rock') && !hitsPhysical) {
+    if (field.hasWeather('Sand') && defender.hasType('바위') && !hitsPhysical) {
         defense = (0, util_2.pokeRound)((defense * 3) / 2);
         desc.weather = field.weather;
     }
@@ -636,13 +636,13 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     if (attacker.hasAbility('Parental Bond (Child)')) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 2048) / 4096);
     }
-    if ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
-        (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))) {
+    if ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('불꽃')) ||
+        (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('물'))) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 6144) / 4096);
         desc.weather = field.weather;
     }
-    else if ((field.hasWeather('Sun') && move.hasType('Water')) ||
-        (field.hasWeather('Rain') && move.hasType('Fire'))) {
+    else if ((field.hasWeather('Sun') && move.hasType('물')) ||
+        (field.hasWeather('Rain') && move.hasType('불꽃'))) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 2048) / 4096);
         desc.weather = field.weather;
     }
@@ -679,7 +679,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         desc.isLightScreen = true;
     }
     if (defender.hasAbility('Multiscale') && defender.curHP() === defender.maxHP() &&
-        !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) &&
+        !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('비행')) &&
         !attacker.hasAbility('Parental Bond (Child)')) {
         finalMods.push(2048);
         desc.defenderAbility = defender.ability;
@@ -719,7 +719,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         desc.attackerItem = attacker.item;
     }
     if (move.hasType((0, items_1.getBerryResistType)(defender.item)) &&
-        (typeEffectiveness > 1 || move.hasType('Normal')) &&
+        (typeEffectiveness > 1 || move.hasType('노말')) &&
         !attacker.hasAbility('Unnerve')) {
         finalMods.push(2048);
         desc.defenderItem = defender.item;

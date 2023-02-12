@@ -172,21 +172,21 @@ describe('calc', function () {
                 var e_2, _a;
                 var weathers = [
                     {
-                        weather: 'Sun', type: 'Fire', damage: {
+                        weather: 'Sun', type: '불꽃', damage: {
                             adv: { range: [346, 408], desc: '(149.7 - 176.6%) -- guaranteed OHKO' },
                             dpp: { range: [170, 204], desc: '(73.5 - 88.3%) -- guaranteed 2HKO' },
                             modern: { range: [344, 408], desc: '(148.9 - 176.6%) -- guaranteed OHKO' }
                         }
                     },
                     {
-                        weather: 'Rain', type: 'Water', damage: {
+                        weather: 'Rain', type: '물', damage: {
                             adv: { range: [86, 102], desc: '(37.2 - 44.1%) -- guaranteed 3HKO' },
                             dpp: { range: [42, 51], desc: '(18.1 - 22%) -- possible 5HKO' },
                             modern: { range: [86, 102], desc: '(37.2 - 44.1%) -- guaranteed 3HKO' }
                         }
                     },
                     {
-                        weather: 'Sand', type: 'Rock', damage: {
+                        weather: 'Sand', type: '바위', damage: {
                             adv: {
                                 range: [96, 114],
                                 desc: '(41.5 - 49.3%) -- 20.7% chance to 2HKO after sandstorm damage'
@@ -202,7 +202,7 @@ describe('calc', function () {
                         }
                     },
                     {
-                        weather: 'Hail', type: 'Ice', damage: {
+                        weather: 'Hail', type: '얼음', damage: {
                             adv: {
                                 range: [234, 276],
                                 desc: '(101.2 - 119.4%) -- guaranteed OHKO'
@@ -222,7 +222,7 @@ describe('calc', function () {
                     for (var weathers_1 = __values(weathers), weathers_1_1 = weathers_1.next(); !weathers_1_1.done; weathers_1_1 = weathers_1.next()) {
                         var _b = weathers_1_1.value, weather = _b.weather, type = _b.type, damage = _b.damage;
                         var dmg = gen === 3 ? damage.adv : gen === 4 ? damage.dpp : damage.modern;
-                        var _c = __read(gen === 3 && type === 'Rock' ? ['Atk', 'Def'] : ['SpA', 'SpD'], 2), atk = _c[0], def = _c[1];
+                        var _c = __read(gen === 3 && type === '바위' ? ['Atk', 'Def'] : ['SpA', 'SpD'], 2), atk = _c[0], def = _c[1];
                         var result = calculate(Pokemon('Castform'), Pokemon('Bulbasaur'), Move('Weather Ball'), Field({ weather: weather }));
                         expect(result.range()).toEqual(dmg.range);
                         expect(result.desc()).toBe("0 ".concat(atk, " Castform Weather Ball (100 BP ").concat(type, ") vs. 0 HP / 0 ").concat(def, " Bulbasaur in ").concat(weather, ": ").concat(dmg.range[0], "-").concat(dmg.range[1], " ").concat(dmg.desc));
@@ -301,8 +301,8 @@ describe('calc', function () {
         });
         (0, helper_1.inGens)(7, 9, function (_a) {
             var gen = _a.gen, calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move, Field = _a.Field;
-            test("Psychic Terrain (gen ".concat(gen, ")"), function () {
-                var field = Field({ terrain: 'Psychic' });
+            test("사이코필드 (gen ".concat(gen, ")"), function () {
+                var field = Field({ terrain: '에스퍼' });
                 var Mewtwo = Pokemon('Mewtwo', {
                     nature: 'Timid',
                     evs: { spa: 252 },
@@ -321,11 +321,11 @@ describe('calc', function () {
                 var result = calculate(Mewtwo, Milotic, Psystrike, field);
                 if (gen < 8) {
                     expect(result.range()).toEqual([331, 391]);
-                    expect(result.desc()).toBe('+2 252 SpA Mewtwo Psystrike vs. 248 HP / 184+ Def Marvel Scale Milotic in Psychic Terrain: 331-391 (84.2 - 99.4%) -- guaranteed 2HKO after burn damage');
+                    expect(result.desc()).toBe('+2 252 SpA Mewtwo Psystrike vs. 248 HP / 184+ Def Marvel Scale Milotic in 사이코필드: 331-391 (84.2 - 99.4%) -- guaranteed 2HKO after burn damage');
                 }
                 else {
                     expect(result.range()).toEqual([288, 339]);
-                    expect(result.desc()).toBe('+2 252 SpA Mewtwo Psystrike vs. 248 HP / 184+ Def Marvel Scale Milotic in Psychic Terrain: 288-339 (73.2 - 86.2%) -- guaranteed 2HKO after burn damage');
+                    expect(result.desc()).toBe('+2 252 SpA Mewtwo Psystrike vs. 248 HP / 184+ Def Marvel Scale Milotic in 사이코필드: 288-339 (73.2 - 86.2%) -- guaranteed 2HKO after burn damage');
                 }
                 result = calculate(Mewtwo, Milotic, sPunch, field);
                 expect(result.range()).toEqual([0, 0]);
@@ -647,7 +647,7 @@ describe('calc', function () {
                 var result = calculate(abomasnow, hoopa, Move('Blizzard'), field);
                 expect(result.range()).toEqual([50, 59]);
                 expect(result.desc()).toBe('0 SpA Abomasnow Helping Hand Blizzard vs. 32 HP / 0 SpD Hoopa-Unbound through Light Screen with an ally\'s Friend Guard: 50-59 (16.1 - 19%)' +
-                    ' -- 91.4% chance to 3HKO after Stealth Rock, 1 layer of Spikes, hail damage, Leech Seed damage, and Grassy Terrain recovery');
+                    ' -- 91.4% chance to 3HKO after 스텔스락, 1 layer of Spikes, hail damage, Leech Seed damage, and Grassy Terrain recovery');
             });
             test('Wring Out', function () {
                 var smeargle = Pokemon('Smeargle', { level: 50, ability: 'Technician' });
@@ -703,7 +703,7 @@ describe('calc', function () {
                 var waterSpout = Move('Water Spout');
                 var field = Field({ weather: 'Rain', attackerSide: { isHelpingHand: true } });
                 expect(calculate(kyogre, wynaut, waterSpout, field).range()).toEqual([55, 66]);
-                kyogre = Pokemon('Kyogre', __assign(__assign({}, kyogre), { overrides: { types: ['Normal'] } }));
+                kyogre = Pokemon('Kyogre', __assign(__assign({}, kyogre), { overrides: { types: ['노말'] } }));
                 expect(calculate(kyogre, wynaut, waterSpout, field).range()).toEqual([37, 44]);
             });
         });
@@ -806,12 +806,12 @@ describe('calc', function () {
                     defender = Pokemon('Manaphy');
                     var se = calc();
                     expect(calc(fusionBolt)).not.toEqual(se);
-                    defender.teraType = 'Normal';
+                    defender.teraType = '노말';
                     expect(calc()).toEqual(neutral);
                     var cc = Move('Collision Course');
                     defender = Pokemon('Jirachi');
                     expect(calc(cc)).toEqual(neutral);
-                    defender.teraType = 'Normal';
+                    defender.teraType = '노말';
                     expect(calc(cc)).toEqual(se);
                 });
             });

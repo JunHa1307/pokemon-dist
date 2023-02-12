@@ -17,12 +17,12 @@ export type MoveName = string & As<'MoveName'>;
 export type SpeciesName = string & As<'SpeciesName'>;
 export type StatusName = 'slp' | 'psn' | 'brn' | 'frz' | 'par' | 'tox';
 export type GameType = 'Singles' | 'Doubles';
-export type Terrain = 'Electric' | 'Grassy' | 'Psychic' | 'Misty';
+export type Terrain = '전기' | 'Grassy' | '에스퍼' | 'Misty';
 export type Weather = 'Sand' | 'Sun' | 'Rain' | 'Hail' | 'Snow' | 'Harsh Sunshine' | 'Heavy Rain' | 'Strong Winds';
 export type NatureName = 'Adamant' | 'Bashful' | 'Bold' | 'Brave' | 'Calm' | 'Careful' | 'Docile' | 'Gentle' | 'Hardy' | 'Hasty' | 'Impish' | 'Jolly' | 'Lax' | 'Lonely' | 'Mild' | 'Modest' | 'Naive' | 'Naughty' | 'Quiet' | 'Quirky' | 'Rash' | 'Relaxed' | 'Sassy' | 'Serious' | 'Timid';
-export type TypeName = 'Normal' | 'Fighting' | 'Flying' | 'Poison' | 'Ground' | 'Rock' | 'Bug' | 'Ghost' | 'Steel' | 'Fire' | 'Water' | '풀' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' | '???';
+export type TypeName = '노말' | '격투' | '비행' | '독' | '땅' | '바위' | '벌레' | '고스트' | '강철' | '불꽃' | '물' | '풀' | '전기' | '에스퍼' | '얼음' | '드래곤' | '악' | '페어리' | '???';
 export type MoveCategory = 'Physical' | 'Special' | 'Status';
-export type MoveTarget = 'adjacentAlly' | 'adjacentAllyOrSelf' | 'adjacentFoe' | 'all' | 'allAdjacent' | 'allAdjacentFoes' | 'allies' | 'allySide' | 'allyTeam' | 'any' | 'foeSide' | 'normal' | 'randomNormal' | 'scripted' | 'self';
+export type MoveTarget = 'adjacentAlly' | 'adjacentAllyOrSelf' | 'adjacentFoe' | 'all' | 'allAdjacent' | 'allAdjacentFoes' | 'allies' | 'allySide' | 'allyTeam' | 'any' | 'foeSide' | '노말' | 'randomNormal' | 'scripted' | 'self';
 export interface Generations {
     get(gen: GenerationNum): Generation;
 }

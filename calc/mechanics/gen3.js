@@ -54,34 +54,34 @@ function calculateADV(gen, attacker, defender, move, field) {
     }
     if (move.named('Weather Ball')) {
         move.type =
-            field.hasWeather('Sun') ? 'Fire'
-                : field.hasWeather('Rain') ? 'Water'
-                    : field.hasWeather('Sand') ? 'Rock'
-                        : field.hasWeather('Hail') ? 'Ice'
-                            : 'Normal';
-        move.category = move.type === 'Rock' ? 'Physical' : 'Special';
+            field.hasWeather('Sun') ? '불꽃'
+                : field.hasWeather('Rain') ? '물'
+                    : field.hasWeather('Sand') ? '바위'
+                        : field.hasWeather('Hail') ? '얼음'
+                            : '노말';
+        move.category = move.type === '바위' ? 'Physical' : 'Special';
         desc.weather = field.weather;
         desc.moveType = move.type;
         desc.moveBP = move.bp;
     }
     var typeEffectivenessPrecedenceRules = [
-        'Normal',
-        'Fire',
-        'Water',
-        'Electric',
+        '노말',
+        '불꽃',
+        '물',
+        '전기',
         '풀',
-        'Ice',
-        'Fighting',
-        'Poison',
-        'Ground',
-        'Flying',
-        'Psychic',
-        'Bug',
-        'Rock',
-        'Ghost',
-        'Dragon',
-        'Dark',
-        'Steel',
+        '얼음',
+        '격투',
+        '독',
+        '땅',
+        '비행',
+        '에스퍼',
+        '벌레',
+        '바위',
+        '고스트',
+        '드래곤',
+        '악',
+        '강철',
     ];
     var firstDefenderType = defender.types[0];
     var secondDefenderType = defender.types[1];
@@ -100,10 +100,10 @@ function calculateADV(gen, attacker, defender, move, field) {
     if (typeEffectiveness === 0) {
         return result;
     }
-    if ((defender.hasAbility('Flash Fire') && move.hasType('Fire')) ||
-        (defender.hasAbility('Levitate') && move.hasType('Ground')) ||
-        (defender.hasAbility('Volt Absorb') && move.hasType('Electric')) ||
-        (defender.hasAbility('Water Absorb') && move.hasType('Water')) ||
+    if ((defender.hasAbility('Flash Fire') && move.hasType('불꽃')) ||
+        (defender.hasAbility('Levitate') && move.hasType('땅')) ||
+        (defender.hasAbility('Volt Absorb') && move.hasType('전기')) ||
+        (defender.hasAbility('Water Absorb') && move.hasType('물')) ||
         (defender.hasAbility('Wonder Guard') && !move.hasType('???') && typeEffectiveness <= 1) ||
         (defender.hasAbility('Soundproof') && move.flags.sound)) {
         desc.defenderAbility = defender.ability;
@@ -168,7 +168,7 @@ function calculateADV(gen, attacker, defender, move, field) {
         at = Math.floor(at * 1.1);
         desc.attackerItem = attacker.item;
     }
-    else if (attacker.hasItem('Sea Incense') && move.hasType('Water')) {
+    else if (attacker.hasItem('Sea Incense') && move.hasType('물')) {
         at = Math.floor(at * 1.05);
         desc.attackerItem = attacker.item;
     }
@@ -192,7 +192,7 @@ function calculateADV(gen, attacker, defender, move, field) {
         df *= 2;
         desc.defenderItem = defender.item;
     }
-    if (defender.hasAbility('Thick Fat') && (move.hasType('Fire', 'Ice'))) {
+    if (defender.hasAbility('Thick Fat') && (move.hasType('불꽃', '얼음'))) {
         at = Math.floor(at / 2);
         desc.defenderAbility = defender.ability;
     }
@@ -208,9 +208,9 @@ function calculateADV(gen, attacker, defender, move, field) {
     }
     else if (attacker.curHP() <= attacker.maxHP() / 3 &&
         ((attacker.hasAbility('Overgrow') && move.hasType('풀')) ||
-            (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
-            (attacker.hasAbility('Torrent') && move.hasType('Water')) ||
-            (attacker.hasAbility('Swarm') && move.hasType('Bug')))) {
+            (attacker.hasAbility('Blaze') && move.hasType('불꽃')) ||
+            (attacker.hasAbility('Torrent') && move.hasType('물')) ||
+            (attacker.hasAbility('Swarm') && move.hasType('벌레')))) {
         bp = Math.floor(bp * 1.5);
         desc.attackerAbility = attacker.ability;
     }
@@ -252,18 +252,18 @@ function calculateADV(gen, attacker, defender, move, field) {
     if (field.gameType !== 'Singles' && move.target === 'allAdjacentFoes') {
         baseDamage = Math.floor(baseDamage / 2);
     }
-    if ((field.hasWeather('Sun') && move.hasType('Fire')) ||
-        (field.hasWeather('Rain') && move.hasType('Water'))) {
+    if ((field.hasWeather('Sun') && move.hasType('불꽃')) ||
+        (field.hasWeather('Rain') && move.hasType('물'))) {
         baseDamage = Math.floor(baseDamage * 1.5);
         desc.weather = field.weather;
     }
-    else if ((field.hasWeather('Sun') && move.hasType('Water')) ||
-        (field.hasWeather('Rain') && move.hasType('Fire')) ||
+    else if ((field.hasWeather('Sun') && move.hasType('물')) ||
+        (field.hasWeather('Rain') && move.hasType('불꽃')) ||
         (move.named('Solar Beam') && field.hasWeather('Rain', 'Sand', 'Hail'))) {
         baseDamage = Math.floor(baseDamage / 2);
         desc.weather = field.weather;
     }
-    if (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) {
+    if (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('불꽃')) {
         baseDamage = Math.floor(baseDamage * 1.5);
         desc.attackerAbility = 'Flash Fire';
     }

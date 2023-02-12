@@ -382,7 +382,7 @@ function NoMove(dex) {
         id: 'nomove',
         name: '(No Move)',
         basePower: 0,
-        type: 'Normal',
+        type: '노말',
         category: 'Status',
         target: 'any',
         flags: {},
