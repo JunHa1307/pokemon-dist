@@ -3,72 +3,72 @@ exports.__esModule = true;
 
 var util_1 = require("./util");
 exports.SEED_BOOSTED_STAT = {
-    '일렉트릭 시드': 'def',
+    'Electric Seed': 'def',
     'Grassy Seed': 'def',
     'Misty Seed': 'spd',
-    '사이코시드': 'spd'
+    'Psychic Seed': 'spd'
 };
 function getItemBoostType(item) {
     switch (item) {
         case 'Draco Plate':
         case 'Dragon Fang':
-            return '드래곤';
+            return 'Dragon';
         case 'Dread Plate':
         case 'Black Glasses':
-            return '악';
+            return 'Dark';
         case 'Earth Plate':
         case 'Soft Sand':
-            return '땅';
+            return 'Ground';
         case 'Fist Plate':
         case 'Black Belt':
-            return '격투';
+            return 'Fighting';
         case 'Flame Plate':
         case 'Charcoal':
-            return '불꽃';
+            return 'Fire';
         case 'Icicle Plate':
         case 'Never-Melt Ice':
-            return '얼음';
+            return 'Ice';
         case 'Insect Plate':
         case 'Silver Powder':
-            return '벌레';
+            return 'Bug';
         case 'Iron Plate':
         case 'Metal Coat':
-            return '강철';
+            return 'Steel';
         case 'Meadow Plate':
         case 'Rose Incense':
         case 'Miracle Seed':
-            return '풀';
+            return 'Grass';
         case 'Mind Plate':
         case 'Odd Incense':
         case 'Twisted Spoon':
-            return '에스퍼';
+            return 'Psychic';
         case 'Pixie Plate':
-            return '페어리';
+            return 'Fairy';
         case 'Sky Plate':
         case 'Sharp Beak':
-            return '비행';
+            return 'Flying';
         case 'Splash Plate':
         case 'Sea Incense':
         case 'Wave Incense':
         case 'Mystic Water':
-            return '물';
+            return 'Water';
         case 'Spooky Plate':
         case 'Spell Tag':
-            return '고스트';
+            return 'Ghost';
         case 'Stone Plate':
         case 'Rock Incense':
         case 'Hard Stone':
-            return '바위';
+            return 'Rock';
         case 'Toxic Plate':
         case 'Poison Barb':
-            return '독';
+            return 'Poison';
         case 'Zap Plate':
         case 'Magnet':
-            return '전기';
+            return 'Electric';
         case 'Silk Scarf':
         case 'Pink Bow':
         case 'Polkadot Bow':
-            return '노말';
+            return 'Normal';
         default:
             return undefined;
     }
@@ -77,41 +77,41 @@ exports.getItemBoostType = getItemBoostType;
 function getBerryResistType(berry) {
     switch (berry) {
         case 'Chilan Berry':
-            return '노말';
+            return 'Normal';
         case 'Occa Berry':
-            return '불꽃';
+            return 'Fire';
         case 'Passho Berry':
-            return '물';
+            return 'Water';
         case 'Wacan Berry':
-            return '전기';
+            return 'Electric';
         case 'Rindo Berry':
-            return '풀';
+            return 'Grass';
         case 'Yache Berry':
-            return '얼음';
+            return 'Ice';
         case 'Chople Berry':
-            return '격투';
+            return 'Fighting';
         case 'Kebia Berry':
-            return '독';
+            return 'Poison';
         case 'Shuca Berry':
-            return '땅';
+            return 'Ground';
         case 'Coba Berry':
-            return '비행';
+            return 'Flying';
         case 'Payapa Berry':
-            return '에스퍼';
+            return 'Psychic';
         case 'Tanga Berry':
-            return '벌레';
+            return 'Bug';
         case 'Charti Berry':
-            return '바위';
+            return 'Rock';
         case 'Kasib Berry':
-            return '고스트';
+            return 'Ghost';
         case 'Haban Berry':
-            return '드래곤';
+            return 'Dragon';
         case 'Colbur Berry':
-            return '악';
+            return 'Dark';
         case 'Babiri Berry':
-            return '강철';
+            return 'Steel';
         case 'Roseli Berry':
-            return '페어리';
+            return 'Fairy';
         default:
             return undefined;
     }
@@ -290,7 +290,7 @@ var FLING_10 = new Set([
     'Choice Specs',
     'Clover Sweet',
     'Destiny Knot',
-    '일렉트릭 시드',
+    'Electric Seed',
     'Expert Belt',
     'Flower Sweet',
     'Focus Band',
@@ -308,7 +308,7 @@ var FLING_10 = new Set([
     'Misty Seed',
     'Muscle Band',
     'Power Herb',
-    '사이코시드',
+    'Psychic Seed',
     'Odd Incense',
     'Quick Powder',
     'Reaper Cloth',
@@ -405,19 +405,19 @@ exports.getFlingPower = getFlingPower;
 function getNaturalGift(gen, item) {
     var _a;
     var gift = (_a = gen.items.get((0, util_1.toID)(item))) === null || _a === void 0 ? void 0 : _a.naturalGift;
-    return gift ? { t: gift.type, p: gift.basePower } : { t: '노말', p: 1 };
+    return gift ? { t: gift.type, p: gift.basePower } : { t: 'Normal', p: 1 };
 }
 exports.getNaturalGift = getNaturalGift;
 function getTechnoBlast(item) {
     switch (item) {
         case 'Burn Drive':
-            return '불꽃';
+            return 'Fire';
         case 'Chill Drive':
-            return '얼음';
+            return 'Ice';
         case 'Douse Drive':
-            return '물';
+            return 'Water';
         case 'Shock Drive':
-            return '전기';
+            return 'Electric';
         default:
             return undefined;
     }

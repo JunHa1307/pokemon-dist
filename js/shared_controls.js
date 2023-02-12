@@ -39,8 +39,8 @@ var HIDDEN_POWER_REGEX = /Hidden Power (\w*)/;
 var CALC_STATUS = {
 	'Healthy': '',
 	'Paralyzed': 'par',
-	'독': 'psn',
-	'맹독': 'tox',
+	'Poisoned': 'psn',
+	'Badly Poisoned': 'tox',
 	'Burned': 'brn',
 	'Asleep': 'slp',
 	'Frozen': 'frz'
@@ -312,7 +312,7 @@ function autosetTerrain(ability, i) {
 	switch (ability) {
 	case "Electric Surge":
 	case "Hadron Engine":
-		lastAutoTerrain[i] = "전기";
+		lastAutoTerrain[i] = "Electric";
 		$("#electric").prop("checked", true);
 		break;
 	case "Grassy Surge":
@@ -324,7 +324,7 @@ function autosetTerrain(ability, i) {
 		$("#misty").prop("checked", true);
 		break;
 	case "Psychic Surge":
-		lastAutoTerrain[i] = "에스퍼";
+		lastAutoTerrain[i] = "Psychic";
 		$("#psychic").prop("checked", true);
 		break;
 	default:
@@ -353,8 +353,8 @@ function autosetStatus(p, item) {
 		$(p + " .status").val("Burned");
 		$(p + " .status").change();
 	} else if (item === "Toxic Orb") {
-		lastAutoStatus[p] = "맹독";
-		$(p + " .status").val("맹독");
+		lastAutoStatus[p] = "Badly Poisoned";
+		$(p + " .status").val("Badly Poisoned");
 		$(p + " .status").change();
 	} else {
 		lastAutoStatus[p] = "Healthy";
@@ -366,7 +366,7 @@ function autosetStatus(p, item) {
 }
 
 $(".status").bind("keyup change", function () {
-	if ($(this).val() === '맹독') {
+	if ($(this).val() === 'Badly Poisoned') {
 		$(this).parent().children(".toxic-counter").show();
 	} else {
 		$(this).parent().children(".toxic-counter").hide();
@@ -861,7 +861,7 @@ function createPokemon(pokeInfo) {
 			boosts: boosts,
 			curHP: curHP,
 			status: CALC_STATUS[pokeInfo.find(".status").val()],
-			toxicCounter: status === '맹독' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
+			toxicCounter: status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
 			moves: [
 				getMoveDetails(pokeInfo.find(".move1"), name, ability, item, isDynamaxed),
 				getMoveDetails(pokeInfo.find(".move2"), name, ability, item, isDynamaxed),
@@ -1241,8 +1241,8 @@ var stickyMoves = (function () {
 function isPokeInfoGrounded(pokeInfo) {
 	var teraType = pokeInfo.find(".teraToggle").is(":checked") ? pokeInfo.find(".teraType").val() : undefined;
 	return $("#gravity").prop("checked") || (
-		  teraType ? teraType !== "비행" : pokeInfo.find(".type1").val() !== "비행" &&
-        teraType ? teraType !== "비행" : pokeInfo.find(".type2").val() !== "비행" &&
+		  teraType ? teraType !== "Flying" : pokeInfo.find(".type1").val() !== "Flying" &&
+        teraType ? teraType !== "Flying" : pokeInfo.find(".type2").val() !== "Flying" &&
         pokeInfo.find(".ability").val() !== "Levitate" &&
         pokeInfo.find(".item").val() !== "Air Balloon"
 	);
@@ -1259,7 +1259,7 @@ function getTerrainEffects() {
 	case "item":
 		var id = $(this).closest(".poke-info").prop("id");
 		var terrainValue = $("input:checkbox[name='terrain']:checked").val();
-		if (terrainValue === "전기") {
+		if (terrainValue === "Electric") {
 			$("#" + id).find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#" + id)));
 		} else if (terrainValue === "Misty") {
 			$("#" + id).find(".status").prop("disabled", isPokeInfoGrounded($("#" + id)));
@@ -1268,7 +1268,7 @@ function getTerrainEffects() {
 	case "ability":
 		// with autoset, ability change may cause terrain change, need to consider both sides
 		var terrainValue = $("input:checkbox[name='terrain']:checked").val();
-		if (terrainValue === "전기") {
+		if (terrainValue === "Electric") {
 			$("#p1").find(".status").prop("disabled", false);
 			$("#p2").find(".status").prop("disabled", false);
 			$("#p1").find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#p1")));
@@ -1285,7 +1285,7 @@ function getTerrainEffects() {
 		break;
 	default:
 		$("input:checkbox[name='terrain']").not(this).prop("checked", false);
-		if ($(this).prop("checked") && $(this).val() === "전기") {
+		if ($(this).prop("checked") && $(this).val() === "Electric") {
 			// need to enable status because it may be disabled by Misty Terrain before.
 			$("#p1").find(".status").prop("disabled", false);
 			$("#p2").find(".status").prop("disabled", false);

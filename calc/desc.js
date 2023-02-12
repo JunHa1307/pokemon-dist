@@ -136,7 +136,7 @@ function getRecoil(gen, attacker, defender, move, damage, notation) {
             case 2:
             case 3:
             case 4:
-                if (defender.hasType('고스트')) {
+                if (defender.hasType('Ghost')) {
                     if (gen.num === 4) {
                         var gen4CrashDamage = Math.floor(((defender.maxHP() * 0.5) / attacker.maxHP()) * 100);
                         recoil = notation === '%' ? gen4CrashDamage : Math.floor((gen4CrashDamage / 100) * 48);
@@ -309,20 +309,20 @@ function getHazards(gen, defender, defenderSide) {
         return { damage: damage, texts: texts };
     }
     if (defenderSide.isSR && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
-        var rockType = gen.types.get('바위');
+        var rockType = gen.types.get('rock');
         var effectiveness = rockType.effectiveness[defender.types[0]] *
             (defender.types[1] ? rockType.effectiveness[defender.types[1]] : 1);
         damage += Math.floor((effectiveness * defender.maxHP()) / 8);
         texts.push('스텔스락');
     }
     if (defenderSide.steelsurge && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
-        var steelType = gen.types.get('강철');
+        var steelType = gen.types.get('steel');
         var effectiveness = steelType.effectiveness[defender.types[0]] *
             (defender.types[1] ? steelType.effectiveness[defender.types[1]] : 1);
         damage += Math.floor((effectiveness * defender.maxHP()) / 8);
         texts.push('Steelsurge');
     }
-    if (!defender.hasType('비행') &&
+    if (!defender.hasType('Flying') &&
         !defender.hasAbility('Magic Guard', 'Levitate') &&
         !defender.hasItem('Air Balloon')) {
         if (defenderSide.spikes === 1) {
@@ -368,7 +368,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         }
     }
     else if (field.hasWeather('Sand')) {
-        if (!defender.hasType('바위', '땅', '강철') &&
+        if (!defender.hasType('Rock', 'Ground', 'Steel') &&
             !defender.hasAbility('Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil') &&
             !defender.hasItem('Safety Goggles')) {
             damage -= Math.floor(defender.maxHP() / (gen.num === 2 ? 8 : 16));
@@ -380,7 +380,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             damage += Math.floor(defender.maxHP() / 16);
             texts.push('Ice Body recovery');
         }
-        else if (!defender.hasType('얼음') &&
+        else if (!defender.hasType('Ice') &&
             !defender.hasAbility('Magic Guard', 'Overcoat', 'Snow Cloak') &&
             !defender.hasItem('Safety Goggles') &&
             field.hasWeather('Hail')) {
@@ -394,7 +394,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         texts.push('Leftovers recovery');
     }
     else if (defender.hasItem('Black Sludge') && !loseItem) {
-        if (defender.hasType('독')) {
+        if (defender.hasType('Poison')) {
             damage += Math.floor(defender.maxHP() / 16);
             texts.push('Black Sludge recovery');
         }
@@ -478,32 +478,32 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         }
     }
     if (defender.isSaltCure && !defender.hasAbility('Magic Guard')) {
-        var isWaterOrSteel = defender.hasType('물', '강철') ||
-            (defender.teraType && ['물', '강철'].includes(defender.teraType));
+        var isWaterOrSteel = defender.hasType('Water', 'Steel') ||
+            (defender.teraType && ['Water', 'Steel'].includes(defender.teraType));
         damage -= Math.floor(defender.maxHP() / (isWaterOrSteel ? 4 : 8));
         texts.push('Salt Cure');
     }
-    if (!defender.hasType('불꽃') && !defender.hasAbility('Magic Guard') &&
+    if (!defender.hasType('Fire') && !defender.hasAbility('Magic Guard') &&
         (move.named('Fire Pledge (Grass Pledge Boosted)', 'Grass Pledge (Fire Pledge Boosted)'))) {
         damage -= Math.floor(defender.maxHP() / 8);
         texts.push('Sea of Fire damage');
     }
-    if (!defender.hasAbility('Magic Guard') && !defender.hasType('풀') &&
+    if (!defender.hasAbility('Magic Guard') && !defender.hasType('Grass') &&
         (field.defenderSide.vinelash || move.named('G-Max Vine Lash'))) {
         damage -= Math.floor(defender.maxHP() / 6);
         texts.push('Vine Lash damage');
     }
-    if (!defender.hasAbility('Magic Guard') && !defender.hasType('불꽃') &&
-        (field.defenderSide.wildfire || move.named('거다이옥염'))) {
+    if (!defender.hasAbility('Magic Guard') && !defender.hasType('Fire') &&
+        (field.defenderSide.wildfire || move.named('G-Max Wildfire'))) {
         damage -= Math.floor(defender.maxHP() / 6);
         texts.push('Wildfire damage');
     }
-    if (!defender.hasAbility('Magic Guard') && !defender.hasType('물') &&
+    if (!defender.hasAbility('Magic Guard') && !defender.hasType('Water') &&
         (field.defenderSide.cannonade || move.named('G-Max Cannonade'))) {
         damage -= Math.floor(defender.maxHP() / 6);
         texts.push('Cannonade damage');
     }
-    if (!defender.hasAbility('Magic Guard') && !defender.hasType('바위') &&
+    if (!defender.hasAbility('Magic Guard') && !defender.hasType('Rock') &&
         (field.defenderSide.volcalith || move.named('G-Max Volcalith'))) {
         damage -= Math.floor(defender.maxHP() / 6);
         texts.push('Volcalith damage');

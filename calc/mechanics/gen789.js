@@ -68,11 +68,11 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     if (move.named('Weather Ball')) {
         var holdingUmbrella = attacker.hasItem('Utility Umbrella');
         type =
-            field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? '불꽃'
-                : field.hasWeather('Rain', 'Heavy Rain') && !holdingUmbrella ? '물'
-                    : field.hasWeather('Sand') ? '바위'
-                        : field.hasWeather('Hail', 'Snow') ? '얼음'
-                            : '노말';
+            field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? 'Fire'
+                : field.hasWeather('Rain', 'Heavy Rain') && !holdingUmbrella ? 'Water'
+                    : field.hasWeather('Sand') ? 'Rock'
+                        : field.hasWeather('Hail', 'Snow') ? 'Ice'
+                            : 'Normal';
         desc.weather = field.weather;
         desc.moveType = type;
     }
@@ -94,11 +94,11 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     else if (move.named('Nature Power') ||
         (move.named('Terrain Pulse') && (0, util_2.isGrounded)(attacker, field))) {
         type =
-            field.hasTerrain('전기') ? '전기'
-                : field.hasTerrain('Grassy') ? '풀'
-                    : field.hasTerrain('Misty') ? '페어리'
-                        : field.hasTerrain('에스퍼') ? '에스퍼'
-                            : '노말';
+            field.hasTerrain('Electric') ? 'Electric'
+                : field.hasTerrain('Grassy') ? 'Grass'
+                    : field.hasTerrain('Misty') ? 'Fairy'
+                        : field.hasTerrain('Psychic') ? 'Psychic'
+                            : 'Normal';
         desc.terrain = field.terrain;
         desc.moveType = type;
     }
@@ -107,21 +107,21 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     }
     else if (move.named('Aura Wheel')) {
         if (attacker.named('Morpeko')) {
-            type = '전기';
+            type = 'Electric';
         }
         else if (attacker.named('Morpeko-Hangry')) {
-            type = '악';
+            type = 'Dark';
         }
     }
     else if (move.named('Raging Bull')) {
         if (attacker.named('Tauros-Paldea')) {
-            type = '격투';
+            type = 'Fighting';
         }
         else if (attacker.named('Tauros-Paldea-Fire')) {
-            type = '불꽃';
+            type = 'Fire';
         }
         else if (attacker.named('Tauros-Paldea-Water')) {
-            type = '물';
+            type = 'Water';
         }
     }
     var hasAteAbilityTypeChange = false;
@@ -133,24 +133,24 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     var isNormalize = false;
     var noTypeChange = move.named('Revelation Dance', 'Judgment', 'Nature Power', 'Techno Blast', 'Multi Attack', 'Natural Gift', 'Weather Ball', 'Terrain Pulse') || (move.named('Tera Blast') && attacker.teraType);
     if (!move.isZ && !noTypeChange) {
-        var normal = move.hasType('노말');
+        var normal = move.hasType('Normal');
         if ((isAerilate = attacker.hasAbility('Aerilate') && normal)) {
-            type = '비행';
+            type = 'Flying';
         }
         else if ((isGalvanize = attacker.hasAbility('Galvanize') && normal)) {
-            type = '전기';
+            type = 'Electric';
         }
         else if ((isLiquidVoice = attacker.hasAbility('Liquid Voice') && !!move.flags.sound)) {
-            type = '물';
+            type = 'Water';
         }
         else if ((isPixilate = attacker.hasAbility('Pixilate') && normal)) {
-            type = '페어리';
+            type = 'Fairy';
         }
         else if ((isRefrigerate = attacker.hasAbility('Refrigerate') && normal)) {
-            type = '얼음';
+            type = 'Ice';
         }
         else if ((isNormalize = attacker.hasAbility('Normalize'))) {
-            type = '노말';
+            type = 'Normal';
         }
         if (isGalvanize || isPixilate || isRefrigerate || isAerilate || isNormalize) {
             desc.attackerAbility = attacker.ability;
@@ -166,7 +166,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     move.type = type;
     if ((attacker.hasAbility('Triage') && move.drain) ||
         (attacker.hasAbility('Gale Wings') &&
-            move.hasType('비행') &&
+            move.hasType('Flying') &&
             attacker.curHP() === attacker.maxHP())) {
         move.priority = 1;
         desc.attackerAbility = attacker.ability;
@@ -181,7 +181,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     if (defender.teraType) {
         typeEffectiveness = (0, util_2.getMoveEffectiveness)(gen, move, defender.teraType, isGhostRevealed, field.isGravity, isRingTarget);
     }
-    if (typeEffectiveness === 0 && move.hasType('땅') &&
+    if (typeEffectiveness === 0 && move.hasType('Ground') &&
         defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz')) {
         typeEffectiveness = 1;
     }
@@ -192,7 +192,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         return result;
     }
     if ((move.named('Sky Drop') &&
-        (defender.hasType('비행') || defender.weightkg >= 200 || field.isGravity)) ||
+        (defender.hasType('Flying') || defender.weightkg >= 200 || field.isGravity)) ||
         (move.named('Synchronoise') && !defender.hasType(attacker.types[0]) &&
             (!attacker.types[1] || !defender.hasType(attacker.types[1]))) ||
         (move.named('Dream Eater') &&
@@ -201,39 +201,39 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         (move.named('Poltergeist') && !defender.item)) {
         return result;
     }
-    if ((field.hasWeather('Harsh Sunshine') && move.hasType('물')) ||
-        (field.hasWeather('Heavy Rain') && move.hasType('불꽃'))) {
+    if ((field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
+        (field.hasWeather('Heavy Rain') && move.hasType('Fire'))) {
         desc.weather = field.weather;
         return result;
     }
-    if (field.hasWeather('Strong Winds') && defender.hasType('비행') &&
-        gen.types.get((0, util_1.toID)(move.type)).effectiveness['비행'] > 1) {
+    if (field.hasWeather('Strong Winds') && defender.hasType('Flying') &&
+        gen.types.get((0, util_1.toID)(move.type)).effectiveness['Flying'] > 1) {
         typeEffectiveness /= 2;
         desc.weather = field.weather;
     }
     if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
-        (move.hasType('풀') && defender.hasAbility('Sap Sipper')) ||
-        (move.hasType('불꽃') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) ||
-        (move.hasType('물') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) ||
-        (move.hasType('전기') &&
+        (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
+        (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) ||
+        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) ||
+        (move.hasType('Electric') &&
             defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
-        (move.hasType('땅') &&
+        (move.hasType('Ground') &&
             !field.isGravity && !move.named('Thousand Arrows') &&
             !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
         (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
         (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
         (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
-        (move.hasType('땅') && defender.hasAbility('Earth Eater')) ||
+        (move.hasType('Ground') && defender.hasAbility('Earth Eater')) ||
         (move.flags.wind && defender.hasAbility('Wind Rider'))) {
         desc.defenderAbility = defender.ability;
         return result;
     }
-    if (move.hasType('땅') && !move.named('Thousand Arrows') &&
+    if (move.hasType('Ground') && !move.named('Thousand Arrows') &&
         !field.isGravity && defender.hasItem('Air Balloon')) {
         desc.defenderItem = defender.item;
         return result;
     }
-    if (move.priority > 0 && field.hasTerrain('에스퍼') && (0, util_2.isGrounded)(defender, field)) {
+    if (move.priority > 0 && field.hasTerrain('Psychic') && (0, util_2.isGrounded)(defender, field)) {
         desc.terrain = field.terrain;
         return result;
     }
@@ -321,14 +321,14 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     }
     var noWeatherBoost = defender.hasItem('Utility Umbrella');
     if (!noWeatherBoost &&
-        ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('불꽃')) ||
-            (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('물')))) {
+        ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
+            (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water')))) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 6144) / 4096);
         desc.weather = field.weather;
     }
     else if (!noWeatherBoost &&
-        ((field.hasWeather('Sun') && move.hasType('물')) ||
-            (field.hasWeather('Rain') && move.hasType('불꽃')))) {
+        ((field.hasWeather('Sun') && move.hasType('Water')) ||
+            (field.hasWeather('Rain') && move.hasType('Fire')))) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 2048) / 4096);
         desc.weather = field.weather;
     }
@@ -520,7 +520,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             desc.moveBP = basePower;
             break;
         case 'Rising Voltage':
-            basePower = move.bp * (((0, util_2.isGrounded)(defender, field) && field.hasTerrain('전기')) ? 2 : 1);
+            basePower = move.bp * (((0, util_2.isGrounded)(defender, field) && field.hasTerrain('Electric')) ? 2 : 1);
             desc.moveBP = basePower;
             break;
         case 'Fling':
@@ -555,7 +555,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             move.category = 'Special';
             move.secondaries = true;
             switch (field.terrain) {
-                case '전기':
+                case 'Electric':
                     basePower = 90;
                     desc.moveName = 'Thunderbolt';
                     break;
@@ -567,9 +567,9 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
                     basePower = 95;
                     desc.moveName = 'Moonblast';
                     break;
-                case '에스퍼':
+                case 'Psychic':
                     basePower = 90;
-                    desc.moveName = '에스퍼';
+                    desc.moveName = 'Psychic';
                     break;
                 default:
                     basePower = 80;
@@ -641,7 +641,7 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
         bpMods.push(8192);
         desc.moveBP = basePower * 2;
     }
-    else if (move.named('Expanding Force') && (0, util_2.isGrounded)(attacker, field) && field.hasTerrain('에스퍼')) {
+    else if (move.named('Expanding Force') && (0, util_2.isGrounded)(attacker, field) && field.hasTerrain('Psychic')) {
         move.target = 'allAdjacentFoes';
         bpMods.push(6144);
         desc.moveBP = basePower * 1.5;
@@ -675,15 +675,15 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
     }
     var terrainMultiplier = gen.num > 7 ? 5325 : 6144;
     if ((0, util_2.isGrounded)(attacker, field)) {
-        if ((field.hasTerrain('전기') && move.hasType('전기')) ||
-            (field.hasTerrain('Grassy') && move.hasType('풀')) ||
-            (field.hasTerrain('에스퍼') && move.hasType('에스퍼'))) {
+        if ((field.hasTerrain('Electric') && move.hasType('Electric')) ||
+            (field.hasTerrain('Grassy') && move.hasType('Grass')) ||
+            (field.hasTerrain('Psychic') && move.hasType('Psychic'))) {
             bpMods.push(terrainMultiplier);
             desc.terrain = field.terrain;
         }
     }
     if ((0, util_2.isGrounded)(defender, field)) {
-        if ((field.hasTerrain('Misty') && move.hasType('드래곤')) ||
+        if ((field.hasTerrain('Misty') && move.hasType('Dragon')) ||
             (field.hasTerrain('Grassy') && move.named('Bulldoze', 'Earthquake'))) {
             bpMods.push(2048);
             desc.terrain = field.terrain;
@@ -696,7 +696,7 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
             attacker.hasStatus('psn', 'tox') && move.category === 'Physical') ||
         (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
         (attacker.hasAbility('Strong Jaw') && move.flags.bite) ||
-        (attacker.hasAbility('Steely Spirit') && move.hasType('강철')) ||
+        (attacker.hasAbility('Steely Spirit') && move.hasType('Steel')) ||
         (attacker.hasAbility('Sharpness') && move.flags.slicing)) {
         bpMods.push(6144);
         desc.attackerAbility = attacker.ability;
@@ -706,8 +706,8 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
     var isDefenderAura = defender.hasAbility(aura);
     var isUserAuraBreak = attacker.hasAbility('Aura Break') || defender.hasAbility('Aura Break');
     var isFieldAuraBreak = field.isAuraBreak;
-    var isFieldFairyAura = field.isFairyAura && move.type === '페어리';
-    var isFieldDarkAura = field.isDarkAura && move.type === '악';
+    var isFieldFairyAura = field.isFairyAura && move.type === 'Fairy';
+    var isFieldDarkAura = field.isDarkAura && move.type === 'Dark';
     var auraActive = isAttackerAura || isDefenderAura || isFieldFairyAura || isFieldDarkAura;
     var auraBreak = isFieldAuraBreak || isUserAuraBreak;
     if (auraActive) {
@@ -727,7 +727,7 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
     if ((attacker.hasAbility('Sheer Force') &&
         (move.secondaries || move.named('Jet Punch', 'Order Up')) && !move.isMax) ||
         (attacker.hasAbility('Sand Force') &&
-            field.hasWeather('Sand') && move.hasType('바위', '땅', '강철')) ||
+            field.hasWeather('Sand') && move.hasType('Rock', 'Ground', 'Steel')) ||
         (attacker.hasAbility('Analytic') &&
             (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out')) ||
         (attacker.hasAbility('Tough Claws') && move.flags.contact) ||
@@ -766,11 +766,11 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
         bpMods.push(4506);
         desc.attackerItem = attacker.item;
     }
-    if (defender.hasAbility('Heatproof') && move.hasType('불꽃')) {
+    if (defender.hasAbility('Heatproof') && move.hasType('Fire')) {
         bpMods.push(2048);
         desc.defenderAbility = defender.ability;
     }
-    else if (defender.hasAbility('Dry Skin') && move.hasType('불꽃')) {
+    else if (defender.hasAbility('Dry Skin') && move.hasType('Fire')) {
         bpMods.push(5120);
         desc.defenderAbility = defender.ability;
     }
@@ -786,20 +786,20 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
     }
     else if (((attacker.hasItem('Adamant Crystal') && attacker.named('Dialga-Origin')) ||
         (attacker.hasItem('Adamant Orb') && attacker.named('Dialga')) &&
-            move.hasType('강철', '드래곤')) ||
+            move.hasType('Steel', 'Dragon')) ||
         ((attacker.hasItem('Lustrous Orb') &&
             attacker.named('Palkia')) ||
             (attacker.hasItem('Lustrous Globe') && attacker.named('Palkia-Origin')) &&
-                move.hasType('물', '드래곤')) ||
+                move.hasType('Water', 'Dragon')) ||
         ((attacker.hasItem('Griseous Orb') || attacker.hasItem('Griseous Core')) &&
             (attacker.named('Giratina-Origin') || attacker.named('Giratina')) &&
-            move.hasType('고스트', '드래곤')) ||
+            move.hasType('Ghost', 'Dragon')) ||
         (attacker.hasItem('Vile Vial') &&
             attacker.named('Venomicon-Epilogue') &&
-            move.hasType('독', '비행')) ||
+            move.hasType('Poison', 'Flying')) ||
         (attacker.hasItem('Soul Dew') &&
             attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega') &&
-            move.hasType('에스퍼', '드래곤')) ||
+            move.hasType('Psychic', 'Dragon')) ||
         attacker.item && move.hasType((0, items_1.getItemBoostType)(attacker.item))) {
         bpMods.push(4915);
         desc.attackerItem = attacker.item;
@@ -883,22 +883,22 @@ function calculateAtModsSMSSSV(gen, attacker, defender, move, field, desc) {
     }
     else if ((attacker.hasAbility('Guts') && attacker.status && move.category === 'Physical') ||
         (attacker.curHP() <= attacker.maxHP() / 3 &&
-            ((attacker.hasAbility('Overgrow') && move.hasType('풀')) ||
-                (attacker.hasAbility('Blaze') && move.hasType('불꽃')) ||
-                (attacker.hasAbility('Torrent') && move.hasType('물')) ||
-                (attacker.hasAbility('Swarm') && move.hasType('벌레')))) ||
+            ((attacker.hasAbility('Overgrow') && move.hasType('Grass')) ||
+                (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
+                (attacker.hasAbility('Torrent') && move.hasType('Water')) ||
+                (attacker.hasAbility('Swarm') && move.hasType('Bug')))) ||
         (move.category === 'Special' && attacker.abilityOn && attacker.hasAbility('Plus', 'Minus'))) {
         atMods.push(6144);
         desc.attackerAbility = attacker.ability;
     }
-    else if (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('불꽃')) {
+    else if (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) {
         atMods.push(6144);
         desc.attackerAbility = 'Flash Fire';
     }
-    else if ((attacker.hasAbility('Steelworker') && move.hasType('강철')) ||
-        (attacker.hasAbility('Dragon\'s Maw') && move.hasType('드래곤')) ||
-        (attacker.hasAbility('Transistor') && move.hasType('전기')) ||
-        (attacker.hasAbility('Rocky Payload') && move.hasType('바위'))) {
+    else if ((attacker.hasAbility('Steelworker') && move.hasType('Steel')) ||
+        (attacker.hasAbility('Dragon\'s Maw') && move.hasType('Dragon')) ||
+        (attacker.hasAbility('Transistor') && move.hasType('Electric')) ||
+        (attacker.hasAbility('Rocky Payload') && move.hasType('Rock'))) {
         atMods.push(6144);
         desc.attackerAbility = attacker.ability;
     }
@@ -906,14 +906,14 @@ function calculateAtModsSMSSSV(gen, attacker, defender, move, field, desc) {
         atMods.push(8192);
         desc.attackerAbility = attacker.ability;
     }
-    else if ((attacker.hasAbility('Water Bubble') && move.hasType('물')) ||
+    else if ((attacker.hasAbility('Water Bubble') && move.hasType('Water')) ||
         (attacker.hasAbility('Huge Power', 'Pure Power') && move.category === 'Physical')) {
         atMods.push(8192);
         desc.attackerAbility = attacker.ability;
     }
-    if ((defender.hasAbility('Thick Fat') && move.hasType('불꽃', '얼음')) ||
-        (defender.hasAbility('Water Bubble') && move.hasType('불꽃')) ||
-        (defender.hasAbility('Purifying Salt') && move.hasType('고스트'))) {
+    if ((defender.hasAbility('Thick Fat') && move.hasType('Fire', 'Ice')) ||
+        (defender.hasAbility('Water Bubble') && move.hasType('Fire')) ||
+        (defender.hasAbility('Purifying Salt') && move.hasType('Ghost'))) {
         atMods.push(2048);
         desc.defenderAbility = defender.ability;
     }
@@ -932,7 +932,7 @@ function calculateAtModsSMSSSV(gen, attacker, defender, move, field, desc) {
     if ((attacker.hasAbility('Protosynthesis') &&
         (field.hasWeather('Sun') || attacker.hasItem('Booster Energy'))) ||
         (attacker.hasAbility('Quark Drive') &&
-            (field.hasTerrain('전기') || attacker.hasItem('Booster Energy')))) {
+            (field.hasTerrain('Electric') || attacker.hasItem('Booster Energy')))) {
         if ((move.category === 'Physical' &&
             (0, util_2.getMostProficientStat)(attacker) === 'atk') ||
             (move.category === 'Special' && (0, util_2.getMostProficientStat)(attacker) === 'spa')) {
@@ -941,7 +941,7 @@ function calculateAtModsSMSSSV(gen, attacker, defender, move, field, desc) {
         }
     }
     if ((attacker.hasAbility('Hadron Engine') && move.category === 'Special' &&
-        field.hasTerrain('전기') && (0, util_2.isGrounded)(attacker, field)) ||
+        field.hasTerrain('Electric') && (0, util_2.isGrounded)(attacker, field)) ||
         (attacker.hasAbility('Orichalcum Pulse') && move.category === 'Physical' &&
             field.hasWeather('Sun', 'Harsh Sunshine') && !attacker.hasItem('Utility Umbrella'))) {
         atMods.push(5461);
@@ -986,11 +986,11 @@ function calculateDefenseSMSSSV(gen, attacker, defender, move, field, desc, isCr
         defense = defender.stats[defenseStat];
         desc.defenseBoost = defender.boosts[defenseStat];
     }
-    if (field.hasWeather('Sand') && defender.hasType('바위') && !hitsPhysical) {
+    if (field.hasWeather('Sand') && defender.hasType('Rock') && !hitsPhysical) {
         defense = (0, util_2.pokeRound)((defense * 3) / 2);
         desc.weather = field.weather;
     }
-    if (field.hasWeather('Snow') && defender.hasType('얼음') && hitsPhysical) {
+    if (field.hasWeather('Snow') && defender.hasType('Ice') && hitsPhysical) {
         defense = (0, util_2.pokeRound)((defense * 3) / 2);
         desc.weather = field.weather;
     }
@@ -1047,7 +1047,7 @@ function calculateDfModsSMSSSV(gen, attacker, defender, move, field, desc, isCri
     if ((defender.hasAbility('Protosynthesis') &&
         (field.hasWeather('Sun') || attacker.hasItem('Booster Energy'))) ||
         (defender.hasAbility('Quark Drive') &&
-            (field.hasTerrain('전기') || attacker.hasItem('Booster Energy')))) {
+            (field.hasTerrain('Electric') || attacker.hasItem('Booster Energy')))) {
         if ((hitsPhysical && (0, util_2.getMostProficientStat)(defender) === 'def') ||
             (!hitsPhysical && (0, util_2.getMostProficientStat)(defender) === 'spd')) {
             desc.defenderAbility = defender.ability;
@@ -1101,7 +1101,7 @@ function calculateFinalModsSMSSSV(gen, attacker, defender, move, field, desc, is
     }
     if (defender.hasAbility('Multiscale', 'Shadow Shield') &&
         defender.curHP() === defender.maxHP() &&
-        (!field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('비행')) ||
+        (!field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) ||
             defender.hasItem('Heavy-Duty Boots')) && !attacker.hasAbility('Parental Bond (Child)')) {
         finalMods.push(2048);
         desc.defenderAbility = defender.ability;
@@ -1123,7 +1123,7 @@ function calculateFinalModsSMSSSV(gen, attacker, defender, move, field, desc, is
         finalMods.push(3072);
         desc.isFriendGuard = true;
     }
-    if (defender.hasAbility('Fluffy') && move.hasType('불꽃')) {
+    if (defender.hasAbility('Fluffy') && move.hasType('Fire')) {
         finalMods.push(8192);
         desc.defenderAbility = defender.ability;
     }
@@ -1146,7 +1146,7 @@ function calculateFinalModsSMSSSV(gen, attacker, defender, move, field, desc, is
         desc.attackerItem = attacker.item;
     }
     if (move.hasType((0, items_1.getBerryResistType)(defender.item)) &&
-        (typeEffectiveness > 1 || move.hasType('노말')) &&
+        (typeEffectiveness > 1 || move.hasType('Normal')) &&
         !attacker.hasAbility('Unnerve', 'As One (Glastrier)', 'As One (Spectrier)')) {
         if (defender.hasAbility('Ripen')) {
             finalMods.push(1024);
@@ -1160,6 +1160,6 @@ function calculateFinalModsSMSSSV(gen, attacker, defender, move, field, desc, is
 }
 exports.calculateFinalModsSMSSSV = calculateFinalModsSMSSSV;
 function hasTerrainSeed(pokemon) {
-    return pokemon.hasItem('일렉트릭 시드', 'Misty Seed', 'Grassy Seed', '사이코시드');
+    return pokemon.hasItem('Electric Seed', 'Misty Seed', 'Grassy Seed', 'Psychic Seed');
 }
 //# sourceMappingURL=gen789.js.map

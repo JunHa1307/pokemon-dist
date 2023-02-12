@@ -2,7 +2,7 @@
 exports.__esModule = true;
 
 var util_1 = require("./util");
-var SPECIAL = ['불꽃', '물', '풀', '전기', '얼음', '에스퍼', '악', '드래곤'];
+var SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', 'Dragon'];
 var Move = (function () {
     function Move(gen, name, options) {
         if (options === void 0) { options = {}; }
@@ -146,7 +146,7 @@ function getZMoveName(moveName, moveType, item) {
     }
     if (moveName === 'Play Rough' && item === 'Mimikium Z')
         return 'Let\'s Snuggle Forever';
-    if (moveName === '에스퍼' && item === 'Mewnium Z')
+    if (moveName === 'Psychic' && item === 'Mewnium Z')
         return 'Genesis Supernova';
     if (moveName === 'Sparkling Aria' && item === 'Primarium Z')
         return 'Oceanic Operetta';
@@ -173,39 +173,39 @@ function getZMoveName(moveName, moveType, item) {
 }
 exports.getZMoveName = getZMoveName;
 var ZMOVES_TYPING = {
-    벌레: 'Savage Spin-Out',
-    악: 'Black Hole Eclipse',
-    드래곤: 'Devastating Drake',
-    전기: 'Gigavolt Havoc',
-    페어리: 'Twinkle Tackle',
-    격투: 'All-Out Pummeling',
-    불꽃: 'Inferno Overdrive',
-    비행: 'Supersonic Skystrike',
-    고스트: 'Never-Ending Nightmare',
-    풀: 'Bloom Doom',
-    땅: 'Tectonic Rage',
-    얼음: 'Subzero Slammer',
-    노말: 'Breakneck Blitz',
-    독: 'Acid Downpour',
-    에스퍼: 'Shattered Psyche',
-    바위: 'Continental Crush',
-    강철: 'Corkscrew Crash',
-    물: 'Hydro Vortex'
+    Bug: 'Savage Spin-Out',
+    Dark: 'Black Hole Eclipse',
+    Dragon: 'Devastating Drake',
+    Electric: 'Gigavolt Havoc',
+    Fairy: 'Twinkle Tackle',
+    Fighting: 'All-Out Pummeling',
+    Fire: 'Inferno Overdrive',
+    Flying: 'Supersonic Skystrike',
+    Ghost: 'Never-Ending Nightmare',
+    Grass: 'Bloom Doom',
+    Ground: 'Tectonic Rage',
+    Ice: 'Subzero Slammer',
+    Normal: 'Breakneck Blitz',
+    Poison: 'Acid Downpour',
+    Psychic: 'Shattered Psyche',
+    Rock: 'Continental Crush',
+    Steel: 'Corkscrew Crash',
+    Water: 'Hydro Vortex'
 };
 function getMaxMoveName(moveType, pokemonSpecies, isStatus, pokemonAbility) {
     if (isStatus)
         return 'Max Guard';
     if (pokemonAbility === 'Normalize')
         return 'Max Strike';
-    if (moveType === '불꽃') {
+    if (moveType === 'Fire') {
         if (pokemonSpecies === 'Charizard-Gmax')
-            return '거다이옥염';
+            return 'G-Max Wildfire';
         if (pokemonSpecies === 'Centiskorch-Gmax')
             return 'G-Max Centiferno';
         if (pokemonSpecies === 'Cinderace-Gmax')
             return 'G-Max Fire Ball';
     }
-    if (moveType === '노말') {
+    if (moveType === 'Normal') {
         if (pokemonSpecies === 'Eevee-Gmax')
             return 'G-Max Cuddle';
         if (pokemonSpecies === 'Meowth-Gmax')
@@ -221,26 +221,26 @@ function getMaxMoveName(moveType, pokemonSpecies, isStatus, pokemonAbility) {
         if (pokemonAbility === 'Galvanize')
             return 'Max Lightning';
     }
-    if (moveType === '페어리') {
+    if (moveType === 'Fairy') {
         if (pokemonSpecies === 'Alcremie-Gmax')
             return 'G-Max Finale';
         if (pokemonSpecies === 'Hatterene-Gmax')
             return 'G-Max Smite';
     }
-    if (moveType === '강철') {
+    if (moveType === 'Steel') {
         if (pokemonSpecies === 'Copperajah-Gmax')
             return 'G-Max Steelsurge';
         if (pokemonSpecies === 'Melmetal-Gmax')
             return 'G-Max Meltdown';
     }
-    if (moveType === '전기') {
+    if (moveType === 'Electric') {
         if (pokemonSpecies === 'Pikachu-Gmax')
             return 'G-Max Volt Crash';
         if ((pokemonSpecies === null || pokemonSpecies === void 0 ? void 0 : pokemonSpecies.startsWith('Toxtricity')) &&
             (pokemonSpecies === null || pokemonSpecies === void 0 ? void 0 : pokemonSpecies.endsWith('Gmax')))
             return 'G-Max Stun Shock';
     }
-    if (moveType === '풀') {
+    if (moveType === 'Grass') {
         if (pokemonSpecies === 'Appletun-Gmax')
             return 'G-Max Sweetness';
         if (pokemonSpecies === 'Flapple-Gmax')
@@ -250,7 +250,7 @@ function getMaxMoveName(moveType, pokemonSpecies, isStatus, pokemonAbility) {
         if (pokemonSpecies === 'Venusaur-Gmax')
             return 'G-Max Vine Lash';
     }
-    if (moveType === '물') {
+    if (moveType === 'Water') {
         if (pokemonSpecies === 'Blastoise-Gmax')
             return 'G-Max Cannonade';
         if (pokemonSpecies === 'Drednaw-Gmax')
@@ -262,53 +262,53 @@ function getMaxMoveName(moveType, pokemonSpecies, isStatus, pokemonAbility) {
         if (pokemonSpecies === 'Urshifu-Rapid-Strike-Gmax')
             return 'G-Max Rapid Flow';
     }
-    if (moveType === '악') {
+    if (moveType === 'Dark') {
         if (pokemonSpecies === 'Grimmsnarl-Gmax')
             return 'G-Max Snooze';
         if (pokemonSpecies === 'Urshifu-Gmax')
             return 'G-Max One Blow';
     }
-    if (moveType === '독' && pokemonSpecies === 'Garbodor-Gmax')
+    if (moveType === 'Poison' && pokemonSpecies === 'Garbodor-Gmax')
         return 'G-Max Malodor';
-    if (moveType === '격투' && pokemonSpecies === 'Machamp-Gmax')
+    if (moveType === 'Fighting' && pokemonSpecies === 'Machamp-Gmax')
         return 'G-Max Chi Strike';
-    if (moveType === '고스트' && pokemonSpecies === 'Gengar-Gmax')
+    if (moveType === 'Ghost' && pokemonSpecies === 'Gengar-Gmax')
         return 'G-Max Terror';
-    if (moveType === '얼음' && pokemonSpecies === 'Lapras-Gmax')
+    if (moveType === 'Ice' && pokemonSpecies === 'Lapras-Gmax')
         return 'G-Max Resonance';
-    if (moveType === '비행' && pokemonSpecies === 'Corviknight-Gmax')
+    if (moveType === 'Flying' && pokemonSpecies === 'Corviknight-Gmax')
         return 'G-Max Wind Rage';
-    if (moveType === '드래곤' && pokemonSpecies === 'Duraludon-Gmax')
+    if (moveType === 'Dragon' && pokemonSpecies === 'Duraludon-Gmax')
         return 'G-Max Depletion';
-    if (moveType === '에스퍼' && pokemonSpecies === 'Orbeetle-Gmax')
+    if (moveType === 'Psychic' && pokemonSpecies === 'Orbeetle-Gmax')
         return 'G-Max Gravitas';
-    if (moveType === '바위' && pokemonSpecies === 'Coalossal-Gmax')
+    if (moveType === 'Rock' && pokemonSpecies === 'Coalossal-Gmax')
         return 'G-Max Volcalith';
-    if (moveType === '땅' && pokemonSpecies === 'Sandaconda-Gmax')
+    if (moveType === 'Ground' && pokemonSpecies === 'Sandaconda-Gmax')
         return 'G-Max Sandblast';
-    if (moveType === '악' && pokemonSpecies === 'Grimmsnarl-Gmax')
+    if (moveType === 'Dark' && pokemonSpecies === 'Grimmsnarl-Gmax')
         return 'G-Max Snooze';
     return 'Max ' + MAXMOVES_TYPING[moveType];
 }
 exports.getMaxMoveName = getMaxMoveName;
 var MAXMOVES_TYPING = {
-    벌레: 'Flutterby',
-    악: 'Darkness',
-    드래곤: 'Wyrmwind',
-    전기: 'Lightning',
-    페어리: 'Starfall',
-    격투: 'Knuckle',
-    불꽃: 'Flare',
-    비행: 'Airstream',
-    고스트: 'Phantasm',
-    풀: 'Overgrowth',
-    땅: 'Quake',
-    얼음: 'Hailstorm',
-    노말: 'Strike',
-    독: 'Ooze',
-    에스퍼: 'Mindstorm',
-    바위: 'Rockfall',
-    강철: 'Steelspike',
-    물: 'Geyser'
+    Bug: 'Flutterby',
+    Dark: 'Darkness',
+    Dragon: 'Wyrmwind',
+    Electric: 'Lightning',
+    Fairy: 'Starfall',
+    Fighting: 'Knuckle',
+    Fire: 'Flare',
+    Flying: 'Airstream',
+    Ghost: 'Phantasm',
+    Grass: 'Overgrowth',
+    Ground: 'Quake',
+    Ice: 'Hailstorm',
+    Normal: 'Strike',
+    Poison: 'Ooze',
+    Psychic: 'Mindstorm',
+    Rock: 'Rockfall',
+    Steel: 'Steelspike',
+    Water: 'Geyser'
 };
 //# sourceMappingURL=move.js.map

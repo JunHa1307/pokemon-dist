@@ -50,7 +50,7 @@ var EV_ITEMS = [
 ];
 function isGrounded(pokemon, field) {
     return (field.isGravity || pokemon.hasItem('Iron Ball') ||
-        (!pokemon.hasType('비행') &&
+        (!pokemon.hasType('Flying') &&
             !pokemon.hasAbility('Levitate') &&
             !pokemon.hasItem('Air Balloon')));
 }
@@ -140,7 +140,7 @@ function getFinalSpeed(gen, pokemon, field, side) {
         (pokemon.hasAbility('Sand Rush') && weather === 'Sand') ||
         (pokemon.hasAbility('Swift Swim') && weather.includes('Rain')) ||
         (pokemon.hasAbility('Slush Rush') && ['Hail', 'Snow'].includes(weather)) ||
-        (pokemon.hasAbility('Surge Surfer') && terrain === '전기')) {
+        (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')) {
         speedMods.push(8192);
     }
     else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {
@@ -153,7 +153,7 @@ function getFinalSpeed(gen, pokemon, field, side) {
         ((pokemon.hasAbility('Protosynthesis') &&
             (weather.includes('Sun') || pokemon.hasItem('Booster Energy'))) ||
             (pokemon.hasAbility('Quark Drive') &&
-                (terrain === '전기' || pokemon.hasItem('Booster Energy'))))) {
+                (terrain === 'Electric' || pokemon.hasItem('Booster Energy'))))) {
         speedMods.push(6144);
     }
     if (pokemon.hasItem('Choice Scarf')) {
@@ -174,18 +174,18 @@ function getFinalSpeed(gen, pokemon, field, side) {
 }
 exports.getFinalSpeed = getFinalSpeed;
 function getMoveEffectiveness(gen, move, type, isGhostRevealed, isGravity, isRingTarget) {
-    if ((isRingTarget || isGhostRevealed) && type === '고스트' && move.hasType('노말', '격투')) {
+    if ((isRingTarget || isGhostRevealed) && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
         return 1;
     }
-    else if ((isRingTarget || isGravity) && type === '비행' && move.hasType('땅')) {
+    else if ((isRingTarget || isGravity) && type === 'Flying' && move.hasType('Ground')) {
         return 1;
     }
-    else if (move.named('Freeze-Dry') && type === '물') {
+    else if (move.named('Freeze-Dry') && type === 'Water') {
         return 2;
     }
     else if (move.named('Flying Press')) {
-        return (gen.types.get('격투').effectiveness[type] *
-            gen.types.get('비행').effectiveness[type]);
+        return (gen.types.get('fighting').effectiveness[type] *
+            gen.types.get('flying').effectiveness[type]);
     }
     else {
         return gen.types.get((0, util_1.toID)(move.type)).effectiveness[type];
@@ -203,18 +203,18 @@ function checkForecast(pokemon, weather) {
         switch (weather) {
             case 'Sun':
             case 'Harsh Sunshine':
-                pokemon.types = ['불꽃'];
+                pokemon.types = ['Fire'];
                 break;
             case 'Rain':
             case 'Heavy Rain':
-                pokemon.types = ['물'];
+                pokemon.types = ['Water'];
                 break;
             case 'Hail':
             case 'Snow':
-                pokemon.types = ['얼음'];
+                pokemon.types = ['Ice'];
                 break;
             default:
-                pokemon.types = ['노말'];
+                pokemon.types = ['Normal'];
         }
     }
 }
@@ -295,7 +295,7 @@ function checkSeedBoost(pokemon, field) {
     if (field.terrain && pokemon.item.includes('Seed')) {
         var terrainSeed = pokemon.item.substring(0, pokemon.item.indexOf(' '));
         if (field.hasTerrain(terrainSeed)) {
-            if (terrainSeed === 'Grassy' || terrainSeed === '전기') {
+            if (terrainSeed === 'Grassy' || terrainSeed === 'Electric') {
                 pokemon.boosts.def = pokemon.hasAbility('Contrary')
                     ? Math.max(-6, pokemon.boosts.def - 1)
                     : Math.min(6, pokemon.boosts.def + 1);

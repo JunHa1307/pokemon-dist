@@ -53,23 +53,23 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
         }
     }
     var typeEffectivenessPrecedenceRules = [
-        '노말',
-        '불꽃',
-        '물',
-        '전기',
-        '풀',
-        '얼음',
-        '격투',
-        '독',
-        '땅',
-        '비행',
-        '에스퍼',
-        '벌레',
-        '바위',
-        '고스트',
-        '드래곤',
-        '악',
-        '강철',
+        'Normal',
+        'Fire',
+        'Water',
+        'Electric',
+        'Grass',
+        'Ice',
+        'Fighting',
+        'Poison',
+        'Ground',
+        'Flying',
+        'Psychic',
+        'Bug',
+        'Rock',
+        'Ghost',
+        'Dragon',
+        'Dark',
+        'Steel',
     ];
     var firstDefenderType = defender.types[0];
     var secondDefenderType = defender.types[1];
@@ -161,9 +161,9 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
     }
     if (move.named('Present')) {
         var lookup = {
-            노말: 0, 격투: 1, 비행: 2, 독: 3, 땅: 4, 바위: 5, 벌레: 7,
-            고스트: 8, 강철: 9, '???': 19, 불꽃: 20, 물: 21, 풀: 22, 전기: 23,
-            에스퍼: 24, 얼음: 25, 드래곤: 26, 악: 27
+            Normal: 0, Fighting: 1, Flying: 2, Poison: 3, Ground: 4, Rock: 5, Bug: 7,
+            Ghost: 8, Steel: 9, '???': 19, Fire: 20, Water: 21, Grass: 22, Electric: 23,
+            Psychic: 24, Ice: 25, Dragon: 26, Dark: 27
         };
         at = 10;
         df = Math.max(lookup[attacker.types[1] ? attacker.types[1] : attacker.types[0]], 1);
@@ -190,13 +190,13 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
         desc.attackerItem = attacker.item;
     }
     baseDamage = Math.min(997, baseDamage) + 2;
-    if ((field.hasWeather('Sun') && move.hasType('불꽃')) ||
-        (field.hasWeather('Rain') && move.hasType('물'))) {
+    if ((field.hasWeather('Sun') && move.hasType('Fire')) ||
+        (field.hasWeather('Rain') && move.hasType('Water'))) {
         baseDamage = Math.floor(baseDamage * 1.5);
         desc.weather = field.weather;
     }
-    else if ((field.hasWeather('Sun') && move.hasType('물')) ||
-        (field.hasWeather('Rain') && (move.hasType('불꽃') || move.named('Solar Beam')))) {
+    else if ((field.hasWeather('Sun') && move.hasType('Water')) ||
+        (field.hasWeather('Rain') && (move.hasType('Fire') || move.named('Solar Beam')))) {
         baseDamage = Math.floor(baseDamage / 2);
         desc.weather = field.weather;
     }

@@ -13,26 +13,26 @@ var SS = GSC;
 var SV = GSC;
 exports.STATS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 var HP_TYPES = [
-    '격투', '비행', '독', '땅', '바위', '벌레', '고스트', '강철',
-    '불꽃', '물', '풀', '전기', '에스퍼', '얼음', '드래곤', '악',
+    'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel',
+    'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark',
 ];
 var HP = {
-    벌레: { ivs: { atk: 30, def: 30, spd: 30 }, dvs: { atk: 13, def: 13 } },
-    악: { ivs: {}, dvs: {} },
-    드래곤: { ivs: { atk: 30 }, dvs: { def: 14 } },
-    전기: { ivs: { spa: 30 }, dvs: { atk: 14 } },
-    격투: { ivs: { def: 30, spa: 30, spd: 30, spe: 30 }, dvs: { atk: 12, def: 12 } },
-    불꽃: { ivs: { atk: 30, spa: 30, spe: 30 }, dvs: { atk: 14, def: 12 } },
-    비행: { ivs: { hp: 30, atk: 30, def: 30, spa: 30, spd: 30 }, dvs: { atk: 12, def: 13 } },
-    고스트: { ivs: { def: 30, spd: 30 }, dvs: { atk: 13, def: 14 } },
-    풀: { ivs: { atk: 30, spa: 30 }, dvs: { atk: 14, def: 14 } },
-    땅: { ivs: { spa: 30, spd: 30 }, dvs: { atk: 12 } },
-    얼음: { ivs: { atk: 30, def: 30 }, dvs: { def: 13 } },
-    독: { ivs: { def: 30, spa: 30, spd: 30 }, dvs: { atk: 12, def: 14 } },
-    에스퍼: { ivs: { atk: 30, spe: 30 }, dvs: { def: 12 } },
-    바위: { ivs: { def: 30, spd: 30, spe: 30 }, dvs: { atk: 13, def: 12 } },
-    강철: { ivs: { spd: 30 }, dvs: { atk: 13 } },
-    물: { ivs: { atk: 30, def: 30, spa: 30 }, dvs: { atk: 14, def: 13 } }
+    Bug: { ivs: { atk: 30, def: 30, spd: 30 }, dvs: { atk: 13, def: 13 } },
+    Dark: { ivs: {}, dvs: {} },
+    Dragon: { ivs: { atk: 30 }, dvs: { def: 14 } },
+    Electric: { ivs: { spa: 30 }, dvs: { atk: 14 } },
+    Fighting: { ivs: { def: 30, spa: 30, spd: 30, spe: 30 }, dvs: { atk: 12, def: 12 } },
+    Fire: { ivs: { atk: 30, spa: 30, spe: 30 }, dvs: { atk: 14, def: 12 } },
+    Flying: { ivs: { hp: 30, atk: 30, def: 30, spa: 30, spd: 30 }, dvs: { atk: 12, def: 13 } },
+    Ghost: { ivs: { def: 30, spd: 30 }, dvs: { atk: 13, def: 14 } },
+    Grass: { ivs: { atk: 30, spa: 30 }, dvs: { atk: 14, def: 14 } },
+    Ground: { ivs: { spa: 30, spd: 30 }, dvs: { atk: 12 } },
+    Ice: { ivs: { atk: 30, def: 30 }, dvs: { def: 13 } },
+    Poison: { ivs: { def: 30, spa: 30, spd: 30 }, dvs: { atk: 12, def: 14 } },
+    Psychic: { ivs: { atk: 30, spe: 30 }, dvs: { def: 12 } },
+    Rock: { ivs: { def: 30, spd: 30, spe: 30 }, dvs: { atk: 13, def: 12 } },
+    Steel: { ivs: { spd: 30 }, dvs: { atk: 13 } },
+    Water: { ivs: { atk: 30, def: 30, spa: 30 }, dvs: { atk: 14, def: 13 } }
 };
 exports.Stats = new ((function () {
     function class_1() {

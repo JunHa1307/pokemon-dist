@@ -68,774 +68,774 @@ exports.__esModule = true;
 var util_1 = require("../util");
 var RBY = {
     Abra: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 25, at: 20, df: 15, sp: 90, sl: 105 },
         weightkg: 19.5,
         nfe: true
     },
     Aerodactyl: {
-        types: ['바위', '비행'],
+        types: ['Rock', 'Flying'],
         bs: { hp: 80, at: 105, df: 65, sp: 130, sl: 60 },
         weightkg: 59
     },
     Alakazam: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 55, at: 50, df: 45, sp: 120, sl: 135 },
         weightkg: 48
     },
-    Arbok: { types: ['독'], bs: { hp: 60, at: 85, df: 69, sp: 80, sl: 65 }, weightkg: 65 },
+    Arbok: { types: ['Poison'], bs: { hp: 60, at: 85, df: 69, sp: 80, sl: 65 }, weightkg: 65 },
     Arcanine: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 90, at: 110, df: 80, sp: 95, sl: 80 },
         weightkg: 155
     },
     Articuno: {
-        types: ['얼음', '비행'],
+        types: ['Ice', 'Flying'],
         bs: { hp: 90, at: 85, df: 100, sp: 85, sl: 125 },
         weightkg: 55.4
     },
     Beedrill: {
-        types: ['벌레', '독'],
+        types: ['Bug', 'Poison'],
         bs: { hp: 65, at: 80, df: 40, sp: 75, sl: 45 },
         weightkg: 29.5
     },
     Bellsprout: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 50, at: 75, df: 35, sp: 40, sl: 70 },
         weightkg: 4,
         nfe: true
     },
     Blastoise: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 79, at: 83, df: 100, sp: 78, sl: 85 },
         weightkg: 85.5
     },
     Bulbasaur: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 45, at: 49, df: 49, sp: 45, sl: 65 },
         weightkg: 6.9,
         nfe: true
     },
     Butterfree: {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 60, at: 45, df: 50, sp: 70, sl: 80 },
         weightkg: 32
     },
     Caterpie: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 45, at: 30, df: 35, sp: 45, sl: 20 },
         weightkg: 2.9,
         nfe: true
     },
     Chansey: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 250, at: 5, df: 5, sp: 50, sl: 105 },
         weightkg: 34.6
     },
     Charizard: {
-        types: ['불꽃', '비행'],
+        types: ['Fire', 'Flying'],
         bs: { hp: 78, at: 84, df: 78, sp: 100, sl: 85 },
         weightkg: 90.5
     },
     Charmander: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 39, at: 52, df: 43, sp: 65, sl: 50 },
         weightkg: 8.5,
         nfe: true
     },
     Charmeleon: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 58, at: 64, df: 58, sp: 80, sl: 65 },
         weightkg: 19,
         nfe: true
     },
-    Clefable: { types: ['노말'], bs: { hp: 95, at: 70, df: 73, sp: 60, sl: 85 }, weightkg: 40 },
+    Clefable: { types: ['Normal'], bs: { hp: 95, at: 70, df: 73, sp: 60, sl: 85 }, weightkg: 40 },
     Clefairy: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 70, at: 45, df: 48, sp: 35, sl: 60 },
         weightkg: 7.5,
         nfe: true
     },
     Cloyster: {
-        types: ['물', '얼음'],
+        types: ['Water', 'Ice'],
         bs: { hp: 50, at: 95, df: 180, sp: 70, sl: 85 },
         weightkg: 132.5
     },
     Cubone: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 50, at: 50, df: 95, sp: 35, sl: 40 },
         weightkg: 6.5,
         nfe: true
     },
     Dewgong: {
-        types: ['물', '얼음'],
+        types: ['Water', 'Ice'],
         bs: { hp: 90, at: 70, df: 80, sp: 70, sl: 95 },
         weightkg: 120
     },
     Diglett: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 10, at: 55, df: 25, sp: 95, sl: 45 },
         weightkg: 0.8,
         nfe: true
     },
-    Ditto: { types: ['노말'], bs: { hp: 48, at: 48, df: 48, sp: 48, sl: 48 }, weightkg: 4 },
+    Ditto: { types: ['Normal'], bs: { hp: 48, at: 48, df: 48, sp: 48, sl: 48 }, weightkg: 4 },
     Dodrio: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 60, at: 110, df: 70, sp: 100, sl: 60 },
         weightkg: 85.2
     },
     Doduo: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 35, at: 85, df: 45, sp: 75, sl: 35 },
         weightkg: 39.2,
         nfe: true
     },
     Dragonair: {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 61, at: 84, df: 65, sp: 70, sl: 70 },
         weightkg: 16.5,
         nfe: true
     },
     Dragonite: {
-        types: ['드래곤', '비행'],
+        types: ['Dragon', 'Flying'],
         bs: { hp: 91, at: 134, df: 95, sp: 80, sl: 100 },
         weightkg: 210
     },
     Dratini: {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 41, at: 64, df: 45, sp: 50, sl: 50 },
         weightkg: 3.3,
         nfe: true
     },
     Drowzee: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 60, at: 48, df: 45, sp: 42, sl: 90 },
         weightkg: 32.4,
         nfe: true
     },
     Dugtrio: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 35, at: 80, df: 50, sp: 120, sl: 70 },
         weightkg: 33.3
     },
     Eevee: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 55, at: 55, df: 50, sp: 55, sl: 65 },
         weightkg: 6.5,
         nfe: true
     },
     Ekans: {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 35, at: 60, df: 44, sp: 55, sl: 40 },
         weightkg: 6.9,
         nfe: true
     },
     Electabuzz: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 65, at: 83, df: 57, sp: 105, sl: 85 },
         weightkg: 30
     },
     Electrode: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 60, at: 50, df: 70, sp: 140, sl: 80 },
         weightkg: 66.6
     },
     Exeggcute: {
-        types: ['풀', '에스퍼'],
+        types: ['Grass', 'Psychic'],
         bs: { hp: 60, at: 40, df: 80, sp: 40, sl: 60 },
         weightkg: 2.5,
         nfe: true
     },
     Exeggutor: {
-        types: ['풀', '에스퍼'],
+        types: ['Grass', 'Psychic'],
         bs: { hp: 95, at: 95, df: 85, sp: 55, sl: 125 },
         weightkg: 120
     },
     'Farfetch\u2019d': {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 52, at: 65, df: 55, sp: 60, sl: 58 },
         weightkg: 15
     },
     Fearow: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 65, at: 90, df: 65, sp: 100, sl: 61 },
         weightkg: 38
     },
-    Flareon: { types: ['불꽃'], bs: { hp: 65, at: 130, df: 60, sp: 65, sl: 110 }, weightkg: 25 },
+    Flareon: { types: ['Fire'], bs: { hp: 65, at: 130, df: 60, sp: 65, sl: 110 }, weightkg: 25 },
     Gastly: {
-        types: ['고스트', '독'],
+        types: ['Ghost', 'Poison'],
         bs: { hp: 30, at: 35, df: 30, sp: 80, sl: 100 },
         weightkg: 0.1,
         nfe: true
     },
     Gengar: {
-        types: ['고스트', '독'],
+        types: ['Ghost', 'Poison'],
         bs: { hp: 60, at: 65, df: 60, sp: 110, sl: 130 },
         weightkg: 40.5
     },
     Geodude: {
-        types: ['바위', '땅'],
+        types: ['Rock', 'Ground'],
         bs: { hp: 40, at: 80, df: 100, sp: 20, sl: 30 },
         weightkg: 20,
         nfe: true
     },
     Gloom: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 60, at: 65, df: 70, sp: 40, sl: 85 },
         weightkg: 8.6,
         nfe: true
     },
     Golbat: {
-        types: ['독', '비행'],
+        types: ['Poison', 'Flying'],
         bs: { hp: 75, at: 80, df: 70, sp: 90, sl: 75 },
         weightkg: 55
     },
     Goldeen: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 45, at: 67, df: 60, sp: 63, sl: 50 },
         weightkg: 15,
         nfe: true
     },
-    Golduck: { types: ['물'], bs: { hp: 80, at: 82, df: 78, sp: 85, sl: 80 }, weightkg: 76.6 },
+    Golduck: { types: ['Water'], bs: { hp: 80, at: 82, df: 78, sp: 85, sl: 80 }, weightkg: 76.6 },
     Golem: {
-        types: ['바위', '땅'],
+        types: ['Rock', 'Ground'],
         bs: { hp: 80, at: 110, df: 130, sp: 45, sl: 55 },
         weightkg: 300
     },
     Graveler: {
-        types: ['바위', '땅'],
+        types: ['Rock', 'Ground'],
         bs: { hp: 55, at: 95, df: 115, sp: 35, sl: 45 },
         weightkg: 105,
         nfe: true
     },
     Grimer: {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 80, at: 80, df: 50, sp: 25, sl: 40 },
         weightkg: 30,
         nfe: true
     },
     Growlithe: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 55, at: 70, df: 45, sp: 60, sl: 50 },
         weightkg: 19,
         nfe: true
     },
     Gyarados: {
-        types: ['물', '비행'],
+        types: ['Water', 'Flying'],
         bs: { hp: 95, at: 125, df: 79, sp: 81, sl: 100 },
         weightkg: 235
     },
     Haunter: {
-        types: ['고스트', '독'],
+        types: ['Ghost', 'Poison'],
         bs: { hp: 45, at: 50, df: 45, sp: 95, sl: 115 },
         weightkg: 0.1,
         nfe: true
     },
     Hitmonchan: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 50, at: 105, df: 79, sp: 76, sl: 35 },
         weightkg: 50.2
     },
     Hitmonlee: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 50, at: 120, df: 53, sp: 87, sl: 35 },
         weightkg: 49.8
     },
     Horsea: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 30, at: 40, df: 70, sp: 60, sl: 70 },
         weightkg: 8,
         nfe: true
     },
     Hypno: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 85, at: 73, df: 70, sp: 67, sl: 115 },
         weightkg: 75.6
     },
     Ivysaur: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 60, at: 62, df: 63, sp: 60, sl: 80 },
         weightkg: 13,
         nfe: true
     },
     Jigglypuff: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 115, at: 45, df: 20, sp: 20, sl: 25 },
         weightkg: 5.5,
         nfe: true
     },
     Jolteon: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 65, at: 65, df: 60, sp: 130, sl: 110 },
         weightkg: 24.5
     },
     Jynx: {
-        types: ['얼음', '에스퍼'],
+        types: ['Ice', 'Psychic'],
         bs: { hp: 65, at: 50, df: 35, sp: 95, sl: 95 },
         weightkg: 40.6
     },
     Kabuto: {
-        types: ['바위', '물'],
+        types: ['Rock', 'Water'],
         bs: { hp: 30, at: 80, df: 90, sp: 55, sl: 45 },
         weightkg: 11.5,
         nfe: true
     },
     Kabutops: {
-        types: ['바위', '물'],
+        types: ['Rock', 'Water'],
         bs: { hp: 60, at: 115, df: 105, sp: 80, sl: 70 },
         weightkg: 40.5
     },
     Kadabra: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 40, at: 35, df: 30, sp: 105, sl: 120 },
         weightkg: 56.5,
         nfe: true
     },
     Kakuna: {
-        types: ['벌레', '독'],
+        types: ['Bug', 'Poison'],
         bs: { hp: 45, at: 25, df: 50, sp: 35, sl: 25 },
         weightkg: 10,
         nfe: true
     },
     Kangaskhan: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 105, at: 95, df: 80, sp: 90, sl: 40 },
         weightkg: 80
     },
-    Kingler: { types: ['물'], bs: { hp: 55, at: 130, df: 115, sp: 75, sl: 50 }, weightkg: 60 },
+    Kingler: { types: ['Water'], bs: { hp: 55, at: 130, df: 115, sp: 75, sl: 50 }, weightkg: 60 },
     Koffing: {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 40, at: 65, df: 95, sp: 35, sl: 60 },
         weightkg: 1,
         nfe: true
     },
     Krabby: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 30, at: 105, df: 90, sp: 50, sl: 25 },
         weightkg: 6.5,
         nfe: true
     },
     Lapras: {
-        types: ['물', '얼음'],
+        types: ['Water', 'Ice'],
         bs: { hp: 130, at: 85, df: 80, sp: 60, sl: 95 },
         weightkg: 220
     },
     Lickitung: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 90, at: 55, df: 75, sp: 30, sl: 60 },
         weightkg: 65.5
     },
     Machamp: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 90, at: 130, df: 80, sp: 55, sl: 65 },
         weightkg: 130
     },
     Machoke: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 80, at: 100, df: 70, sp: 45, sl: 50 },
         weightkg: 70.5,
         nfe: true
     },
     Machop: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 70, at: 80, df: 50, sp: 35, sl: 35 },
         weightkg: 19.5,
         nfe: true
     },
     Magikarp: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 20, at: 10, df: 55, sp: 80, sl: 20 },
         weightkg: 10,
         nfe: true
     },
     Magmar: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 65, at: 95, df: 57, sp: 93, sl: 85 },
         weightkg: 44.5
     },
     Magnemite: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 25, at: 35, df: 70, sp: 45, sl: 95 },
         weightkg: 6,
         nfe: true
     },
     Magneton: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 50, at: 60, df: 95, sp: 70, sl: 120 },
         weightkg: 60
     },
     Mankey: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 40, at: 80, df: 35, sp: 70, sl: 35 },
         weightkg: 28,
         nfe: true
     },
-    Marowak: { types: ['땅'], bs: { hp: 60, at: 80, df: 110, sp: 45, sl: 50 }, weightkg: 45 },
+    Marowak: { types: ['Ground'], bs: { hp: 60, at: 80, df: 110, sp: 45, sl: 50 }, weightkg: 45 },
     Meowth: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 40, at: 45, df: 35, sp: 90, sl: 40 },
         weightkg: 4.2,
         nfe: true
     },
     Metapod: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 50, at: 20, df: 55, sp: 30, sl: 25 },
         weightkg: 9.9,
         nfe: true
     },
     Mew: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 100, at: 100, df: 100, sp: 100, sl: 100 },
         weightkg: 4
     },
     Mewtwo: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 106, at: 110, df: 90, sp: 130, sl: 154 },
         weightkg: 122
     },
     Moltres: {
-        types: ['불꽃', '비행'],
+        types: ['Fire', 'Flying'],
         bs: { hp: 90, at: 100, df: 90, sp: 90, sl: 125 },
         weightkg: 60
     },
     'Mr. Mime': {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 40, at: 45, df: 65, sp: 90, sl: 100 },
         weightkg: 54.5
     },
-    Muk: { types: ['독'], bs: { hp: 105, at: 105, df: 75, sp: 50, sl: 65 }, weightkg: 30 },
+    Muk: { types: ['Poison'], bs: { hp: 105, at: 105, df: 75, sp: 50, sl: 65 }, weightkg: 30 },
     Nidoking: {
-        types: ['독', '땅'],
+        types: ['Poison', 'Ground'],
         bs: { hp: 81, at: 92, df: 77, sp: 85, sl: 75 },
         weightkg: 62
     },
     Nidoqueen: {
-        types: ['독', '땅'],
+        types: ['Poison', 'Ground'],
         bs: { hp: 90, at: 82, df: 87, sp: 76, sl: 75 },
         weightkg: 60
     },
     'Nidoran-F': {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 55, at: 47, df: 52, sp: 41, sl: 40 },
         weightkg: 7,
         nfe: true
     },
     'Nidoran-M': {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 46, at: 57, df: 40, sp: 50, sl: 40 },
         weightkg: 9,
         nfe: true
     },
     Nidorina: {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 70, at: 62, df: 67, sp: 56, sl: 55 },
         weightkg: 20,
         nfe: true
     },
     Nidorino: {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 61, at: 72, df: 57, sp: 65, sl: 55 },
         weightkg: 19.5,
         nfe: true
     },
     Ninetales: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 73, at: 76, df: 75, sp: 100, sl: 100 },
         weightkg: 19.9
     },
     Oddish: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 45, at: 50, df: 55, sp: 30, sl: 75 },
         weightkg: 5.4,
         nfe: true
     },
     Omanyte: {
-        types: ['바위', '물'],
+        types: ['Rock', 'Water'],
         bs: { hp: 35, at: 40, df: 100, sp: 35, sl: 90 },
         weightkg: 7.5,
         nfe: true
     },
     Omastar: {
-        types: ['바위', '물'],
+        types: ['Rock', 'Water'],
         bs: { hp: 70, at: 60, df: 125, sp: 55, sl: 115 },
         weightkg: 35
     },
     Onix: {
-        types: ['바위', '땅'],
+        types: ['Rock', 'Ground'],
         bs: { hp: 35, at: 45, df: 160, sp: 70, sl: 30 },
         weightkg: 210
     },
     Paras: {
-        types: ['벌레', '풀'],
+        types: ['Bug', 'Grass'],
         bs: { hp: 35, at: 70, df: 55, sp: 25, sl: 55 },
         weightkg: 5.4,
         nfe: true
     },
     Parasect: {
-        types: ['벌레', '풀'],
+        types: ['Bug', 'Grass'],
         bs: { hp: 60, at: 95, df: 80, sp: 30, sl: 80 },
         weightkg: 29.5
     },
-    Persian: { types: ['노말'], bs: { hp: 65, at: 70, df: 60, sp: 115, sl: 65 }, weightkg: 32 },
+    Persian: { types: ['Normal'], bs: { hp: 65, at: 70, df: 60, sp: 115, sl: 65 }, weightkg: 32 },
     Pidgeot: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 83, at: 80, df: 75, sp: 91, sl: 70 },
         weightkg: 39.5
     },
     Pidgeotto: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 63, at: 60, df: 55, sp: 71, sl: 50 },
         weightkg: 30,
         nfe: true
     },
     Pidgey: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 40, at: 45, df: 40, sp: 56, sl: 35 },
         weightkg: 1.8,
         nfe: true
     },
     Pikachu: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 30, sp: 90, sl: 50 },
         weightkg: 6,
         nfe: true
     },
-    Pinsir: { types: ['벌레'], bs: { hp: 65, at: 125, df: 100, sp: 85, sl: 55 }, weightkg: 55 },
+    Pinsir: { types: ['Bug'], bs: { hp: 65, at: 125, df: 100, sp: 85, sl: 55 }, weightkg: 55 },
     Poliwag: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 40, at: 50, df: 40, sp: 90, sl: 40 },
         weightkg: 12.4,
         nfe: true
     },
     Poliwhirl: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 65, at: 65, df: 65, sp: 90, sl: 50 },
         weightkg: 20,
         nfe: true
     },
     Poliwrath: {
-        types: ['물', '격투'],
+        types: ['Water', 'Fighting'],
         bs: { hp: 90, at: 85, df: 95, sp: 70, sl: 70 },
         weightkg: 54
     },
     Ponyta: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 50, at: 85, df: 55, sp: 90, sl: 65 },
         weightkg: 30,
         nfe: true
     },
     Porygon: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 65, at: 60, df: 70, sp: 40, sl: 75 },
         weightkg: 36.5
     },
     Primeape: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 65, at: 105, df: 60, sp: 95, sl: 60 },
         weightkg: 32
     },
     Psyduck: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 50, at: 52, df: 48, sp: 55, sl: 50 },
         weightkg: 19.6,
         nfe: true
     },
     Raichu: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 60, at: 90, df: 55, sp: 100, sl: 90 },
         weightkg: 30
     },
-    Rapidash: { types: ['불꽃'], bs: { hp: 65, at: 100, df: 70, sp: 105, sl: 80 }, weightkg: 95 },
+    Rapidash: { types: ['Fire'], bs: { hp: 65, at: 100, df: 70, sp: 105, sl: 80 }, weightkg: 95 },
     Raticate: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 55, at: 81, df: 60, sp: 97, sl: 50 },
         weightkg: 18.5
     },
     Rattata: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 30, at: 56, df: 35, sp: 72, sl: 25 },
         weightkg: 3.5,
         nfe: true
     },
     Rhydon: {
-        types: ['땅', '바위'],
+        types: ['Ground', 'Rock'],
         bs: { hp: 105, at: 130, df: 120, sp: 40, sl: 45 },
         weightkg: 120
     },
     Rhyhorn: {
-        types: ['땅', '바위'],
+        types: ['Ground', 'Rock'],
         bs: { hp: 80, at: 85, df: 95, sp: 25, sl: 30 },
         weightkg: 115,
         nfe: true
     },
     Sandshrew: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 50, at: 75, df: 85, sp: 40, sl: 30 },
         weightkg: 12,
         nfe: true
     },
     Sandslash: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 75, at: 100, df: 110, sp: 65, sl: 55 },
         weightkg: 29.5
     },
     Scyther: {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 70, at: 110, df: 80, sp: 105, sl: 55 },
         weightkg: 56
     },
-    Seadra: { types: ['물'], bs: { hp: 55, at: 65, df: 95, sp: 85, sl: 95 }, weightkg: 25 },
-    Seaking: { types: ['물'], bs: { hp: 80, at: 92, df: 65, sp: 68, sl: 80 }, weightkg: 39 },
+    Seadra: { types: ['Water'], bs: { hp: 55, at: 65, df: 95, sp: 85, sl: 95 }, weightkg: 25 },
+    Seaking: { types: ['Water'], bs: { hp: 80, at: 92, df: 65, sp: 68, sl: 80 }, weightkg: 39 },
     Seel: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 65, at: 45, df: 55, sp: 45, sl: 70 },
         weightkg: 90,
         nfe: true
     },
     Shellder: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 30, at: 65, df: 100, sp: 40, sl: 45 },
         weightkg: 4,
         nfe: true
     },
     Slowbro: {
-        types: ['물', '에스퍼'],
+        types: ['Water', 'Psychic'],
         bs: { hp: 95, at: 75, df: 110, sp: 30, sl: 80 },
         weightkg: 78.5
     },
     Slowpoke: {
-        types: ['물', '에스퍼'],
+        types: ['Water', 'Psychic'],
         bs: { hp: 90, at: 65, df: 65, sp: 15, sl: 40 },
         weightkg: 36,
         nfe: true
     },
     Snorlax: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 160, at: 110, df: 65, sp: 30, sl: 65 },
         weightkg: 460
     },
     Spearow: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 40, at: 60, df: 30, sp: 70, sl: 31 },
         weightkg: 2,
         nfe: true
     },
     Squirtle: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 44, at: 48, df: 65, sp: 43, sl: 50 },
         weightkg: 9,
         nfe: true
     },
     Starmie: {
-        types: ['물', '에스퍼'],
+        types: ['Water', 'Psychic'],
         bs: { hp: 60, at: 75, df: 85, sp: 115, sl: 100 },
         weightkg: 80
     },
     Staryu: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 30, at: 45, df: 55, sp: 85, sl: 70 },
         weightkg: 34.5,
         nfe: true
     },
     Tangela: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 65, at: 55, df: 115, sp: 60, sl: 100 },
         weightkg: 35
     },
     Tauros: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 75, at: 100, df: 95, sp: 110, sl: 70 },
         weightkg: 88.4
     },
     Tentacool: {
-        types: ['물', '독'],
+        types: ['Water', 'Poison'],
         bs: { hp: 40, at: 40, df: 35, sp: 70, sl: 100 },
         weightkg: 45.5,
         nfe: true
     },
     Tentacruel: {
-        types: ['물', '독'],
+        types: ['Water', 'Poison'],
         bs: { hp: 80, at: 70, df: 65, sp: 100, sl: 120 },
         weightkg: 55
     },
     Vaporeon: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 130, at: 65, df: 60, sp: 65, sl: 110 },
         weightkg: 29
     },
     Venomoth: {
-        types: ['벌레', '독'],
+        types: ['Bug', 'Poison'],
         bs: { hp: 70, at: 65, df: 60, sp: 90, sl: 90 },
         weightkg: 12.5
     },
     Venonat: {
-        types: ['벌레', '독'],
+        types: ['Bug', 'Poison'],
         bs: { hp: 60, at: 55, df: 50, sp: 45, sl: 40 },
         weightkg: 30,
         nfe: true
     },
     Venusaur: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 80, at: 82, df: 83, sp: 80, sl: 100 },
         weightkg: 100
     },
     Victreebel: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 80, at: 105, df: 65, sp: 70, sl: 100 },
         weightkg: 15.5
     },
     Vileplume: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 75, at: 80, df: 85, sp: 50, sl: 100 },
         weightkg: 18.6
     },
     Voltorb: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 40, at: 30, df: 50, sp: 100, sl: 55 },
         weightkg: 10.4,
         nfe: true
     },
     Vulpix: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 38, at: 41, df: 40, sp: 65, sl: 65 },
         weightkg: 9.9,
         nfe: true
     },
     Wartortle: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 59, at: 63, df: 80, sp: 58, sl: 65 },
         weightkg: 22.5,
         nfe: true
     },
     Weedle: {
-        types: ['벌레', '독'],
+        types: ['Bug', 'Poison'],
         bs: { hp: 40, at: 35, df: 30, sp: 50, sl: 20 },
         weightkg: 3.2,
         nfe: true
     },
     Weepinbell: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 65, at: 90, df: 50, sp: 55, sl: 85 },
         weightkg: 6.4,
         nfe: true
     },
     Weezing: {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 65, at: 90, df: 120, sp: 60, sl: 85 },
         weightkg: 9.5
     },
     Wigglytuff: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 140, at: 70, df: 45, sp: 45, sl: 50 },
         weightkg: 12
     },
     Zapdos: {
-        types: ['전기', '비행'],
+        types: ['Electric', 'Flying'],
         bs: { hp: 90, at: 90, df: 85, sp: 100, sl: 125 },
         weightkg: 52.6
     },
     Zubat: {
-        types: ['독', '비행'],
+        types: ['Poison', 'Flying'],
         bs: { hp: 40, at: 45, df: 35, sp: 55, sl: 40 },
         weightkg: 7.5,
         nfe: true
@@ -917,8 +917,8 @@ var GSC_PATCH = {
     Machop: { bs: { sa: 35, sd: 35 } },
     Magikarp: { bs: { sa: 15, sd: 20 } },
     Magmar: { bs: { sa: 100, sd: 85 } },
-    Magnemite: { types: ['전기', '강철'], bs: { sa: 95, sd: 55 }, gender: 'N' },
-    Magneton: { types: ['전기', '강철'], bs: { sa: 120, sd: 70 }, gender: 'N' },
+    Magnemite: { types: ['Electric', 'Steel'], bs: { sa: 95, sd: 55 }, gender: 'N' },
+    Magneton: { types: ['Electric', 'Steel'], bs: { sa: 120, sd: 70 }, gender: 'N' },
     Mankey: { bs: { sa: 35, sd: 45 } },
     Marowak: { bs: { sa: 50, sd: 80 } },
     Meowth: { bs: { sa: 40, sd: 40 } },
@@ -993,532 +993,532 @@ var GSC_PATCH = {
     Wigglytuff: { bs: { sa: 75, sd: 50 } },
     Zapdos: { bs: { sa: 125, sd: 90 }, gender: 'N' },
     Zubat: { bs: { sa: 30, sd: 40 } },
-    Aipom: { types: ['노말'], bs: { hp: 55, at: 70, df: 55, sa: 40, sd: 55, sp: 85 }, weightkg: 11.5 },
+    Aipom: { types: ['Normal'], bs: { hp: 55, at: 70, df: 55, sa: 40, sd: 55, sp: 85 }, weightkg: 11.5 },
     Ampharos: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 90, at: 75, df: 75, sa: 115, sd: 90, sp: 55 },
         weightkg: 61.5
     },
     Ariados: {
-        types: ['벌레', '독'],
+        types: ['Bug', 'Poison'],
         bs: { hp: 70, at: 90, df: 70, sa: 60, sd: 60, sp: 40 },
         weightkg: 33.5
     },
     Azumarill: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 100, at: 50, df: 80, sa: 50, sd: 80, sp: 50 },
         weightkg: 28.5
     },
     Bayleef: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 60, at: 62, df: 80, sa: 63, sd: 80, sp: 60 },
         weightkg: 15.8,
         nfe: true
     },
     Bellossom: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 75, at: 80, df: 85, sa: 90, sd: 100, sp: 50 },
         weightkg: 5.8
     },
     Blissey: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 255, at: 10, df: 10, sa: 75, sd: 135, sp: 55 },
         weightkg: 46.8
     },
     Celebi: {
-        types: ['에스퍼', '풀'],
+        types: ['Psychic', 'Grass'],
         bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
         weightkg: 5,
         gender: 'N'
     },
     Chikorita: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 45, at: 49, df: 65, sa: 49, sd: 65, sp: 45 },
         weightkg: 6.4,
         nfe: true
     },
     Chinchou: {
-        types: ['물', '전기'],
+        types: ['Water', 'Electric'],
         bs: { hp: 75, at: 38, df: 38, sa: 56, sd: 56, sp: 67 },
         weightkg: 12,
         nfe: true
     },
     Cleffa: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 50, at: 25, df: 28, sa: 45, sd: 55, sp: 15 },
         weightkg: 3,
         nfe: true
     },
     Corsola: {
-        types: ['물', '바위'],
+        types: ['Water', 'Rock'],
         bs: { hp: 55, at: 55, df: 85, sa: 65, sd: 85, sp: 35 },
         weightkg: 5
     },
     Crobat: {
-        types: ['독', '비행'],
+        types: ['Poison', 'Flying'],
         bs: { hp: 85, at: 90, df: 80, sa: 70, sd: 80, sp: 130 },
         weightkg: 75
     },
     Croconaw: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 65, at: 80, df: 80, sa: 59, sd: 63, sp: 58 },
         weightkg: 25,
         nfe: true
     },
     Cyndaquil: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 39, at: 52, df: 43, sa: 60, sd: 50, sp: 65 },
         weightkg: 7.9,
         nfe: true
     },
     Delibird: {
-        types: ['얼음', '비행'],
+        types: ['Ice', 'Flying'],
         bs: { hp: 45, at: 55, df: 45, sa: 65, sd: 45, sp: 75 },
         weightkg: 16
     },
     Donphan: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 90, at: 120, df: 120, sa: 60, sd: 60, sp: 50 },
         weightkg: 120
     },
     Dunsparce: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 100, at: 70, df: 70, sa: 65, sd: 65, sp: 45 },
         weightkg: 14
     },
     Elekid: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 45, at: 63, df: 37, sa: 65, sd: 55, sp: 95 },
         weightkg: 23.5,
         nfe: true
     },
     Entei: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 115, at: 115, df: 85, sa: 90, sd: 75, sp: 100 },
         weightkg: 198,
         gender: 'N'
     },
     Espeon: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 65, at: 65, df: 60, sa: 130, sd: 95, sp: 110 },
         weightkg: 26.5
     },
     Feraligatr: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 85, at: 105, df: 100, sa: 79, sd: 83, sp: 78 },
         weightkg: 88.8
     },
     Flaaffy: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 70, at: 55, df: 55, sa: 80, sd: 60, sp: 45 },
         weightkg: 13.3,
         nfe: true
     },
     Forretress: {
-        types: ['벌레', '강철'],
+        types: ['Bug', 'Steel'],
         bs: { hp: 75, at: 90, df: 140, sa: 60, sd: 60, sp: 40 },
         weightkg: 125.8
     },
-    Furret: { types: ['노말'], bs: { hp: 85, at: 76, df: 64, sa: 45, sd: 55, sp: 90 }, weightkg: 32.5 },
+    Furret: { types: ['Normal'], bs: { hp: 85, at: 76, df: 64, sa: 45, sd: 55, sp: 90 }, weightkg: 32.5 },
     Girafarig: {
-        types: ['노말', '에스퍼'],
+        types: ['Normal', 'Psychic'],
         bs: { hp: 70, at: 80, df: 65, sa: 90, sd: 65, sp: 85 },
         weightkg: 41.5
     },
     Gligar: {
-        types: ['땅', '비행'],
+        types: ['Ground', 'Flying'],
         bs: { hp: 65, at: 75, df: 105, sa: 35, sd: 65, sp: 85 },
         weightkg: 64.8
     },
     Granbull: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 90, at: 120, df: 75, sa: 60, sd: 60, sp: 45 },
         weightkg: 48.7
     },
     Heracross: {
-        types: ['벌레', '격투'],
+        types: ['Bug', 'Fighting'],
         bs: { hp: 80, at: 125, df: 75, sa: 40, sd: 95, sp: 85 },
         weightkg: 54
     },
     Hitmontop: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 50, at: 95, df: 95, sa: 35, sd: 110, sp: 70 },
         weightkg: 48
     },
     'Ho-Oh': {
-        types: ['불꽃', '비행'],
+        types: ['Fire', 'Flying'],
         bs: { hp: 106, at: 130, df: 90, sa: 110, sd: 154, sp: 90 },
         weightkg: 199,
         gender: 'N'
     },
     Hoothoot: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 60, at: 30, df: 30, sa: 36, sd: 56, sp: 50 },
         weightkg: 21.2,
         nfe: true
     },
     Hoppip: {
-        types: ['풀', '비행'],
+        types: ['Grass', 'Flying'],
         bs: { hp: 35, at: 35, df: 40, sa: 35, sd: 55, sp: 50 },
         weightkg: 0.5,
         nfe: true
     },
     Houndoom: {
-        types: ['악', '불꽃'],
+        types: ['Dark', 'Fire'],
         bs: { hp: 75, at: 90, df: 50, sa: 110, sd: 80, sp: 95 },
         weightkg: 35
     },
     Houndour: {
-        types: ['악', '불꽃'],
+        types: ['Dark', 'Fire'],
         bs: { hp: 45, at: 60, df: 30, sa: 80, sd: 50, sp: 65 },
         weightkg: 10.8,
         nfe: true
     },
     Igglybuff: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 90, at: 30, df: 15, sa: 40, sd: 20, sp: 15 },
         weightkg: 1,
         nfe: true
     },
     Jumpluff: {
-        types: ['풀', '비행'],
+        types: ['Grass', 'Flying'],
         bs: { hp: 75, at: 55, df: 70, sa: 55, sd: 85, sp: 110 },
         weightkg: 3
     },
     Kingdra: {
-        types: ['물', '드래곤'],
+        types: ['Water', 'Dragon'],
         bs: { hp: 75, at: 95, df: 95, sa: 95, sd: 95, sp: 85 },
         weightkg: 152
     },
     Lanturn: {
-        types: ['물', '전기'],
+        types: ['Water', 'Electric'],
         bs: { hp: 125, at: 58, df: 58, sa: 76, sd: 76, sp: 67 },
         weightkg: 22.5
     },
     Larvitar: {
-        types: ['바위', '땅'],
+        types: ['Rock', 'Ground'],
         bs: { hp: 50, at: 64, df: 50, sa: 45, sd: 50, sp: 41 },
         weightkg: 72,
         nfe: true
     },
     Ledian: {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 55, at: 35, df: 50, sa: 55, sd: 110, sp: 85 },
         weightkg: 35.6
     },
     Ledyba: {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 40, at: 20, df: 30, sa: 40, sd: 80, sp: 55 },
         weightkg: 10.8,
         nfe: true
     },
     Lugia: {
-        types: ['에스퍼', '비행'],
+        types: ['Psychic', 'Flying'],
         bs: { hp: 106, at: 90, df: 130, sa: 90, sd: 154, sp: 110 },
         weightkg: 216,
         gender: 'N'
     },
     Magby: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 45, at: 75, df: 37, sa: 70, sd: 55, sp: 83 },
         weightkg: 21.4,
         nfe: true
     },
     Magcargo: {
-        types: ['불꽃', '바위'],
+        types: ['Fire', 'Rock'],
         bs: { hp: 50, at: 50, df: 120, sa: 80, sd: 80, sp: 30 },
         weightkg: 55
     },
     Mantine: {
-        types: ['물', '비행'],
+        types: ['Water', 'Flying'],
         bs: { hp: 65, at: 40, df: 70, sa: 80, sd: 140, sp: 70 },
         weightkg: 220
     },
     Mareep: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 55, at: 40, df: 40, sa: 65, sd: 45, sp: 35 },
         weightkg: 7.8,
         nfe: true
     },
     Marill: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 70, at: 20, df: 50, sa: 20, sd: 50, sp: 40 },
         weightkg: 8.5,
         nfe: true
     },
     Meganium: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 80, at: 82, df: 100, sa: 83, sd: 100, sp: 80 },
         weightkg: 100.5
     },
     Miltank: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 95, at: 80, df: 105, sa: 40, sd: 70, sp: 100 },
         weightkg: 75.5
     },
     Misdreavus: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 60, at: 60, df: 60, sa: 85, sd: 85, sp: 85 },
         weightkg: 1
     },
     Murkrow: {
-        types: ['악', '비행'],
+        types: ['Dark', 'Flying'],
         bs: { hp: 60, at: 85, df: 42, sa: 85, sd: 42, sp: 91 },
         weightkg: 2.1
     },
     Natu: {
-        types: ['에스퍼', '비행'],
+        types: ['Psychic', 'Flying'],
         bs: { hp: 40, at: 50, df: 45, sa: 70, sd: 45, sp: 70 },
         weightkg: 2,
         nfe: true
     },
     Noctowl: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 100, at: 50, df: 50, sa: 76, sd: 96, sp: 70 },
         weightkg: 40.8
     },
     Octillery: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 75, at: 105, df: 75, sa: 105, sd: 75, sp: 45 },
         weightkg: 28.5
     },
     Phanpy: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 90, at: 60, df: 60, sa: 40, sd: 40, sp: 40 },
         weightkg: 33.5,
         nfe: true
     },
     Pichu: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 20, at: 40, df: 15, sa: 35, sd: 35, sp: 60 },
         weightkg: 2,
         nfe: true
     },
     Piloswine: {
-        types: ['얼음', '땅'],
+        types: ['Ice', 'Ground'],
         bs: { hp: 100, at: 100, df: 80, sa: 60, sd: 60, sp: 50 },
         weightkg: 55.8
     },
     Pineco: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 50, at: 65, df: 90, sa: 35, sd: 35, sp: 15 },
         weightkg: 7.2,
         nfe: true
     },
     Politoed: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 90, at: 75, df: 75, sa: 90, sd: 100, sp: 70 },
         weightkg: 33.9
     },
     Porygon2: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 85, at: 80, df: 90, sa: 105, sd: 95, sp: 60 },
         weightkg: 32.5,
         gender: 'N'
     },
     Pupitar: {
-        types: ['바위', '땅'],
+        types: ['Rock', 'Ground'],
         bs: { hp: 70, at: 84, df: 70, sa: 65, sd: 70, sp: 51 },
         weightkg: 152,
         nfe: true
     },
     Quagsire: {
-        types: ['물', '땅'],
+        types: ['Water', 'Ground'],
         bs: { hp: 95, at: 85, df: 85, sa: 65, sd: 65, sp: 35 },
         weightkg: 75
     },
     Quilava: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 58, at: 64, df: 58, sa: 80, sd: 65, sp: 80 },
         weightkg: 19,
         nfe: true
     },
     Qwilfish: {
-        types: ['물', '독'],
+        types: ['Water', 'Poison'],
         bs: { hp: 65, at: 95, df: 75, sa: 55, sd: 55, sp: 85 },
         weightkg: 3.9
     },
     Raikou: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 90, at: 85, df: 75, sa: 115, sd: 100, sp: 115 },
         weightkg: 178,
         gender: 'N'
     },
     Remoraid: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 35, at: 65, df: 35, sa: 65, sd: 35, sp: 65 },
         weightkg: 12,
         nfe: true
     },
     Scizor: {
-        types: ['벌레', '강철'],
+        types: ['Bug', 'Steel'],
         bs: { hp: 70, at: 130, df: 100, sa: 55, sd: 80, sp: 65 },
         weightkg: 118
     },
     Sentret: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 35, at: 46, df: 34, sa: 35, sd: 45, sp: 20 },
         weightkg: 6,
         nfe: true
     },
     Shuckle: {
-        types: ['벌레', '바위'],
+        types: ['Bug', 'Rock'],
         bs: { hp: 20, at: 10, df: 230, sa: 10, sd: 230, sp: 5 },
         weightkg: 20.5
     },
     Skarmory: {
-        types: ['강철', '비행'],
+        types: ['Steel', 'Flying'],
         bs: { hp: 65, at: 80, df: 140, sa: 40, sd: 70, sp: 70 },
         weightkg: 50.5
     },
     Skiploom: {
-        types: ['풀', '비행'],
+        types: ['Grass', 'Flying'],
         bs: { hp: 55, at: 45, df: 50, sa: 45, sd: 65, sp: 80 },
         weightkg: 1,
         nfe: true
     },
     Slowking: {
-        types: ['물', '에스퍼'],
+        types: ['Water', 'Psychic'],
         bs: { hp: 95, at: 75, df: 80, sa: 100, sd: 110, sp: 30 },
         weightkg: 79.5
     },
     Slugma: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 40, at: 40, df: 40, sa: 70, sd: 40, sp: 20 },
         weightkg: 35,
         nfe: true
     },
-    Smeargle: { types: ['노말'], bs: { hp: 55, at: 20, df: 35, sa: 20, sd: 45, sp: 75 }, weightkg: 58 },
+    Smeargle: { types: ['Normal'], bs: { hp: 55, at: 20, df: 35, sa: 20, sd: 45, sp: 75 }, weightkg: 58 },
     Smoochum: {
-        types: ['얼음', '에스퍼'],
+        types: ['Ice', 'Psychic'],
         bs: { hp: 45, at: 30, df: 15, sa: 85, sd: 65, sp: 65 },
         weightkg: 6,
         nfe: true
     },
     Sneasel: {
-        types: ['악', '얼음'],
+        types: ['Dark', 'Ice'],
         bs: { hp: 55, at: 95, df: 55, sa: 35, sd: 75, sp: 115 },
         weightkg: 28
     },
     Snubbull: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 60, at: 80, df: 50, sa: 40, sd: 40, sp: 30 },
         weightkg: 7.8,
         nfe: true
     },
     Spinarak: {
-        types: ['벌레', '독'],
+        types: ['Bug', 'Poison'],
         bs: { hp: 40, at: 60, df: 40, sa: 40, sd: 40, sp: 30 },
         weightkg: 8.5,
         nfe: true
     },
     Stantler: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 73, at: 95, df: 62, sa: 85, sd: 65, sp: 85 },
         weightkg: 71.2
     },
     Steelix: {
-        types: ['강철', '땅'],
+        types: ['Steel', 'Ground'],
         bs: { hp: 75, at: 85, df: 200, sa: 55, sd: 65, sp: 30 },
         weightkg: 400
     },
     Sudowoodo: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 70, at: 100, df: 115, sa: 30, sd: 65, sp: 30 },
         weightkg: 38
     },
     Suicune: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 100, at: 75, df: 115, sa: 90, sd: 115, sp: 85 },
         weightkg: 187,
         gender: 'N'
     },
     Sunflora: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 75, at: 75, df: 55, sa: 105, sd: 85, sp: 30 },
         weightkg: 8.5
     },
     Sunkern: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 30, at: 30, df: 30, sa: 30, sd: 30, sp: 30 },
         weightkg: 1.8,
         nfe: true
     },
     Swinub: {
-        types: ['얼음', '땅'],
+        types: ['Ice', 'Ground'],
         bs: { hp: 50, at: 50, df: 40, sa: 30, sd: 30, sp: 50 },
         weightkg: 6.5,
         nfe: true
     },
     Teddiursa: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 60, at: 80, df: 50, sa: 50, sd: 50, sp: 40 },
         weightkg: 8.8,
         nfe: true
     },
     Togepi: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 35, at: 20, df: 65, sa: 40, sd: 65, sp: 20 },
         weightkg: 1.5,
         nfe: true
     },
     Togetic: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 55, at: 40, df: 85, sa: 80, sd: 105, sp: 40 },
         weightkg: 3.2
     },
     Totodile: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 50, at: 65, df: 64, sa: 44, sd: 48, sp: 43 },
         weightkg: 9.5,
         nfe: true
     },
     Typhlosion: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 78, at: 84, df: 78, sa: 109, sd: 85, sp: 100 },
         weightkg: 79.5
     },
     Tyranitar: {
-        types: ['바위', '악'],
+        types: ['Rock', 'Dark'],
         bs: { hp: 100, at: 134, df: 110, sa: 95, sd: 100, sp: 61 },
         weightkg: 202
     },
     Tyrogue: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 35, at: 35, df: 35, sa: 35, sd: 35, sp: 35 },
         weightkg: 21,
         nfe: true
     },
-    Umbreon: { types: ['악'], bs: { hp: 95, at: 65, df: 110, sa: 60, sd: 130, sp: 65 }, weightkg: 27 },
+    Umbreon: { types: ['Dark'], bs: { hp: 95, at: 65, df: 110, sa: 60, sd: 130, sp: 65 }, weightkg: 27 },
     Unown: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 48, at: 72, df: 48, sa: 72, sd: 48, sp: 48 },
         weightkg: 5,
         gender: 'N'
     },
     Ursaring: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 90, at: 130, df: 75, sa: 75, sd: 75, sp: 55 },
         weightkg: 125.8
     },
     Wobbuffet: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 190, at: 33, df: 58, sa: 33, sd: 58, sp: 33 },
         weightkg: 28.5
     },
     Wooper: {
-        types: ['물', '땅'],
+        types: ['Water', 'Ground'],
         bs: { hp: 55, at: 45, df: 45, sa: 25, sd: 25, sp: 15 },
         weightkg: 8.5,
         nfe: true
     },
     Xatu: {
-        types: ['에스퍼', '비행'],
+        types: ['Psychic', 'Flying'],
         bs: { hp: 65, at: 75, df: 70, sa: 95, sd: 70, sp: 95 },
         weightkg: 15
     },
     Yanma: {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 65, at: 65, df: 45, sa: 75, sd: 45, sp: 95 },
         weightkg: 38
     }
@@ -1777,59 +1777,59 @@ var ADV_PATCH = {
     Xatu: { abilities: { 0: 'Synchronize' } },
     Yanma: { abilities: { 0: 'Speed Boost' } },
     Absol: {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 65, at: 130, df: 60, sa: 75, sd: 60, sp: 75 },
         weightkg: 47,
         abilities: { 0: 'Pressure' }
     },
     Aggron: {
-        types: ['강철', '바위'],
+        types: ['Steel', 'Rock'],
         bs: { hp: 70, at: 110, df: 180, sa: 60, sd: 60, sp: 50 },
         weightkg: 360,
         abilities: { 0: 'Sturdy' }
     },
     Altaria: {
-        types: ['드래곤', '비행'],
+        types: ['Dragon', 'Flying'],
         bs: { hp: 75, at: 70, df: 90, sa: 70, sd: 105, sp: 80 },
         weightkg: 20.6,
         abilities: { 0: 'Natural Cure' }
     },
     Anorith: {
-        types: ['바위', '벌레'],
+        types: ['Rock', 'Bug'],
         bs: { hp: 45, at: 95, df: 50, sa: 40, sd: 50, sp: 75 },
         weightkg: 12.5,
         nfe: true,
         abilities: { 0: 'Battle Armor' }
     },
     Armaldo: {
-        types: ['바위', '벌레'],
+        types: ['Rock', 'Bug'],
         bs: { hp: 75, at: 125, df: 100, sa: 70, sd: 80, sp: 45 },
         weightkg: 68.2,
         abilities: { 0: 'Battle Armor' }
     },
     Aron: {
-        types: ['강철', '바위'],
+        types: ['Steel', 'Rock'],
         bs: { hp: 50, at: 70, df: 100, sa: 40, sd: 40, sp: 30 },
         weightkg: 60,
         nfe: true,
         abilities: { 0: 'Sturdy' }
     },
     Azurill: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 50, at: 20, df: 40, sa: 20, sd: 40, sp: 20 },
         weightkg: 2,
         nfe: true,
         abilities: { 0: 'Thick Fat' }
     },
     Bagon: {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 45, at: 75, df: 60, sa: 40, sd: 30, sp: 50 },
         weightkg: 42.1,
         nfe: true,
         abilities: { 0: 'Rock Head' }
     },
     Baltoy: {
-        types: ['땅', '에스퍼'],
+        types: ['Ground', 'Psychic'],
         bs: { hp: 40, at: 40, df: 55, sa: 40, sd: 70, sp: 55 },
         weightkg: 21.5,
         abilities: { 0: 'Levitate' },
@@ -1837,26 +1837,26 @@ var ADV_PATCH = {
         gender: 'N'
     },
     Banette: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 64, at: 115, df: 65, sa: 83, sd: 63, sp: 65 },
         weightkg: 12.5,
         abilities: { 0: 'Insomnia' }
     },
     Barboach: {
-        types: ['물', '땅'],
+        types: ['Water', 'Ground'],
         bs: { hp: 50, at: 48, df: 43, sa: 46, sd: 41, sp: 60 },
         weightkg: 1.9,
         nfe: true,
         abilities: { 0: 'Oblivious' }
     },
     Beautifly: {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 60, at: 70, df: 50, sa: 90, sd: 50, sp: 65 },
         weightkg: 28.4,
         abilities: { 0: 'Swarm' }
     },
     Beldum: {
-        types: ['강철', '에스퍼'],
+        types: ['Steel', 'Psychic'],
         bs: { hp: 40, at: 55, df: 80, sa: 35, sd: 60, sp: 30 },
         weightkg: 95.2,
         nfe: true,
@@ -1864,132 +1864,132 @@ var ADV_PATCH = {
         abilities: { 0: 'Clear Body' }
     },
     Blaziken: {
-        types: ['불꽃', '격투'],
+        types: ['Fire', 'Fighting'],
         bs: { hp: 80, at: 120, df: 70, sa: 110, sd: 70, sp: 80 },
         weightkg: 52,
         abilities: { 0: 'Blaze' }
     },
     Breloom: {
-        types: ['풀', '격투'],
+        types: ['Grass', 'Fighting'],
         bs: { hp: 60, at: 130, df: 80, sa: 60, sd: 60, sp: 70 },
         weightkg: 39.2,
         abilities: { 0: 'Effect Spore' }
     },
     Cacnea: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 50, at: 85, df: 40, sa: 85, sd: 40, sp: 35 },
         weightkg: 51.3,
         nfe: true,
         abilities: { 0: 'Sand Veil' }
     },
     Cacturne: {
-        types: ['풀', '악'],
+        types: ['Grass', 'Dark'],
         bs: { hp: 70, at: 115, df: 60, sa: 115, sd: 60, sp: 55 },
         weightkg: 77.4,
         abilities: { 0: 'Sand Veil' }
     },
     Camerupt: {
-        types: ['불꽃', '땅'],
+        types: ['Fire', 'Ground'],
         bs: { hp: 70, at: 100, df: 70, sa: 105, sd: 75, sp: 40 },
         weightkg: 220,
         abilities: { 0: 'Magma Armor' }
     },
     Carvanha: {
-        types: ['물', '악'],
+        types: ['Water', 'Dark'],
         bs: { hp: 45, at: 90, df: 20, sa: 65, sd: 20, sp: 65 },
         weightkg: 20.8,
         nfe: true,
         abilities: { 0: 'Rough Skin' }
     },
     Cascoon: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 50, at: 35, df: 55, sa: 25, sd: 25, sp: 15 },
         weightkg: 11.5,
         abilities: { 0: 'Shed Skin' },
         nfe: true
     },
     Castform: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 70, at: 70, df: 70, sa: 70, sd: 70, sp: 70 },
         weightkg: 0.8,
         abilities: { 0: 'Forecast' },
         otherFormes: ['Castform-Rainy', 'Castform-Snowy', 'Castform-Sunny']
     },
     'Castform-Rainy': {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 70, at: 70, df: 70, sa: 70, sd: 70, sp: 70 },
         weightkg: 0.8,
         abilities: { 0: 'Forecast' },
         baseSpecies: 'Castform'
     },
     'Castform-Snowy': {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 70, at: 70, df: 70, sa: 70, sd: 70, sp: 70 },
         weightkg: 0.8,
         abilities: { 0: 'Forecast' },
         baseSpecies: 'Castform'
     },
     'Castform-Sunny': {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 70, at: 70, df: 70, sa: 70, sd: 70, sp: 70 },
         weightkg: 0.8,
         abilities: { 0: 'Forecast' },
         baseSpecies: 'Castform'
     },
     Chimecho: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 65, at: 50, df: 70, sa: 95, sd: 80, sp: 65 },
         weightkg: 1,
         abilities: { 0: 'Levitate' }
     },
     Clamperl: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 35, at: 64, df: 85, sa: 74, sd: 55, sp: 32 },
         weightkg: 52.5,
         nfe: true,
         abilities: { 0: 'Shell Armor' }
     },
     Claydol: {
-        types: ['땅', '에스퍼'],
+        types: ['Ground', 'Psychic'],
         bs: { hp: 60, at: 70, df: 105, sa: 70, sd: 120, sp: 75 },
         weightkg: 108,
         abilities: { 0: 'Levitate' },
         gender: 'N'
     },
     Combusken: {
-        types: ['불꽃', '격투'],
+        types: ['Fire', 'Fighting'],
         bs: { hp: 60, at: 85, df: 60, sa: 85, sd: 60, sp: 55 },
         weightkg: 19.5,
         nfe: true,
         abilities: { 0: 'Blaze' }
     },
     Corphish: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 43, at: 80, df: 65, sa: 50, sd: 35, sp: 35 },
         weightkg: 11.5,
         nfe: true,
         abilities: { 0: 'Hyper Cutter' }
     },
     Cradily: {
-        types: ['바위', '풀'],
+        types: ['Rock', 'Grass'],
         bs: { hp: 86, at: 81, df: 97, sa: 81, sd: 107, sp: 43 },
         weightkg: 60.4,
         abilities: { 0: 'Suction Cups' }
     },
     Crawdaunt: {
-        types: ['물', '악'],
+        types: ['Water', 'Dark'],
         bs: { hp: 63, at: 120, df: 85, sa: 90, sd: 55, sp: 55 },
         weightkg: 32.8,
         abilities: { 0: 'Hyper Cutter' }
     },
     Delcatty: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 70, at: 65, df: 65, sa: 55, sd: 55, sp: 70 },
         weightkg: 32.6,
         abilities: { 0: 'Cute Charm' }
     },
     Deoxys: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 50, at: 150, df: 50, sa: 150, sd: 50, sp: 150 },
         weightkg: 60.8,
         abilities: { 0: 'Pressure' },
@@ -1997,7 +1997,7 @@ var ADV_PATCH = {
         otherFormes: ['Deoxys-Attack', 'Deoxys-Defense', 'Deoxys-Speed']
     },
     'Deoxys-Attack': {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 50, at: 180, df: 20, sa: 180, sd: 20, sp: 150 },
         weightkg: 60.8,
         abilities: { 0: 'Pressure' },
@@ -2005,7 +2005,7 @@ var ADV_PATCH = {
         baseSpecies: 'Deoxys'
     },
     'Deoxys-Defense': {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 50, at: 70, df: 160, sa: 70, sd: 160, sp: 90 },
         weightkg: 60.8,
         abilities: { 0: 'Pressure' },
@@ -2013,7 +2013,7 @@ var ADV_PATCH = {
         baseSpecies: 'Deoxys'
     },
     'Deoxys-Speed': {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 50, at: 95, df: 90, sa: 95, sd: 90, sp: 180 },
         weightkg: 60.8,
         abilities: { 0: 'Pressure' },
@@ -2021,266 +2021,266 @@ var ADV_PATCH = {
         baseSpecies: 'Deoxys'
     },
     Dusclops: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 40, at: 70, df: 130, sa: 60, sd: 130, sp: 25 },
         weightkg: 30.6,
         abilities: { 0: 'Pressure' }
     },
     Duskull: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 20, at: 40, df: 90, sa: 30, sd: 90, sp: 25 },
         weightkg: 15,
         nfe: true,
         abilities: { 0: 'Levitate' }
     },
     Dustox: {
-        types: ['벌레', '독'],
+        types: ['Bug', 'Poison'],
         bs: { hp: 60, at: 50, df: 70, sa: 50, sd: 90, sp: 65 },
         weightkg: 31.6,
         abilities: { 0: 'Shield Dust' }
     },
     Electrike: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 40, at: 45, df: 40, sa: 65, sd: 40, sp: 65 },
         weightkg: 15.2,
         nfe: true,
         abilities: { 0: 'Static' }
     },
     Exploud: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 104, at: 91, df: 63, sa: 91, sd: 63, sp: 68 },
         weightkg: 84,
         abilities: { 0: 'Soundproof' }
     },
     Feebas: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 20, at: 15, df: 20, sa: 10, sd: 55, sp: 80 },
         weightkg: 7.4,
         nfe: true,
         abilities: { 0: 'Swift Swim' }
     },
     Flygon: {
-        types: ['땅', '드래곤'],
+        types: ['Ground', 'Dragon'],
         bs: { hp: 80, at: 100, df: 80, sa: 80, sd: 80, sp: 100 },
         weightkg: 82,
         abilities: { 0: 'Levitate' }
     },
     Gardevoir: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 68, at: 65, df: 65, sa: 125, sd: 115, sp: 80 },
         weightkg: 48.4,
         abilities: { 0: 'Synchronize' }
     },
     Glalie: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 80, at: 80, df: 80, sa: 80, sd: 80, sp: 80 },
         weightkg: 256.5,
         abilities: { 0: 'Inner Focus' }
     },
     Gorebyss: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 55, at: 84, df: 105, sa: 114, sd: 75, sp: 52 },
         weightkg: 22.6,
         abilities: { 0: 'Swift Swim' }
     },
     Groudon: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 100, at: 150, df: 140, sa: 100, sd: 90, sp: 90 },
         weightkg: 950,
         abilities: { 0: 'Drought' },
         gender: 'N'
     },
     Grovyle: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 50, at: 65, df: 45, sa: 85, sd: 65, sp: 95 },
         weightkg: 21.6,
         nfe: true,
         abilities: { 0: 'Overgrow' }
     },
     Grumpig: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 80, at: 45, df: 65, sa: 90, sd: 110, sp: 80 },
         weightkg: 71.5,
         abilities: { 0: 'Thick Fat' }
     },
     Gulpin: {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 70, at: 43, df: 53, sa: 43, sd: 53, sp: 40 },
         weightkg: 10.3,
         nfe: true,
         abilities: { 0: 'Liquid Ooze' }
     },
     Hariyama: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 144, at: 120, df: 60, sa: 40, sd: 60, sp: 50 },
         weightkg: 253.8,
         abilities: { 0: 'Thick Fat' }
     },
     Huntail: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 55, at: 104, df: 105, sa: 94, sd: 75, sp: 52 },
         weightkg: 27,
         abilities: { 0: 'Swift Swim' }
     },
     Illumise: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 65, at: 47, df: 55, sa: 73, sd: 75, sp: 85 },
         abilities: { 0: 'Oblivious' },
         weightkg: 17.7
     },
     Jirachi: {
-        types: ['강철', '에스퍼'],
+        types: ['Steel', 'Psychic'],
         bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
         weightkg: 1.1,
         abilities: { 0: 'Serene Grace' },
         gender: 'N'
     },
     Kecleon: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 60, at: 90, df: 70, sa: 60, sd: 120, sp: 40 },
         weightkg: 22,
         abilities: { 0: 'Color Change' }
     },
     Kirlia: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 38, at: 35, df: 35, sa: 65, sd: 55, sp: 50 },
         weightkg: 20.2,
         nfe: true,
         abilities: { 0: 'Synchronize' }
     },
     Kyogre: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 100, at: 100, df: 90, sa: 150, sd: 140, sp: 90 },
         weightkg: 352,
         abilities: { 0: 'Drizzle' },
         gender: 'N'
     },
     Lairon: {
-        types: ['강철', '바위'],
+        types: ['Steel', 'Rock'],
         bs: { hp: 60, at: 90, df: 140, sa: 50, sd: 50, sp: 40 },
         weightkg: 120,
         nfe: true,
         abilities: { 0: 'Sturdy' }
     },
     Latias: {
-        types: ['드래곤', '에스퍼'],
+        types: ['Dragon', 'Psychic'],
         bs: { hp: 80, at: 80, df: 90, sa: 110, sd: 130, sp: 110 },
         weightkg: 40,
         abilities: { 0: 'Levitate' }
     },
     Latios: {
-        types: ['드래곤', '에스퍼'],
+        types: ['Dragon', 'Psychic'],
         bs: { hp: 80, at: 90, df: 80, sa: 130, sd: 110, sp: 110 },
         weightkg: 60,
         abilities: { 0: 'Levitate' }
     },
     Lileep: {
-        types: ['바위', '풀'],
+        types: ['Rock', 'Grass'],
         bs: { hp: 66, at: 41, df: 77, sa: 61, sd: 87, sp: 23 },
         weightkg: 23.8,
         nfe: true,
         abilities: { 0: 'Suction Cups' }
     },
     Linoone: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 78, at: 70, df: 61, sa: 50, sd: 61, sp: 100 },
         weightkg: 32.5,
         abilities: { 0: 'Pickup' }
     },
     Lombre: {
-        types: ['물', '풀'],
+        types: ['Water', 'Grass'],
         bs: { hp: 60, at: 50, df: 50, sa: 60, sd: 70, sp: 50 },
         weightkg: 32.5,
         nfe: true,
         abilities: { 0: 'Swift Swim' }
     },
     Lotad: {
-        types: ['물', '풀'],
+        types: ['Water', 'Grass'],
         bs: { hp: 40, at: 30, df: 30, sa: 40, sd: 50, sp: 30 },
         weightkg: 2.6,
         nfe: true,
         abilities: { 0: 'Swift Swim' }
     },
     Loudred: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 84, at: 71, df: 43, sa: 71, sd: 43, sp: 48 },
         weightkg: 40.5,
         nfe: true,
         abilities: { 0: 'Soundproof' }
     },
     Ludicolo: {
-        types: ['물', '풀'],
+        types: ['Water', 'Grass'],
         bs: { hp: 80, at: 70, df: 70, sa: 90, sd: 100, sp: 70 },
         weightkg: 55,
         abilities: { 0: 'Swift Swim' }
     },
     Lunatone: {
-        types: ['바위', '에스퍼'],
+        types: ['Rock', 'Psychic'],
         bs: { hp: 70, at: 55, df: 65, sa: 95, sd: 85, sp: 70 },
         weightkg: 168,
         abilities: { 0: 'Levitate' },
         gender: 'N'
     },
     Luvdisc: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 43, at: 30, df: 55, sa: 40, sd: 65, sp: 97 },
         weightkg: 8.7,
         abilities: { 0: 'Swift Swim' }
     },
     Makuhita: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 72, at: 60, df: 30, sa: 20, sd: 30, sp: 25 },
         weightkg: 86.4,
         nfe: true,
         abilities: { 0: 'Thick Fat' }
     },
     Manectric: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 70, at: 75, df: 60, sa: 105, sd: 60, sp: 105 },
         weightkg: 40.2,
         abilities: { 0: 'Static' }
     },
     Marshtomp: {
-        types: ['물', '땅'],
+        types: ['Water', 'Ground'],
         bs: { hp: 70, at: 85, df: 70, sa: 60, sd: 70, sp: 50 },
         weightkg: 28,
         nfe: true,
         abilities: { 0: 'Torrent' }
     },
     Masquerain: {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 70, at: 60, df: 62, sa: 80, sd: 82, sp: 60 },
         weightkg: 3.6,
         abilities: { 0: 'Intimidate' }
     },
     Mawile: {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 50, at: 85, df: 85, sa: 55, sd: 55, sp: 50 },
         weightkg: 11.5,
         abilities: { 0: 'Hyper Cutter' }
     },
     Medicham: {
-        types: ['격투', '에스퍼'],
+        types: ['Fighting', 'Psychic'],
         bs: { hp: 60, at: 60, df: 75, sa: 60, sd: 75, sp: 80 },
         weightkg: 31.5,
         abilities: { 0: 'Pure Power' }
     },
     Meditite: {
-        types: ['격투', '에스퍼'],
+        types: ['Fighting', 'Psychic'],
         bs: { hp: 30, at: 40, df: 55, sa: 40, sd: 55, sp: 60 },
         weightkg: 11.2,
         nfe: true,
         abilities: { 0: 'Pure Power' }
     },
     Metagross: {
-        types: ['강철', '에스퍼'],
+        types: ['Steel', 'Psychic'],
         bs: { hp: 80, at: 135, df: 130, sa: 95, sd: 90, sp: 70 },
         weightkg: 550,
         gender: 'N',
         abilities: { 0: 'Clear Body' }
     },
     Metang: {
-        types: ['강철', '에스퍼'],
+        types: ['Steel', 'Psychic'],
         bs: { hp: 60, at: 75, df: 100, sa: 55, sd: 80, sp: 50 },
         weightkg: 202.5,
         nfe: true,
@@ -2288,421 +2288,421 @@ var ADV_PATCH = {
         abilities: { 0: 'Clear Body' }
     },
     Mightyena: {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 70, at: 90, df: 70, sa: 60, sd: 60, sp: 70 },
         weightkg: 37,
         abilities: { 0: 'Intimidate' }
     },
     Milotic: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 95, at: 60, df: 79, sa: 100, sd: 125, sp: 81 },
         weightkg: 162,
         abilities: { 0: 'Marvel Scale' }
     },
     Minun: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 60, at: 40, df: 50, sa: 75, sd: 85, sp: 95 },
         weightkg: 4.2,
         abilities: { 0: 'Minus' }
     },
     Mudkip: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 50, at: 70, df: 50, sa: 50, sd: 50, sp: 40 },
         weightkg: 7.6,
         nfe: true,
         abilities: { 0: 'Torrent' }
     },
     Nincada: {
-        types: ['벌레', '땅'],
+        types: ['Bug', 'Ground'],
         bs: { hp: 31, at: 45, df: 90, sa: 30, sd: 30, sp: 40 },
         weightkg: 5.5,
         nfe: true,
         abilities: { 0: 'Compound Eyes' }
     },
     Ninjask: {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 61, at: 90, df: 45, sa: 50, sd: 50, sp: 160 },
         weightkg: 12,
         abilities: { 0: 'Speed Boost' }
     },
     Nosepass: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 30, at: 45, df: 135, sa: 45, sd: 90, sp: 30 },
         weightkg: 97,
         abilities: { 0: 'Sturdy' }
     },
     Numel: {
-        types: ['불꽃', '땅'],
+        types: ['Fire', 'Ground'],
         bs: { hp: 60, at: 60, df: 40, sa: 65, sd: 45, sp: 35 },
         weightkg: 24,
         nfe: true,
         abilities: { 0: 'Oblivious' }
     },
     Nuzleaf: {
-        types: ['풀', '악'],
+        types: ['Grass', 'Dark'],
         bs: { hp: 70, at: 70, df: 40, sa: 60, sd: 40, sp: 60 },
         weightkg: 28,
         nfe: true,
         abilities: { 0: 'Chlorophyll' }
     },
     Pelipper: {
-        types: ['물', '비행'],
+        types: ['Water', 'Flying'],
         bs: { hp: 60, at: 50, df: 100, sa: 85, sd: 70, sp: 65 },
         weightkg: 28,
         abilities: { 0: 'Keen Eye' }
     },
     Plusle: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 60, at: 50, df: 40, sa: 85, sd: 75, sp: 95 },
         weightkg: 4.2,
         abilities: { 0: 'Plus' }
     },
     Poochyena: {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 35, at: 55, df: 35, sa: 30, sd: 30, sp: 35 },
         weightkg: 13.6,
         nfe: true,
         abilities: { 0: 'Run Away' }
     },
     Ralts: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 28, at: 25, df: 25, sa: 45, sd: 35, sp: 40 },
         weightkg: 6.6,
         nfe: true,
         abilities: { 0: 'Synchronize' }
     },
     Rayquaza: {
-        types: ['드래곤', '비행'],
+        types: ['Dragon', 'Flying'],
         bs: { hp: 105, at: 150, df: 90, sa: 150, sd: 90, sp: 95 },
         weightkg: 206.5,
         abilities: { 0: 'Air Lock' },
         gender: 'N'
     },
     Regice: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 80, at: 50, df: 100, sa: 100, sd: 200, sp: 50 },
         weightkg: 175,
         gender: 'N',
         abilities: { 0: 'Clear Body' }
     },
     Regirock: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 80, at: 100, df: 200, sa: 50, sd: 100, sp: 50 },
         weightkg: 230,
         gender: 'N',
         abilities: { 0: 'Clear Body' }
     },
     Registeel: {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 80, at: 75, df: 150, sa: 75, sd: 150, sp: 50 },
         weightkg: 205,
         gender: 'N',
         abilities: { 0: 'Clear Body' }
     },
     Relicanth: {
-        types: ['물', '바위'],
+        types: ['Water', 'Rock'],
         bs: { hp: 100, at: 90, df: 130, sa: 45, sd: 65, sp: 55 },
         weightkg: 23.4,
         abilities: { 0: 'Swift Swim' }
     },
     Roselia: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 50, at: 60, df: 45, sa: 100, sd: 80, sp: 65 },
         weightkg: 2,
         abilities: { 0: 'Natural Cure' }
     },
     Sableye: {
-        types: ['악', '고스트'],
+        types: ['Dark', 'Ghost'],
         bs: { hp: 50, at: 75, df: 75, sa: 65, sd: 65, sp: 50 },
         weightkg: 11,
         abilities: { 0: 'Keen Eye' }
     },
     Salamence: {
-        types: ['드래곤', '비행'],
+        types: ['Dragon', 'Flying'],
         bs: { hp: 95, at: 135, df: 80, sa: 110, sd: 80, sp: 100 },
         weightkg: 102.6,
         abilities: { 0: 'Intimidate' }
     },
     Sceptile: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 70, at: 85, df: 65, sa: 105, sd: 85, sp: 120 },
         weightkg: 52.2,
         abilities: { 0: 'Overgrow' }
     },
     Sealeo: {
-        types: ['얼음', '물'],
+        types: ['Ice', 'Water'],
         bs: { hp: 90, at: 60, df: 70, sa: 75, sd: 70, sp: 45 },
         weightkg: 87.6,
         nfe: true,
         abilities: { 0: 'Thick Fat' }
     },
     Seedot: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 40, at: 40, df: 50, sa: 30, sd: 30, sp: 30 },
         weightkg: 4,
         nfe: true,
         abilities: { 0: 'Chlorophyll' }
     },
     Seviper: {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 73, at: 100, df: 60, sa: 100, sd: 60, sp: 65 },
         weightkg: 52.5,
         abilities: { 0: 'Shed Skin' }
     },
     Sharpedo: {
-        types: ['물', '악'],
+        types: ['Water', 'Dark'],
         bs: { hp: 70, at: 120, df: 40, sa: 95, sd: 40, sp: 95 },
         weightkg: 88.8,
         abilities: { 0: 'Rough Skin' }
     },
     Shedinja: {
-        types: ['벌레', '고스트'],
+        types: ['Bug', 'Ghost'],
         bs: { hp: 1, at: 90, df: 45, sa: 30, sd: 30, sp: 40 },
         weightkg: 1.2,
         abilities: { 0: 'Wonder Guard' },
         gender: 'N'
     },
     Shelgon: {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 65, at: 95, df: 100, sa: 60, sd: 50, sp: 50 },
         weightkg: 110.5,
         nfe: true,
         abilities: { 0: 'Rock Head' }
     },
     Shiftry: {
-        types: ['풀', '악'],
+        types: ['Grass', 'Dark'],
         bs: { hp: 90, at: 100, df: 60, sa: 90, sd: 60, sp: 80 },
         weightkg: 59.6,
         abilities: { 0: 'Chlorophyll' }
     },
     Shroomish: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 60, at: 40, df: 60, sa: 40, sd: 60, sp: 35 },
         weightkg: 4.5,
         nfe: true,
         abilities: { 0: 'Effect Spore' }
     },
     Shuppet: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 44, at: 75, df: 35, sa: 63, sd: 33, sp: 45 },
         weightkg: 2.3,
         nfe: true,
         abilities: { 0: 'Insomnia' }
     },
     Silcoon: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 50, at: 35, df: 55, sa: 25, sd: 25, sp: 15 },
         weightkg: 10,
         abilities: { 0: 'Shed Skin' },
         nfe: true
     },
     Skitty: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 50, at: 45, df: 45, sa: 35, sd: 35, sp: 50 },
         weightkg: 11,
         nfe: true,
         abilities: { 0: 'Cute Charm' }
     },
     Slaking: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 150, at: 160, df: 100, sa: 95, sd: 65, sp: 100 },
         weightkg: 130.5,
         abilities: { 0: 'Truant' }
     },
     Slakoth: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 60, at: 60, df: 60, sa: 35, sd: 35, sp: 30 },
         weightkg: 24,
         abilities: { 0: 'Truant' },
         nfe: true
     },
     Snorunt: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 50, at: 50, df: 50, sa: 50, sd: 50, sp: 50 },
         weightkg: 16.8,
         nfe: true,
         abilities: { 0: 'Inner Focus' }
     },
     Solrock: {
-        types: ['바위', '에스퍼'],
+        types: ['Rock', 'Psychic'],
         bs: { hp: 70, at: 95, df: 85, sa: 55, sd: 65, sp: 70 },
         weightkg: 154,
         abilities: { 0: 'Levitate' },
         gender: 'N'
     },
     Spheal: {
-        types: ['얼음', '물'],
+        types: ['Ice', 'Water'],
         bs: { hp: 70, at: 40, df: 50, sa: 55, sd: 50, sp: 25 },
         weightkg: 39.5,
         nfe: true,
         abilities: { 0: 'Thick Fat' }
     },
     Spinda: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 60, at: 60, df: 60, sa: 60, sd: 60, sp: 60 },
         weightkg: 5,
         abilities: { 0: 'Own Tempo' }
     },
     Spoink: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 60, at: 25, df: 35, sa: 70, sd: 80, sp: 60 },
         weightkg: 30.6,
         nfe: true,
         abilities: { 0: 'Thick Fat' }
     },
     Surskit: {
-        types: ['벌레', '물'],
+        types: ['Bug', 'Water'],
         bs: { hp: 40, at: 30, df: 32, sa: 50, sd: 52, sp: 65 },
         weightkg: 1.7,
         nfe: true,
         abilities: { 0: 'Swift Swim' }
     },
     Swablu: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 45, at: 40, df: 60, sa: 40, sd: 75, sp: 50 },
         weightkg: 1.2,
         nfe: true,
         abilities: { 0: 'Natural Cure' }
     },
     Swalot: {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 100, at: 73, df: 83, sa: 73, sd: 83, sp: 55 },
         weightkg: 80,
         abilities: { 0: 'Liquid Ooze' }
     },
     Swampert: {
-        types: ['물', '땅'],
+        types: ['Water', 'Ground'],
         bs: { hp: 100, at: 110, df: 90, sa: 85, sd: 90, sp: 60 },
         weightkg: 81.9,
         abilities: { 0: 'Torrent' }
     },
     Swellow: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 60, at: 85, df: 60, sa: 50, sd: 50, sp: 125 },
         weightkg: 19.8,
         abilities: { 0: 'Guts' }
     },
     Taillow: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 40, at: 55, df: 30, sa: 30, sd: 30, sp: 85 },
         weightkg: 2.3,
         nfe: true,
         abilities: { 0: 'Guts' }
     },
     Torchic: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 45, at: 60, df: 40, sa: 70, sd: 50, sp: 45 },
         weightkg: 2.5,
         nfe: true,
         abilities: { 0: 'Blaze' }
     },
     Torkoal: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 70, at: 85, df: 140, sa: 85, sd: 70, sp: 20 },
         weightkg: 80.4,
         abilities: { 0: 'White Smoke' }
     },
     Trapinch: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 45, at: 100, df: 45, sa: 45, sd: 45, sp: 10 },
         weightkg: 15,
         nfe: true,
         abilities: { 0: 'Hyper Cutter' }
     },
     Treecko: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 40, at: 45, df: 35, sa: 65, sd: 55, sp: 70 },
         weightkg: 5,
         nfe: true,
         abilities: { 0: 'Overgrow' }
     },
     Tropius: {
-        types: ['풀', '비행'],
+        types: ['Grass', 'Flying'],
         bs: { hp: 99, at: 68, df: 83, sa: 72, sd: 87, sp: 51 },
         weightkg: 100,
         abilities: { 0: 'Chlorophyll' }
     },
     Vibrava: {
-        types: ['땅', '드래곤'],
+        types: ['Ground', 'Dragon'],
         bs: { hp: 50, at: 70, df: 50, sa: 50, sd: 50, sp: 70 },
         weightkg: 15.3,
         abilities: { 0: 'Levitate' },
         nfe: true
     },
     Vigoroth: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 80, at: 80, df: 80, sa: 55, sd: 55, sp: 90 },
         weightkg: 46.5,
         abilities: { 0: 'Vital Spirit' },
         nfe: true
     },
     Volbeat: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 65, at: 73, df: 55, sa: 47, sd: 75, sp: 85 },
         weightkg: 17.7,
         abilities: { 0: 'Illuminate' }
     },
     Wailmer: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 130, at: 70, df: 35, sa: 70, sd: 35, sp: 60 },
         weightkg: 130,
         nfe: true,
         abilities: { 0: 'Water Veil' }
     },
     Wailord: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 170, at: 90, df: 45, sa: 90, sd: 45, sp: 60 },
         weightkg: 398,
         abilities: { 0: 'Water Veil' }
     },
     Walrein: {
-        types: ['얼음', '물'],
+        types: ['Ice', 'Water'],
         bs: { hp: 110, at: 80, df: 90, sa: 95, sd: 90, sp: 65 },
         weightkg: 150.6,
         abilities: { 0: 'Thick Fat' }
     },
     Whiscash: {
-        types: ['물', '땅'],
+        types: ['Water', 'Ground'],
         bs: { hp: 110, at: 78, df: 73, sa: 76, sd: 71, sp: 60 },
         weightkg: 23.6,
         abilities: { 0: 'Oblivious' }
     },
     Whismur: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 64, at: 51, df: 23, sa: 51, sd: 23, sp: 28 },
         weightkg: 16.3,
         nfe: true,
         abilities: { 0: 'Soundproof' }
     },
     Wingull: {
-        types: ['물', '비행'],
+        types: ['Water', 'Flying'],
         bs: { hp: 40, at: 30, df: 30, sa: 55, sd: 30, sp: 85 },
         weightkg: 9.5,
         nfe: true,
         abilities: { 0: 'Keen Eye' }
     },
     Wurmple: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 45, at: 45, df: 35, sa: 20, sd: 30, sp: 20 },
         weightkg: 3.6,
         nfe: true,
         abilities: { 0: 'Shield Dust' }
     },
     Wynaut: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 95, at: 23, df: 48, sa: 23, sd: 48, sp: 23 },
         weightkg: 14,
         nfe: true,
         abilities: { 0: 'Shadow Tag' }
     },
     Zangoose: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 73, at: 115, df: 60, sa: 60, sd: 60, sp: 90 },
         weightkg: 40.3,
         abilities: { 0: 'Immunity' }
     },
     Zigzagoon: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 38, at: 30, df: 41, sa: 30, sd: 41, sp: 60 },
         weightkg: 17.5,
         nfe: true,
@@ -2731,19 +2731,19 @@ var DPP_PATCH = {
     Togetic: { nfe: true },
     Yanma: { nfe: true },
     Abomasnow: {
-        types: ['풀', '얼음'],
+        types: ['Grass', 'Ice'],
         bs: { hp: 90, at: 92, df: 75, sa: 92, sd: 85, sp: 60 },
         weightkg: 135.5,
         abilities: { 0: 'Snow Warning' }
     },
     Ambipom: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 75, at: 100, df: 66, sa: 60, sd: 66, sp: 115 },
         weightkg: 20.3,
         abilities: { 0: 'Technician' }
     },
     Arceus: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2768,7 +2768,7 @@ var DPP_PATCH = {
         ]
     },
     'Arceus-Bug': {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2776,7 +2776,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Dark': {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2784,7 +2784,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Dragon': {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2792,7 +2792,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Electric': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2800,7 +2800,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Fighting': {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2808,7 +2808,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Fire': {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2816,7 +2816,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Flying': {
-        types: ['비행'],
+        types: ['Flying'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2824,7 +2824,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Ghost': {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2832,7 +2832,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Grass': {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2840,7 +2840,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Ground': {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2848,7 +2848,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Ice': {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2856,7 +2856,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Poison': {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2864,7 +2864,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Psychic': {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2872,7 +2872,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Rock': {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2880,7 +2880,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Steel': {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2888,7 +2888,7 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     'Arceus-Water': {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -2896,60 +2896,60 @@ var DPP_PATCH = {
         baseSpecies: 'Arceus'
     },
     Arghonaut: {
-        types: ['물', '격투'],
+        types: ['Water', 'Fighting'],
         bs: { hp: 105, at: 110, df: 95, sa: 70, sd: 100, sp: 75 },
         weightkg: 151,
         abilities: { 0: 'Unaware' }
     },
     Azelf: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 75, at: 125, df: 70, sa: 125, sd: 70, sp: 115 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
         gender: 'N'
     },
     Bastiodon: {
-        types: ['바위', '강철'],
+        types: ['Rock', 'Steel'],
         bs: { hp: 60, at: 52, df: 168, sa: 47, sd: 138, sp: 30 },
         weightkg: 149.5,
         abilities: { 0: 'Sturdy' }
     },
     Bibarel: {
-        types: ['노말', '물'],
+        types: ['Normal', 'Water'],
         bs: { hp: 79, at: 85, df: 60, sa: 55, sd: 60, sp: 71 },
         weightkg: 31.5,
         abilities: { 0: 'Simple' }
     },
     Bidoof: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 59, at: 45, df: 40, sa: 35, sd: 40, sp: 31 },
         weightkg: 20,
         nfe: true,
         abilities: { 0: 'Simple' }
     },
     Bonsly: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 50, at: 80, df: 95, sa: 10, sd: 45, sp: 10 },
         weightkg: 15,
         nfe: true,
         abilities: { 0: 'Sturdy' }
     },
     Breezi: {
-        types: ['독', '비행'],
+        types: ['Poison', 'Flying'],
         bs: { hp: 50, at: 46, df: 69, sa: 60, sd: 50, sp: 75 },
         weightkg: 0.6,
         nfe: true,
         abilities: { 0: 'Unburden' }
     },
     Bronzong: {
-        types: ['강철', '에스퍼'],
+        types: ['Steel', 'Psychic'],
         bs: { hp: 67, at: 89, df: 116, sa: 79, sd: 116, sp: 33 },
         weightkg: 187,
         gender: 'N',
         abilities: { 0: 'Levitate' }
     },
     Bronzor: {
-        types: ['강철', '에스퍼'],
+        types: ['Steel', 'Psychic'],
         bs: { hp: 57, at: 24, df: 86, sa: 24, sd: 86, sp: 23 },
         weightkg: 60.5,
         nfe: true,
@@ -2957,257 +2957,257 @@ var DPP_PATCH = {
         abilities: { 0: 'Levitate' }
     },
     Budew: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 40, at: 30, df: 35, sa: 50, sd: 70, sp: 55 },
         weightkg: 1.2,
         nfe: true,
         abilities: { 0: 'Natural Cure' }
     },
     Buizel: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 55, at: 65, df: 35, sa: 60, sd: 30, sp: 85 },
         weightkg: 29.5,
         nfe: true,
         abilities: { 0: 'Swift Swim' }
     },
     Buneary: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 55, at: 66, df: 44, sa: 44, sd: 56, sp: 85 },
         weightkg: 5.5,
         nfe: true,
         abilities: { 0: 'Run Away' }
     },
     Burmy: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 40, at: 29, df: 45, sa: 29, sd: 45, sp: 36 },
         weightkg: 3.4,
         nfe: true,
         abilities: { 0: 'Shed Skin' }
     },
     Carnivine: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 74, at: 100, df: 72, sa: 90, sd: 72, sp: 46 },
         weightkg: 27,
         abilities: { 0: 'Levitate' }
     },
     Chatot: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 76, at: 65, df: 45, sa: 92, sd: 42, sp: 91 },
         weightkg: 1.9,
         abilities: { 0: 'Keen Eye' }
     },
     Cherrim: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 70, at: 60, df: 70, sa: 87, sd: 78, sp: 85 },
         weightkg: 9.3,
         abilities: { 0: 'Flower Gift' },
         otherFormes: ['Cherrim-Sunshine']
     },
     'Cherrim-Sunshine': {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 70, at: 60, df: 70, sa: 87, sd: 78, sp: 85 },
         weightkg: 9.3,
         abilities: { 0: 'Flower Gift' },
         baseSpecies: 'Cherrim'
     },
     Cherubi: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 45, at: 35, df: 45, sa: 62, sd: 53, sp: 35 },
         weightkg: 3.3,
         abilities: { 0: 'Chlorophyll' },
         nfe: true
     },
     Chimchar: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 44, at: 58, df: 44, sa: 58, sd: 44, sp: 61 },
         weightkg: 6.2,
         nfe: true,
         abilities: { 0: 'Blaze' }
     },
     Chingling: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 45, at: 30, df: 50, sa: 65, sd: 50, sp: 45 },
         weightkg: 0.6,
         abilities: { 0: 'Levitate' },
         nfe: true
     },
     Colossoil: {
-        types: ['땅', '악'],
+        types: ['Ground', 'Dark'],
         bs: { hp: 133, at: 122, df: 72, sa: 71, sd: 72, sp: 95 },
         weightkg: 683.6,
         abilities: { 0: 'Rebound' }
     },
     Combee: {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 30, at: 30, df: 42, sa: 30, sd: 42, sp: 70 },
         weightkg: 5.5,
         nfe: true,
         abilities: { 0: 'Honey Gather' }
     },
     Cranidos: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 67, at: 125, df: 40, sa: 30, sd: 30, sp: 58 },
         weightkg: 31.5,
         nfe: true,
         abilities: { 0: 'Mold Breaker' }
     },
     Cresselia: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 120, at: 70, df: 120, sa: 75, sd: 130, sp: 85 },
         weightkg: 85.6,
         abilities: { 0: 'Levitate' }
     },
     Croagunk: {
-        types: ['독', '격투'],
+        types: ['Poison', 'Fighting'],
         bs: { hp: 48, at: 61, df: 40, sa: 61, sd: 40, sp: 50 },
         weightkg: 23,
         nfe: true,
         abilities: { 0: 'Anticipation' }
     },
     Cyclohm: {
-        types: ['전기', '드래곤'],
+        types: ['Electric', 'Dragon'],
         bs: { hp: 108, at: 60, df: 118, sa: 112, sd: 70, sp: 80 },
         weightkg: 59,
         abilities: { 0: 'Shield Dust' }
     },
     Darkrai: {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 70, at: 90, df: 90, sa: 135, sd: 90, sp: 125 },
         weightkg: 50.5,
         abilities: { 0: 'Bad Dreams' },
         gender: 'N'
     },
     Dialga: {
-        types: ['강철', '드래곤'],
+        types: ['Steel', 'Dragon'],
         bs: { hp: 100, at: 120, df: 120, sa: 150, sd: 100, sp: 90 },
         weightkg: 683,
         gender: 'N',
         abilities: { 0: 'Pressure' }
     },
     Dorsoil: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 103, at: 72, df: 52, sa: 61, sd: 52, sp: 65 },
         weightkg: 145,
         nfe: true,
         abilities: { 0: 'Oblivious' }
     },
     Drapion: {
-        types: ['독', '악'],
+        types: ['Poison', 'Dark'],
         bs: { hp: 70, at: 90, df: 110, sa: 60, sd: 75, sp: 95 },
         weightkg: 61.5,
         abilities: { 0: 'Battle Armor' }
     },
     Drifblim: {
-        types: ['고스트', '비행'],
+        types: ['Ghost', 'Flying'],
         bs: { hp: 150, at: 80, df: 44, sa: 90, sd: 54, sp: 80 },
         weightkg: 15,
         abilities: { 0: 'Aftermath' }
     },
     Drifloon: {
-        types: ['고스트', '비행'],
+        types: ['Ghost', 'Flying'],
         bs: { hp: 90, at: 50, df: 34, sa: 60, sd: 44, sp: 70 },
         weightkg: 1.2,
         nfe: true,
         abilities: { 0: 'Aftermath' }
     },
     Duohm: {
-        types: ['전기', '드래곤'],
+        types: ['Electric', 'Dragon'],
         bs: { hp: 88, at: 40, df: 103, sa: 77, sd: 60, sp: 60 },
         weightkg: 19.2,
         nfe: true,
         abilities: { 0: 'Shield Dust' }
     },
     Dusknoir: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 45, at: 100, df: 135, sa: 65, sd: 135, sp: 45 },
         weightkg: 106.6,
         abilities: { 0: 'Pressure' }
     },
     Electivire: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 75, at: 123, df: 67, sa: 95, sd: 85, sp: 95 },
         weightkg: 138.6,
         abilities: { 0: 'Motor Drive' }
     },
     Embirch: {
-        types: ['불꽃', '풀'],
+        types: ['Fire', 'Grass'],
         bs: { hp: 60, at: 40, df: 55, sa: 65, sd: 40, sp: 60 },
         weightkg: 15,
         nfe: true,
         abilities: { 0: 'Reckless' }
     },
     Empoleon: {
-        types: ['물', '강철'],
+        types: ['Water', 'Steel'],
         bs: { hp: 84, at: 86, df: 88, sa: 111, sd: 101, sp: 60 },
         weightkg: 84.5,
         abilities: { 0: 'Torrent' }
     },
     Fidgit: {
-        types: ['독', '땅'],
+        types: ['Poison', 'Ground'],
         bs: { hp: 95, at: 76, df: 109, sa: 90, sd: 80, sp: 105 },
         weightkg: 53,
         abilities: { 0: 'Persistent' }
     },
     Finneon: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 49, at: 49, df: 56, sa: 49, sd: 61, sp: 66 },
         weightkg: 7,
         nfe: true,
         abilities: { 0: 'Swift Swim' }
     },
     Flarelm: {
-        types: ['불꽃', '풀'],
+        types: ['Fire', 'Grass'],
         bs: { hp: 90, at: 50, df: 95, sa: 75, sd: 70, sp: 40 },
         weightkg: 73,
         nfe: true,
         abilities: { 0: 'Rock Head' }
     },
     Floatzel: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 85, at: 105, df: 55, sa: 85, sd: 50, sp: 115 },
         weightkg: 33.5,
         abilities: { 0: 'Swift Swim' }
     },
     Froslass: {
-        types: ['얼음', '고스트'],
+        types: ['Ice', 'Ghost'],
         bs: { hp: 70, at: 80, df: 70, sa: 80, sd: 70, sp: 110 },
         weightkg: 26.6,
         abilities: { 0: 'Snow Cloak' }
     },
     Gabite: {
-        types: ['드래곤', '땅'],
+        types: ['Dragon', 'Ground'],
         bs: { hp: 68, at: 90, df: 65, sa: 50, sd: 55, sp: 82 },
         weightkg: 56,
         nfe: true,
         abilities: { 0: 'Sand Veil' }
     },
     Gallade: {
-        types: ['에스퍼', '격투'],
+        types: ['Psychic', 'Fighting'],
         bs: { hp: 68, at: 125, df: 65, sa: 65, sd: 115, sp: 80 },
         weightkg: 52,
         abilities: { 0: 'Steadfast' }
     },
     Garchomp: {
-        types: ['드래곤', '땅'],
+        types: ['Dragon', 'Ground'],
         bs: { hp: 108, at: 130, df: 95, sa: 80, sd: 85, sp: 102 },
         weightkg: 95,
         abilities: { 0: 'Sand Veil' }
     },
     Gastrodon: {
-        types: ['물', '땅'],
+        types: ['Water', 'Ground'],
         bs: { hp: 111, at: 83, df: 68, sa: 92, sd: 82, sp: 39 },
         weightkg: 29.9,
         abilities: { 0: 'Sticky Hold' }
     },
     Gible: {
-        types: ['드래곤', '땅'],
+        types: ['Dragon', 'Ground'],
         bs: { hp: 58, at: 70, df: 45, sa: 40, sd: 45, sp: 42 },
         weightkg: 20.5,
         nfe: true,
         abilities: { 0: 'Sand Veil' }
     },
     Giratina: {
-        types: ['고스트', '드래곤'],
+        types: ['Ghost', 'Dragon'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
@@ -3215,7 +3215,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Pressure' }
     },
     'Giratina-Origin': {
-        types: ['고스트', '드래곤'],
+        types: ['Ghost', 'Dragon'],
         bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 650,
         gender: 'N',
@@ -3223,312 +3223,312 @@ var DPP_PATCH = {
         baseSpecies: 'Giratina'
     },
     Glaceon: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 65, at: 60, df: 110, sa: 130, sd: 95, sp: 65 },
         weightkg: 25.9,
         abilities: { 0: 'Snow Cloak' }
     },
     Glameow: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 49, at: 55, df: 42, sa: 42, sd: 37, sp: 85 },
         weightkg: 3.9,
         nfe: true,
         abilities: { 0: 'Limber' }
     },
     Gliscor: {
-        types: ['땅', '비행'],
+        types: ['Ground', 'Flying'],
         bs: { hp: 75, at: 95, df: 125, sa: 45, sd: 75, sp: 95 },
         weightkg: 42.5,
         abilities: { 0: 'Hyper Cutter' }
     },
     Grotle: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 75, at: 89, df: 85, sa: 55, sd: 65, sp: 36 },
         weightkg: 97,
         nfe: true,
         abilities: { 0: 'Overgrow' }
     },
     Happiny: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 100, at: 5, df: 5, sa: 15, sd: 65, sp: 30 },
         weightkg: 24.4,
         nfe: true,
         abilities: { 0: 'Natural Cure' }
     },
     Heatran: {
-        types: ['불꽃', '강철'],
+        types: ['Fire', 'Steel'],
         bs: { hp: 91, at: 90, df: 106, sa: 130, sd: 106, sp: 77 },
         weightkg: 430,
         abilities: { 0: 'Flash Fire' }
     },
     Hippopotas: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 68, at: 72, df: 78, sa: 38, sd: 42, sp: 32 },
         weightkg: 49.5,
         nfe: true,
         abilities: { 0: 'Sand Stream' }
     },
     Hippowdon: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 108, at: 112, df: 118, sa: 68, sd: 72, sp: 47 },
         weightkg: 300,
         abilities: { 0: 'Sand Stream' }
     },
     Honchkrow: {
-        types: ['악', '비행'],
+        types: ['Dark', 'Flying'],
         bs: { hp: 100, at: 125, df: 52, sa: 105, sd: 52, sp: 71 },
         weightkg: 27.3,
         abilities: { 0: 'Insomnia' }
     },
     Infernape: {
-        types: ['불꽃', '격투'],
+        types: ['Fire', 'Fighting'],
         bs: { hp: 76, at: 104, df: 71, sa: 104, sd: 71, sp: 108 },
         weightkg: 55,
         abilities: { 0: 'Blaze' }
     },
     Kitsunoh: {
-        types: ['고스트', '강철'],
+        types: ['Ghost', 'Steel'],
         bs: { hp: 80, at: 103, df: 85, sa: 55, sd: 80, sp: 110 },
         weightkg: 51,
         abilities: { 0: 'Frisk' }
     },
     Kricketot: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 37, at: 25, df: 41, sa: 25, sd: 41, sp: 25 },
         weightkg: 2.2,
         nfe: true,
         abilities: { 0: 'Shed Skin' }
     },
     Kricketune: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 77, at: 85, df: 51, sa: 55, sd: 51, sp: 65 },
         weightkg: 25.5,
         abilities: { 0: 'Swarm' }
     },
     Krilowatt: {
-        types: ['전기', '물'],
+        types: ['Electric', 'Water'],
         bs: { hp: 151, at: 84, df: 73, sa: 83, sd: 74, sp: 105 },
         weightkg: 10.6,
         abilities: { 0: 'Trace' }
     },
     Leafeon: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 65, at: 110, df: 130, sa: 60, sd: 65, sp: 95 },
         weightkg: 25.5,
         abilities: { 0: 'Leaf Guard' }
     },
     Lickilicky: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 110, at: 85, df: 95, sa: 80, sd: 95, sp: 50 },
         weightkg: 140,
         abilities: { 0: 'Own Tempo' }
     },
     Lopunny: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 65, at: 76, df: 84, sa: 54, sd: 96, sp: 105 },
         weightkg: 33.3,
         abilities: { 0: 'Cute Charm' }
     },
     Lucario: {
-        types: ['격투', '강철'],
+        types: ['Fighting', 'Steel'],
         bs: { hp: 70, at: 110, df: 70, sa: 115, sd: 70, sp: 90 },
         weightkg: 54,
         abilities: { 0: 'Steadfast' }
     },
     Lumineon: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 69, at: 69, df: 76, sa: 69, sd: 86, sp: 91 },
         weightkg: 24,
         abilities: { 0: 'Swift Swim' }
     },
     Luxio: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 60, at: 85, df: 49, sa: 60, sd: 49, sp: 60 },
         weightkg: 30.5,
         nfe: true,
         abilities: { 0: 'Rivalry' }
     },
     Luxray: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 80, at: 120, df: 79, sa: 95, sd: 79, sp: 70 },
         weightkg: 42,
         abilities: { 0: 'Rivalry' }
     },
     Magmortar: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 75, at: 95, df: 67, sa: 125, sd: 95, sp: 83 },
         weightkg: 68,
         abilities: { 0: 'Flame Body' }
     },
     Magnezone: {
-        types: ['전기', '강철'],
+        types: ['Electric', 'Steel'],
         bs: { hp: 70, at: 70, df: 115, sa: 130, sd: 90, sp: 60 },
         weightkg: 180,
         gender: 'N',
         abilities: { 0: 'Magnet Pull' }
     },
     Mamoswine: {
-        types: ['얼음', '땅'],
+        types: ['Ice', 'Ground'],
         bs: { hp: 110, at: 130, df: 80, sa: 70, sd: 60, sp: 80 },
         weightkg: 291,
         abilities: { 0: 'Oblivious' }
     },
     Manaphy: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
         weightkg: 1.4,
         abilities: { 0: 'Hydration' },
         gender: 'N'
     },
     Mantyke: {
-        types: ['물', '비행'],
+        types: ['Water', 'Flying'],
         bs: { hp: 45, at: 20, df: 50, sa: 60, sd: 120, sp: 50 },
         weightkg: 65,
         nfe: true,
         abilities: { 0: 'Swift Swim' }
     },
     Mesprit: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 80, at: 105, df: 105, sa: 105, sd: 105, sp: 80 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
         gender: 'N'
     },
     'Mime Jr.': {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 20, at: 25, df: 45, sa: 70, sd: 90, sp: 60 },
         weightkg: 13,
         nfe: true,
         abilities: { 0: 'Soundproof' }
     },
     Mismagius: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 60, at: 60, df: 60, sa: 105, sd: 105, sp: 105 },
         weightkg: 4.4,
         abilities: { 0: 'Levitate' }
     },
     Monferno: {
-        types: ['불꽃', '격투'],
+        types: ['Fire', 'Fighting'],
         bs: { hp: 64, at: 78, df: 52, sa: 78, sd: 52, sp: 81 },
         weightkg: 22,
         nfe: true,
         abilities: { 0: 'Blaze' }
     },
     Monohm: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 53, at: 40, df: 58, sa: 67, sd: 55, sp: 55 },
         weightkg: 4.1,
         nfe: true,
         abilities: { 0: 'Shield Dust' }
     },
     Mothim: {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 70, at: 94, df: 50, sa: 94, sd: 50, sp: 66 },
         weightkg: 23.3,
         abilities: { 0: 'Swarm' }
     },
     Munchlax: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 135, at: 85, df: 40, sa: 40, sd: 85, sp: 5 },
         weightkg: 105,
         nfe: true,
         abilities: { 0: 'Pickup' }
     },
     Nohface: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 50, at: 73, df: 50, sa: 30, sd: 50, sp: 80 },
         weightkg: 5.9,
         nfe: true,
         abilities: { 0: 'Frisk' }
     },
     Pachirisu: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 60, at: 45, df: 70, sa: 45, sd: 90, sp: 95 },
         weightkg: 3.9,
         abilities: { 0: 'Run Away' }
     },
     Palkia: {
-        types: ['물', '드래곤'],
+        types: ['Water', 'Dragon'],
         bs: { hp: 90, at: 120, df: 100, sa: 150, sd: 120, sp: 100 },
         weightkg: 336,
         gender: 'N',
         abilities: { 0: 'Pressure' }
     },
     Phione: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 80, at: 80, df: 80, sa: 80, sd: 80, sp: 80 },
         weightkg: 3.1,
         abilities: { 0: 'Hydration' },
         gender: 'N'
     },
     'Pichu-Spiky-eared': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 20, at: 40, df: 15, sa: 35, sd: 35, sp: 60 },
         weightkg: 2,
         abilities: { 0: 'Static' },
         baseSpecies: 'Pichu'
     },
     Piplup: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 53, at: 51, df: 53, sa: 61, sd: 56, sp: 40 },
         weightkg: 5.2,
         nfe: true,
         abilities: { 0: 'Torrent' }
     },
     'Porygon-Z': {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 85, at: 80, df: 70, sa: 135, sd: 75, sp: 90 },
         weightkg: 34,
         gender: 'N',
         abilities: { 0: 'Adaptability' }
     },
     Prinplup: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 64, at: 66, df: 68, sa: 81, sd: 76, sp: 50 },
         weightkg: 23,
         nfe: true,
         abilities: { 0: 'Torrent' }
     },
     Privatyke: {
-        types: ['물', '격투'],
+        types: ['Water', 'Fighting'],
         bs: { hp: 65, at: 75, df: 65, sa: 40, sd: 60, sp: 45 },
         weightkg: 35,
         nfe: true,
         abilities: { 0: 'Unaware' }
     },
     Probopass: {
-        types: ['바위', '강철'],
+        types: ['Rock', 'Steel'],
         bs: { hp: 60, at: 55, df: 145, sa: 75, sd: 150, sp: 40 },
         weightkg: 340,
         abilities: { 0: 'Sturdy' }
     },
     Protowatt: {
-        types: ['전기', '물'],
+        types: ['Electric', 'Water'],
         bs: { hp: 51, at: 44, df: 33, sa: 43, sd: 34, sp: 65 },
         weightkg: 0.1,
         nfe: true,
         abilities: { 0: 'Trace' }
     },
     Purugly: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 71, at: 82, df: 64, sa: 64, sd: 59, sp: 112 },
         weightkg: 43.8,
         abilities: { 0: 'Thick Fat' }
     },
     Pyroak: {
-        types: ['불꽃', '풀'],
+        types: ['Fire', 'Grass'],
         bs: { hp: 120, at: 70, df: 105, sa: 95, sd: 90, sp: 60 },
         weightkg: 168,
         abilities: { 0: 'Rock Head' }
     },
     Rampardos: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 97, at: 165, df: 60, sa: 65, sd: 50, sp: 58 },
         weightkg: 102.5,
         abilities: { 0: 'Mold Breaker' }
     },
     Rebble: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 45, at: 25, df: 65, sa: 75, sd: 55, sp: 80 },
         weightkg: 7,
         nfe: true,
@@ -3536,39 +3536,39 @@ var DPP_PATCH = {
         abilities: { 0: 'Levitate' }
     },
     Regigigas: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 110, at: 160, df: 110, sa: 80, sd: 110, sp: 100 },
         weightkg: 420,
         abilities: { 0: 'Slow Start' },
         gender: 'N'
     },
     Revenankh: {
-        types: ['고스트', '격투'],
+        types: ['Ghost', 'Fighting'],
         bs: { hp: 90, at: 105, df: 90, sa: 65, sd: 110, sp: 65 },
         weightkg: 44,
         abilities: { 0: 'Shed Skin' }
     },
     Rhyperior: {
-        types: ['땅', '바위'],
+        types: ['Ground', 'Rock'],
         bs: { hp: 115, at: 140, df: 130, sa: 55, sd: 55, sp: 40 },
         weightkg: 282.8,
         abilities: { 0: 'Lightning Rod' }
     },
     Riolu: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 40, at: 70, df: 40, sa: 35, sd: 40, sp: 60 },
         weightkg: 20.2,
         nfe: true,
         abilities: { 0: 'Steadfast' }
     },
     Roserade: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 60, at: 70, df: 55, sa: 125, sd: 105, sp: 90 },
         weightkg: 14.5,
         abilities: { 0: 'Natural Cure' }
     },
     Rotom: {
-        types: ['전기', '고스트'],
+        types: ['Electric', 'Ghost'],
         bs: { hp: 50, at: 50, df: 77, sa: 95, sd: 77, sp: 91 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
@@ -3576,7 +3576,7 @@ var DPP_PATCH = {
         otherFormes: ['Rotom-Fan', 'Rotom-Frost', 'Rotom-Heat', 'Rotom-Mow', 'Rotom-Wash']
     },
     'Rotom-Mow': {
-        types: ['전기', '고스트'],
+        types: ['Electric', 'Ghost'],
         bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
@@ -3584,7 +3584,7 @@ var DPP_PATCH = {
         baseSpecies: 'Rotom'
     },
     'Rotom-Frost': {
-        types: ['전기', '고스트'],
+        types: ['Electric', 'Ghost'],
         bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
@@ -3592,7 +3592,7 @@ var DPP_PATCH = {
         baseSpecies: 'Rotom'
     },
     'Rotom-Heat': {
-        types: ['전기', '고스트'],
+        types: ['Electric', 'Ghost'],
         bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
@@ -3600,7 +3600,7 @@ var DPP_PATCH = {
         baseSpecies: 'Rotom'
     },
     'Rotom-Fan': {
-        types: ['전기', '고스트'],
+        types: ['Electric', 'Ghost'],
         bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
@@ -3608,7 +3608,7 @@ var DPP_PATCH = {
         baseSpecies: 'Rotom'
     },
     'Rotom-Wash': {
-        types: ['전기', '고스트'],
+        types: ['Electric', 'Ghost'],
         bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
@@ -3616,7 +3616,7 @@ var DPP_PATCH = {
         baseSpecies: 'Rotom'
     },
     Shaymin: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
         weightkg: 2.1,
         abilities: { 0: 'Natural Cure' },
@@ -3624,7 +3624,7 @@ var DPP_PATCH = {
         otherFormes: ['Shaymin-Sky']
     },
     'Shaymin-Sky': {
-        types: ['풀', '비행'],
+        types: ['Grass', 'Flying'],
         bs: { hp: 100, at: 103, df: 75, sa: 120, sd: 75, sp: 127 },
         weightkg: 5.2,
         abilities: { 0: 'Serene Grace' },
@@ -3632,101 +3632,101 @@ var DPP_PATCH = {
         baseSpecies: 'Shaymin'
     },
     Shellos: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 76, at: 48, df: 48, sa: 57, sd: 62, sp: 34 },
         weightkg: 6.3,
         nfe: true,
         abilities: { 0: 'Sticky Hold' }
     },
     Shieldon: {
-        types: ['바위', '강철'],
+        types: ['Rock', 'Steel'],
         bs: { hp: 30, at: 42, df: 118, sa: 42, sd: 88, sp: 30 },
         weightkg: 57,
         nfe: true,
         abilities: { 0: 'Sturdy' }
     },
     Shinx: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 45, at: 65, df: 34, sa: 40, sd: 34, sp: 45 },
         weightkg: 9.5,
         nfe: true,
         abilities: { 0: 'Rivalry' }
     },
     Skorupi: {
-        types: ['독', '벌레'],
+        types: ['Poison', 'Bug'],
         bs: { hp: 40, at: 50, df: 90, sa: 30, sd: 55, sp: 65 },
         weightkg: 12,
         nfe: true,
         abilities: { 0: 'Battle Armor' }
     },
     Skuntank: {
-        types: ['독', '악'],
+        types: ['Poison', 'Dark'],
         bs: { hp: 103, at: 93, df: 67, sa: 71, sd: 61, sp: 84 },
         weightkg: 38,
         abilities: { 0: 'Stench' }
     },
     Snover: {
-        types: ['풀', '얼음'],
+        types: ['Grass', 'Ice'],
         bs: { hp: 60, at: 62, df: 50, sa: 62, sd: 60, sp: 40 },
         weightkg: 50.5,
         nfe: true,
         abilities: { 0: 'Snow Warning' }
     },
     Spiritomb: {
-        types: ['고스트', '악'],
+        types: ['Ghost', 'Dark'],
         bs: { hp: 50, at: 92, df: 108, sa: 92, sd: 108, sp: 35 },
         weightkg: 108,
         abilities: { 0: 'Pressure' }
     },
     Staraptor: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 85, at: 120, df: 70, sa: 50, sd: 50, sp: 100 },
         weightkg: 24.9,
         abilities: { 0: 'Intimidate' }
     },
     Staravia: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 55, at: 75, df: 50, sa: 40, sd: 40, sp: 80 },
         weightkg: 15.5,
         nfe: true,
         abilities: { 0: 'Intimidate' }
     },
     Starly: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 40, at: 55, df: 30, sa: 30, sd: 30, sp: 60 },
         weightkg: 2,
         nfe: true,
         abilities: { 0: 'Keen Eye' }
     },
     Stratagem: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 90, at: 60, df: 65, sa: 120, sd: 70, sp: 130 },
         weightkg: 45,
         gender: 'N',
         abilities: { 0: 'Levitate' }
     },
     Stunky: {
-        types: ['독', '악'],
+        types: ['Poison', 'Dark'],
         bs: { hp: 63, at: 63, df: 47, sa: 41, sd: 41, sp: 74 },
         weightkg: 19.2,
         nfe: true,
         abilities: { 0: 'Stench' }
     },
     Syclant: {
-        types: ['얼음', '벌레'],
+        types: ['Ice', 'Bug'],
         bs: { hp: 70, at: 116, df: 70, sa: 114, sd: 64, sp: 121 },
         weightkg: 52,
         abilities: { 0: 'Compound Eyes' }
     },
     Syclar: {
-        types: ['얼음', '벌레'],
+        types: ['Ice', 'Bug'],
         bs: { hp: 40, at: 76, df: 45, sa: 74, sd: 39, sp: 91 },
         weightkg: 4,
         nfe: true,
         abilities: { 0: 'Compound Eyes' }
     },
     Tactite: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 70, at: 40, df: 65, sa: 100, sd: 65, sp: 95 },
         weightkg: 16,
         nfe: true,
@@ -3734,91 +3734,91 @@ var DPP_PATCH = {
         abilities: { 0: 'Levitate' }
     },
     Tangrowth: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 100, at: 100, df: 125, sa: 110, sd: 50, sp: 50 },
         weightkg: 128.6,
         abilities: { 0: 'Chlorophyll' }
     },
     Togekiss: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 85, at: 50, df: 95, sa: 120, sd: 115, sp: 80 },
         weightkg: 38,
         abilities: { 0: 'Hustle' }
     },
     Torterra: {
-        types: ['풀', '땅'],
+        types: ['Grass', 'Ground'],
         bs: { hp: 95, at: 109, df: 105, sa: 75, sd: 85, sp: 56 },
         weightkg: 310,
         abilities: { 0: 'Overgrow' }
     },
     Toxicroak: {
-        types: ['독', '격투'],
+        types: ['Poison', 'Fighting'],
         bs: { hp: 83, at: 106, df: 65, sa: 86, sd: 65, sp: 85 },
         weightkg: 44.4,
         abilities: { 0: 'Anticipation' }
     },
     Turtwig: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 55, at: 68, df: 64, sa: 45, sd: 55, sp: 31 },
         weightkg: 10.2,
         nfe: true,
         abilities: { 0: 'Overgrow' }
     },
     Uxie: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 75, at: 75, df: 130, sa: 75, sd: 130, sp: 95 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
         gender: 'N'
     },
     Vespiquen: {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 70, at: 80, df: 102, sa: 80, sd: 102, sp: 40 },
         weightkg: 38.5,
         abilities: { 0: 'Pressure' }
     },
     Voodoll: {
-        types: ['노말', '악'],
+        types: ['Normal', 'Dark'],
         bs: { hp: 55, at: 40, df: 55, sa: 75, sd: 50, sp: 70 },
         weightkg: 25,
         nfe: true,
         abilities: { 0: 'Volt Absorb' }
     },
     Voodoom: {
-        types: ['격투', '악'],
+        types: ['Fighting', 'Dark'],
         bs: { hp: 90, at: 85, df: 80, sa: 105, sd: 80, sp: 110 },
         weightkg: 75.5,
         abilities: { 0: 'Volt Absorb' }
     },
     Weavile: {
-        types: ['악', '얼음'],
+        types: ['Dark', 'Ice'],
         bs: { hp: 70, at: 120, df: 65, sa: 45, sd: 85, sp: 125 },
         weightkg: 34,
         abilities: { 0: 'Pressure' }
     },
     Wormadam: {
-        types: ['벌레', '풀'],
+        types: ['Bug', 'Grass'],
         bs: { hp: 60, at: 59, df: 85, sa: 79, sd: 105, sp: 36 },
         weightkg: 6.5,
         abilities: { 0: 'Anticipation' },
         otherFormes: ['Wormadam-Sandy', 'Wormadam-Trash']
     },
     'Wormadam-Sandy': {
-        types: ['벌레', '땅'],
+        types: ['Bug', 'Ground'],
         bs: { hp: 60, at: 79, df: 105, sa: 59, sd: 85, sp: 36 },
         weightkg: 6.5,
         abilities: { 0: 'Anticipation' },
         baseSpecies: 'Wormadam'
     },
     'Wormadam-Trash': {
-        types: ['벌레', '강철'],
+        types: ['Bug', 'Steel'],
         bs: { hp: 60, at: 69, df: 95, sa: 69, sd: 95, sp: 36 },
         weightkg: 6.5,
         abilities: { 0: 'Anticipation' },
         baseSpecies: 'Wormadam'
     },
     Yanmega: {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 86, at: 76, df: 86, sa: 116, sd: 56, sp: 95 },
         weightkg: 51.5,
         abilities: { 0: 'Speed Boost' }
@@ -3826,391 +3826,391 @@ var DPP_PATCH = {
 };
 var DPP = (0, util_1.extend)(true, {}, ADV, DPP_PATCH);
 var BW_PATCH = {
-    'Rotom-Fan': { types: ['전기', '비행'] },
-    'Rotom-Frost': { types: ['전기', '얼음'] },
-    'Rotom-Heat': { types: ['전기', '불꽃'] },
-    'Rotom-Mow': { types: ['전기', '풀'] },
-    'Rotom-Wash': { types: ['전기', '물'] },
+    'Rotom-Fan': { types: ['Electric', 'Flying'] },
+    'Rotom-Frost': { types: ['Electric', 'Ice'] },
+    'Rotom-Heat': { types: ['Electric', 'Fire'] },
+    'Rotom-Mow': { types: ['Electric', 'Grass'] },
+    'Rotom-Wash': { types: ['Electric', 'Water'] },
     Accelgor: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 80, at: 70, df: 40, sa: 100, sd: 60, sp: 145 },
         weightkg: 25.3,
         abilities: { 0: 'Hydration' }
     },
     Alomomola: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 165, at: 75, df: 80, sa: 40, sd: 45, sp: 65 },
         weightkg: 31.6,
         abilities: { 0: 'Healer' }
     },
     Amoonguss: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 114, at: 85, df: 70, sa: 85, sd: 80, sp: 30 },
         weightkg: 10.5,
         abilities: { 0: 'Effect Spore' }
     },
     Archen: {
-        types: ['바위', '비행'],
+        types: ['Rock', 'Flying'],
         bs: { hp: 55, at: 112, df: 45, sa: 74, sd: 45, sp: 70 },
         weightkg: 9.5,
         abilities: { 0: 'Defeatist' },
         nfe: true
     },
     Archeops: {
-        types: ['바위', '비행'],
+        types: ['Rock', 'Flying'],
         bs: { hp: 75, at: 140, df: 65, sa: 112, sd: 65, sp: 110 },
         weightkg: 32,
         abilities: { 0: 'Defeatist' }
     },
     Argalis: {
-        types: ['벌레', '에스퍼'],
+        types: ['Bug', 'Psychic'],
         bs: { hp: 60, at: 90, df: 89, sa: 87, sd: 40, sp: 54 },
         weightkg: 341.4,
         nfe: true,
         abilities: { 0: 'Shed Skin' }
     },
     Audino: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 103, at: 60, df: 86, sa: 60, sd: 86, sp: 50 },
         weightkg: 31,
         abilities: { 0: 'Healer' }
     },
     Aurumoth: {
-        types: ['벌레', '에스퍼'],
+        types: ['Bug', 'Psychic'],
         bs: { hp: 110, at: 120, df: 99, sa: 117, sd: 60, sp: 94 },
         weightkg: 193,
         abilities: { 0: 'Weak Armor' }
     },
     Axew: {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 46, at: 87, df: 60, sa: 30, sd: 40, sp: 57 },
         weightkg: 18,
         nfe: true,
         abilities: { 0: 'Rivalry' }
     },
     Basculin: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 70, at: 92, df: 65, sa: 80, sd: 55, sp: 98 },
         weightkg: 18,
         abilities: { 0: 'Reckless' },
         otherFormes: ['Basculin-Blue-Striped']
     },
     'Basculin-Blue-Striped': {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 70, at: 92, df: 65, sa: 80, sd: 55, sp: 98 },
         weightkg: 18,
         abilities: { 0: 'Rock Head' },
         baseSpecies: 'Basculin'
     },
     Beartic: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 95, at: 110, df: 80, sa: 70, sd: 80, sp: 50 },
         weightkg: 260,
         abilities: { 0: 'Snow Cloak' }
     },
     Beheeyem: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 75, at: 75, df: 75, sa: 125, sd: 95, sp: 40 },
         weightkg: 34.5,
         abilities: { 0: 'Telepathy' }
     },
     Bisharp: {
-        types: ['악', '강철'],
+        types: ['Dark', 'Steel'],
         bs: { hp: 65, at: 125, df: 100, sa: 60, sd: 70, sp: 70 },
         weightkg: 70,
         abilities: { 0: 'Defiant' }
     },
     Blitzle: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 45, at: 60, df: 32, sa: 50, sd: 32, sp: 76 },
         weightkg: 29.8,
         nfe: true,
         abilities: { 0: 'Lightning Rod' }
     },
     Boldore: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 70, at: 105, df: 105, sa: 50, sd: 40, sp: 20 },
         weightkg: 102,
         nfe: true,
         abilities: { 0: 'Sturdy' }
     },
     Bouffalant: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 95, at: 110, df: 95, sa: 40, sd: 95, sp: 55 },
         weightkg: 94.6,
         abilities: { 0: 'Reckless' }
     },
     Brattler: {
-        types: ['악', '풀'],
+        types: ['Dark', 'Grass'],
         bs: { hp: 80, at: 70, df: 40, sa: 20, sd: 90, sp: 30 },
         weightkg: 11.5,
         nfe: true,
         abilities: { 0: 'Harvest' }
     },
     Braviary: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 100, at: 123, df: 75, sa: 57, sd: 75, sp: 80 },
         weightkg: 41,
         abilities: { 0: 'Keen Eye' }
     },
     Carracosta: {
-        types: ['물', '바위'],
+        types: ['Water', 'Rock'],
         bs: { hp: 74, at: 108, df: 133, sa: 83, sd: 65, sp: 32 },
         weightkg: 81,
         abilities: { 0: 'Solid Rock' }
     },
     Cawdet: {
-        types: ['강철', '비행'],
+        types: ['Steel', 'Flying'],
         bs: { hp: 35, at: 72, df: 85, sa: 40, sd: 55, sp: 88 },
         weightkg: 25,
         nfe: true,
         abilities: { 0: 'Keen Eye' }
     },
     Cawmodore: {
-        types: ['강철', '비행'],
+        types: ['Steel', 'Flying'],
         bs: { hp: 50, at: 92, df: 130, sa: 65, sd: 75, sp: 118 },
         weightkg: 37,
         abilities: { 0: 'Intimidate' }
     },
     Chandelure: {
-        types: ['고스트', '불꽃'],
+        types: ['Ghost', 'Fire'],
         bs: { hp: 60, at: 55, df: 90, sa: 145, sd: 90, sp: 80 },
         weightkg: 34.3,
         abilities: { 0: 'Flash Fire' }
     },
     Cinccino: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 75, at: 95, df: 60, sa: 65, sd: 60, sp: 115 },
         weightkg: 7.5,
         abilities: { 0: 'Cute Charm' }
     },
     Cobalion: {
-        types: ['강철', '격투'],
+        types: ['Steel', 'Fighting'],
         bs: { hp: 91, at: 90, df: 129, sa: 90, sd: 72, sp: 108 },
         weightkg: 250,
         abilities: { 0: 'Justified' },
         gender: 'N'
     },
     Cofagrigus: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 58, at: 50, df: 145, sa: 95, sd: 105, sp: 30 },
         weightkg: 76.5,
         abilities: { 0: 'Mummy' }
     },
     Conkeldurr: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 105, at: 140, df: 95, sa: 55, sd: 65, sp: 45 },
         weightkg: 87,
         abilities: { 0: 'Guts' }
     },
     Cottonee: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 40, at: 27, df: 60, sa: 37, sd: 50, sp: 66 },
         weightkg: 0.6,
         nfe: true,
         abilities: { 0: 'Prankster' }
     },
     Crustle: {
-        types: ['벌레', '바위'],
+        types: ['Bug', 'Rock'],
         bs: { hp: 70, at: 95, df: 125, sa: 65, sd: 75, sp: 45 },
         weightkg: 200,
         abilities: { 0: 'Sturdy' }
     },
     Cryogonal: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 70, at: 50, df: 30, sa: 95, sd: 135, sp: 105 },
         weightkg: 148,
         abilities: { 0: 'Levitate' },
         gender: 'N'
     },
     Cubchoo: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 55, at: 70, df: 40, sa: 60, sd: 40, sp: 40 },
         weightkg: 8.5,
         nfe: true,
         abilities: { 0: 'Snow Cloak' }
     },
     Cupra: {
-        types: ['벌레', '에스퍼'],
+        types: ['Bug', 'Psychic'],
         bs: { hp: 50, at: 60, df: 49, sa: 67, sd: 30, sp: 44 },
         weightkg: 4.8,
         nfe: true,
         abilities: { 0: 'Shield Dust' }
     },
     Darmanitan: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 105, at: 140, df: 55, sa: 30, sd: 55, sp: 95 },
         weightkg: 92.9,
         abilities: { 0: 'Sheer Force' },
         otherFormes: ['Darmanitan-Zen']
     },
     'Darmanitan-Zen': {
-        types: ['불꽃', '에스퍼'],
+        types: ['Fire', 'Psychic'],
         bs: { hp: 105, at: 30, df: 105, sa: 140, sd: 105, sp: 55 },
         weightkg: 92.9,
         baseSpecies: 'Darmanitan',
         abilities: { 0: 'Zen Mode' }
     },
     Darumaka: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 70, at: 90, df: 45, sa: 15, sd: 45, sp: 50 },
         weightkg: 37.5,
         nfe: true,
         abilities: { 0: 'Hustle' }
     },
     Deerling: {
-        types: ['노말', '풀'],
+        types: ['Normal', 'Grass'],
         bs: { hp: 60, at: 60, df: 50, sa: 40, sd: 50, sp: 75 },
         weightkg: 19.5,
         nfe: true,
         abilities: { 0: 'Chlorophyll' }
     },
     Deino: {
-        types: ['악', '드래곤'],
+        types: ['Dark', 'Dragon'],
         bs: { hp: 52, at: 65, df: 50, sa: 45, sd: 50, sp: 38 },
         weightkg: 17.3,
         abilities: { 0: 'Hustle' },
         nfe: true
     },
     Dewott: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 75, at: 75, df: 60, sa: 83, sd: 60, sp: 60 },
         weightkg: 24.5,
         nfe: true,
         abilities: { 0: 'Torrent' }
     },
     Drilbur: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 60, at: 85, df: 40, sa: 30, sd: 45, sp: 68 },
         weightkg: 8.5,
         nfe: true,
         abilities: { 0: 'Sand Rush' }
     },
     Druddigon: {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 77, at: 120, df: 90, sa: 60, sd: 90, sp: 48 },
         weightkg: 139,
         abilities: { 0: 'Rough Skin' }
     },
     Ducklett: {
-        types: ['물', '비행'],
+        types: ['Water', 'Flying'],
         bs: { hp: 62, at: 44, df: 50, sa: 44, sd: 50, sp: 55 },
         weightkg: 5.5,
         nfe: true,
         abilities: { 0: 'Keen Eye' }
     },
     Duosion: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 65, at: 40, df: 50, sa: 125, sd: 60, sp: 30 },
         weightkg: 8,
         nfe: true,
         abilities: { 0: 'Overcoat' }
     },
     Durant: {
-        types: ['벌레', '강철'],
+        types: ['Bug', 'Steel'],
         bs: { hp: 58, at: 109, df: 112, sa: 48, sd: 48, sp: 109 },
         weightkg: 33,
         abilities: { 0: 'Swarm' }
     },
     Dwebble: {
-        types: ['벌레', '바위'],
+        types: ['Bug', 'Rock'],
         bs: { hp: 50, at: 65, df: 85, sa: 35, sd: 35, sp: 55 },
         weightkg: 14.5,
         nfe: true,
         abilities: { 0: 'Sturdy' }
     },
     Eelektrik: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 65, at: 85, df: 70, sa: 75, sd: 70, sp: 40 },
         weightkg: 22,
         abilities: { 0: 'Levitate' },
         nfe: true
     },
     Eelektross: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 85, at: 115, df: 80, sa: 105, sd: 80, sp: 50 },
         weightkg: 80.5,
         abilities: { 0: 'Levitate' }
     },
     Elgyem: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 55, at: 55, df: 55, sa: 85, sd: 55, sp: 30 },
         weightkg: 9,
         nfe: true,
         abilities: { 0: 'Telepathy' }
     },
     Emboar: {
-        types: ['불꽃', '격투'],
+        types: ['Fire', 'Fighting'],
         bs: { hp: 110, at: 123, df: 65, sa: 100, sd: 65, sp: 65 },
         weightkg: 150,
         abilities: { 0: 'Blaze' }
     },
     Emolga: {
-        types: ['전기', '비행'],
+        types: ['Electric', 'Flying'],
         bs: { hp: 55, at: 75, df: 60, sa: 75, sd: 60, sp: 103 },
         weightkg: 5,
         abilities: { 0: 'Static' }
     },
     Escavalier: {
-        types: ['벌레', '강철'],
+        types: ['Bug', 'Steel'],
         bs: { hp: 70, at: 135, df: 105, sa: 60, sd: 105, sp: 20 },
         weightkg: 33,
         abilities: { 0: 'Swarm' }
     },
     Excadrill: {
-        types: ['땅', '강철'],
+        types: ['Ground', 'Steel'],
         bs: { hp: 110, at: 135, df: 60, sa: 50, sd: 65, sp: 88 },
         weightkg: 40.4,
         abilities: { 0: 'Sand Rush' }
     },
     Ferroseed: {
-        types: ['풀', '강철'],
+        types: ['Grass', 'Steel'],
         bs: { hp: 44, at: 50, df: 91, sa: 24, sd: 86, sp: 10 },
         weightkg: 18.8,
         nfe: true,
         abilities: { 0: 'Iron Barbs' }
     },
     Ferrothorn: {
-        types: ['풀', '강철'],
+        types: ['Grass', 'Steel'],
         bs: { hp: 74, at: 94, df: 131, sa: 54, sd: 116, sp: 20 },
         weightkg: 110,
         abilities: { 0: 'Iron Barbs' }
     },
     Foongus: {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 69, at: 55, df: 45, sa: 55, sd: 55, sp: 15 },
         weightkg: 1,
         nfe: true,
         abilities: { 0: 'Effect Spore' }
     },
     Fraxure: {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 66, at: 117, df: 70, sa: 40, sd: 50, sp: 67 },
         weightkg: 36,
         nfe: true,
         abilities: { 0: 'Rivalry' }
     },
     Frillish: {
-        types: ['물', '고스트'],
+        types: ['Water', 'Ghost'],
         bs: { hp: 55, at: 40, df: 50, sa: 65, sd: 85, sp: 40 },
         weightkg: 33,
         nfe: true,
         abilities: { 0: 'Water Absorb' }
     },
     Galvantula: {
-        types: ['벌레', '전기'],
+        types: ['Bug', 'Electric'],
         bs: { hp: 70, at: 77, df: 60, sa: 97, sd: 60, sp: 108 },
         weightkg: 14.3,
         abilities: { 0: 'Compound Eyes' }
     },
     Garbodor: {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 80, at: 95, df: 82, sa: 60, sd: 82, sp: 75 },
         weightkg: 107.3,
         abilities: { 0: 'Stench' }
     },
     Genesect: {
-        types: ['벌레', '강철'],
+        types: ['Bug', 'Steel'],
         bs: { hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99 },
         weightkg: 82.5,
         abilities: { 0: 'Download' },
@@ -4218,7 +4218,7 @@ var BW_PATCH = {
         otherFormes: ['Genesect-Burn', 'Genesect-Chill', 'Genesect-Douse', 'Genesect-Shock']
     },
     'Genesect-Burn': {
-        types: ['벌레', '강철'],
+        types: ['Bug', 'Steel'],
         bs: { hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99 },
         weightkg: 82.5,
         abilities: { 0: 'Download' },
@@ -4226,7 +4226,7 @@ var BW_PATCH = {
         baseSpecies: 'Genesect'
     },
     'Genesect-Chill': {
-        types: ['벌레', '강철'],
+        types: ['Bug', 'Steel'],
         bs: { hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99 },
         weightkg: 82.5,
         abilities: { 0: 'Download' },
@@ -4234,7 +4234,7 @@ var BW_PATCH = {
         baseSpecies: 'Genesect'
     },
     'Genesect-Douse': {
-        types: ['벌레', '강철'],
+        types: ['Bug', 'Steel'],
         bs: { hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99 },
         weightkg: 82.5,
         abilities: { 0: 'Download' },
@@ -4242,7 +4242,7 @@ var BW_PATCH = {
         baseSpecies: 'Genesect'
     },
     'Genesect-Shock': {
-        types: ['벌레', '강철'],
+        types: ['Bug', 'Steel'],
         bs: { hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99 },
         weightkg: 82.5,
         abilities: { 0: 'Download' },
@@ -4250,13 +4250,13 @@ var BW_PATCH = {
         baseSpecies: 'Genesect'
     },
     Gigalith: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 85, at: 135, df: 130, sa: 60, sd: 70, sp: 25 },
         weightkg: 260,
         abilities: { 0: 'Sturdy' }
     },
     Golett: {
-        types: ['땅', '고스트'],
+        types: ['Ground', 'Ghost'],
         bs: { hp: 59, at: 74, df: 50, sa: 35, sd: 50, sp: 35 },
         weightkg: 92,
         nfe: true,
@@ -4264,86 +4264,86 @@ var BW_PATCH = {
         abilities: { 0: 'Iron Fist' }
     },
     Golurk: {
-        types: ['땅', '고스트'],
+        types: ['Ground', 'Ghost'],
         bs: { hp: 89, at: 124, df: 80, sa: 55, sd: 80, sp: 55 },
         weightkg: 330,
         gender: 'N',
         abilities: { 0: 'Iron Fist' }
     },
     Gothita: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 45, at: 30, df: 50, sa: 55, sd: 65, sp: 45 },
         weightkg: 5.8,
         nfe: true,
         abilities: { 0: 'Frisk' }
     },
     Gothitelle: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 70, at: 55, df: 95, sa: 95, sd: 110, sp: 65 },
         weightkg: 44,
         abilities: { 0: 'Frisk' }
     },
     Gothorita: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 60, at: 45, df: 70, sa: 75, sd: 85, sp: 55 },
         weightkg: 18,
         nfe: true,
         abilities: { 0: 'Frisk' }
     },
     Gurdurr: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 85, at: 105, df: 85, sa: 40, sd: 50, sp: 40 },
         weightkg: 40,
         nfe: true,
         abilities: { 0: 'Guts' }
     },
     Haxorus: {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 76, at: 147, df: 90, sa: 60, sd: 70, sp: 97 },
         weightkg: 105.5,
         abilities: { 0: 'Rivalry' }
     },
     Heatmor: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 85, at: 97, df: 66, sa: 105, sd: 66, sp: 65 },
         weightkg: 58,
         abilities: { 0: 'Gluttony' }
     },
     Herdier: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 65, at: 80, df: 65, sa: 35, sd: 65, sp: 60 },
         weightkg: 14.7,
         nfe: true,
         abilities: { 0: 'Intimidate' }
     },
     Hydreigon: {
-        types: ['악', '드래곤'],
+        types: ['Dark', 'Dragon'],
         bs: { hp: 92, at: 105, df: 90, sa: 125, sd: 90, sp: 98 },
         weightkg: 160,
         abilities: { 0: 'Levitate' }
     },
     Jellicent: {
-        types: ['물', '고스트'],
+        types: ['Water', 'Ghost'],
         bs: { hp: 100, at: 60, df: 70, sa: 85, sd: 105, sp: 60 },
         weightkg: 135,
         abilities: { 0: 'Water Absorb' }
     },
     Joltik: {
-        types: ['벌레', '전기'],
+        types: ['Bug', 'Electric'],
         bs: { hp: 50, at: 47, df: 50, sa: 57, sd: 50, sp: 65 },
         weightkg: 0.6,
         nfe: true,
         abilities: { 0: 'Compound Eyes' }
     },
     Karrablast: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 50, at: 75, df: 45, sa: 40, sd: 45, sp: 60 },
         weightkg: 5.9,
         nfe: true,
         abilities: { 0: 'Swarm' }
     },
     Keldeo: {
-        types: ['물', '격투'],
+        types: ['Water', 'Fighting'],
         bs: { hp: 91, at: 72, df: 90, sa: 129, sd: 90, sp: 108 },
         weightkg: 48.5,
         abilities: { 0: 'Justified' },
@@ -4351,7 +4351,7 @@ var BW_PATCH = {
         otherFormes: ['Keldeo-Resolute']
     },
     'Keldeo-Resolute': {
-        types: ['물', '격투'],
+        types: ['Water', 'Fighting'],
         bs: { hp: 91, at: 72, df: 90, sa: 129, sd: 90, sp: 108 },
         weightkg: 48.5,
         abilities: { 0: 'Justified' },
@@ -4359,7 +4359,7 @@ var BW_PATCH = {
         baseSpecies: 'Keldeo'
     },
     Klang: {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 60, at: 80, df: 95, sa: 70, sd: 85, sp: 50 },
         weightkg: 51,
         nfe: true,
@@ -4367,7 +4367,7 @@ var BW_PATCH = {
         abilities: { 0: 'Plus' }
     },
     Klink: {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 40, at: 55, df: 70, sa: 45, sd: 60, sp: 30 },
         weightkg: 21,
         nfe: true,
@@ -4375,27 +4375,27 @@ var BW_PATCH = {
         abilities: { 0: 'Plus' }
     },
     Klinklang: {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 60, at: 100, df: 115, sa: 70, sd: 85, sp: 90 },
         weightkg: 81,
         gender: 'N',
         abilities: { 0: 'Plus' }
     },
     Krokorok: {
-        types: ['땅', '악'],
+        types: ['Ground', 'Dark'],
         bs: { hp: 60, at: 82, df: 45, sa: 45, sd: 45, sp: 74 },
         weightkg: 33.4,
         nfe: true,
         abilities: { 0: 'Intimidate' }
     },
     Krookodile: {
-        types: ['땅', '악'],
+        types: ['Ground', 'Dark'],
         bs: { hp: 95, at: 117, df: 70, sa: 65, sd: 70, sp: 92 },
         weightkg: 96.3,
         abilities: { 0: 'Intimidate' }
     },
     Kyurem: {
-        types: ['드래곤', '얼음'],
+        types: ['Dragon', 'Ice'],
         bs: { hp: 125, at: 130, df: 90, sa: 130, sd: 90, sp: 95 },
         weightkg: 325,
         abilities: { 0: 'Pressure' },
@@ -4403,7 +4403,7 @@ var BW_PATCH = {
         otherFormes: ['Kyurem-Black', 'Kyurem-White']
     },
     'Kyurem-Black': {
-        types: ['드래곤', '얼음'],
+        types: ['Dragon', 'Ice'],
         bs: { hp: 125, at: 170, df: 100, sa: 120, sd: 90, sp: 95 },
         weightkg: 325,
         abilities: { 0: 'Teravolt' },
@@ -4411,7 +4411,7 @@ var BW_PATCH = {
         baseSpecies: 'Kyurem'
     },
     'Kyurem-White': {
-        types: ['드래곤', '얼음'],
+        types: ['Dragon', 'Ice'],
         bs: { hp: 125, at: 120, df: 90, sa: 170, sd: 100, sp: 95 },
         weightkg: 325,
         abilities: { 0: 'Turboblaze' },
@@ -4419,85 +4419,85 @@ var BW_PATCH = {
         baseSpecies: 'Kyurem'
     },
     Lampent: {
-        types: ['고스트', '불꽃'],
+        types: ['Ghost', 'Fire'],
         bs: { hp: 60, at: 40, df: 60, sa: 95, sd: 60, sp: 55 },
         weightkg: 13,
         nfe: true,
         abilities: { 0: 'Flash Fire' }
     },
     Landorus: {
-        types: ['땅', '비행'],
+        types: ['Ground', 'Flying'],
         bs: { hp: 89, at: 125, df: 90, sa: 115, sd: 80, sp: 101 },
         weightkg: 68,
         abilities: { 0: 'Sand Force' },
         otherFormes: ['Landorus-Therian']
     },
     'Landorus-Therian': {
-        types: ['땅', '비행'],
+        types: ['Ground', 'Flying'],
         bs: { hp: 89, at: 145, df: 90, sa: 105, sd: 80, sp: 91 },
         weightkg: 68,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Landorus'
     },
     Larvesta: {
-        types: ['벌레', '불꽃'],
+        types: ['Bug', 'Fire'],
         bs: { hp: 55, at: 85, df: 55, sa: 50, sd: 55, sp: 60 },
         weightkg: 28.8,
         nfe: true,
         abilities: { 0: 'Flame Body' }
     },
     Leavanny: {
-        types: ['벌레', '풀'],
+        types: ['Bug', 'Grass'],
         bs: { hp: 75, at: 103, df: 80, sa: 70, sd: 70, sp: 92 },
         weightkg: 20.5,
         abilities: { 0: 'Swarm' }
     },
     Liepard: {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 64, at: 88, df: 50, sa: 88, sd: 50, sp: 106 },
         weightkg: 37.5,
         abilities: { 0: 'Limber' }
     },
     Lilligant: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 70, at: 60, df: 75, sa: 110, sd: 75, sp: 90 },
         weightkg: 16.3,
         abilities: { 0: 'Chlorophyll' }
     },
     Lillipup: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 45, at: 60, df: 45, sa: 25, sd: 45, sp: 55 },
         weightkg: 4.1,
         nfe: true,
         abilities: { 0: 'Vital Spirit' }
     },
     Litwick: {
-        types: ['고스트', '불꽃'],
+        types: ['Ghost', 'Fire'],
         bs: { hp: 50, at: 30, df: 55, sa: 65, sd: 55, sp: 20 },
         weightkg: 3.1,
         nfe: true,
         abilities: { 0: 'Flash Fire' }
     },
     Malaconda: {
-        types: ['악', '풀'],
+        types: ['Dark', 'Grass'],
         bs: { hp: 115, at: 100, df: 60, sa: 40, sd: 130, sp: 55 },
         weightkg: 108.8,
         abilities: { 0: 'Harvest' }
     },
     Mandibuzz: {
-        types: ['악', '비행'],
+        types: ['Dark', 'Flying'],
         bs: { hp: 110, at: 65, df: 105, sa: 55, sd: 95, sp: 80 },
         weightkg: 39.5,
         abilities: { 0: 'Big Pecks' }
     },
     Maractus: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 75, at: 86, df: 67, sa: 106, sd: 67, sp: 60 },
         weightkg: 28,
         abilities: { 0: 'Water Absorb' }
     },
     Meloetta: {
-        types: ['노말', '에스퍼'],
+        types: ['Normal', 'Psychic'],
         bs: { hp: 100, at: 77, df: 77, sa: 128, sd: 128, sp: 90 },
         weightkg: 6.5,
         abilities: { 0: 'Serene Grace' },
@@ -4505,7 +4505,7 @@ var BW_PATCH = {
         gender: 'N'
     },
     'Meloetta-Pirouette': {
-        types: ['노말', '격투'],
+        types: ['Normal', 'Fighting'],
         bs: { hp: 100, at: 128, df: 90, sa: 77, sd: 77, sp: 128 },
         weightkg: 6.5,
         abilities: { 0: 'Serene Grace' },
@@ -4513,531 +4513,531 @@ var BW_PATCH = {
         gender: 'N'
     },
     Mienfoo: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 45, at: 85, df: 50, sa: 55, sd: 50, sp: 65 },
         weightkg: 20,
         nfe: true,
         abilities: { 0: 'Inner Focus' }
     },
     Mienshao: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 65, at: 125, df: 60, sa: 95, sd: 60, sp: 105 },
         weightkg: 35.5,
         abilities: { 0: 'Inner Focus' }
     },
     Minccino: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 55, at: 50, df: 40, sa: 40, sd: 40, sp: 75 },
         weightkg: 5.8,
         nfe: true,
         abilities: { 0: 'Cute Charm' }
     },
     Mollux: {
-        types: ['불꽃', '독'],
+        types: ['Fire', 'Poison'],
         bs: { hp: 95, at: 45, df: 83, sa: 131, sd: 105, sp: 76 },
         weightkg: 41,
         abilities: { 0: 'Dry Skin' }
     },
     Munna: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 76, at: 25, df: 45, sa: 67, sd: 55, sp: 24 },
         weightkg: 23.3,
         nfe: true,
         abilities: { 0: 'Forewarn' }
     },
     Musharna: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 116, at: 55, df: 85, sa: 107, sd: 95, sp: 29 },
         weightkg: 60.5,
         abilities: { 0: 'Forewarn' }
     },
     Necturine: {
-        types: ['풀', '고스트'],
+        types: ['Grass', 'Ghost'],
         bs: { hp: 49, at: 55, df: 60, sa: 50, sd: 75, sp: 51 },
         weightkg: 1.8,
         nfe: true,
         abilities: { 0: 'Anticipation' }
     },
     Necturna: {
-        types: ['풀', '고스트'],
+        types: ['Grass', 'Ghost'],
         bs: { hp: 64, at: 120, df: 100, sa: 85, sd: 120, sp: 81 },
         weightkg: 49.6,
         abilities: { 0: 'Forewarn' }
     },
     Oshawott: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 55, at: 55, df: 45, sa: 63, sd: 45, sp: 45 },
         weightkg: 5.9,
         nfe: true,
         abilities: { 0: 'Torrent' }
     },
     Palpitoad: {
-        types: ['물', '땅'],
+        types: ['Water', 'Ground'],
         bs: { hp: 75, at: 65, df: 55, sa: 65, sd: 55, sp: 69 },
         weightkg: 17,
         nfe: true,
         abilities: { 0: 'Swift Swim' }
     },
     Panpour: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 50, at: 53, df: 48, sa: 53, sd: 48, sp: 64 },
         weightkg: 13.5,
         nfe: true,
         abilities: { 0: 'Gluttony' }
     },
     Pansage: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 50, at: 53, df: 48, sa: 53, sd: 48, sp: 64 },
         weightkg: 10.5,
         nfe: true,
         abilities: { 0: 'Gluttony' }
     },
     Pansear: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 50, at: 53, df: 48, sa: 53, sd: 48, sp: 64 },
         weightkg: 11,
         nfe: true,
         abilities: { 0: 'Gluttony' }
     },
     Patrat: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 45, at: 55, df: 39, sa: 35, sd: 39, sp: 42 },
         weightkg: 11.6,
         nfe: true,
         abilities: { 0: 'Run Away' }
     },
     Pawniard: {
-        types: ['악', '강철'],
+        types: ['Dark', 'Steel'],
         bs: { hp: 45, at: 85, df: 70, sa: 40, sd: 40, sp: 60 },
         weightkg: 10.2,
         nfe: true,
         abilities: { 0: 'Defiant' }
     },
     Petilil: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 45, at: 35, df: 50, sa: 70, sd: 50, sp: 30 },
         weightkg: 6.6,
         nfe: true,
         abilities: { 0: 'Chlorophyll' }
     },
     Pidove: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 50, at: 55, df: 50, sa: 36, sd: 30, sp: 43 },
         weightkg: 2.1,
         nfe: true,
         abilities: { 0: 'Big Pecks' }
     },
     Pignite: {
-        types: ['불꽃', '격투'],
+        types: ['Fire', 'Fighting'],
         bs: { hp: 90, at: 93, df: 55, sa: 70, sd: 55, sp: 55 },
         weightkg: 55.5,
         nfe: true,
         abilities: { 0: 'Blaze' }
     },
     Purrloin: {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 41, at: 50, df: 37, sa: 50, sd: 37, sp: 66 },
         weightkg: 10.1,
         nfe: true,
         abilities: { 0: 'Limber' }
     },
     Reshiram: {
-        types: ['드래곤', '불꽃'],
+        types: ['Dragon', 'Fire'],
         bs: { hp: 100, at: 120, df: 100, sa: 150, sd: 120, sp: 90 },
         weightkg: 330,
         abilities: { 0: 'Turboblaze' },
         gender: 'N'
     },
     Reuniclus: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 110, at: 65, df: 75, sa: 125, sd: 85, sp: 30 },
         weightkg: 20.1,
         abilities: { 0: 'Overcoat' }
     },
     Roggenrola: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 55, at: 75, df: 85, sa: 25, sd: 25, sp: 15 },
         weightkg: 18,
         nfe: true,
         abilities: { 0: 'Sturdy' }
     },
     Rufflet: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 70, at: 83, df: 50, sa: 37, sd: 50, sp: 60 },
         weightkg: 10.5,
         nfe: true,
         abilities: { 0: 'Keen Eye' }
     },
     Samurott: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 95, at: 100, df: 85, sa: 108, sd: 70, sp: 70 },
         weightkg: 94.6,
         abilities: { 0: 'Torrent' }
     },
     Sandile: {
-        types: ['땅', '악'],
+        types: ['Ground', 'Dark'],
         bs: { hp: 50, at: 72, df: 35, sa: 35, sd: 35, sp: 65 },
         weightkg: 15.2,
         nfe: true,
         abilities: { 0: 'Intimidate' }
     },
     Sawk: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 75, at: 125, df: 75, sa: 30, sd: 75, sp: 85 },
         weightkg: 51,
         abilities: { 0: 'Sturdy' }
     },
     Sawsbuck: {
-        types: ['노말', '풀'],
+        types: ['Normal', 'Grass'],
         bs: { hp: 80, at: 100, df: 70, sa: 60, sd: 70, sp: 95 },
         weightkg: 92.5,
         abilities: { 0: 'Chlorophyll' }
     },
     Scolipede: {
-        types: ['벌레', '독'],
+        types: ['Bug', 'Poison'],
         bs: { hp: 60, at: 90, df: 89, sa: 55, sd: 69, sp: 112 },
         weightkg: 200.5,
         abilities: { 0: 'Poison Point' }
     },
     Scrafty: {
-        types: ['악', '격투'],
+        types: ['Dark', 'Fighting'],
         bs: { hp: 65, at: 90, df: 115, sa: 45, sd: 115, sp: 58 },
         weightkg: 30,
         abilities: { 0: 'Shed Skin' }
     },
     Scraggy: {
-        types: ['악', '격투'],
+        types: ['Dark', 'Fighting'],
         bs: { hp: 50, at: 75, df: 70, sa: 35, sd: 70, sp: 48 },
         weightkg: 11.8,
         nfe: true,
         abilities: { 0: 'Shed Skin' }
     },
     Scratchet: {
-        types: ['노말', '격투'],
+        types: ['Normal', 'Fighting'],
         bs: { hp: 55, at: 85, df: 80, sa: 20, sd: 70, sp: 40 },
         weightkg: 20,
         nfe: true,
         abilities: { 0: 'Scrappy' }
     },
     Seismitoad: {
-        types: ['물', '땅'],
+        types: ['Water', 'Ground'],
         bs: { hp: 105, at: 85, df: 75, sa: 85, sd: 75, sp: 74 },
         weightkg: 62,
         abilities: { 0: 'Swift Swim' }
     },
     Serperior: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 75, at: 75, df: 95, sa: 75, sd: 95, sp: 113 },
         weightkg: 63,
         abilities: { 0: 'Overgrow' }
     },
     Servine: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 60, at: 60, df: 75, sa: 60, sd: 75, sp: 83 },
         weightkg: 16,
         nfe: true,
         abilities: { 0: 'Overgrow' }
     },
     Sewaddle: {
-        types: ['벌레', '풀'],
+        types: ['Bug', 'Grass'],
         bs: { hp: 45, at: 53, df: 70, sa: 40, sd: 60, sp: 42 },
         weightkg: 2.5,
         nfe: true,
         abilities: { 0: 'Swarm' }
     },
     Shelmet: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 50, at: 40, df: 85, sa: 40, sd: 65, sp: 25 },
         weightkg: 7.7,
         nfe: true,
         abilities: { 0: 'Hydration' }
     },
     Sigilyph: {
-        types: ['에스퍼', '비행'],
+        types: ['Psychic', 'Flying'],
         bs: { hp: 72, at: 58, df: 80, sa: 103, sd: 80, sp: 97 },
         weightkg: 14,
         abilities: { 0: 'Wonder Skin' }
     },
     Simipour: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 75, at: 98, df: 63, sa: 98, sd: 63, sp: 101 },
         weightkg: 29,
         abilities: { 0: 'Gluttony' }
     },
     Simisage: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 75, at: 98, df: 63, sa: 98, sd: 63, sp: 101 },
         weightkg: 30.5,
         abilities: { 0: 'Gluttony' }
     },
     Simisear: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 75, at: 98, df: 63, sa: 98, sd: 63, sp: 101 },
         weightkg: 28,
         abilities: { 0: 'Gluttony' }
     },
     Snivy: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 45, at: 45, df: 55, sa: 45, sd: 55, sp: 63 },
         weightkg: 8.1,
         nfe: true,
         abilities: { 0: 'Overgrow' }
     },
     Solosis: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 45, at: 30, df: 40, sa: 105, sd: 50, sp: 20 },
         weightkg: 1,
         nfe: true,
         abilities: { 0: 'Overcoat' }
     },
     Stoutland: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 85, at: 100, df: 90, sa: 45, sd: 90, sp: 80 },
         weightkg: 61,
         abilities: { 0: 'Intimidate' }
     },
     Stunfisk: {
-        types: ['땅', '전기'],
+        types: ['Ground', 'Electric'],
         bs: { hp: 109, at: 66, df: 84, sa: 81, sd: 99, sp: 32 },
         weightkg: 11,
         abilities: { 0: 'Static' }
     },
     Swadloon: {
-        types: ['벌레', '풀'],
+        types: ['Bug', 'Grass'],
         bs: { hp: 55, at: 63, df: 90, sa: 50, sd: 80, sp: 42 },
         weightkg: 7.3,
         nfe: true,
         abilities: { 0: 'Leaf Guard' }
     },
     Swanna: {
-        types: ['물', '비행'],
+        types: ['Water', 'Flying'],
         bs: { hp: 75, at: 87, df: 63, sa: 87, sd: 63, sp: 98 },
         weightkg: 24.2,
         abilities: { 0: 'Keen Eye' }
     },
     Swoobat: {
-        types: ['에스퍼', '비행'],
+        types: ['Psychic', 'Flying'],
         bs: { hp: 67, at: 57, df: 55, sa: 77, sd: 55, sp: 114 },
         weightkg: 10.5,
         abilities: { 0: 'Unaware' }
     },
     Tepig: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 65, at: 63, df: 45, sa: 45, sd: 45, sp: 45 },
         weightkg: 9.9,
         nfe: true,
         abilities: { 0: 'Blaze' }
     },
     Terrakion: {
-        types: ['바위', '격투'],
+        types: ['Rock', 'Fighting'],
         bs: { hp: 91, at: 129, df: 90, sa: 72, sd: 90, sp: 108 },
         weightkg: 260,
         abilities: { 0: 'Justified' },
         gender: 'N'
     },
     Throh: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 120, at: 100, df: 85, sa: 30, sd: 85, sp: 45 },
         weightkg: 55.5,
         abilities: { 0: 'Guts' }
     },
     Thundurus: {
-        types: ['전기', '비행'],
+        types: ['Electric', 'Flying'],
         bs: { hp: 79, at: 115, df: 70, sa: 125, sd: 80, sp: 111 },
         weightkg: 61,
         abilities: { 0: 'Prankster' },
         otherFormes: ['Thundurus-Therian']
     },
     'Thundurus-Therian': {
-        types: ['전기', '비행'],
+        types: ['Electric', 'Flying'],
         bs: { hp: 79, at: 105, df: 70, sa: 145, sd: 80, sp: 101 },
         weightkg: 61,
         abilities: { 0: 'Volt Absorb' },
         baseSpecies: 'Thundurus'
     },
     Timburr: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 75, at: 80, df: 55, sa: 25, sd: 35, sp: 35 },
         weightkg: 12.5,
         nfe: true,
         abilities: { 0: 'Guts' }
     },
     Tirtouga: {
-        types: ['물', '바위'],
+        types: ['Water', 'Rock'],
         bs: { hp: 54, at: 78, df: 103, sa: 53, sd: 45, sp: 22 },
         weightkg: 16.5,
         nfe: true,
         abilities: { 0: 'Solid Rock' }
     },
     Tomohawk: {
-        types: ['비행', '격투'],
+        types: ['Flying', 'Fighting'],
         bs: { hp: 105, at: 60, df: 90, sa: 115, sd: 80, sp: 85 },
         weightkg: 37.2,
         abilities: { 0: 'Intimidate' }
     },
     Tornadus: {
-        types: ['비행'],
+        types: ['Flying'],
         bs: { hp: 79, at: 115, df: 70, sa: 125, sd: 80, sp: 111 },
         weightkg: 63,
         abilities: { 0: 'Prankster' },
         otherFormes: ['Tornadus-Therian']
     },
     'Tornadus-Therian': {
-        types: ['비행'],
+        types: ['Flying'],
         bs: { hp: 79, at: 100, df: 80, sa: 110, sd: 90, sp: 121 },
         weightkg: 63,
         abilities: { 0: 'Regenerator' },
         baseSpecies: 'Tornadus'
     },
     Tranquill: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 62, at: 77, df: 62, sa: 50, sd: 42, sp: 65 },
         weightkg: 15,
         nfe: true,
         abilities: { 0: 'Big Pecks' }
     },
     Trubbish: {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 50, at: 50, df: 62, sa: 40, sd: 62, sp: 65 },
         weightkg: 31,
         nfe: true,
         abilities: { 0: 'Stench' }
     },
     Tympole: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 50, at: 50, df: 40, sa: 50, sd: 40, sp: 64 },
         weightkg: 4.5,
         nfe: true,
         abilities: { 0: 'Swift Swim' }
     },
     Tynamo: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 45, sd: 40, sp: 60 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
         nfe: true
     },
     Unfezant: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 80, at: 105, df: 80, sa: 65, sd: 55, sp: 93 },
         weightkg: 29,
         abilities: { 0: 'Big Pecks' }
     },
     Vanillish: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 51, at: 65, df: 65, sa: 80, sd: 75, sp: 59 },
         weightkg: 41,
         nfe: true,
         abilities: { 0: 'Ice Body' }
     },
     Vanillite: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 36, at: 50, df: 50, sa: 65, sd: 60, sp: 44 },
         weightkg: 5.7,
         nfe: true,
         abilities: { 0: 'Ice Body' }
     },
     Vanilluxe: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 71, at: 95, df: 85, sa: 110, sd: 95, sp: 79 },
         weightkg: 57.5,
         abilities: { 0: 'Ice Body' }
     },
     Venipede: {
-        types: ['벌레', '독'],
+        types: ['Bug', 'Poison'],
         bs: { hp: 30, at: 45, df: 59, sa: 30, sd: 39, sp: 57 },
         weightkg: 5.3,
         nfe: true,
         abilities: { 0: 'Poison Point' }
     },
     Victini: {
-        types: ['에스퍼', '불꽃'],
+        types: ['Psychic', 'Fire'],
         bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
         weightkg: 4,
         abilities: { 0: 'Victory Star' },
         gender: 'N'
     },
     Virizion: {
-        types: ['풀', '격투'],
+        types: ['Grass', 'Fighting'],
         bs: { hp: 91, at: 90, df: 72, sa: 90, sd: 129, sp: 108 },
         weightkg: 200,
         abilities: { 0: 'Justified' },
         gender: 'N'
     },
     Volcarona: {
-        types: ['벌레', '불꽃'],
+        types: ['Bug', 'Fire'],
         bs: { hp: 85, at: 60, df: 65, sa: 135, sd: 105, sp: 100 },
         weightkg: 46,
         abilities: { 0: 'Flame Body' }
     },
     Vullaby: {
-        types: ['악', '비행'],
+        types: ['Dark', 'Flying'],
         bs: { hp: 70, at: 55, df: 75, sa: 45, sd: 65, sp: 60 },
         weightkg: 9,
         nfe: true,
         abilities: { 0: 'Big Pecks' }
     },
     Watchog: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 60, at: 85, df: 69, sa: 60, sd: 69, sp: 77 },
         weightkg: 27,
         abilities: { 0: 'Illuminate' }
     },
     Whimsicott: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 60, at: 67, df: 85, sa: 77, sd: 75, sp: 116 },
         weightkg: 6.6,
         abilities: { 0: 'Prankster' }
     },
     Whirlipede: {
-        types: ['벌레', '독'],
+        types: ['Bug', 'Poison'],
         bs: { hp: 40, at: 55, df: 99, sa: 40, sd: 79, sp: 47 },
         weightkg: 58.5,
         nfe: true,
         abilities: { 0: 'Poison Point' }
     },
     Woobat: {
-        types: ['에스퍼', '비행'],
+        types: ['Psychic', 'Flying'],
         bs: { hp: 55, at: 45, df: 43, sa: 55, sd: 43, sp: 72 },
         weightkg: 2.1,
         nfe: true,
         abilities: { 0: 'Unaware' }
     },
     Yamask: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 38, at: 30, df: 85, sa: 55, sd: 65, sp: 30 },
         weightkg: 1.5,
         abilities: { 0: 'Mummy' },
         nfe: true
     },
     Zebstrika: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 75, at: 100, df: 63, sa: 80, sd: 63, sp: 116 },
         weightkg: 79.5,
         abilities: { 0: 'Lightning Rod' }
     },
     Zekrom: {
-        types: ['드래곤', '전기'],
+        types: ['Dragon', 'Electric'],
         bs: { hp: 100, at: 150, df: 120, sa: 120, sd: 100, sp: 90 },
         weightkg: 345,
         abilities: { 0: 'Teravolt' },
         gender: 'N'
     },
     Zoroark: {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 60, at: 105, df: 60, sa: 120, sd: 60, sp: 105 },
         weightkg: 81.1,
         abilities: { 0: 'Illusion' }
     },
     Zorua: {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 40, at: 65, df: 40, sa: 80, sd: 40, sp: 65 },
         weightkg: 12.5,
         abilities: { 0: 'Illusion' },
         nfe: true
     },
     Zweilous: {
-        types: ['악', '드래곤'],
+        types: ['Dark', 'Dragon'],
         bs: { hp: 72, at: 85, df: 70, sa: 65, sd: 70, sp: 58 },
         weightkg: 50,
         abilities: { 0: 'Hustle' },
@@ -5056,8 +5056,8 @@ var XY_PATCH = {
     Altaria: { otherFormes: ['Altaria-Mega'] },
     Ampharos: { bs: { df: 85 }, otherFormes: ['Ampharos-Mega'] },
     Audino: { otherFormes: ['Audino-Mega'] },
-    Azumarill: { types: ['물', '페어리'], bs: { sa: 60 } },
-    Azurill: { types: ['노말', '페어리'] },
+    Azumarill: { types: ['Water', 'Fairy'], bs: { sa: 60 } },
+    Azurill: { types: ['Normal', 'Fairy'] },
     Banette: { otherFormes: ['Banette-Mega'] },
     Beautifly: { bs: { sa: 100 } },
     Beedrill: { bs: { at: 90 }, otherFormes: ['Beedrill-Mega'] },
@@ -5067,28 +5067,28 @@ var XY_PATCH = {
     Butterfree: { bs: { sa: 90 } },
     Camerupt: { otherFormes: ['Camerupt-Mega'] },
     Charizard: { otherFormes: ['Charizard-Mega-X', 'Charizard-Mega-Y'] },
-    Clefable: { types: ['페어리'], bs: { sa: 95 } },
-    Clefairy: { types: ['페어리'] },
-    Cleffa: { types: ['페어리'] },
-    Cottonee: { types: ['풀', '페어리'] },
+    Clefable: { types: ['Fairy'], bs: { sa: 95 } },
+    Clefairy: { types: ['Fairy'] },
+    Cleffa: { types: ['Fairy'] },
+    Cottonee: { types: ['Grass', 'Fairy'] },
     Exploud: { bs: { sd: 73 } },
     Gallade: { otherFormes: ['Gallade-Mega'] },
     Garchomp: { otherFormes: ['Garchomp-Mega'] },
-    Gardevoir: { types: ['에스퍼', '페어리'], otherFormes: ['Gardevoir-Mega'] },
+    Gardevoir: { types: ['Psychic', 'Fairy'], otherFormes: ['Gardevoir-Mega'] },
     Gengar: { otherFormes: ['Gengar-Mega'] },
     Gigalith: { bs: { sd: 80 } },
     Glalie: { otherFormes: ['Glalie-Mega'] },
     Golem: { bs: { at: 120 } },
-    Granbull: { types: ['페어리'] },
+    Granbull: { types: ['Fairy'] },
     Groudon: { otherFormes: ['Groudon-Primal'] },
     Gyarados: { otherFormes: ['Gyarados-Mega'] },
     Heracross: { otherFormes: ['Heracross-Mega'] },
     Houndoom: { otherFormes: ['Houndoom-Mega'] },
-    Igglybuff: { types: ['노말', '페어리'] },
-    Jigglypuff: { types: ['노말', '페어리'] },
+    Igglybuff: { types: ['Normal', 'Fairy'] },
+    Jigglypuff: { types: ['Normal', 'Fairy'] },
     Jumpluff: { bs: { sd: 95 } },
     Kangaskhan: { otherFormes: ['Kangaskhan-Mega'] },
-    Kirlia: { types: ['에스퍼', '페어리'] },
+    Kirlia: { types: ['Psychic', 'Fairy'] },
     Krookodile: { bs: { df: 80 } },
     Kyogre: { otherFormes: ['Kyogre-Primal'] },
     Latias: { otherFormes: ['Latias-Mega'] },
@@ -5097,13 +5097,13 @@ var XY_PATCH = {
     Lopunny: { otherFormes: ['Lopunny-Mega'] },
     Lucario: { otherFormes: ['Lucario-Mega'] },
     Manectric: { otherFormes: ['Manectric-Mega'] },
-    Marill: { types: ['물', '페어리'] },
-    Mawile: { types: ['강철', '페어리'], otherFormes: ['Mawile-Mega'] },
+    Marill: { types: ['Water', 'Fairy'] },
+    Mawile: { types: ['Steel', 'Fairy'], otherFormes: ['Mawile-Mega'] },
     Medicham: { otherFormes: ['Medicham-Mega'] },
     Metagross: { otherFormes: ['Metagross-Mega'] },
     Mewtwo: { otherFormes: ['Mewtwo-Mega-X', 'Mewtwo-Mega-Y'] },
-    'Mime Jr.': { types: ['에스퍼', '페어리'] },
-    'Mr. Mime': { types: ['에스퍼', '페어리'] },
+    'Mime Jr.': { types: ['Psychic', 'Fairy'] },
+    'Mr. Mime': { types: ['Psychic', 'Fairy'] },
     Nidoking: { bs: { at: 102 } },
     Nidoqueen: { bs: { at: 92 } },
     Pidgeot: { bs: { sp: 101 }, otherFormes: ['Pidgeot-Mega'] },
@@ -5121,7 +5121,7 @@ var XY_PATCH = {
     Pinsir: { otherFormes: ['Pinsir-Mega'] },
     Poliwrath: { bs: { at: 95 } },
     Raichu: { bs: { sp: 110 } },
-    Ralts: { types: ['에스퍼', '페어리'] },
+    Ralts: { types: ['Psychic', 'Fairy'] },
     Rayquaza: { otherFormes: ['Rayquaza-Mega'] },
     Roserade: { bs: { df: 65 } },
     Sableye: { otherFormes: ['Sableye-Mega'] },
@@ -5132,51 +5132,51 @@ var XY_PATCH = {
     Seismitoad: { bs: { at: 95 } },
     Sharpedo: { otherFormes: ['Sharpedo-Mega'] },
     Slowbro: { otherFormes: ['Slowbro-Mega'] },
-    Snubbull: { types: ['페어리'] },
+    Snubbull: { types: ['Fairy'] },
     Staraptor: { bs: { sd: 60 } },
     Steelix: { otherFormes: ['Steelix-Mega'] },
     Stoutland: { bs: { at: 110 } },
     Swampert: { otherFormes: ['Swampert-Mega'] },
-    Togekiss: { types: ['페어리', '비행'] },
-    Togepi: { types: ['페어리'] },
-    Togetic: { types: ['페어리', '비행'] },
+    Togekiss: { types: ['Fairy', 'Flying'] },
+    Togepi: { types: ['Fairy'] },
+    Togetic: { types: ['Fairy', 'Flying'] },
     Tyranitar: { otherFormes: ['Tyranitar-Mega'] },
     Unfezant: { bs: { at: 115 } },
     Venusaur: { otherFormes: ['Venusaur-Mega'] },
     Victreebel: { bs: { sd: 70 } },
     Vileplume: { bs: { sa: 110 } },
-    Whimsicott: { types: ['풀', '페어리'] },
-    Wigglytuff: { types: ['노말', '페어리'], bs: { sa: 85 } },
+    Whimsicott: { types: ['Grass', 'Fairy'] },
+    Wigglytuff: { types: ['Normal', 'Fairy'], bs: { sa: 85 } },
     'Aegislash-Blade': {
-        types: ['강철', '고스트'],
+        types: ['Steel', 'Ghost'],
         bs: { hp: 60, at: 150, df: 50, sa: 150, sd: 50, sp: 60 },
         weightkg: 53,
         abilities: { 0: 'Stance Change' },
         otherFormes: ['Aegislash-Shield', 'Aegislash-Both']
     },
     'Aegislash-Shield': {
-        types: ['강철', '고스트'],
+        types: ['Steel', 'Ghost'],
         bs: { hp: 60, at: 50, df: 150, sa: 50, sd: 150, sp: 60 },
         weightkg: 53,
         abilities: { 0: 'Stance Change' },
         baseSpecies: 'Aegislash-Blade'
     },
     'Aegislash-Both': {
-        types: ['강철', '고스트'],
+        types: ['Steel', 'Ghost'],
         bs: { hp: 60, at: 150, df: 150, sa: 150, sd: 150, sp: 60 },
         weightkg: 53,
         abilities: { 0: 'Stance Change' },
         baseSpecies: 'Aegislash-Blade'
     },
     Amaura: {
-        types: ['바위', '얼음'],
+        types: ['Rock', 'Ice'],
         bs: { hp: 77, at: 59, df: 50, sa: 67, sd: 63, sp: 46 },
         weightkg: 25.2,
         nfe: true,
         abilities: { 0: 'Refrigerate' }
     },
     'Arceus-Fairy': {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         weightkg: 320,
         abilities: { 0: 'Multitype' },
@@ -5184,106 +5184,106 @@ var XY_PATCH = {
         gender: 'N'
     },
     Aromatisse: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 101, at: 72, df: 72, sa: 99, sd: 89, sp: 29 },
         weightkg: 15.5,
         abilities: { 0: 'Healer' }
     },
     Aurorus: {
-        types: ['바위', '얼음'],
+        types: ['Rock', 'Ice'],
         bs: { hp: 123, at: 77, df: 72, sa: 99, sd: 92, sp: 58 },
         weightkg: 225,
         abilities: { 0: 'Refrigerate' }
     },
     Avalugg: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 95, at: 117, df: 184, sa: 44, sd: 46, sp: 28 },
         weightkg: 505,
         abilities: { 0: 'Own Tempo' }
     },
     Barbaracle: {
-        types: ['바위', '물'],
+        types: ['Rock', 'Water'],
         bs: { hp: 72, at: 105, df: 115, sa: 54, sd: 86, sp: 68 },
         weightkg: 96,
         abilities: { 0: 'Tough Claws' }
     },
     Bergmite: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 55, at: 69, df: 85, sa: 32, sd: 35, sp: 28 },
         weightkg: 99.5,
         nfe: true,
         abilities: { 0: 'Own Tempo' }
     },
     Binacle: {
-        types: ['바위', '물'],
+        types: ['Rock', 'Water'],
         bs: { hp: 42, at: 52, df: 67, sa: 39, sd: 56, sp: 50 },
         weightkg: 31,
         nfe: true,
         abilities: { 0: 'Tough Claws' }
     },
     Braixen: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 59, at: 59, df: 58, sa: 90, sd: 70, sp: 73 },
         weightkg: 14.5,
         nfe: true,
         abilities: { 0: 'Blaze' }
     },
     Bunnelby: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 38, at: 36, df: 38, sa: 32, sd: 36, sp: 57 },
         weightkg: 5,
         nfe: true,
         abilities: { 0: 'Pickup' }
     },
     Caimanoe: {
-        types: ['물', '강철'],
+        types: ['Water', 'Steel'],
         bs: { hp: 73, at: 85, df: 65, sa: 80, sd: 40, sp: 87 },
         weightkg: 72.5,
         nfe: true,
         abilities: { 0: 'Water Veil' }
     },
     Carbink: {
-        types: ['바위', '페어리'],
+        types: ['Rock', 'Fairy'],
         bs: { hp: 50, at: 50, df: 150, sa: 50, sd: 150, sp: 50 },
         weightkg: 5.7,
         gender: 'N',
         abilities: { 0: 'Clear Body' }
     },
     Chesnaught: {
-        types: ['풀', '격투'],
+        types: ['Grass', 'Fighting'],
         bs: { hp: 88, at: 107, df: 122, sa: 74, sd: 75, sp: 64 },
         weightkg: 90,
         abilities: { 0: 'Overgrow' }
     },
     Chespin: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 56, at: 61, df: 65, sa: 48, sd: 45, sp: 38 },
         weightkg: 9,
         nfe: true,
         abilities: { 0: 'Overgrow' }
     },
     Clauncher: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 50, at: 53, df: 62, sa: 58, sd: 63, sp: 44 },
         weightkg: 8.3,
         abilities: { 0: 'Mega Launcher' },
         nfe: true
     },
     Clawitzer: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 71, at: 73, df: 88, sa: 120, sd: 89, sp: 59 },
         weightkg: 35.3,
         abilities: { 0: 'Mega Launcher' }
     },
     Crucibelle: {
-        types: ['바위', '독'],
+        types: ['Rock', 'Poison'],
         bs: { hp: 106, at: 105, df: 65, sa: 75, sd: 85, sp: 104 },
         weightkg: 23.6,
         abilities: { 0: 'Regenerator' },
         otherFormes: ['Crucibelle-Mega']
     },
     Diancie: {
-        types: ['바위', '페어리'],
+        types: ['Rock', 'Fairy'],
         bs: { hp: 50, at: 100, df: 150, sa: 100, sd: 150, sp: 50 },
         weightkg: 8.8,
         abilities: { 0: 'Clear Body' },
@@ -5291,80 +5291,80 @@ var XY_PATCH = {
         gender: 'N'
     },
     Dedenne: {
-        types: ['전기', '페어리'],
+        types: ['Electric', 'Fairy'],
         bs: { hp: 67, at: 58, df: 57, sa: 81, sd: 67, sp: 101 },
         weightkg: 2.2,
         abilities: { 0: 'Cheek Pouch' }
     },
     Delphox: {
-        types: ['불꽃', '에스퍼'],
+        types: ['Fire', 'Psychic'],
         bs: { hp: 75, at: 69, df: 72, sa: 114, sd: 100, sp: 104 },
         weightkg: 39,
         abilities: { 0: 'Blaze' }
     },
     Diggersby: {
-        types: ['노말', '땅'],
+        types: ['Normal', 'Ground'],
         bs: { hp: 85, at: 56, df: 77, sa: 50, sd: 77, sp: 78 },
         weightkg: 42.4,
         abilities: { 0: 'Pickup' }
     },
     Doublade: {
-        types: ['강철', '고스트'],
+        types: ['Steel', 'Ghost'],
         bs: { hp: 59, at: 110, df: 150, sa: 45, sd: 49, sp: 35 },
         weightkg: 4.5,
         abilities: { 0: 'No Guard' },
         nfe: true
     },
     Dragalge: {
-        types: ['독', '드래곤'],
+        types: ['Poison', 'Dragon'],
         bs: { hp: 65, at: 75, df: 90, sa: 97, sd: 123, sp: 44 },
         weightkg: 81.5,
         abilities: { 0: 'Poison Point' }
     },
     Espurr: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 62, at: 48, df: 54, sa: 63, sd: 60, sp: 68 },
         weightkg: 3.5,
         nfe: true,
         abilities: { 0: 'Keen Eye' }
     },
     Fennekin: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 40, at: 45, df: 40, sa: 62, sd: 60, sp: 60 },
         weightkg: 9.4,
         nfe: true,
         abilities: { 0: 'Blaze' }
     },
     Flabébé: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 44, at: 38, df: 39, sa: 61, sd: 79, sp: 42 },
         weightkg: 0.1,
         nfe: true,
         abilities: { 0: 'Flower Veil' }
     },
     Fletchinder: {
-        types: ['불꽃', '비행'],
+        types: ['Fire', 'Flying'],
         bs: { hp: 62, at: 73, df: 55, sa: 56, sd: 52, sp: 84 },
         weightkg: 16,
         nfe: true,
         abilities: { 0: 'Flame Body' }
     },
     Fletchling: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 45, at: 50, df: 43, sa: 40, sd: 38, sp: 62 },
         weightkg: 1.7,
         nfe: true,
         abilities: { 0: 'Big Pecks' }
     },
     Floatoy: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 48, at: 70, df: 40, sa: 70, sd: 30, sp: 77 },
         weightkg: 1.9,
         nfe: true,
         abilities: { 0: 'Water Veil' }
     },
     Floette: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 54, at: 45, df: 47, sa: 75, sd: 98, sp: 52 },
         weightkg: 0.9,
         nfe: true,
@@ -5372,119 +5372,119 @@ var XY_PATCH = {
         abilities: { 0: 'Flower Veil' }
     },
     'Floette-Eternal': {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 74, at: 65, df: 67, sa: 125, sd: 128, sp: 92 },
         weightkg: 0.9,
         abilities: { 0: 'Flower Veil' },
         baseSpecies: 'Floette'
     },
     Florges: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 78, at: 65, df: 68, sa: 112, sd: 154, sp: 75 },
         weightkg: 10,
         abilities: { 0: 'Flower Veil' }
     },
     Froakie: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 41, at: 56, df: 40, sa: 62, sd: 44, sp: 71 },
         weightkg: 7,
         nfe: true,
         abilities: { 0: 'Torrent' }
     },
     Frogadier: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 54, at: 63, df: 52, sa: 83, sd: 56, sp: 97 },
         weightkg: 10.9,
         nfe: true,
         abilities: { 0: 'Torrent' }
     },
     Furfrou: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 75, at: 80, df: 60, sa: 65, sd: 90, sp: 102 },
         weightkg: 28,
         abilities: { 0: 'Fur Coat' }
     },
     Gogoat: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 123, at: 100, df: 62, sa: 97, sd: 81, sp: 68 },
         weightkg: 91,
         abilities: { 0: 'Sap Sipper' }
     },
     Goodra: {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 90, at: 100, df: 70, sa: 110, sd: 150, sp: 80 },
         weightkg: 150.5,
         abilities: { 0: 'Sap Sipper' }
     },
     Goomy: {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 45, at: 50, df: 35, sa: 55, sd: 75, sp: 40 },
         weightkg: 2.8,
         nfe: true,
         abilities: { 0: 'Sap Sipper' }
     },
     Gourgeist: {
-        types: ['고스트', '풀'],
+        types: ['Ghost', 'Grass'],
         bs: { hp: 65, at: 90, df: 122, sa: 58, sd: 75, sp: 84 },
         weightkg: 12.5,
         abilities: { 0: 'Pickup' },
         otherFormes: ['Gourgeist-Large', 'Gourgeist-Small', 'Gourgeist-Super']
     },
     'Gourgeist-Large': {
-        types: ['고스트', '풀'],
+        types: ['Ghost', 'Grass'],
         bs: { hp: 75, at: 95, df: 122, sa: 58, sd: 75, sp: 69 },
         weightkg: 14,
         abilities: { 0: 'Pickup' },
         baseSpecies: 'Gourgeist'
     },
     'Gourgeist-Small': {
-        types: ['고스트', '풀'],
+        types: ['Ghost', 'Grass'],
         bs: { hp: 55, at: 85, df: 122, sa: 58, sd: 75, sp: 99 },
         weightkg: 9.5,
         abilities: { 0: 'Pickup' },
         baseSpecies: 'Gourgeist'
     },
     'Gourgeist-Super': {
-        types: ['고스트', '풀'],
+        types: ['Ghost', 'Grass'],
         bs: { hp: 85, at: 100, df: 122, sa: 58, sd: 75, sp: 54 },
         weightkg: 39,
         abilities: { 0: 'Pickup' },
         baseSpecies: 'Gourgeist'
     },
     Greninja: {
-        types: ['물', '악'],
+        types: ['Water', 'Dark'],
         bs: { hp: 72, at: 95, df: 67, sa: 103, sd: 71, sp: 122 },
         weightkg: 40,
         abilities: { 0: 'Torrent' }
     },
     Hawlucha: {
-        types: ['격투', '비행'],
+        types: ['Fighting', 'Flying'],
         bs: { hp: 78, at: 92, df: 75, sa: 74, sd: 63, sp: 118 },
         weightkg: 21.5,
         abilities: { 0: 'Limber' }
     },
     Heliolisk: {
-        types: ['전기', '노말'],
+        types: ['Electric', 'Normal'],
         bs: { hp: 62, at: 55, df: 52, sa: 109, sd: 94, sp: 109 },
         weightkg: 21,
         abilities: { 0: 'Dry Skin' }
     },
     Helioptile: {
-        types: ['전기', '노말'],
+        types: ['Electric', 'Normal'],
         bs: { hp: 44, at: 38, df: 33, sa: 61, sd: 43, sp: 70 },
         weightkg: 6,
         nfe: true,
         abilities: { 0: 'Dry Skin' }
     },
     Honedge: {
-        types: ['강철', '고스트'],
+        types: ['Steel', 'Ghost'],
         bs: { hp: 45, at: 80, df: 100, sa: 35, sd: 37, sp: 28 },
         weightkg: 2,
         abilities: { 0: 'No Guard' },
         nfe: true
     },
     Hoopa: {
-        types: ['에스퍼', '고스트'],
+        types: ['Psychic', 'Ghost'],
         bs: { hp: 80, at: 110, df: 60, sa: 150, sd: 130, sp: 70 },
         weightkg: 9,
         gender: 'N',
@@ -5492,7 +5492,7 @@ var XY_PATCH = {
         otherFormes: ['Hoopa-Unbound']
     },
     'Hoopa-Unbound': {
-        types: ['에스퍼', '악'],
+        types: ['Psychic', 'Dark'],
         bs: { hp: 80, at: 160, df: 60, sa: 170, sd: 130, sp: 80 },
         weightkg: 490,
         gender: 'N',
@@ -5500,151 +5500,151 @@ var XY_PATCH = {
         baseSpecies: 'Hoopa'
     },
     Inkay: {
-        types: ['악', '에스퍼'],
+        types: ['Dark', 'Psychic'],
         bs: { hp: 53, at: 54, df: 53, sa: 37, sd: 46, sp: 45 },
         weightkg: 3.5,
         nfe: true,
         abilities: { 0: 'Contrary' }
     },
     Kerfluffle: {
-        types: ['페어리', '격투'],
+        types: ['Fairy', 'Fighting'],
         bs: { hp: 84, at: 78, df: 86, sa: 115, sd: 88, sp: 119 },
         weightkg: 24.2,
         abilities: { 0: 'Natural Cure' }
     },
     Klefki: {
-        types: ['강철', '페어리'],
+        types: ['Steel', 'Fairy'],
         bs: { hp: 57, at: 80, df: 91, sa: 80, sd: 87, sp: 75 },
         weightkg: 3,
         abilities: { 0: 'Prankster' }
     },
     Litleo: {
-        types: ['불꽃', '노말'],
+        types: ['Fire', 'Normal'],
         bs: { hp: 62, at: 50, df: 58, sa: 73, sd: 54, sp: 72 },
         weightkg: 13.5,
         nfe: true,
         abilities: { 0: 'Rivalry' }
     },
     Malamar: {
-        types: ['악', '에스퍼'],
+        types: ['Dark', 'Psychic'],
         bs: { hp: 86, at: 92, df: 88, sa: 68, sd: 75, sp: 73 },
         weightkg: 47,
         abilities: { 0: 'Contrary' }
     },
     'Abomasnow-Mega': {
-        types: ['풀', '얼음'],
+        types: ['Grass', 'Ice'],
         bs: { hp: 90, at: 132, df: 105, sa: 132, sd: 105, sp: 30 },
         weightkg: 185,
         abilities: { 0: 'Snow Warning' },
         baseSpecies: 'Abomasnow'
     },
     'Absol-Mega': {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 65, at: 150, df: 60, sa: 115, sd: 60, sp: 115 },
         weightkg: 49,
         abilities: { 0: 'Magic Bounce' },
         baseSpecies: 'Absol'
     },
     'Aerodactyl-Mega': {
-        types: ['바위', '비행'],
+        types: ['Rock', 'Flying'],
         bs: { hp: 80, at: 135, df: 85, sa: 70, sd: 95, sp: 150 },
         weightkg: 79,
         abilities: { 0: 'Tough Claws' },
         baseSpecies: 'Aerodactyl'
     },
     'Aggron-Mega': {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 70, at: 140, df: 230, sa: 60, sd: 80, sp: 50 },
         weightkg: 395,
         abilities: { 0: 'Filter' },
         baseSpecies: 'Aggron'
     },
     'Alakazam-Mega': {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 55, at: 50, df: 65, sa: 175, sd: 95, sp: 150 },
         weightkg: 48,
         abilities: { 0: 'Trace' },
         baseSpecies: 'Alakazam'
     },
     'Altaria-Mega': {
-        types: ['드래곤', '페어리'],
+        types: ['Dragon', 'Fairy'],
         bs: { hp: 75, at: 110, df: 110, sa: 110, sd: 105, sp: 80 },
         weightkg: 20.6,
         abilities: { 0: 'Pixilate' },
         baseSpecies: 'Altaria'
     },
     'Ampharos-Mega': {
-        types: ['전기', '드래곤'],
+        types: ['Electric', 'Dragon'],
         bs: { hp: 90, at: 95, df: 105, sa: 165, sd: 110, sp: 45 },
         weightkg: 61.5,
         abilities: { 0: 'Mold Breaker' },
         baseSpecies: 'Ampharos'
     },
     'Audino-Mega': {
-        types: ['노말', '페어리'],
+        types: ['Normal', 'Fairy'],
         bs: { hp: 103, at: 60, df: 126, sa: 80, sd: 126, sp: 50 },
         weightkg: 32,
         abilities: { 0: 'Healer' },
         baseSpecies: 'Audino'
     },
     'Banette-Mega': {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 64, at: 165, df: 75, sa: 93, sd: 83, sp: 75 },
         weightkg: 13,
         abilities: { 0: 'Prankster' },
         baseSpecies: 'Banette'
     },
     'Beedrill-Mega': {
-        types: ['벌레', '독'],
+        types: ['Bug', 'Poison'],
         bs: { hp: 65, at: 150, df: 40, sa: 15, sd: 80, sp: 145 },
         weightkg: 40.5,
         abilities: { 0: 'Adaptability' },
         baseSpecies: 'Beedrill'
     },
     'Blastoise-Mega': {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 79, at: 103, df: 120, sa: 135, sd: 115, sp: 78 },
         weightkg: 101.1,
         abilities: { 0: 'Mega Launcher' },
         baseSpecies: 'Blastoise'
     },
     'Blaziken-Mega': {
-        types: ['불꽃', '격투'],
+        types: ['Fire', 'Fighting'],
         bs: { hp: 80, at: 160, df: 80, sa: 130, sd: 80, sp: 100 },
         weightkg: 52,
         abilities: { 0: 'Speed Boost' },
         baseSpecies: 'Blaziken'
     },
     'Camerupt-Mega': {
-        types: ['불꽃', '땅'],
+        types: ['Fire', 'Ground'],
         bs: { hp: 70, at: 120, df: 100, sa: 145, sd: 105, sp: 20 },
         weightkg: 320.5,
         abilities: { 0: 'Sheer Force' },
         baseSpecies: 'Camerupt'
     },
     'Charizard-Mega-X': {
-        types: ['불꽃', '드래곤'],
+        types: ['Fire', 'Dragon'],
         bs: { hp: 78, at: 130, df: 111, sa: 130, sd: 85, sp: 100 },
         weightkg: 110.5,
         abilities: { 0: 'Tough Claws' },
         baseSpecies: 'Charizard'
     },
     'Charizard-Mega-Y': {
-        types: ['불꽃', '비행'],
+        types: ['Fire', 'Flying'],
         bs: { hp: 78, at: 104, df: 78, sa: 159, sd: 115, sp: 100 },
         weightkg: 100.5,
         abilities: { 0: 'Drought' },
         baseSpecies: 'Charizard'
     },
     'Crucibelle-Mega': {
-        types: ['바위', '독'],
+        types: ['Rock', 'Poison'],
         bs: { hp: 106, at: 135, df: 75, sa: 85, sd: 125, sp: 114 },
         weightkg: 22.5,
         abilities: { 0: 'Magic Guard' },
         baseSpecies: 'Crucibelle'
     },
     'Diancie-Mega': {
-        types: ['바위', '페어리'],
+        types: ['Rock', 'Fairy'],
         bs: { hp: 50, at: 160, df: 110, sa: 160, sd: 110, sp: 110 },
         weightkg: 27.8,
         abilities: { 0: 'Magic Bounce' },
@@ -5652,119 +5652,119 @@ var XY_PATCH = {
         gender: 'N'
     },
     'Gallade-Mega': {
-        types: ['에스퍼', '격투'],
+        types: ['Psychic', 'Fighting'],
         bs: { hp: 68, at: 165, df: 95, sa: 65, sd: 115, sp: 110 },
         weightkg: 56.4,
         abilities: { 0: 'Inner Focus' },
         baseSpecies: 'Gallade'
     },
     'Garchomp-Mega': {
-        types: ['드래곤', '땅'],
+        types: ['Dragon', 'Ground'],
         bs: { hp: 108, at: 170, df: 115, sa: 120, sd: 95, sp: 92 },
         weightkg: 95,
         abilities: { 0: 'Sand Force' },
         baseSpecies: 'Garchomp'
     },
     'Gardevoir-Mega': {
-        types: ['에스퍼', '페어리'],
+        types: ['Psychic', 'Fairy'],
         bs: { hp: 68, at: 85, df: 65, sa: 165, sd: 135, sp: 100 },
         weightkg: 48.4,
         abilities: { 0: 'Pixilate' },
         baseSpecies: 'Gardevoir'
     },
     'Gengar-Mega': {
-        types: ['고스트', '독'],
+        types: ['Ghost', 'Poison'],
         bs: { hp: 60, at: 65, df: 80, sa: 170, sd: 95, sp: 130 },
         weightkg: 40.5,
         abilities: { 0: 'Shadow Tag' },
         baseSpecies: 'Gengar'
     },
     'Glalie-Mega': {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 80, at: 120, df: 80, sa: 120, sd: 80, sp: 100 },
         weightkg: 350.2,
         abilities: { 0: 'Refrigerate' },
         baseSpecies: 'Glalie'
     },
     'Gyarados-Mega': {
-        types: ['물', '악'],
+        types: ['Water', 'Dark'],
         bs: { hp: 95, at: 155, df: 109, sa: 70, sd: 130, sp: 81 },
         weightkg: 305,
         abilities: { 0: 'Mold Breaker' },
         baseSpecies: 'Gyarados'
     },
     'Heracross-Mega': {
-        types: ['벌레', '격투'],
+        types: ['Bug', 'Fighting'],
         bs: { hp: 80, at: 185, df: 115, sa: 40, sd: 105, sp: 75 },
         weightkg: 62.5,
         abilities: { 0: 'Skill Link' },
         baseSpecies: 'Heracross'
     },
     'Houndoom-Mega': {
-        types: ['악', '불꽃'],
+        types: ['Dark', 'Fire'],
         bs: { hp: 75, at: 90, df: 90, sa: 140, sd: 90, sp: 115 },
         weightkg: 49.5,
         abilities: { 0: 'Solar Power' },
         baseSpecies: 'Houndoom'
     },
     'Kangaskhan-Mega': {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 105, at: 125, df: 100, sa: 60, sd: 100, sp: 100 },
         weightkg: 100,
         abilities: { 0: 'Parental Bond' },
         baseSpecies: 'Kangaskhan'
     },
     'Latias-Mega': {
-        types: ['드래곤', '에스퍼'],
+        types: ['Dragon', 'Psychic'],
         bs: { hp: 80, at: 100, df: 120, sa: 140, sd: 150, sp: 110 },
         weightkg: 52,
         abilities: { 0: 'Levitate' },
         baseSpecies: 'Latias'
     },
     'Latios-Mega': {
-        types: ['드래곤', '에스퍼'],
+        types: ['Dragon', 'Psychic'],
         bs: { hp: 80, at: 130, df: 100, sa: 160, sd: 120, sp: 110 },
         weightkg: 70,
         abilities: { 0: 'Levitate' },
         baseSpecies: 'Latios'
     },
     'Lopunny-Mega': {
-        types: ['노말', '격투'],
+        types: ['Normal', 'Fighting'],
         bs: { hp: 65, at: 136, df: 94, sa: 54, sd: 96, sp: 135 },
         weightkg: 28.3,
         abilities: { 0: 'Scrappy' },
         baseSpecies: 'Lopunny'
     },
     'Lucario-Mega': {
-        types: ['격투', '강철'],
+        types: ['Fighting', 'Steel'],
         bs: { hp: 70, at: 145, df: 88, sa: 140, sd: 70, sp: 112 },
         weightkg: 57.5,
         abilities: { 0: 'Adaptability' },
         baseSpecies: 'Lucario'
     },
     'Manectric-Mega': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 70, at: 75, df: 80, sa: 135, sd: 80, sp: 135 },
         weightkg: 44,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Manectric'
     },
     'Mawile-Mega': {
-        types: ['강철', '페어리'],
+        types: ['Steel', 'Fairy'],
         bs: { hp: 50, at: 105, df: 125, sa: 55, sd: 95, sp: 50 },
         weightkg: 23.5,
         abilities: { 0: 'Huge Power' },
         baseSpecies: 'Mawile'
     },
     'Medicham-Mega': {
-        types: ['격투', '에스퍼'],
+        types: ['Fighting', 'Psychic'],
         bs: { hp: 60, at: 100, df: 85, sa: 80, sd: 85, sp: 100 },
         weightkg: 31.5,
         abilities: { 0: 'Pure Power' },
         baseSpecies: 'Medicham'
     },
     'Metagross-Mega': {
-        types: ['강철', '에스퍼'],
+        types: ['Steel', 'Psychic'],
         bs: { hp: 80, at: 145, df: 150, sa: 105, sd: 110, sp: 110 },
         weightkg: 942.9,
         abilities: { 0: 'Tough Claws' },
@@ -5772,7 +5772,7 @@ var XY_PATCH = {
         gender: 'N'
     },
     'Mewtwo-Mega-X': {
-        types: ['에스퍼', '격투'],
+        types: ['Psychic', 'Fighting'],
         bs: { hp: 106, at: 190, df: 100, sa: 154, sd: 100, sp: 130 },
         weightkg: 127,
         abilities: { 0: 'Steadfast' },
@@ -5780,7 +5780,7 @@ var XY_PATCH = {
         gender: 'N'
     },
     'Mewtwo-Mega-Y': {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 106, at: 150, df: 70, sa: 194, sd: 120, sp: 140 },
         weightkg: 33,
         abilities: { 0: 'Insomnia' },
@@ -5788,21 +5788,21 @@ var XY_PATCH = {
         gender: 'N'
     },
     'Pidgeot-Mega': {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 83, at: 80, df: 80, sa: 135, sd: 80, sp: 121 },
         weightkg: 50.5,
         abilities: { 0: 'No Guard' },
         baseSpecies: 'Pidgeot'
     },
     'Pinsir-Mega': {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 65, at: 155, df: 120, sa: 65, sd: 90, sp: 105 },
         weightkg: 59,
         abilities: { 0: 'Aerilate' },
         baseSpecies: 'Pinsir'
     },
     'Rayquaza-Mega': {
-        types: ['드래곤', '비행'],
+        types: ['Dragon', 'Flying'],
         bs: { hp: 105, at: 180, df: 100, sa: 180, sd: 100, sp: 115 },
         weightkg: 392,
         gender: 'N',
@@ -5810,185 +5810,185 @@ var XY_PATCH = {
         baseSpecies: 'Rayquaza'
     },
     'Sableye-Mega': {
-        types: ['악', '고스트'],
+        types: ['Dark', 'Ghost'],
         bs: { hp: 50, at: 85, df: 125, sa: 85, sd: 115, sp: 20 },
         weightkg: 161,
         abilities: { 0: 'Magic Bounce' },
         baseSpecies: 'Sableye'
     },
     'Salamence-Mega': {
-        types: ['드래곤', '비행'],
+        types: ['Dragon', 'Flying'],
         bs: { hp: 95, at: 145, df: 130, sa: 120, sd: 90, sp: 120 },
         weightkg: 112.6,
         abilities: { 0: 'Aerilate' },
         baseSpecies: 'Salamence'
     },
     'Sceptile-Mega': {
-        types: ['풀', '드래곤'],
+        types: ['Grass', 'Dragon'],
         bs: { hp: 70, at: 110, df: 75, sa: 145, sd: 85, sp: 145 },
         weightkg: 55.2,
         abilities: { 0: 'Lightning Rod' },
         baseSpecies: 'Sceptile'
     },
     'Scizor-Mega': {
-        types: ['벌레', '강철'],
+        types: ['Bug', 'Steel'],
         bs: { hp: 70, at: 150, df: 140, sa: 65, sd: 100, sp: 75 },
         weightkg: 125,
         abilities: { 0: 'Technician' },
         baseSpecies: 'Scizor'
     },
     'Sharpedo-Mega': {
-        types: ['물', '악'],
+        types: ['Water', 'Dark'],
         bs: { hp: 70, at: 140, df: 70, sa: 110, sd: 65, sp: 105 },
         weightkg: 130.3,
         abilities: { 0: 'Strong Jaw' },
         baseSpecies: 'Sharpedo'
     },
     'Slowbro-Mega': {
-        types: ['물', '에스퍼'],
+        types: ['Water', 'Psychic'],
         bs: { hp: 95, at: 75, df: 180, sa: 130, sd: 80, sp: 30 },
         weightkg: 120,
         abilities: { 0: 'Shell Armor' },
         baseSpecies: 'Slowbro'
     },
     'Steelix-Mega': {
-        types: ['강철', '땅'],
+        types: ['Steel', 'Ground'],
         bs: { hp: 75, at: 125, df: 230, sa: 55, sd: 95, sp: 30 },
         weightkg: 740,
         abilities: { 0: 'Sand Force' },
         baseSpecies: 'Steelix'
     },
     'Swampert-Mega': {
-        types: ['물', '땅'],
+        types: ['Water', 'Ground'],
         bs: { hp: 100, at: 150, df: 110, sa: 95, sd: 110, sp: 70 },
         weightkg: 102,
         abilities: { 0: 'Swift Swim' },
         baseSpecies: 'Swampert'
     },
     'Tyranitar-Mega': {
-        types: ['바위', '악'],
+        types: ['Rock', 'Dark'],
         bs: { hp: 100, at: 164, df: 150, sa: 95, sd: 120, sp: 71 },
         weightkg: 255,
         abilities: { 0: 'Sand Stream' },
         baseSpecies: 'Tyranitar'
     },
     'Venusaur-Mega': {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 80, at: 100, df: 123, sa: 122, sd: 120, sp: 80 },
         weightkg: 155.5,
         abilities: { 0: 'Thick Fat' },
         baseSpecies: 'Venusaur'
     },
     Meowstic: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 74, at: 48, df: 76, sa: 83, sd: 81, sp: 104 },
         weightkg: 8.5,
         abilities: { 0: 'Keen Eye' },
         otherFormes: ['Meowstic-F']
     },
     'Meowstic-F': {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 74, at: 48, df: 76, sa: 83, sd: 81, sp: 104 },
         weightkg: 8.5,
         abilities: { 0: 'Keen Eye' },
         baseSpecies: 'Meowstic'
     },
     Naviathan: {
-        types: ['물', '강철'],
+        types: ['Water', 'Steel'],
         bs: { hp: 103, at: 110, df: 90, sa: 95, sd: 65, sp: 97 },
         weightkg: 510,
         abilities: { 0: 'Water Veil' }
     },
     Noibat: {
-        types: ['비행', '드래곤'],
+        types: ['Flying', 'Dragon'],
         bs: { hp: 40, at: 30, df: 35, sa: 45, sd: 40, sp: 55 },
         weightkg: 8,
         nfe: true,
         abilities: { 0: 'Frisk' }
     },
     Noivern: {
-        types: ['비행', '드래곤'],
+        types: ['Flying', 'Dragon'],
         bs: { hp: 85, at: 70, df: 80, sa: 97, sd: 80, sp: 123 },
         weightkg: 85,
         abilities: { 0: 'Frisk' }
     },
     Pancham: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 67, at: 82, df: 62, sa: 46, sd: 48, sp: 43 },
         weightkg: 8,
         nfe: true,
         abilities: { 0: 'Iron Fist' }
     },
     Pangoro: {
-        types: ['격투', '악'],
+        types: ['Fighting', 'Dark'],
         bs: { hp: 95, at: 124, df: 78, sa: 69, sd: 71, sp: 58 },
         weightkg: 136,
         abilities: { 0: 'Iron Fist' }
     },
     Phantump: {
-        types: ['고스트', '풀'],
+        types: ['Ghost', 'Grass'],
         bs: { hp: 43, at: 70, df: 48, sa: 50, sd: 60, sp: 38 },
         weightkg: 7,
         nfe: true,
         abilities: { 0: 'Natural Cure' }
     },
     'Pikachu-Cosplay': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Lightning Rod' },
         baseSpecies: 'Pikachu'
     },
     'Pikachu-Rock-Star': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Lightning Rod' },
         baseSpecies: 'Pikachu'
     },
     'Pikachu-Belle': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Lightning Rod' },
         baseSpecies: 'Pikachu'
     },
     'Pikachu-PhD': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Lightning Rod' },
         baseSpecies: 'Pikachu'
     },
     'Pikachu-Pop-Star': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Lightning Rod' },
         baseSpecies: 'Pikachu'
     },
     'Pikachu-Libre': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Lightning Rod' },
         baseSpecies: 'Pikachu'
     },
     Plasmanta: {
-        types: ['전기', '독'],
+        types: ['Electric', 'Poison'],
         bs: { hp: 60, at: 57, df: 119, sa: 131, sd: 98, sp: 100 },
         weightkg: 460,
         abilities: { 0: 'Storm Drain' }
     },
     Pluffle: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 74, at: 38, df: 51, sa: 65, sd: 78, sp: 49 },
         weightkg: 1.8,
         nfe: true,
         abilities: { 0: 'Natural Cure' }
     },
     'Groudon-Primal': {
-        types: ['땅', '불꽃'],
+        types: ['Ground', 'Fire'],
         bs: { hp: 100, at: 180, df: 160, sa: 150, sd: 90, sp: 90 },
         weightkg: 999.7,
         abilities: { 0: 'Desolate Land' },
@@ -5996,7 +5996,7 @@ var XY_PATCH = {
         gender: 'N'
     },
     'Kyogre-Primal': {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 100, at: 150, df: 90, sa: 180, sd: 160, sp: 90 },
         weightkg: 430,
         abilities: { 0: 'Primordial Sea' },
@@ -6004,7 +6004,7 @@ var XY_PATCH = {
         gender: 'N'
     },
     Pumpkaboo: {
-        types: ['고스트', '풀'],
+        types: ['Ghost', 'Grass'],
         bs: { hp: 49, at: 66, df: 70, sa: 44, sd: 55, sp: 51 },
         weightkg: 5,
         nfe: true,
@@ -6012,7 +6012,7 @@ var XY_PATCH = {
         otherFormes: ['Pumpkaboo-Large', 'Pumpkaboo-Small', 'Pumpkaboo-Super']
     },
     'Pumpkaboo-Large': {
-        types: ['고스트', '풀'],
+        types: ['Ghost', 'Grass'],
         bs: { hp: 54, at: 66, df: 70, sa: 44, sd: 55, sp: 46 },
         weightkg: 7.5,
         nfe: true,
@@ -6020,7 +6020,7 @@ var XY_PATCH = {
         baseSpecies: 'Pumpkaboo'
     },
     'Pumpkaboo-Small': {
-        types: ['고스트', '풀'],
+        types: ['Ghost', 'Grass'],
         bs: { hp: 44, at: 66, df: 70, sa: 44, sd: 55, sp: 56 },
         weightkg: 3.5,
         nfe: true,
@@ -6028,7 +6028,7 @@ var XY_PATCH = {
         baseSpecies: 'Pumpkaboo'
     },
     'Pumpkaboo-Super': {
-        types: ['고스트', '풀'],
+        types: ['Ghost', 'Grass'],
         bs: { hp: 59, at: 66, df: 70, sa: 44, sd: 55, sp: 41 },
         weightkg: 15,
         nfe: true,
@@ -6036,168 +6036,168 @@ var XY_PATCH = {
         baseSpecies: 'Pumpkaboo'
     },
     Pyroar: {
-        types: ['불꽃', '노말'],
+        types: ['Fire', 'Normal'],
         bs: { hp: 86, at: 68, df: 72, sa: 109, sd: 66, sp: 106 },
         weightkg: 81.5,
         abilities: { 0: 'Rivalry' }
     },
     Quilladin: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 61, at: 78, df: 95, sa: 56, sd: 58, sp: 57 },
         weightkg: 29,
         nfe: true,
         abilities: { 0: 'Overgrow' }
     },
     Scatterbug: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 38, at: 35, df: 40, sa: 27, sd: 25, sp: 35 },
         weightkg: 2.5,
         nfe: true,
         abilities: { 0: 'Shield Dust' }
     },
     Skiddo: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 66, at: 65, df: 48, sa: 62, sd: 57, sp: 52 },
         weightkg: 31,
         nfe: true,
         abilities: { 0: 'Sap Sipper' }
     },
     Skrelp: {
-        types: ['독', '물'],
+        types: ['Poison', 'Water'],
         bs: { hp: 50, at: 60, df: 60, sa: 60, sd: 60, sp: 30 },
         weightkg: 7.3,
         nfe: true,
         abilities: { 0: 'Poison Point' }
     },
     Sliggoo: {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 68, at: 75, df: 53, sa: 83, sd: 113, sp: 60 },
         weightkg: 17.5,
         nfe: true,
         abilities: { 0: 'Sap Sipper' }
     },
     Slurpuff: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 82, at: 80, df: 86, sa: 85, sd: 75, sp: 72 },
         weightkg: 5,
         abilities: { 0: 'Sweet Veil' }
     },
     Snugglow: {
-        types: ['전기', '독'],
+        types: ['Electric', 'Poison'],
         bs: { hp: 40, at: 37, df: 79, sa: 91, sd: 68, sp: 70 },
         weightkg: 6,
         nfe: true,
         abilities: { 0: 'Storm Drain' }
     },
     Spewpa: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 45, at: 22, df: 60, sa: 27, sd: 30, sp: 29 },
         weightkg: 8.4,
         nfe: true,
         abilities: { 0: 'Shed Skin' }
     },
     Spritzee: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 78, at: 52, df: 60, sa: 63, sd: 65, sp: 23 },
         weightkg: 0.5,
         nfe: true,
         abilities: { 0: 'Healer' }
     },
     Swirlix: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 62, at: 48, df: 66, sa: 59, sd: 57, sp: 49 },
         weightkg: 3.5,
         nfe: true,
         abilities: { 0: 'Sweet Veil' }
     },
     Sylveon: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 95, at: 65, df: 65, sa: 110, sd: 130, sp: 60 },
         weightkg: 23.5,
         abilities: { 0: 'Cute Charm' }
     },
     Talonflame: {
-        types: ['불꽃', '비행'],
+        types: ['Fire', 'Flying'],
         bs: { hp: 78, at: 81, df: 71, sa: 74, sd: 69, sp: 126 },
         weightkg: 24.5,
         abilities: { 0: 'Flame Body' }
     },
     Trevenant: {
-        types: ['고스트', '풀'],
+        types: ['Ghost', 'Grass'],
         bs: { hp: 85, at: 110, df: 76, sa: 65, sd: 82, sp: 56 },
         weightkg: 71,
         abilities: { 0: 'Natural Cure' }
     },
     Tyrantrum: {
-        types: ['바위', '드래곤'],
+        types: ['Rock', 'Dragon'],
         bs: { hp: 82, at: 121, df: 119, sa: 69, sd: 59, sp: 71 },
         weightkg: 270,
         abilities: { 0: 'Strong Jaw' }
     },
     Tyrunt: {
-        types: ['바위', '드래곤'],
+        types: ['Rock', 'Dragon'],
         bs: { hp: 58, at: 89, df: 77, sa: 45, sd: 45, sp: 48 },
         weightkg: 26,
         nfe: true,
         abilities: { 0: 'Strong Jaw' }
     },
     Vivillon: {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 80, at: 52, df: 50, sa: 90, sd: 50, sp: 89 },
         weightkg: 17,
         abilities: { 0: 'Shield Dust' },
         otherFormes: ['Vivillon-Fancy', 'Vivillon-Pokeball']
     },
     'Vivillon-Fancy': {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 80, at: 52, df: 50, sa: 90, sd: 50, sp: 89 },
         weightkg: 17,
         abilities: { 0: 'Shield Dust' },
         baseSpecies: 'Vivillon'
     },
     'Vivillon-Pokeball': {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 80, at: 52, df: 50, sa: 90, sd: 50, sp: 89 },
         weightkg: 17,
         abilities: { 0: 'Shield Dust' },
         baseSpecies: 'Vivillon'
     },
     Volcanion: {
-        types: ['불꽃', '물'],
+        types: ['Fire', 'Water'],
         bs: { hp: 80, at: 110, df: 120, sa: 130, sd: 90, sp: 70 },
         weightkg: 195,
         gender: 'N',
         abilities: { 0: 'Water Absorb' }
     },
     Volkraken: {
-        types: ['물', '불꽃'],
+        types: ['Water', 'Fire'],
         bs: { hp: 100, at: 45, df: 80, sa: 135, sd: 100, sp: 95 },
         weightkg: 44.5,
         abilities: { 0: 'Analytic' }
     },
     Volkritter: {
-        types: ['물', '불꽃'],
+        types: ['Water', 'Fire'],
         bs: { hp: 60, at: 30, df: 50, sa: 80, sd: 60, sp: 70 },
         weightkg: 15,
         nfe: true,
         abilities: { 0: 'Anticipation' }
     },
     Xerneas: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 126, at: 131, df: 95, sa: 131, sd: 98, sp: 99 },
         weightkg: 215,
         abilities: { 0: 'Fairy Aura' },
         gender: 'N'
     },
     Yveltal: {
-        types: ['악', '비행'],
+        types: ['Dark', 'Flying'],
         bs: { hp: 126, at: 131, df: 95, sa: 131, sd: 98, sp: 99 },
         weightkg: 203,
         abilities: { 0: 'Dark Aura' },
         gender: 'N'
     },
     Zygarde: {
-        types: ['드래곤', '땅'],
+        types: ['Dragon', 'Ground'],
         bs: { hp: 108, at: 100, df: 121, sa: 81, sd: 95, sp: 95 },
         weightkg: 305,
         abilities: { 0: 'Aura Break' },
@@ -6270,87 +6270,87 @@ var SM_PATCH = {
     Woobat: { bs: { hp: 65 } },
     Zygarde: { otherFormes: ['Zygarde-10%', 'Zygarde-Complete'] },
     Araquanid: {
-        types: ['물', '벌레'],
+        types: ['Water', 'Bug'],
         bs: { hp: 68, at: 70, df: 92, sa: 50, sd: 132, sp: 42 },
         abilities: { 0: 'Water Bubble' },
         weightkg: 82,
         otherFormes: ['Araquanid-Totem']
     },
     'Araquanid-Totem': {
-        types: ['물', '벌레'],
+        types: ['Water', 'Bug'],
         bs: { hp: 68, at: 70, df: 92, sa: 50, sd: 132, sp: 42 },
         abilities: { 0: 'Water Bubble' },
         weightkg: 217.5,
         baseSpecies: 'Araquanid'
     },
     Bewear: {
-        types: ['노말', '격투'],
+        types: ['Normal', 'Fighting'],
         bs: { hp: 120, at: 125, df: 80, sa: 55, sd: 60, sp: 60 },
         abilities: { 0: 'Fluffy' },
         weightkg: 135
     },
     Blacephalon: {
-        types: ['불꽃', '고스트'],
+        types: ['Fire', 'Ghost'],
         bs: { hp: 53, at: 127, df: 53, sa: 151, sd: 79, sp: 107 },
         weightkg: 13,
         abilities: { 0: 'Beast Boost' },
         gender: 'N'
     },
     Bounsweet: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 42, at: 30, df: 38, sa: 30, sd: 38, sp: 32 },
         weightkg: 3.2,
         nfe: true,
         abilities: { 0: 'Leaf Guard' }
     },
     Brionne: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 60, at: 69, df: 69, sa: 91, sd: 81, sp: 50 },
         weightkg: 17.5,
         nfe: true,
         abilities: { 0: 'Torrent' }
     },
     Bruxish: {
-        types: ['물', '에스퍼'],
+        types: ['Water', 'Psychic'],
         bs: { hp: 68, at: 105, df: 70, sa: 70, sd: 70, sp: 92 },
         weightkg: 19,
         abilities: { 0: 'Dazzling' }
     },
     Buzzwole: {
-        types: ['벌레', '격투'],
+        types: ['Bug', 'Fighting'],
         bs: { hp: 107, at: 139, df: 139, sa: 53, sd: 53, sp: 79 },
         weightkg: 333.6,
         abilities: { 0: 'Beast Boost' },
         gender: 'N'
     },
     Caribolt: {
-        types: ['풀', '전기'],
+        types: ['Grass', 'Electric'],
         bs: { hp: 84, at: 106, df: 82, sa: 77, sd: 80, sp: 106 },
         weightkg: 140,
         abilities: { 0: 'Overgrow' }
     },
     Celesteela: {
-        types: ['강철', '비행'],
+        types: ['Steel', 'Flying'],
         bs: { hp: 97, at: 101, df: 103, sa: 107, sd: 101, sp: 61 },
         weightkg: 999.9,
         abilities: { 0: 'Beast Boost' },
         gender: 'N'
     },
     Charjabug: {
-        types: ['벌레', '전기'],
+        types: ['Bug', 'Electric'],
         bs: { hp: 57, at: 82, df: 95, sa: 55, sd: 75, sp: 36 },
         weightkg: 10.5,
         nfe: true,
         abilities: { 0: 'Battery' }
     },
     Comfey: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 51, at: 52, df: 90, sa: 82, sd: 110, sp: 100 },
         weightkg: 0.3,
         abilities: { 0: 'Flower Veil' }
     },
     Cosmoem: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 43, at: 29, df: 131, sa: 29, sd: 131, sp: 37 },
         weightkg: 999.9,
         nfe: true,
@@ -6358,14 +6358,14 @@ var SM_PATCH = {
         abilities: { 0: 'Sturdy' }
     },
     Coribalis: {
-        types: ['물', '벌레'],
+        types: ['Water', 'Bug'],
         bs: { hp: 76, at: 69, df: 90, sa: 65, sd: 77, sp: 43 },
         weightkg: 24.5,
         nfe: true,
         abilities: { 0: 'Torrent' }
     },
     Cosmog: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 43, at: 29, df: 31, sa: 29, sd: 31, sp: 37 },
         weightkg: 0.1,
         nfe: true,
@@ -6373,60 +6373,60 @@ var SM_PATCH = {
         abilities: { 0: 'Unaware' }
     },
     Crabominable: {
-        types: ['격투', '얼음'],
+        types: ['Fighting', 'Ice'],
         bs: { hp: 97, at: 132, df: 77, sa: 62, sd: 67, sp: 43 },
         weightkg: 180,
         abilities: { 0: 'Hyper Cutter' }
     },
     Crabrawler: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 47, at: 82, df: 57, sa: 42, sd: 47, sp: 63 },
         weightkg: 7,
         nfe: true,
         abilities: { 0: 'Hyper Cutter' }
     },
     Cutiefly: {
-        types: ['벌레', '페어리'],
+        types: ['Bug', 'Fairy'],
         bs: { hp: 40, at: 45, df: 40, sa: 55, sd: 40, sp: 84 },
         weightkg: 0.2,
         nfe: true,
         abilities: { 0: 'Honey Gather' }
     },
     Dartrix: {
-        types: ['풀', '비행'],
+        types: ['Grass', 'Flying'],
         bs: { hp: 78, at: 75, df: 75, sa: 70, sd: 70, sp: 52 },
         weightkg: 16,
         nfe: true,
         abilities: { 0: 'Overgrow' }
     },
     Decidueye: {
-        types: ['풀', '고스트'],
+        types: ['Grass', 'Ghost'],
         bs: { hp: 78, at: 107, df: 75, sa: 100, sd: 100, sp: 70 },
         weightkg: 36.6,
         abilities: { 0: 'Overgrow' }
     },
     Dewpider: {
-        types: ['물', '벌레'],
+        types: ['Water', 'Bug'],
         bs: { hp: 38, at: 40, df: 52, sa: 40, sd: 72, sp: 27 },
         weightkg: 4,
         nfe: true,
         abilities: { 0: 'Water Bubble' }
     },
     Dhelmise: {
-        types: ['고스트', '풀'],
+        types: ['Ghost', 'Grass'],
         bs: { hp: 70, at: 131, df: 100, sa: 86, sd: 90, sp: 40 },
         weightkg: 210,
         gender: 'N',
         abilities: { 0: 'Steelworker' }
     },
     Drampa: {
-        types: ['노말', '드래곤'],
+        types: ['Normal', 'Dragon'],
         bs: { hp: 78, at: 60, df: 85, sa: 135, sd: 91, sp: 36 },
         weightkg: 185,
         abilities: { 0: 'Berserk' }
     },
     'Diglett-Alola': {
-        types: ['땅', '강철'],
+        types: ['Ground', 'Steel'],
         bs: { hp: 10, at: 55, df: 30, sa: 35, sd: 45, sp: 90 },
         weightkg: 1,
         baseSpecies: 'Diglett',
@@ -6434,56 +6434,56 @@ var SM_PATCH = {
         abilities: { 0: 'Sand Veil' }
     },
     'Dugtrio-Alola': {
-        types: ['땅', '강철'],
+        types: ['Ground', 'Steel'],
         bs: { hp: 35, at: 100, df: 60, sa: 50, sd: 70, sp: 110 },
         weightkg: 66.6,
         baseSpecies: 'Dugtrio',
         abilities: { 0: 'Sand Veil' }
     },
     'Eevee-Starter': {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 65, at: 75, df: 70, sa: 65, sd: 85, sp: 75 },
         weightkg: 6.5,
         abilities: { 0: 'Run Away' },
         baseSpecies: 'Eevee'
     },
     Electrelk: {
-        types: ['풀', '전기'],
+        types: ['Grass', 'Electric'],
         bs: { hp: 59, at: 81, df: 67, sa: 57, sd: 55, sp: 101 },
         weightkg: 41.5,
         nfe: true,
         abilities: { 0: 'Overgrow' }
     },
     Equilibra: {
-        types: ['강철', '땅'],
+        types: ['Steel', 'Ground'],
         bs: { hp: 102, at: 50, df: 96, sa: 133, sd: 118, sp: 60 },
         weightkg: 51.3,
         gender: 'N',
         abilities: { 0: 'Levitate' }
     },
     'Exeggutor-Alola': {
-        types: ['풀', '드래곤'],
+        types: ['Grass', 'Dragon'],
         bs: { hp: 95, at: 105, df: 85, sa: 125, sd: 75, sp: 45 },
         weightkg: 415.6,
         baseSpecies: 'Exeggutor',
         abilities: { 0: 'Frisk' }
     },
     Fawnifer: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 49, at: 61, df: 42, sa: 52, sd: 40, sp: 76 },
         weightkg: 6.9,
         nfe: true,
         abilities: { 0: 'Overgrow' }
     },
     Fomantis: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 40, at: 55, df: 35, sa: 50, sd: 35, sp: 35 },
         weightkg: 1.5,
         nfe: true,
         abilities: { 0: 'Leaf Guard' }
     },
     'Geodude-Alola': {
-        types: ['바위', '전기'],
+        types: ['Rock', 'Electric'],
         bs: { hp: 40, at: 80, df: 100, sa: 30, sd: 30, sp: 20 },
         weightkg: 20.3,
         baseSpecies: 'Geodude',
@@ -6491,20 +6491,20 @@ var SM_PATCH = {
         abilities: { 0: 'Magnet Pull' }
     },
     'Golem-Alola': {
-        types: ['바위', '전기'],
+        types: ['Rock', 'Electric'],
         bs: { hp: 80, at: 120, df: 130, sa: 55, sd: 65, sp: 45 },
         weightkg: 316,
         abilities: { 0: 'Magnet Pull' },
         baseSpecies: 'Golem'
     },
     Golisopod: {
-        types: ['벌레', '물'],
+        types: ['Bug', 'Water'],
         bs: { hp: 75, at: 125, df: 140, sa: 60, sd: 90, sp: 40 },
         weightkg: 108,
         abilities: { 0: 'Emergency Exit' }
     },
     'Graveler-Alola': {
-        types: ['바위', '전기'],
+        types: ['Rock', 'Electric'],
         bs: { hp: 55, at: 95, df: 115, sa: 45, sd: 45, sp: 35 },
         weightkg: 110,
         baseSpecies: 'Graveler',
@@ -6512,7 +6512,7 @@ var SM_PATCH = {
         abilities: { 0: 'Magnet Pull' }
     },
     'Grimer-Alola': {
-        types: ['독', '악'],
+        types: ['Poison', 'Dark'],
         bs: { hp: 80, at: 80, df: 50, sa: 40, sd: 50, sp: 25 },
         weightkg: 42,
         baseSpecies: 'Grimer',
@@ -6520,62 +6520,62 @@ var SM_PATCH = {
         abilities: { 0: 'Poison Touch' }
     },
     'Greninja-Ash': {
-        types: ['물', '악'],
+        types: ['Water', 'Dark'],
         bs: { hp: 72, at: 145, df: 67, sa: 153, sd: 71, sp: 132 },
         weightkg: 40,
         abilities: { 0: 'Battle Bond' },
         baseSpecies: 'Greninja'
     },
     Grubbin: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 47, at: 62, df: 45, sa: 55, sd: 45, sp: 46 },
         weightkg: 4.4,
         nfe: true,
         abilities: { 0: 'Swarm' }
     },
     Gumshoos: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 88, at: 110, df: 60, sa: 55, sd: 60, sp: 45 },
         weightkg: 14.2,
         otherFormes: ['Gumshoos-Totem'],
         abilities: { 0: 'Stakeout' }
     },
     'Gumshoos-Totem': {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 88, at: 110, df: 60, sa: 55, sd: 60, sp: 45 },
         weightkg: 60,
         baseSpecies: 'Gumshoos',
         abilities: { 0: 'Adaptability' }
     },
     Guzzlord: {
-        types: ['악', '드래곤'],
+        types: ['Dark', 'Dragon'],
         bs: { hp: 223, at: 101, df: 53, sa: 97, sd: 53, sp: 43 },
         weightkg: 888,
         abilities: { 0: 'Beast Boost' },
         gender: 'N'
     },
     'Hakamo-o': {
-        types: ['드래곤', '격투'],
+        types: ['Dragon', 'Fighting'],
         bs: { hp: 55, at: 75, df: 90, sa: 65, sd: 70, sp: 65 },
         weightkg: 47,
         nfe: true,
         abilities: { 0: 'Bulletproof' }
     },
     Incineroar: {
-        types: ['불꽃', '악'],
+        types: ['Fire', 'Dark'],
         bs: { hp: 95, at: 115, df: 90, sa: 80, sd: 90, sp: 60 },
         weightkg: 83,
         abilities: { 0: 'Blaze' }
     },
     'Jangmo-o': {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 45, at: 55, df: 65, sa: 45, sd: 45, sp: 45 },
         weightkg: 29.7,
         nfe: true,
         abilities: { 0: 'Bulletproof' }
     },
     Justyke: {
-        types: ['강철', '땅'],
+        types: ['Steel', 'Ground'],
         bs: { hp: 72, at: 70, df: 56, sa: 83, sd: 68, sp: 30 },
         weightkg: 36.5,
         nfe: true,
@@ -6583,138 +6583,138 @@ var SM_PATCH = {
         gender: 'N'
     },
     Jumbao: {
-        types: ['풀', '페어리'],
+        types: ['Grass', 'Fairy'],
         bs: { hp: 92, at: 63, df: 97, sa: 124, sd: 104, sp: 96 },
         weightkg: 200,
         abilities: { 0: 'Trace' }
     },
     Kartana: {
-        types: ['풀', '강철'],
+        types: ['Grass', 'Steel'],
         bs: { hp: 59, at: 181, df: 131, sa: 59, sd: 31, sp: 109 },
         weightkg: 0.1,
         abilities: { 0: 'Beast Boost' },
         gender: 'N'
     },
     Komala: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 65, at: 115, df: 65, sa: 75, sd: 95, sp: 65 },
         weightkg: 19.9,
         abilities: { 0: 'Comatose' }
     },
     'Kommo-o': {
-        types: ['드래곤', '격투'],
+        types: ['Dragon', 'Fighting'],
         bs: { hp: 75, at: 110, df: 125, sa: 100, sd: 105, sp: 85 },
         weightkg: 78.2,
         otherFormes: ['Kommo-o-Totem'],
         abilities: { 0: 'Bulletproof' }
     },
     'Kommo-o-Totem': {
-        types: ['드래곤', '격투'],
+        types: ['Dragon', 'Fighting'],
         bs: { hp: 75, at: 110, df: 125, sa: 100, sd: 105, sp: 85 },
         weightkg: 207.5,
         abilities: { 0: 'Overcoat' },
         baseSpecies: 'Kommo-o'
     },
     Litten: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 45, at: 65, df: 40, sa: 60, sd: 40, sp: 70 },
         weightkg: 4.3,
         nfe: true,
         abilities: { 0: 'Blaze' }
     },
     Lunala: {
-        types: ['에스퍼', '고스트'],
+        types: ['Psychic', 'Ghost'],
         bs: { hp: 137, at: 113, df: 89, sa: 137, sd: 107, sp: 97 },
         weightkg: 120,
         abilities: { 0: 'Shadow Shield' },
         gender: 'N'
     },
     Lurantis: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 70, at: 105, df: 90, sa: 80, sd: 90, sp: 45 },
         weightkg: 18.5,
         otherFormes: ['Lurantis-Totem'],
         abilities: { 0: 'Leaf Guard' }
     },
     'Lurantis-Totem': {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 70, at: 105, df: 90, sa: 80, sd: 90, sp: 45 },
         weightkg: 58,
         abilities: { 0: 'Leaf Guard' },
         baseSpecies: 'Lurantis'
     },
     Lycanroc: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 75, at: 115, df: 65, sa: 55, sd: 65, sp: 112 },
         weightkg: 25,
         otherFormes: ['Lycanroc-Dusk', 'Lycanroc-Midnight'],
         abilities: { 0: 'Keen Eye' }
     },
     'Lycanroc-Dusk': {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 75, at: 117, df: 65, sa: 55, sd: 65, sp: 110 },
         weightkg: 25,
         abilities: { 0: 'Tough Claws' },
         baseSpecies: 'Lycanroc'
     },
     'Lycanroc-Midnight': {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 85, at: 115, df: 75, sa: 55, sd: 75, sp: 82 },
         weightkg: 25,
         baseSpecies: 'Lycanroc',
         abilities: { 0: 'Keen Eye' }
     },
     Magearna: {
-        types: ['강철', '페어리'],
+        types: ['Steel', 'Fairy'],
         bs: { hp: 80, at: 95, df: 115, sa: 130, sd: 115, sp: 65 },
         weightkg: 80.5,
         gender: 'N',
         abilities: { 0: 'Soul-Heart' }
     },
     Mareanie: {
-        types: ['독', '물'],
+        types: ['Poison', 'Water'],
         bs: { hp: 50, at: 53, df: 62, sa: 43, sd: 52, sp: 45 },
         weightkg: 8,
         nfe: true,
         abilities: { 0: 'Merciless' }
     },
     'Marowak-Alola': {
-        types: ['불꽃', '고스트'],
+        types: ['Fire', 'Ghost'],
         bs: { hp: 60, at: 80, df: 110, sa: 50, sd: 80, sp: 45 },
         weightkg: 34,
         abilities: { 0: 'Cursed Body' },
         baseSpecies: 'Marowak'
     },
     'Marowak-Alola-Totem': {
-        types: ['불꽃', '고스트'],
+        types: ['Fire', 'Ghost'],
         bs: { hp: 60, at: 80, df: 110, sa: 50, sd: 80, sp: 45 },
         weightkg: 98,
         abilities: { 0: 'Rock Head' },
         baseSpecies: 'Marowak'
     },
     Marshadow: {
-        types: ['격투', '고스트'],
+        types: ['Fighting', 'Ghost'],
         bs: { hp: 90, at: 125, df: 80, sa: 90, sd: 90, sp: 125 },
         weightkg: 22.2,
         gender: 'N',
         abilities: { 0: 'Technician' }
     },
     Melmetal: {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 135, at: 143, df: 143, sa: 80, sd: 65, sp: 34 },
         weightkg: 800,
         gender: 'N',
         abilities: { 0: 'Iron Fist' }
     },
     Meltan: {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 46, at: 65, df: 65, sa: 55, sd: 35, sp: 34 },
         weightkg: 8,
         gender: 'N',
         abilities: { 0: 'Magnet Pull' }
     },
     'Meowth-Alola': {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 40, at: 35, df: 35, sa: 50, sd: 40, sp: 90 },
         weightkg: 4.2,
         baseSpecies: 'Meowth',
@@ -6722,35 +6722,35 @@ var SM_PATCH = {
         abilities: { 0: 'Pickup' }
     },
     Mimikyu: {
-        types: ['고스트', '페어리'],
+        types: ['Ghost', 'Fairy'],
         bs: { hp: 55, at: 90, df: 80, sa: 50, sd: 105, sp: 96 },
         weightkg: 0.7,
         otherFormes: ['Mimikyu-Busted', 'Mimikyu-Busted-Totem', 'Mimikyu-Totem'],
         abilities: { 0: 'Disguise' }
     },
     'Mimikyu-Busted': {
-        types: ['고스트', '페어리'],
+        types: ['Ghost', 'Fairy'],
         bs: { hp: 55, at: 90, df: 80, sa: 50, sd: 105, sp: 96 },
         weightkg: 0.7,
         baseSpecies: 'Mimikyu',
         abilities: { 0: 'Disguise' }
     },
     'Mimikyu-Busted-Totem': {
-        types: ['고스트', '페어리'],
+        types: ['Ghost', 'Fairy'],
         bs: { hp: 55, at: 90, df: 80, sa: 50, sd: 105, sp: 96 },
         weightkg: 2.8,
         baseSpecies: 'Mimikyu',
         abilities: { 0: 'Disguise' }
     },
     'Mimikyu-Totem': {
-        types: ['고스트', '페어리'],
+        types: ['Ghost', 'Fairy'],
         bs: { hp: 55, at: 90, df: 80, sa: 50, sd: 105, sp: 96 },
         weightkg: 2.8,
         baseSpecies: 'Mimikyu',
         abilities: { 0: 'Disguise' }
     },
     Minior: {
-        types: ['바위', '비행'],
+        types: ['Rock', 'Flying'],
         bs: { hp: 60, at: 100, df: 60, sa: 100, sd: 60, sp: 120 },
         weightkg: 0.3,
         otherFormes: ['Minior-Meteor'],
@@ -6758,7 +6758,7 @@ var SM_PATCH = {
         abilities: { 0: 'Shields Down' }
     },
     'Minior-Meteor': {
-        types: ['바위', '비행'],
+        types: ['Rock', 'Flying'],
         bs: { hp: 60, at: 60, df: 100, sa: 60, sd: 100, sp: 60 },
         weightkg: 40,
         gender: 'N',
@@ -6766,48 +6766,48 @@ var SM_PATCH = {
         abilities: { 0: 'Shields Down' }
     },
     Morelull: {
-        types: ['풀', '페어리'],
+        types: ['Grass', 'Fairy'],
         bs: { hp: 40, at: 35, df: 55, sa: 65, sd: 75, sp: 15 },
         weightkg: 1.5,
         nfe: true,
         abilities: { 0: 'Illuminate' }
     },
     Mudbray: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 70, at: 100, df: 70, sa: 45, sd: 55, sp: 45 },
         weightkg: 110,
         nfe: true,
         abilities: { 0: 'Own Tempo' }
     },
     Mudsdale: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 100, at: 125, df: 100, sa: 55, sd: 85, sp: 35 },
         weightkg: 920,
         abilities: { 0: 'Own Tempo' }
     },
     'Muk-Alola': {
-        types: ['독', '악'],
+        types: ['Poison', 'Dark'],
         bs: { hp: 105, at: 105, df: 75, sa: 65, sd: 100, sp: 50 },
         weightkg: 52,
         baseSpecies: 'Muk',
         abilities: { 0: 'Poison Touch' }
     },
     Mumbao: {
-        types: ['풀', '페어리'],
+        types: ['Grass', 'Fairy'],
         bs: { hp: 55, at: 30, df: 64, sa: 87, sd: 73, sp: 66 },
         weightkg: 83,
         nfe: true,
         abilities: { 0: 'Trace' }
     },
     Naganadel: {
-        types: ['독', '드래곤'],
+        types: ['Poison', 'Dragon'],
         bs: { hp: 73, at: 73, df: 73, sa: 127, sd: 73, sp: 121 },
         weightkg: 150,
         abilities: { 0: 'Beast Boost' },
         gender: 'N'
     },
     Necrozma: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 97, at: 107, df: 101, sa: 127, sd: 89, sp: 79 },
         weightkg: 230,
         abilities: { 0: 'Prism Armor' },
@@ -6815,7 +6815,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Necrozma-Dawn-Wings': {
-        types: ['에스퍼', '고스트'],
+        types: ['Psychic', 'Ghost'],
         bs: { hp: 97, at: 113, df: 109, sa: 157, sd: 127, sp: 77 },
         weightkg: 350,
         abilities: { 0: 'Prism Armor' },
@@ -6823,7 +6823,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Necrozma-Dusk-Mane': {
-        types: ['에스퍼', '강철'],
+        types: ['Psychic', 'Steel'],
         bs: { hp: 97, at: 157, df: 127, sa: 113, sd: 109, sp: 77 },
         weightkg: 460,
         abilities: { 0: 'Prism Armor' },
@@ -6831,7 +6831,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Necrozma-Ultra': {
-        types: ['에스퍼', '드래곤'],
+        types: ['Psychic', 'Dragon'],
         bs: { hp: 97, at: 167, df: 97, sa: 167, sd: 97, sp: 129 },
         weightkg: 230,
         abilities: { 0: 'Neuroforce' },
@@ -6839,150 +6839,150 @@ var SM_PATCH = {
         gender: 'N'
     },
     Nihilego: {
-        types: ['바위', '독'],
+        types: ['Rock', 'Poison'],
         bs: { hp: 109, at: 53, df: 47, sa: 127, sd: 131, sp: 103 },
         weightkg: 55.5,
         abilities: { 0: 'Beast Boost' },
         gender: 'N'
     },
     'Ninetales-Alola': {
-        types: ['얼음', '페어리'],
+        types: ['Ice', 'Fairy'],
         bs: { hp: 73, at: 67, df: 75, sa: 81, sd: 100, sp: 109 },
         weightkg: 19.9,
         abilities: { 0: 'Snow Cloak' },
         baseSpecies: 'Ninetales'
     },
     Oranguru: {
-        types: ['노말', '에스퍼'],
+        types: ['Normal', 'Psychic'],
         bs: { hp: 90, at: 60, df: 80, sa: 90, sd: 110, sp: 60 },
         weightkg: 76,
         abilities: { 0: 'Inner Focus' }
     },
     Oricorio: {
-        types: ['불꽃', '비행'],
+        types: ['Fire', 'Flying'],
         bs: { hp: 75, at: 70, df: 70, sa: 98, sd: 70, sp: 93 },
         weightkg: 3.4,
         abilities: { 0: 'Dancer' },
         otherFormes: ['Oricorio-Pa\'u', 'Oricorio-Pom-Pom', 'Oricorio-Sensu']
     },
     'Oricorio-Pa\'u': {
-        types: ['에스퍼', '비행'],
+        types: ['Psychic', 'Flying'],
         bs: { hp: 75, at: 70, df: 70, sa: 98, sd: 70, sp: 93 },
         weightkg: 3.4,
         abilities: { 0: 'Dancer' },
         baseSpecies: 'Oricorio'
     },
     'Oricorio-Pom-Pom': {
-        types: ['전기', '비행'],
+        types: ['Electric', 'Flying'],
         bs: { hp: 75, at: 70, df: 70, sa: 98, sd: 70, sp: 93 },
         weightkg: 3.4,
         abilities: { 0: 'Dancer' },
         baseSpecies: 'Oricorio'
     },
     'Oricorio-Sensu': {
-        types: ['고스트', '비행'],
+        types: ['Ghost', 'Flying'],
         bs: { hp: 75, at: 70, df: 70, sa: 98, sd: 70, sp: 93 },
         weightkg: 3.4,
         abilities: { 0: 'Dancer' },
         baseSpecies: 'Oricorio'
     },
     Pajantom: {
-        types: ['드래곤', '고스트'],
+        types: ['Dragon', 'Ghost'],
         bs: { hp: 84, at: 133, df: 71, sa: 51, sd: 111, sp: 101 },
         weightkg: 3.1,
         abilities: { 0: 'Comatose' }
     },
     Palossand: {
-        types: ['고스트', '땅'],
+        types: ['Ghost', 'Ground'],
         bs: { hp: 85, at: 75, df: 110, sa: 100, sd: 75, sp: 35 },
         weightkg: 250,
         abilities: { 0: 'Water Compaction' }
     },
     Passimian: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 100, at: 120, df: 90, sa: 40, sd: 60, sp: 80 },
         weightkg: 82.8,
         abilities: { 0: 'Receiver' }
     },
     'Persian-Alola': {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 65, at: 60, df: 60, sa: 75, sd: 65, sp: 115 },
         weightkg: 33,
         baseSpecies: 'Persian',
         abilities: { 0: 'Fur Coat' }
     },
     Pheromosa: {
-        types: ['벌레', '격투'],
+        types: ['Bug', 'Fighting'],
         bs: { hp: 71, at: 137, df: 37, sa: 137, sd: 37, sp: 151 },
         weightkg: 25,
         abilities: { 0: 'Beast Boost' },
         gender: 'N'
     },
     'Pikachu-Alola': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Static' },
         baseSpecies: 'Pikachu'
     },
     'Pikachu-Hoenn': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Static' },
         baseSpecies: 'Pikachu'
     },
     'Pikachu-Kalos': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Static' },
         baseSpecies: 'Pikachu'
     },
     'Pikachu-Original': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Static' },
         baseSpecies: 'Pikachu'
     },
     'Pikachu-Partner': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Static' },
         baseSpecies: 'Pikachu'
     },
     'Pikachu-Sinnoh': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Static' },
         baseSpecies: 'Pikachu'
     },
     'Pikachu-Starter': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 45, at: 80, df: 50, sa: 75, sd: 60, sp: 120 },
         weightkg: 6,
         abilities: { 0: 'Static' },
         baseSpecies: 'Pikachu'
     },
     'Pikachu-Unova': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Static' },
         baseSpecies: 'Pikachu'
     },
     Pikipek: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 35, at: 75, df: 30, sa: 30, sd: 30, sp: 65 },
         weightkg: 1.2,
         nfe: true,
         abilities: { 0: 'Keen Eye' }
     },
     Poipole: {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 67, at: 73, df: 67, sa: 73, sd: 67, sp: 73 },
         weightkg: 1.8,
         abilities: { 0: 'Beast Boost' },
@@ -6990,47 +6990,47 @@ var SM_PATCH = {
         gender: 'N'
     },
     Popplio: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 50, at: 54, df: 54, sa: 66, sd: 56, sp: 40 },
         weightkg: 7.5,
         nfe: true,
         abilities: { 0: 'Torrent' }
     },
     Primarina: {
-        types: ['물', '페어리'],
+        types: ['Water', 'Fairy'],
         bs: { hp: 80, at: 74, df: 74, sa: 126, sd: 116, sp: 60 },
         weightkg: 44,
         abilities: { 0: 'Torrent' }
     },
     Pyukumuku: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 55, at: 60, df: 130, sa: 30, sd: 130, sp: 5 },
         weightkg: 1.2,
         abilities: { 0: 'Innards Out' }
     },
     'Raichu-Alola': {
-        types: ['전기', '에스퍼'],
+        types: ['Electric', 'Psychic'],
         bs: { hp: 60, at: 85, df: 50, sa: 95, sd: 85, sp: 110 },
         weightkg: 21,
         baseSpecies: 'Raichu',
         abilities: { 0: 'Surge Surfer' }
     },
     'Raticate-Alola': {
-        types: ['악', '노말'],
+        types: ['Dark', 'Normal'],
         bs: { hp: 75, at: 71, df: 70, sa: 40, sd: 80, sp: 77 },
         weightkg: 25.5,
         baseSpecies: 'Raticate',
         abilities: { 0: 'Gluttony' }
     },
     'Raticate-Alola-Totem': {
-        types: ['악', '노말'],
+        types: ['Dark', 'Normal'],
         bs: { hp: 75, at: 71, df: 70, sa: 40, sd: 80, sp: 77 },
         weightkg: 105,
         abilities: { 0: 'Thick Fat' },
         baseSpecies: 'Raticate'
     },
     'Rattata-Alola': {
-        types: ['악', '노말'],
+        types: ['Dark', 'Normal'],
         bs: { hp: 30, at: 56, df: 35, sa: 25, sd: 35, sp: 72 },
         weightkg: 3.8,
         baseSpecies: 'Rattata',
@@ -7038,56 +7038,56 @@ var SM_PATCH = {
         abilities: { 0: 'Gluttony' }
     },
     Ribombee: {
-        types: ['벌레', '페어리'],
+        types: ['Bug', 'Fairy'],
         bs: { hp: 60, at: 55, df: 60, sa: 95, sd: 70, sp: 124 },
         weightkg: 0.5,
         otherFormes: ['Ribombee-Totem'],
         abilities: { 0: 'Honey Gather' }
     },
     'Ribombee-Totem': {
-        types: ['벌레', '페어리'],
+        types: ['Bug', 'Fairy'],
         bs: { hp: 60, at: 55, df: 60, sa: 95, sd: 70, sp: 124 },
         weightkg: 2,
         abilities: { 0: 'Sweet Veil' },
         baseSpecies: 'Ribombee'
     },
     Rockruff: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 45, at: 65, df: 40, sa: 30, sd: 40, sp: 60 },
         weightkg: 9.2,
         nfe: true,
         abilities: { 0: 'Keen Eye' }
     },
     Rowlet: {
-        types: ['풀', '비행'],
+        types: ['Grass', 'Flying'],
         bs: { hp: 68, at: 55, df: 55, sa: 50, sd: 50, sp: 42 },
         weightkg: 1.5,
         nfe: true,
         abilities: { 0: 'Overgrow' }
     },
     Salandit: {
-        types: ['독', '불꽃'],
+        types: ['Poison', 'Fire'],
         bs: { hp: 48, at: 44, df: 40, sa: 71, sd: 40, sp: 77 },
         weightkg: 4.8,
         nfe: true,
         abilities: { 0: 'Corrosion' }
     },
     Salazzle: {
-        types: ['독', '불꽃'],
+        types: ['Poison', 'Fire'],
         bs: { hp: 68, at: 64, df: 60, sa: 111, sd: 60, sp: 117 },
         weightkg: 22.2,
         otherFormes: ['Salazzle-Totem'],
         abilities: { 0: 'Corrosion' }
     },
     'Salazzle-Totem': {
-        types: ['독', '불꽃'],
+        types: ['Poison', 'Fire'],
         bs: { hp: 68, at: 64, df: 60, sa: 111, sd: 60, sp: 117 },
         weightkg: 81,
         abilities: { 0: 'Corrosion' },
         baseSpecies: 'Salazzle'
     },
     'Sandshrew-Alola': {
-        types: ['얼음', '강철'],
+        types: ['Ice', 'Steel'],
         bs: { hp: 50, at: 75, df: 90, sa: 10, sd: 35, sp: 40 },
         weightkg: 40,
         baseSpecies: 'Sandshrew',
@@ -7095,27 +7095,27 @@ var SM_PATCH = {
         abilities: { 0: 'Snow Cloak' }
     },
     'Sandslash-Alola': {
-        types: ['얼음', '강철'],
+        types: ['Ice', 'Steel'],
         bs: { hp: 75, at: 100, df: 120, sa: 25, sd: 65, sp: 65 },
         weightkg: 55,
         baseSpecies: 'Sandslash',
         abilities: { 0: 'Snow Cloak' }
     },
     Sandygast: {
-        types: ['고스트', '땅'],
+        types: ['Ghost', 'Ground'],
         bs: { hp: 55, at: 55, df: 80, sa: 70, sd: 45, sp: 15 },
         weightkg: 70,
         nfe: true,
         abilities: { 0: 'Water Compaction' }
     },
     Shiinotic: {
-        types: ['풀', '페어리'],
+        types: ['Grass', 'Fairy'],
         bs: { hp: 60, at: 45, df: 80, sa: 90, sd: 100, sp: 30 },
         weightkg: 11.5,
         abilities: { 0: 'Illuminate' }
     },
     Silvally: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7141,7 +7141,7 @@ var SM_PATCH = {
         ]
     },
     'Silvally-Bug': {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7149,7 +7149,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Dark': {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7157,7 +7157,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Dragon': {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7165,7 +7165,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Electric': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7173,7 +7173,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Fairy': {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7181,7 +7181,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Fighting': {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7189,7 +7189,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Fire': {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7197,7 +7197,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Flying': {
-        types: ['비행'],
+        types: ['Flying'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7205,7 +7205,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Ghost': {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7213,7 +7213,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Grass': {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7221,7 +7221,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Ground': {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7229,7 +7229,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Ice': {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7237,7 +7237,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Poison': {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7245,7 +7245,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Psychic': {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7253,7 +7253,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Rock': {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7261,7 +7261,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Steel': {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7269,7 +7269,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Silvally-Water': {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95 },
         weightkg: 100.5,
         abilities: { 0: 'RKS System' },
@@ -7277,148 +7277,148 @@ var SM_PATCH = {
         gender: 'N'
     },
     Smogecko: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 48, at: 66, df: 43, sa: 58, sd: 48, sp: 56 },
         weightkg: 8.5,
         nfe: true,
         abilities: { 0: 'Blaze' }
     },
     Smoguana: {
-        types: ['불꽃', '땅'],
+        types: ['Fire', 'Ground'],
         bs: { hp: 68, at: 86, df: 53, sa: 68, sd: 68, sp: 76 },
         weightkg: 22.2,
         nfe: true,
         abilities: { 0: 'Blaze' }
     },
     Smokomodo: {
-        types: ['불꽃', '땅'],
+        types: ['Fire', 'Ground'],
         bs: { hp: 88, at: 116, df: 67, sa: 88, sd: 78, sp: 97 },
         weightkg: 205,
         abilities: { 0: 'Blaze' }
     },
     Snaelstrom: {
-        types: ['물', '벌레'],
+        types: ['Water', 'Bug'],
         bs: { hp: 91, at: 94, df: 110, sa: 80, sd: 97, sp: 63 },
         weightkg: 120,
         abilities: { 0: 'Torrent' }
     },
     Solgaleo: {
-        types: ['에스퍼', '강철'],
+        types: ['Psychic', 'Steel'],
         bs: { hp: 137, at: 137, df: 107, sa: 113, sd: 89, sp: 97 },
         weightkg: 230,
         abilities: { 0: 'Full Metal Body' },
         gender: 'N'
     },
     Stakataka: {
-        types: ['바위', '강철'],
+        types: ['Rock', 'Steel'],
         bs: { hp: 61, at: 131, df: 211, sa: 53, sd: 101, sp: 13 },
         weightkg: 820,
         abilities: { 0: 'Beast Boost' },
         gender: 'N'
     },
     Steenee: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 52, at: 40, df: 48, sa: 40, sd: 48, sp: 62 },
         weightkg: 8.2,
         nfe: true,
         abilities: { 0: 'Leaf Guard' }
     },
     Stufful: {
-        types: ['노말', '격투'],
+        types: ['Normal', 'Fighting'],
         bs: { hp: 70, at: 75, df: 50, sa: 45, sd: 50, sp: 50 },
         weightkg: 6.8,
         abilities: { 0: 'Fluffy' },
         nfe: true
     },
     Swirlpool: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 61, at: 49, df: 70, sa: 50, sd: 62, sp: 28 },
         weightkg: 7,
         nfe: true,
         abilities: { 0: 'Torrent' }
     },
     'Tapu Bulu': {
-        types: ['풀', '페어리'],
+        types: ['Grass', 'Fairy'],
         bs: { hp: 70, at: 130, df: 115, sa: 85, sd: 95, sp: 75 },
         weightkg: 45.5,
         abilities: { 0: 'Grassy Surge' },
         gender: 'N'
     },
     'Tapu Fini': {
-        types: ['물', '페어리'],
+        types: ['Water', 'Fairy'],
         bs: { hp: 70, at: 75, df: 115, sa: 95, sd: 130, sp: 85 },
         weightkg: 21.2,
         abilities: { 0: 'Misty Surge' },
         gender: 'N'
     },
     'Tapu Koko': {
-        types: ['전기', '페어리'],
+        types: ['Electric', 'Fairy'],
         bs: { hp: 70, at: 115, df: 85, sa: 95, sd: 75, sp: 130 },
         weightkg: 20.5,
         abilities: { 0: 'Electric Surge' },
         gender: 'N'
     },
     'Tapu Lele': {
-        types: ['에스퍼', '페어리'],
+        types: ['Psychic', 'Fairy'],
         bs: { hp: 70, at: 85, df: 75, sa: 130, sd: 115, sp: 95 },
         weightkg: 18.6,
         abilities: { 0: 'Psychic Surge' },
         gender: 'N'
     },
     Togedemaru: {
-        types: ['전기', '강철'],
+        types: ['Electric', 'Steel'],
         bs: { hp: 65, at: 98, df: 63, sa: 40, sd: 73, sp: 96 },
         weightkg: 3.3,
         abilities: { 0: 'Iron Barbs' },
         otherFormes: ['Togedemaru-Totem']
     },
     'Togedemaru-Totem': {
-        types: ['전기', '강철'],
+        types: ['Electric', 'Steel'],
         bs: { hp: 65, at: 98, df: 63, sa: 40, sd: 73, sp: 96 },
         weightkg: 13,
         abilities: { 0: 'Sturdy' },
         baseSpecies: 'Togedemaru'
     },
     Torracat: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 65, at: 85, df: 50, sa: 80, sd: 50, sp: 90 },
         weightkg: 25,
         nfe: true,
         abilities: { 0: 'Blaze' }
     },
     Toucannon: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 80, at: 120, df: 75, sa: 75, sd: 75, sp: 60 },
         weightkg: 26,
         abilities: { 0: 'Keen Eye' }
     },
     Toxapex: {
-        types: ['독', '물'],
+        types: ['Poison', 'Water'],
         bs: { hp: 50, at: 63, df: 152, sa: 53, sd: 142, sp: 35 },
         weightkg: 14.5,
         abilities: { 0: 'Merciless' }
     },
     Trumbeak: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 55, at: 85, df: 50, sa: 40, sd: 50, sp: 75 },
         weightkg: 14.8,
         nfe: true,
         abilities: { 0: 'Keen Eye' }
     },
     Tsareena: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 72, at: 120, df: 98, sa: 50, sd: 98, sp: 72 },
         weightkg: 21.4,
         abilities: { 0: 'Leaf Guard' }
     },
     Turtonator: {
-        types: ['불꽃', '드래곤'],
+        types: ['Fire', 'Dragon'],
         bs: { hp: 60, at: 78, df: 135, sa: 91, sd: 85, sp: 36 },
         weightkg: 212,
         abilities: { 0: 'Shell Armor' }
     },
     'Type: Null': {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 59 },
         weightkg: 120.5,
         abilities: { 0: 'Battle Armor' },
@@ -7426,21 +7426,21 @@ var SM_PATCH = {
         gender: 'N'
     },
     Vikavolt: {
-        types: ['벌레', '전기'],
+        types: ['Bug', 'Electric'],
         bs: { hp: 77, at: 70, df: 90, sa: 145, sd: 75, sp: 43 },
         weightkg: 45,
         abilities: { 0: 'Levitate' },
         otherFormes: ['Vikavolt-Totem']
     },
     'Vikavolt-Totem': {
-        types: ['벌레', '전기'],
+        types: ['Bug', 'Electric'],
         bs: { hp: 77, at: 70, df: 90, sa: 145, sd: 75, sp: 43 },
         weightkg: 147.5,
         abilities: { 0: 'Levitate' },
         baseSpecies: 'Vikavolt'
     },
     'Vulpix-Alola': {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 38, at: 41, df: 40, sa: 50, sd: 65, sp: 65 },
         weightkg: 9.9,
         baseSpecies: 'Vulpix',
@@ -7448,49 +7448,49 @@ var SM_PATCH = {
         abilities: { 0: 'Snow Cloak' }
     },
     Wimpod: {
-        types: ['벌레', '물'],
+        types: ['Bug', 'Water'],
         bs: { hp: 25, at: 35, df: 40, sa: 20, sd: 30, sp: 80 },
         weightkg: 12,
         abilities: { 0: 'Wimp Out' },
         nfe: true
     },
     Wishiwashi: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 45, at: 20, df: 20, sa: 25, sd: 25, sp: 40 },
         weightkg: 0.3,
         otherFormes: ['Wishiwashi-School'],
         abilities: { 0: 'Schooling' }
     },
     'Wishiwashi-School': {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 45, at: 140, df: 130, sa: 140, sd: 135, sp: 30 },
         weightkg: 78.6,
         baseSpecies: 'Wishiwashi',
         abilities: { 0: 'Schooling' }
     },
     Xurkitree: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 83, at: 89, df: 71, sa: 173, sd: 71, sp: 83 },
         weightkg: 100,
         abilities: { 0: 'Beast Boost' },
         gender: 'N'
     },
     Yungoos: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 48, at: 70, df: 30, sa: 30, sd: 30, sp: 45 },
         weightkg: 6,
         nfe: true,
         abilities: { 0: 'Stakeout' }
     },
     Zeraora: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 88, at: 112, df: 75, sa: 102, sd: 80, sp: 143 },
         weightkg: 44.5,
         abilities: { 0: 'Volt Absorb' },
         gender: 'N'
     },
     'Zygarde-10%': {
-        types: ['드래곤', '땅'],
+        types: ['Dragon', 'Ground'],
         bs: { hp: 54, at: 100, df: 71, sa: 61, sd: 85, sp: 115 },
         weightkg: 33.5,
         abilities: { 0: 'Aura Break' },
@@ -7498,7 +7498,7 @@ var SM_PATCH = {
         gender: 'N'
     },
     'Zygarde-Complete': {
-        types: ['드래곤', '땅'],
+        types: ['Dragon', 'Ground'],
         bs: { hp: 216, at: 100, df: 121, sa: 91, sd: 95, sp: 85 },
         weightkg: 610,
         abilities: { 0: 'Power Construct' },
@@ -7567,63 +7567,63 @@ var SS_PATCH = {
     Zapdos: { otherFormes: ['Zapdos-Galar'] },
     Zigzagoon: { otherFormes: ['Zigzagoon-Galar'] },
     Alcremie: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 65, at: 60, df: 75, sa: 110, sd: 121, sp: 64 },
         weightkg: 0.5,
         abilities: { 0: 'Sweet Veil' },
         otherFormes: ['Alcremie-Gmax']
     },
     'Alcremie-Gmax': {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 65, at: 60, df: 75, sa: 110, sd: 121, sp: 64 },
         weightkg: 0,
         abilities: { 0: 'Sweet Veil' },
         baseSpecies: 'Alcremie'
     },
     Appletun: {
-        types: ['풀', '드래곤'],
+        types: ['Grass', 'Dragon'],
         bs: { hp: 110, at: 85, df: 80, sa: 100, sd: 80, sp: 30 },
         weightkg: 13,
         abilities: { 0: 'Ripen' },
         otherFormes: ['Appletun-Gmax']
     },
     'Appletun-Gmax': {
-        types: ['풀', '드래곤'],
+        types: ['Grass', 'Dragon'],
         bs: { hp: 110, at: 85, df: 80, sa: 100, sd: 80, sp: 30 },
         weightkg: 0,
         abilities: { 0: 'Ripen' },
         baseSpecies: 'Appletun'
     },
     Applin: {
-        types: ['풀', '드래곤'],
+        types: ['Grass', 'Dragon'],
         bs: { hp: 40, at: 40, df: 80, sa: 40, sd: 40, sp: 20 },
         weightkg: 0.5,
         abilities: { 0: 'Ripen' },
         nfe: true
     },
     Arctovish: {
-        types: ['물', '얼음'],
+        types: ['Water', 'Ice'],
         bs: { hp: 90, at: 90, df: 100, sa: 80, sd: 90, sp: 55 },
         weightkg: 175,
         abilities: { 0: 'Water Absorb' },
         gender: 'N'
     },
     Arctozolt: {
-        types: ['전기', '얼음'],
+        types: ['Electric', 'Ice'],
         bs: { hp: 90, at: 100, df: 90, sa: 90, sd: 80, sp: 55 },
         weightkg: 150,
         abilities: { 0: 'Volt Absorb' },
         gender: 'N'
     },
     Arrokuda: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 41, at: 63, df: 40, sa: 40, sd: 30, sp: 66 },
         weightkg: 1,
         abilities: { 0: 'Swift Swim' },
         nfe: true
     },
     'Articuno-Galar': {
-        types: ['에스퍼', '비행'],
+        types: ['Psychic', 'Flying'],
         bs: { hp: 90, at: 85, df: 85, sa: 125, sd: 100, sp: 95 },
         weightkg: 50.9,
         abilities: { 0: 'Competitive' },
@@ -7631,46 +7631,46 @@ var SS_PATCH = {
         baseSpecies: 'Articuno'
     },
     Astrolotl: {
-        types: ['불꽃', '드래곤'],
+        types: ['Fire', 'Dragon'],
         bs: { hp: 108, at: 108, df: 74, sa: 92, sd: 64, sp: 114 },
         weightkg: 50,
         abilities: { 0: 'Regenerator' }
     },
     Barraskewda: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 61, at: 123, df: 60, sa: 60, sd: 50, sp: 136 },
         weightkg: 30,
         abilities: { 0: 'Swift Swim' }
     },
     'Blastoise-Gmax': {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 79, at: 83, df: 100, sa: 85, sd: 105, sp: 78 },
         weightkg: 0,
         abilities: { 0: 'Torrent' },
         baseSpecies: 'Blastoise'
     },
     Blipbug: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 25, at: 20, df: 20, sa: 25, sd: 45, sp: 45 },
         weightkg: 8,
         abilities: { 0: 'Swarm' },
         nfe: true
     },
     Boltund: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 69, at: 90, df: 60, sa: 90, sd: 60, sp: 121 },
         weightkg: 34,
         abilities: { 0: 'Strong Jaw' }
     },
     'Butterfree-Gmax': {
-        types: ['벌레', '비행'],
+        types: ['Bug', 'Flying'],
         bs: { hp: 60, at: 45, df: 50, sa: 90, sd: 80, sp: 70 },
         weightkg: 0,
         abilities: { 0: 'Compound Eyes' },
         baseSpecies: 'Butterfree'
     },
     Calyrex: {
-        types: ['에스퍼', '풀'],
+        types: ['Psychic', 'Grass'],
         bs: { hp: 100, at: 80, df: 80, sa: 80, sd: 80, sp: 80 },
         weightkg: 7.7,
         abilities: { 0: 'Unnerve' },
@@ -7678,7 +7678,7 @@ var SS_PATCH = {
         otherFormes: ['Calyrex-Ice', 'Calyrex-Shadow']
     },
     'Calyrex-Ice': {
-        types: ['에스퍼', '얼음'],
+        types: ['Psychic', 'Ice'],
         bs: { hp: 100, at: 165, df: 150, sa: 85, sd: 130, sp: 50 },
         weightkg: 809.1,
         abilities: { 0: 'As One (Glastrier)' },
@@ -7686,7 +7686,7 @@ var SS_PATCH = {
         baseSpecies: 'Calyrex'
     },
     'Calyrex-Shadow': {
-        types: ['에스퍼', '고스트'],
+        types: ['Psychic', 'Ghost'],
         bs: { hp: 100, at: 85, df: 80, sa: 165, sd: 100, sp: 150 },
         weightkg: 53.6,
         abilities: { 0: 'As One (Spectrier)' },
@@ -7694,98 +7694,98 @@ var SS_PATCH = {
         baseSpecies: 'Calyrex'
     },
     Carkol: {
-        types: ['바위', '불꽃'],
+        types: ['Rock', 'Fire'],
         bs: { hp: 80, at: 60, df: 90, sa: 60, sd: 70, sp: 50 },
         weightkg: 78,
         abilities: { 0: 'Steam Engine' },
         nfe: true
     },
     Centiskorch: {
-        types: ['불꽃', '벌레'],
+        types: ['Fire', 'Bug'],
         bs: { hp: 100, at: 115, df: 65, sa: 90, sd: 90, sp: 65 },
         weightkg: 120,
         abilities: { 0: 'Flash Fire' },
         otherFormes: ['Centiskorch-Gmax']
     },
     'Centiskorch-Gmax': {
-        types: ['불꽃', '벌레'],
+        types: ['Fire', 'Bug'],
         bs: { hp: 100, at: 115, df: 65, sa: 90, sd: 90, sp: 65 },
         weightkg: 0,
         abilities: { 0: 'Flash Fire' },
         baseSpecies: 'Centiskorch'
     },
     'Charizard-Gmax': {
-        types: ['불꽃', '비행'],
+        types: ['Fire', 'Flying'],
         bs: { hp: 78, at: 84, df: 78, sa: 109, sd: 85, sp: 100 },
         weightkg: 0,
         abilities: { 0: 'Blaze' },
         baseSpecies: 'Charizard'
     },
     Chewtle: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 50, at: 64, df: 50, sa: 38, sd: 38, sp: 44 },
         weightkg: 8.5,
         abilities: { 0: 'Strong Jaw' },
         nfe: true
     },
     Chromera: {
-        types: ['악', '노말'],
+        types: ['Dark', 'Normal'],
         bs: { hp: 85, at: 85, df: 115, sa: 115, sd: 100, sp: 100 },
         weightkg: 215,
         abilities: { 0: 'Color Change' },
         gender: 'N'
     },
     Cinderace: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 80, at: 116, df: 75, sa: 65, sd: 75, sp: 119 },
         weightkg: 33,
         abilities: { 0: 'Blaze' },
         otherFormes: ['Cinderace-Gmax']
     },
     'Cinderace-Gmax': {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 80, at: 116, df: 75, sa: 65, sd: 75, sp: 119 },
         weightkg: 0,
         abilities: { 0: 'Blaze' },
         baseSpecies: 'Cinderace'
     },
     Clobbopus: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 50, at: 68, df: 60, sa: 50, sd: 50, sp: 32 },
         weightkg: 4,
         abilities: { 0: 'Limber' },
         nfe: true
     },
     Coalossal: {
-        types: ['바위', '불꽃'],
+        types: ['Rock', 'Fire'],
         bs: { hp: 110, at: 80, df: 120, sa: 80, sd: 90, sp: 30 },
         weightkg: 310.5,
         abilities: { 0: 'Steam Engine' },
         otherFormes: ['Coalossal-Gmax']
     },
     'Coalossal-Gmax': {
-        types: ['바위', '불꽃'],
+        types: ['Rock', 'Fire'],
         bs: { hp: 110, at: 80, df: 120, sa: 80, sd: 90, sp: 30 },
         weightkg: 0,
         abilities: { 0: 'Steam Engine' },
         baseSpecies: 'Coalossal'
     },
     Copperajah: {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 122, at: 130, df: 69, sa: 80, sd: 69, sp: 30 },
         weightkg: 650,
         abilities: { 0: 'Sheer Force' },
         otherFormes: ['Copperajah-Gmax']
     },
     'Copperajah-Gmax': {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 122, at: 130, df: 69, sa: 80, sd: 69, sp: 30 },
         weightkg: 0,
         abilities: { 0: 'Sheer Force' },
         baseSpecies: 'Copperajah'
     },
     'Corsola-Galar': {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 60, at: 55, df: 100, sa: 65, sd: 100, sp: 30 },
         weightkg: 0.5,
         abilities: { 0: 'Weak Armor' },
@@ -7793,76 +7793,76 @@ var SS_PATCH = {
         baseSpecies: 'Corsola'
     },
     Corviknight: {
-        types: ['비행', '강철'],
+        types: ['Flying', 'Steel'],
         bs: { hp: 98, at: 87, df: 105, sa: 53, sd: 85, sp: 67 },
         weightkg: 75,
         abilities: { 0: 'Pressure' },
         otherFormes: ['Corviknight-Gmax']
     },
     'Corviknight-Gmax': {
-        types: ['비행', '강철'],
+        types: ['Flying', 'Steel'],
         bs: { hp: 98, at: 87, df: 105, sa: 53, sd: 85, sp: 67 },
         weightkg: 0,
         abilities: { 0: 'Pressure' },
         baseSpecies: 'Corviknight'
     },
     Corvisquire: {
-        types: ['비행'],
+        types: ['Flying'],
         bs: { hp: 68, at: 67, df: 55, sa: 43, sd: 55, sp: 77 },
         weightkg: 16,
         abilities: { 0: 'Keen Eye' },
         nfe: true
     },
     Cramorant: {
-        types: ['비행', '물'],
+        types: ['Flying', 'Water'],
         bs: { hp: 70, at: 85, df: 55, sa: 85, sd: 95, sp: 85 },
         weightkg: 18,
         abilities: { 0: 'Gulp Missile' },
         otherFormes: ['Cramorant-Gorging', 'Cramorant-Gulping']
     },
     'Cramorant-Gorging': {
-        types: ['비행', '물'],
+        types: ['Flying', 'Water'],
         bs: { hp: 70, at: 85, df: 55, sa: 85, sd: 95, sp: 85 },
         weightkg: 18,
         abilities: { 0: 'Gulp Missile' },
         baseSpecies: 'Cramorant'
     },
     'Cramorant-Gulping': {
-        types: ['비행', '물'],
+        types: ['Flying', 'Water'],
         bs: { hp: 70, at: 85, df: 55, sa: 85, sd: 95, sp: 85 },
         weightkg: 18,
         abilities: { 0: 'Gulp Missile' },
         baseSpecies: 'Cramorant'
     },
     Cufant: {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 72, at: 80, df: 49, sa: 40, sd: 49, sp: 40 },
         weightkg: 100,
         abilities: { 0: 'Sheer Force' },
         nfe: true
     },
     Cursola: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 60, at: 95, df: 50, sa: 145, sd: 130, sp: 30 },
         weightkg: 0.4,
         abilities: { 0: 'Weak Armor' }
     },
     'Darmanitan-Galar': {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 105, at: 140, df: 55, sa: 30, sd: 55, sp: 95 },
         weightkg: 120,
         abilities: { 0: 'Gorilla Tactics' },
         baseSpecies: 'Darmanitan'
     },
     'Darmanitan-Galar-Zen': {
-        types: ['얼음', '불꽃'],
+        types: ['Ice', 'Fire'],
         bs: { hp: 105, at: 160, df: 55, sa: 30, sd: 55, sp: 135 },
         weightkg: 120,
         abilities: { 0: 'Zen Mode' },
         baseSpecies: 'Darmanitan'
     },
     'Darumaka-Galar': {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 70, at: 90, df: 45, sa: 15, sd: 45, sp: 50 },
         weightkg: 40,
         abilities: { 0: 'Hustle' },
@@ -7870,116 +7870,116 @@ var SS_PATCH = {
         baseSpecies: 'Darumaka'
     },
     Dottler: {
-        types: ['벌레', '에스퍼'],
+        types: ['Bug', 'Psychic'],
         bs: { hp: 50, at: 35, df: 80, sa: 50, sd: 90, sp: 30 },
         weightkg: 19.5,
         abilities: { 0: 'Swarm' },
         nfe: true
     },
     Dracovish: {
-        types: ['물', '드래곤'],
+        types: ['Water', 'Dragon'],
         bs: { hp: 90, at: 90, df: 100, sa: 70, sd: 80, sp: 75 },
         weightkg: 215,
         abilities: { 0: 'Water Absorb' },
         gender: 'N'
     },
     Dracozolt: {
-        types: ['전기', '드래곤'],
+        types: ['Electric', 'Dragon'],
         bs: { hp: 90, at: 100, df: 90, sa: 80, sd: 70, sp: 75 },
         weightkg: 190,
         abilities: { 0: 'Volt Absorb' },
         gender: 'N'
     },
     Dragapult: {
-        types: ['드래곤', '고스트'],
+        types: ['Dragon', 'Ghost'],
         bs: { hp: 88, at: 120, df: 75, sa: 100, sd: 75, sp: 142 },
         weightkg: 50,
         abilities: { 0: 'Clear Body' }
     },
     Drakloak: {
-        types: ['드래곤', '고스트'],
+        types: ['Dragon', 'Ghost'],
         bs: { hp: 68, at: 80, df: 50, sa: 60, sd: 50, sp: 102 },
         weightkg: 11,
         abilities: { 0: 'Clear Body' },
         nfe: true
     },
     Drednaw: {
-        types: ['물', '바위'],
+        types: ['Water', 'Rock'],
         bs: { hp: 90, at: 115, df: 90, sa: 48, sd: 68, sp: 74 },
         weightkg: 115.5,
         abilities: { 0: 'Strong Jaw' },
         otherFormes: ['Drednaw-Gmax']
     },
     'Drednaw-Gmax': {
-        types: ['물', '바위'],
+        types: ['Water', 'Rock'],
         bs: { hp: 90, at: 115, df: 90, sa: 48, sd: 68, sp: 74 },
         weightkg: 0,
         abilities: { 0: 'Strong Jaw' },
         baseSpecies: 'Drednaw'
     },
     Dreepy: {
-        types: ['드래곤', '고스트'],
+        types: ['Dragon', 'Ghost'],
         bs: { hp: 28, at: 60, df: 30, sa: 40, sd: 30, sp: 82 },
         weightkg: 2,
         abilities: { 0: 'Clear Body' },
         nfe: true
     },
     Drizzile: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 65, at: 60, df: 55, sa: 95, sd: 55, sp: 90 },
         weightkg: 11.5,
         abilities: { 0: 'Torrent' },
         nfe: true
     },
     Dubwool: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 72, at: 80, df: 100, sa: 60, sd: 90, sp: 88 },
         weightkg: 43,
         abilities: { 0: 'Fluffy' }
     },
     Duraludon: {
-        types: ['강철', '드래곤'],
+        types: ['Steel', 'Dragon'],
         bs: { hp: 70, at: 95, df: 115, sa: 120, sd: 50, sp: 85 },
         weightkg: 40,
         abilities: { 0: 'Light Metal' },
         otherFormes: ['Duraludon-Gmax']
     },
     'Duraludon-Gmax': {
-        types: ['강철', '드래곤'],
+        types: ['Steel', 'Dragon'],
         bs: { hp: 70, at: 95, df: 115, sa: 120, sd: 50, sp: 85 },
         weightkg: 0,
         abilities: { 0: 'Light Metal' },
         baseSpecies: 'Duraludon'
     },
     'Eevee-Gmax': {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 55, at: 55, df: 50, sa: 45, sd: 65, sp: 55 },
         weightkg: 0,
         abilities: { 0: 'Run Away' },
         baseSpecies: 'Eevee'
     },
     Eiscue: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 75, at: 80, df: 110, sa: 65, sd: 90, sp: 50 },
         weightkg: 89,
         abilities: { 0: 'Ice Face' },
         otherFormes: ['Eiscue-Noice']
     },
     'Eiscue-Noice': {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 75, at: 80, df: 70, sa: 65, sd: 50, sp: 130 },
         weightkg: 89,
         abilities: { 0: 'Ice Face' },
         baseSpecies: 'Eiscue'
     },
     Eldegoss: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 60, at: 50, df: 90, sa: 80, sd: 120, sp: 60 },
         weightkg: 2.5,
         abilities: { 0: 'Cotton Down' }
     },
     Eternatus: {
-        types: ['독', '드래곤'],
+        types: ['Poison', 'Dragon'],
         bs: { hp: 140, at: 85, df: 95, sa: 145, sd: 95, sp: 130 },
         weightkg: 950,
         abilities: { 0: 'Pressure' },
@@ -7987,7 +7987,7 @@ var SS_PATCH = {
         otherFormes: ['Eternatus-Eternamax']
     },
     'Eternatus-Eternamax': {
-        types: ['독', '드래곤'],
+        types: ['Poison', 'Dragon'],
         bs: { hp: 255, at: 115, df: 250, sa: 125, sd: 250, sp: 130 },
         weightkg: 0,
         abilities: { 0: 'Pressure' },
@@ -7995,14 +7995,14 @@ var SS_PATCH = {
         baseSpecies: 'Eternatus'
     },
     Falinks: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 65, at: 100, df: 100, sa: 70, sd: 60, sp: 75 },
         weightkg: 62,
         abilities: { 0: 'Battle Armor' },
         gender: 'N'
     },
     'Farfetch\u2019d-Galar': {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 52, at: 95, df: 55, sa: 58, sd: 62, sp: 55 },
         weightkg: 15,
         abilities: { 0: 'Steadfast' },
@@ -8010,172 +8010,172 @@ var SS_PATCH = {
         baseSpecies: 'Farfetch\u2019d'
     },
     Flapple: {
-        types: ['풀', '드래곤'],
+        types: ['Grass', 'Dragon'],
         bs: { hp: 70, at: 110, df: 80, sa: 95, sd: 60, sp: 70 },
         weightkg: 1,
         abilities: { 0: 'Ripen' },
         otherFormes: ['Flapple-Gmax']
     },
     'Flapple-Gmax': {
-        types: ['풀', '드래곤'],
+        types: ['Grass', 'Dragon'],
         bs: { hp: 70, at: 110, df: 80, sa: 95, sd: 60, sp: 70 },
         weightkg: 0,
         abilities: { 0: 'Ripen' },
         baseSpecies: 'Flapple'
     },
     Frosmoth: {
-        types: ['얼음', '벌레'],
+        types: ['Ice', 'Bug'],
         bs: { hp: 70, at: 65, df: 60, sa: 125, sd: 90, sp: 65 },
         weightkg: 42,
         abilities: { 0: 'Shield Dust' }
     },
     'Garbodor-Gmax': {
-        types: ['독'],
+        types: ['Poison'],
         bs: { hp: 80, at: 95, df: 82, sa: 60, sd: 82, sp: 75 },
         weightkg: 0,
         abilities: { 0: 'Stench' },
         baseSpecies: 'Garbodor'
     },
     'Gengar-Gmax': {
-        types: ['고스트', '독'],
+        types: ['Ghost', 'Poison'],
         bs: { hp: 60, at: 65, df: 60, sa: 130, sd: 75, sp: 110 },
         weightkg: 0,
         abilities: { 0: 'Cursed Body' },
         baseSpecies: 'Gengar'
     },
     Glastrier: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 100, at: 145, df: 130, sa: 65, sd: 110, sp: 30 },
         weightkg: 800,
         abilities: { 0: 'Chilling Neigh' },
         gender: 'N'
     },
     Gossifleur: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 40, at: 40, df: 60, sa: 40, sd: 60, sp: 10 },
         weightkg: 2.2,
         abilities: { 0: 'Cotton Down' },
         nfe: true
     },
     Grapploct: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 80, at: 118, df: 90, sa: 70, sd: 80, sp: 42 },
         weightkg: 39,
         abilities: { 0: 'Limber' }
     },
     Greedent: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 120, at: 95, df: 95, sa: 55, sd: 75, sp: 20 },
         weightkg: 6,
         abilities: { 0: 'Cheek Pouch' }
     },
     Grimmsnarl: {
-        types: ['악', '페어리'],
+        types: ['Dark', 'Fairy'],
         bs: { hp: 95, at: 120, df: 65, sa: 95, sd: 75, sp: 60 },
         weightkg: 61,
         abilities: { 0: 'Prankster' },
         otherFormes: ['Grimmsnarl-Gmax']
     },
     'Grimmsnarl-Gmax': {
-        types: ['악', '페어리'],
+        types: ['Dark', 'Fairy'],
         bs: { hp: 95, at: 120, df: 65, sa: 95, sd: 75, sp: 60 },
         weightkg: 0,
         abilities: { 0: 'Prankster' },
         baseSpecies: 'Grimmsnarl'
     },
     Grookey: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 50, at: 65, df: 50, sa: 40, sd: 40, sp: 65 },
         weightkg: 5,
         abilities: { 0: 'Overgrow' },
         nfe: true
     },
     Hatenna: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 42, at: 30, df: 45, sa: 56, sd: 53, sp: 39 },
         weightkg: 3.4,
         abilities: { 0: 'Healer' },
         nfe: true
     },
     Hatterene: {
-        types: ['에스퍼', '페어리'],
+        types: ['Psychic', 'Fairy'],
         bs: { hp: 57, at: 90, df: 95, sa: 136, sd: 103, sp: 29 },
         weightkg: 5.1,
         abilities: { 0: 'Healer' },
         otherFormes: ['Hatterene-Gmax']
     },
     'Hatterene-Gmax': {
-        types: ['에스퍼', '페어리'],
+        types: ['Psychic', 'Fairy'],
         bs: { hp: 57, at: 90, df: 95, sa: 136, sd: 103, sp: 29 },
         weightkg: 0,
         abilities: { 0: 'Healer' },
         baseSpecies: 'Hatterene'
     },
     Hattrem: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 57, at: 40, df: 65, sa: 86, sd: 73, sp: 49 },
         weightkg: 4.8,
         abilities: { 0: 'Healer' },
         nfe: true
     },
     Impidimp: {
-        types: ['악', '페어리'],
+        types: ['Dark', 'Fairy'],
         bs: { hp: 45, at: 45, df: 30, sa: 55, sd: 40, sp: 50 },
         weightkg: 5.5,
         abilities: { 0: 'Prankster' },
         nfe: true
     },
     Indeedee: {
-        types: ['에스퍼', '노말'],
+        types: ['Psychic', 'Normal'],
         bs: { hp: 60, at: 65, df: 55, sa: 105, sd: 95, sp: 95 },
         weightkg: 28,
         abilities: { 0: 'Inner Focus' },
         otherFormes: ['Indeedee-F']
     },
     'Indeedee-F': {
-        types: ['에스퍼', '노말'],
+        types: ['Psychic', 'Normal'],
         bs: { hp: 70, at: 55, df: 65, sa: 95, sd: 105, sp: 85 },
         weightkg: 28,
         abilities: { 0: 'Own Tempo' },
         baseSpecies: 'Indeedee'
     },
     Inteleon: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 70, at: 85, df: 65, sa: 125, sd: 65, sp: 120 },
         weightkg: 45.2,
         abilities: { 0: 'Torrent' },
         otherFormes: ['Inteleon-Gmax']
     },
     'Inteleon-Gmax': {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 70, at: 85, df: 65, sa: 125, sd: 65, sp: 120 },
         weightkg: 0,
         abilities: { 0: 'Torrent' },
         baseSpecies: 'Inteleon'
     },
     'Kingler-Gmax': {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 55, at: 130, df: 115, sa: 50, sd: 50, sp: 75 },
         weightkg: 0,
         abilities: { 0: 'Hyper Cutter' },
         baseSpecies: 'Kingler'
     },
     'Kubfu': {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 60, at: 90, df: 60, sa: 53, sd: 50, sp: 72 },
         weightkg: 12,
         nfe: true,
         abilities: { 0: 'Inner Focus' }
     },
     'Lapras-Gmax': {
-        types: ['물', '얼음'],
+        types: ['Water', 'Ice'],
         bs: { hp: 130, at: 85, df: 80, sa: 85, sd: 95, sp: 60 },
         weightkg: 0,
         abilities: { 0: 'Water Absorb' },
         baseSpecies: 'Lapras'
     },
     'Linoone-Galar': {
-        types: ['악', '노말'],
+        types: ['Dark', 'Normal'],
         bs: { hp: 78, at: 70, df: 61, sa: 50, sd: 61, sp: 100 },
         weightkg: 32.5,
         abilities: { 0: 'Pickup' },
@@ -8185,21 +8185,21 @@ var SS_PATCH = {
     Magearna: { otherFormes: ['Magearna-Original'] },
     'Magearna-Original': {
         baseSpecies: 'Magearna',
-        types: ['강철', '페어리'],
+        types: ['Steel', 'Fairy'],
         bs: { hp: 80, at: 95, df: 115, sa: 130, sd: 115, sp: 65 },
         weightkg: 80.5,
         gender: 'N',
         abilities: { 0: 'Soul-Heart' }
     },
     'Machamp-Gmax': {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 90, at: 130, df: 80, sa: 65, sd: 85, sp: 55 },
         weightkg: 0,
         abilities: { 0: 'Guts' },
         baseSpecies: 'Machamp'
     },
     'Melmetal-Gmax': {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 135, at: 143, df: 143, sa: 80, sd: 65, sp: 34 },
         weightkg: 0,
         abilities: { 0: 'Iron Fist' },
@@ -8207,7 +8207,7 @@ var SS_PATCH = {
         gender: 'N'
     },
     'Meowth-Galar': {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 50, at: 65, df: 55, sa: 40, sd: 40, sp: 40 },
         weightkg: 7.5,
         abilities: { 0: 'Pickup' },
@@ -8215,34 +8215,34 @@ var SS_PATCH = {
         baseSpecies: 'Meowth'
     },
     'Meowth-Gmax': {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 40, at: 45, df: 35, sa: 40, sd: 40, sp: 90 },
         weightkg: 0,
         abilities: { 0: 'Pickup' },
         baseSpecies: 'Meowth'
     },
     Miasmaw: {
-        types: ['벌레', '드래곤'],
+        types: ['Bug', 'Dragon'],
         bs: { hp: 85, at: 135, df: 60, sa: 88, sd: 105, sp: 99 },
         weightkg: 57,
         abilities: { 0: 'Neutralizing Gas' }
     },
     Miasmite: {
-        types: ['벌레', '드래곤'],
+        types: ['Bug', 'Dragon'],
         bs: { hp: 40, at: 85, df: 60, sa: 52, sd: 52, sp: 44 },
         weightkg: 10.1,
         abilities: { 0: 'Neutralizing Gas' },
         nfe: true
     },
     Milcery: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 45, at: 40, df: 40, sa: 50, sd: 61, sp: 34 },
         weightkg: 0.3,
         abilities: { 0: 'Sweet Veil' },
         nfe: true
     },
     'Moltres-Galar': {
-        types: ['악', '비행'],
+        types: ['Dark', 'Flying'],
         bs: { hp: 90, at: 85, df: 90, sa: 100, sd: 125, sp: 90 },
         weightkg: 66,
         abilities: { 0: 'Berserk' },
@@ -8250,28 +8250,28 @@ var SS_PATCH = {
         baseSpecies: 'Moltres'
     },
     Morgrem: {
-        types: ['악', '페어리'],
+        types: ['Dark', 'Fairy'],
         bs: { hp: 65, at: 60, df: 45, sa: 75, sd: 55, sp: 70 },
         weightkg: 12.5,
         abilities: { 0: 'Prankster' },
         nfe: true
     },
     Morpeko: {
-        types: ['전기', '악'],
+        types: ['Electric', 'Dark'],
         bs: { hp: 58, at: 95, df: 58, sa: 70, sd: 58, sp: 97 },
         weightkg: 3,
         abilities: { 0: 'Hunger Switch' },
         otherFormes: ['Morpeko-Hangry']
     },
     'Morpeko-Hangry': {
-        types: ['전기', '악'],
+        types: ['Electric', 'Dark'],
         bs: { hp: 58, at: 95, df: 58, sa: 70, sd: 58, sp: 97 },
         weightkg: 3,
         abilities: { 0: 'Hunger Switch' },
         baseSpecies: 'Morpeko'
     },
     'Mr. Mime-Galar': {
-        types: ['얼음', '에스퍼'],
+        types: ['Ice', 'Psychic'],
         bs: { hp: 50, at: 65, df: 65, sa: 90, sd: 90, sp: 100 },
         weightkg: 56.8,
         abilities: { 0: 'Vital Spirit' },
@@ -8279,66 +8279,66 @@ var SS_PATCH = {
         baseSpecies: 'Mr. Mime'
     },
     'Mr. Rime': {
-        types: ['얼음', '에스퍼'],
+        types: ['Ice', 'Psychic'],
         bs: { hp: 80, at: 85, df: 75, sa: 110, sd: 100, sp: 70 },
         weightkg: 58.2,
         abilities: { 0: 'Tangled Feet' }
     },
     Nickit: {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 40, at: 28, df: 28, sa: 47, sd: 52, sp: 50 },
         weightkg: 8.9,
         abilities: { 0: 'Run Away' },
         nfe: true
     },
     Obstagoon: {
-        types: ['악', '노말'],
+        types: ['Dark', 'Normal'],
         bs: { hp: 93, at: 90, df: 101, sa: 60, sd: 81, sp: 95 },
         weightkg: 46,
         abilities: { 0: 'Reckless' }
     },
     Orbeetle: {
-        types: ['벌레', '에스퍼'],
+        types: ['Bug', 'Psychic'],
         bs: { hp: 60, at: 45, df: 110, sa: 80, sd: 120, sp: 90 },
         weightkg: 40.8,
         abilities: { 0: 'Swarm' },
         otherFormes: ['Orbeetle-Gmax']
     },
     'Orbeetle-Gmax': {
-        types: ['벌레', '에스퍼'],
+        types: ['Bug', 'Psychic'],
         bs: { hp: 60, at: 45, df: 110, sa: 80, sd: 120, sp: 90 },
         weightkg: 0,
         abilities: { 0: 'Swarm' },
         baseSpecies: 'Orbeetle'
     },
     Perrserker: {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 70, at: 110, df: 100, sa: 50, sd: 60, sp: 50 },
         weightkg: 28,
         abilities: { 0: 'Battle Armor' }
     },
     'Pikachu-Gmax': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 0,
         abilities: { 0: 'Static' },
         baseSpecies: 'Pikachu'
     },
     'Pikachu-World': {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Static' },
         baseSpecies: 'Pikachu'
     },
     Pincurchin: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 48, at: 101, df: 95, sa: 91, sd: 85, sp: 15 },
         weightkg: 1,
         abilities: { 0: 'Lightning Rod' }
     },
     Polteageist: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 60, at: 65, df: 65, sa: 134, sd: 114, sp: 70 },
         weightkg: 0.4,
         abilities: { 0: 'Weak Armor' },
@@ -8346,7 +8346,7 @@ var SS_PATCH = {
         gender: 'N'
     },
     'Polteageist-Antique': {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 60, at: 65, df: 65, sa: 134, sd: 114, sp: 70 },
         weightkg: 0.4,
         abilities: { 0: 'Weak Armor' },
@@ -8354,7 +8354,7 @@ var SS_PATCH = {
         gender: 'N'
     },
     'Ponyta-Galar': {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 50, at: 85, df: 55, sa: 65, sd: 65, sp: 90 },
         weightkg: 24,
         abilities: { 0: 'Run Away' },
@@ -8362,110 +8362,110 @@ var SS_PATCH = {
         baseSpecies: 'Ponyta'
     },
     Raboot: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 65, at: 86, df: 60, sa: 55, sd: 60, sp: 94 },
         weightkg: 9,
         abilities: { 0: 'Blaze' },
         nfe: true
     },
     'Rapidash-Galar': {
-        types: ['에스퍼', '페어리'],
+        types: ['Psychic', 'Fairy'],
         bs: { hp: 65, at: 100, df: 70, sa: 80, sd: 80, sp: 105 },
         weightkg: 80,
         abilities: { 0: 'Run Away' },
         baseSpecies: 'Rapidash'
     },
     Regidrago: {
-        types: ['드래곤'],
+        types: ['Dragon'],
         bs: { hp: 200, at: 100, df: 50, sa: 100, sd: 50, sp: 80 },
         weightkg: 200,
         abilities: { 0: 'Dragon\'s Maw' },
         gender: 'N'
     },
     Regieleki: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 80, at: 100, df: 50, sa: 100, sd: 50, sp: 200 },
         weightkg: 145,
         abilities: { 0: 'Transistor' },
         gender: 'N'
     },
     Rillaboom: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 100, at: 125, df: 90, sa: 60, sd: 70, sp: 85 },
         weightkg: 90,
         abilities: { 0: 'Overgrow' },
         otherFormes: ['Rillaboom-Gmax']
     },
     'Rillaboom-Gmax': {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 100, at: 125, df: 90, sa: 60, sd: 70, sp: 85 },
         weightkg: 0,
         abilities: { 0: 'Overgrow' },
         baseSpecies: 'Rillaboom'
     },
     Rolycoly: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 30, at: 40, df: 50, sa: 40, sd: 50, sp: 30 },
         weightkg: 12,
         abilities: { 0: 'Steam Engine' },
         nfe: true
     },
     Rookidee: {
-        types: ['비행'],
+        types: ['Flying'],
         bs: { hp: 38, at: 47, df: 35, sa: 33, sd: 35, sp: 57 },
         weightkg: 1.8,
         abilities: { 0: 'Keen Eye' },
         nfe: true
     },
     Runerigus: {
-        types: ['땅', '고스트'],
+        types: ['Ground', 'Ghost'],
         bs: { hp: 58, at: 95, df: 145, sa: 50, sd: 105, sp: 30 },
         weightkg: 66.6,
         abilities: { 0: 'Wandering Spirit' }
     },
     Saharaja: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 70, at: 112, df: 105, sa: 65, sd: 123, sp: 78 },
         weightkg: 303.9,
         abilities: { 0: 'Water Absorb' }
     },
     Saharascal: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 50, at: 80, df: 65, sa: 45, sd: 90, sp: 70 },
         weightkg: 48,
         abilities: { 0: 'Water Absorb' },
         nfe: true
     },
     Sandaconda: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 72, at: 107, df: 125, sa: 65, sd: 70, sp: 71 },
         weightkg: 65.5,
         abilities: { 0: 'Sand Spit' },
         otherFormes: ['Sandaconda-Gmax']
     },
     'Sandaconda-Gmax': {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 72, at: 107, df: 125, sa: 65, sd: 70, sp: 71 },
         weightkg: 0,
         abilities: { 0: 'Sand Spit' },
         baseSpecies: 'Sandaconda'
     },
     Scorbunny: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 50, at: 71, df: 40, sa: 40, sd: 40, sp: 69 },
         weightkg: 4.5,
         abilities: { 0: 'Blaze' },
         nfe: true
     },
     Silicobra: {
-        types: ['땅'],
+        types: ['Ground'],
         bs: { hp: 52, at: 57, df: 75, sa: 35, sd: 50, sp: 46 },
         weightkg: 7.6,
         abilities: { 0: 'Sand Spit' },
         nfe: true
     },
     Sinistea: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 40, at: 45, df: 45, sa: 74, sd: 54, sp: 50 },
         weightkg: 0.2,
         abilities: { 0: 'Weak Armor' },
@@ -8474,7 +8474,7 @@ var SS_PATCH = {
         gender: 'N'
     },
     'Sinistea-Antique': {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 40, at: 45, df: 45, sa: 74, sd: 54, sp: 50 },
         weightkg: 0.2,
         abilities: { 0: 'Weak Armor' },
@@ -8483,41 +8483,41 @@ var SS_PATCH = {
         gender: 'N'
     },
     'Sirfetch\u2019d': {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 62, at: 135, df: 95, sa: 68, sd: 82, sp: 65 },
         weightkg: 117,
         abilities: { 0: 'Steadfast' }
     },
     Sizzlipede: {
-        types: ['불꽃', '벌레'],
+        types: ['Fire', 'Bug'],
         bs: { hp: 50, at: 65, df: 45, sa: 50, sd: 50, sp: 45 },
         weightkg: 1,
         abilities: { 0: 'Flash Fire' },
         nfe: true
     },
     Skwovet: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 70, at: 55, df: 55, sa: 35, sd: 35, sp: 25 },
         weightkg: 2.5,
         abilities: { 0: 'Cheek Pouch' },
         nfe: true
     },
     'Slowbro-Galar': {
-        types: ['독', '에스퍼'],
+        types: ['Poison', 'Psychic'],
         bs: { hp: 95, at: 100, df: 95, sa: 100, sd: 70, sp: 30 },
         weightkg: 70.5,
         abilities: { 0: 'Quick Draw' },
         baseSpecies: 'Slowbro'
     },
     'Slowking-Galar': {
-        types: ['독', '에스퍼'],
+        types: ['Poison', 'Psychic'],
         bs: { hp: 95, at: 65, df: 80, sa: 110, sd: 110, sp: 30 },
         weightkg: 79.5,
         abilities: { 0: 'Curious Medicine' },
         baseSpecies: 'Slowking'
     },
     'Slowpoke-Galar': {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 90, at: 65, df: 65, sa: 40, sd: 40, sp: 15 },
         weightkg: 36,
         nfe: true,
@@ -8525,131 +8525,131 @@ var SS_PATCH = {
         baseSpecies: 'Slowpoke'
     },
     Solotl: {
-        types: ['불꽃', '드래곤'],
+        types: ['Fire', 'Dragon'],
         bs: { hp: 68, at: 48, df: 34, sa: 72, sd: 24, sp: 84 },
         weightkg: 11.8,
         nfe: true,
         abilities: { 0: 'Regenerator' }
     },
     Snom: {
-        types: ['얼음', '벌레'],
+        types: ['Ice', 'Bug'],
         bs: { hp: 30, at: 25, df: 35, sa: 45, sd: 30, sp: 20 },
         weightkg: 3.8,
         abilities: { 0: 'Shield Dust' },
         nfe: true
     },
     'Snorlax-Gmax': {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 160, at: 110, df: 65, sa: 65, sd: 110, sp: 30 },
         weightkg: 0,
         abilities: { 0: 'Immunity' },
         baseSpecies: 'Snorlax'
     },
     Sobble: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 50, at: 40, df: 40, sa: 70, sd: 40, sp: 70 },
         weightkg: 4,
         abilities: { 0: 'Torrent' },
         nfe: true
     },
     Spectrier: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 100, at: 65, df: 60, sa: 145, sd: 80, sp: 130 },
         weightkg: 44.5,
         abilities: { 0: 'Grim Neigh' },
         gender: 'N'
     },
     Stonjourner: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 100, at: 125, df: 135, sa: 20, sd: 20, sp: 70 },
         weightkg: 520,
         abilities: { 0: 'Power Spot' }
     },
     'Stunfisk-Galar': {
-        types: ['땅', '강철'],
+        types: ['Ground', 'Steel'],
         bs: { hp: 109, at: 81, df: 99, sa: 66, sd: 84, sp: 32 },
         weightkg: 20.5,
         abilities: { 0: 'Mimicry' },
         baseSpecies: 'Stunfisk'
     },
     Thievul: {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 70, at: 58, df: 58, sa: 87, sd: 92, sp: 90 },
         weightkg: 19.9,
         abilities: { 0: 'Run Away' }
     },
     Thwackey: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 70, at: 85, df: 70, sa: 55, sd: 60, sp: 80 },
         weightkg: 14,
         abilities: { 0: 'Overgrow' },
         nfe: true
     },
     Toxel: {
-        types: ['전기', '독'],
+        types: ['Electric', 'Poison'],
         bs: { hp: 40, at: 38, df: 35, sa: 54, sd: 35, sp: 40 },
         weightkg: 11,
         abilities: { 0: 'Rattled' },
         nfe: true
     },
     Toxtricity: {
-        types: ['전기', '독'],
+        types: ['Electric', 'Poison'],
         bs: { hp: 75, at: 98, df: 70, sa: 114, sd: 70, sp: 75 },
         weightkg: 40,
         abilities: { 0: 'Punk Rock' },
         otherFormes: ['Toxtricity-Gmax', 'Toxtricity-Low-Key', 'Toxtricity-Low-Key-Gmax']
     },
     'Toxtricity-Gmax': {
-        types: ['전기', '독'],
+        types: ['Electric', 'Poison'],
         bs: { hp: 75, at: 98, df: 70, sa: 114, sd: 70, sp: 75 },
         weightkg: 0,
         abilities: { 0: 'Punk Rock' },
         baseSpecies: 'Toxtricity'
     },
     'Toxtricity-Low-Key': {
-        types: ['전기', '독'],
+        types: ['Electric', 'Poison'],
         bs: { hp: 75, at: 98, df: 70, sa: 114, sd: 70, sp: 75 },
         weightkg: 40,
         abilities: { 0: 'Punk Rock' },
         baseSpecies: 'Toxtricity'
     },
     'Toxtricity-Low-Key-Gmax': {
-        types: ['전기', '독'],
+        types: ['Electric', 'Poison'],
         bs: { hp: 75, at: 98, df: 70, sa: 114, sd: 70, sp: 75 },
         weightkg: 0,
         abilities: { 0: 'Punk Rock' },
         baseSpecies: 'Toxtricity'
     },
     Urshifu: {
-        types: ['격투', '악'],
+        types: ['Fighting', 'Dark'],
         bs: { hp: 100, at: 130, df: 100, sa: 63, sd: 60, sp: 97 },
         weightkg: 105,
         abilities: { 0: 'Unseen Fist' },
         otherFormes: ['Urshifu-Gmax', 'Urshifu-Rapid-Strike', 'Urshifu-Rapid-Strike-Gmax']
     },
     'Urshifu-Rapid-Strike': {
-        types: ['격투', '물'],
+        types: ['Fighting', 'Water'],
         bs: { hp: 100, at: 130, df: 100, sa: 63, sd: 60, sp: 97 },
         weightkg: 105,
         abilities: { 0: 'Unseen Fist' },
         baseSpecies: 'Urshifu'
     },
     'Urshifu-Rapid-Strike-Gmax': {
-        types: ['격투', '물'],
+        types: ['Fighting', 'Water'],
         bs: { hp: 100, at: 130, df: 100, sa: 63, sd: 60, sp: 97 },
         weightkg: 105,
         abilities: { 0: 'Unseen Fist' },
         baseSpecies: 'Urshifu'
     },
     'Urshifu-Gmax': {
-        types: ['격투', '악'],
+        types: ['Fighting', 'Dark'],
         bs: { hp: 100, at: 130, df: 100, sa: 63, sd: 60, sp: 97 },
         weightkg: 0,
         abilities: { 0: 'Unseen Fist' },
         baseSpecies: 'Urshifu'
     },
     Venomicon: {
-        types: ['독', '비행'],
+        types: ['Poison', 'Flying'],
         bs: { hp: 85, at: 50, df: 113, sa: 118, sd: 90, sp: 64 },
         weightkg: 11.5,
         abilities: { 0: 'Stamina' },
@@ -8657,7 +8657,7 @@ var SS_PATCH = {
         gender: 'N'
     },
     'Venomicon-Epilogue': {
-        types: ['독', '비행'],
+        types: ['Poison', 'Flying'],
         bs: { hp: 85, at: 102, df: 85, sa: 62, sd: 85, sp: 101 },
         weightkg: 12.4,
         abilities: { 0: 'Tinted Lens' },
@@ -8665,28 +8665,28 @@ var SS_PATCH = {
         gender: 'N'
     },
     'Venusaur-Gmax': {
-        types: ['풀', '독'],
+        types: ['Grass', 'Poison'],
         bs: { hp: 80, at: 82, df: 83, sa: 100, sd: 100, sp: 80 },
         weightkg: 0,
         abilities: { 0: 'Overgrow' },
         baseSpecies: 'Venusaur'
     },
     'Weezing-Galar': {
-        types: ['독', '페어리'],
+        types: ['Poison', 'Fairy'],
         bs: { hp: 65, at: 90, df: 120, sa: 85, sd: 70, sp: 60 },
         weightkg: 16,
         abilities: { 0: 'Levitate' },
         baseSpecies: 'Weezing'
     },
     Wooloo: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 42, at: 40, df: 55, sa: 40, sd: 45, sp: 48 },
         weightkg: 6,
         abilities: { 0: 'Fluffy' },
         nfe: true
     },
     'Yamask-Galar': {
-        types: ['땅', '고스트'],
+        types: ['Ground', 'Ghost'],
         bs: { hp: 38, at: 55, df: 85, sa: 30, sd: 65, sp: 30 },
         weightkg: 1.5,
         abilities: { 0: 'Wandering Spirit' },
@@ -8694,14 +8694,14 @@ var SS_PATCH = {
         baseSpecies: 'Yamask'
     },
     Yamper: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 59, at: 45, df: 50, sa: 40, sd: 50, sp: 26 },
         weightkg: 13.5,
         abilities: { 0: 'Ball Fetch' },
         nfe: true
     },
     Zacian: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 92, at: 130, df: 115, sa: 80, sd: 115, sp: 138 },
         weightkg: 110,
         abilities: { 0: 'Intrepid Sword' },
@@ -8709,7 +8709,7 @@ var SS_PATCH = {
         otherFormes: ['Zacian-Crowned']
     },
     'Zacian-Crowned': {
-        types: ['페어리', '강철'],
+        types: ['Fairy', 'Steel'],
         bs: { hp: 92, at: 170, df: 115, sa: 80, sd: 115, sp: 148 },
         weightkg: 355,
         abilities: { 0: 'Intrepid Sword' },
@@ -8717,7 +8717,7 @@ var SS_PATCH = {
         gender: 'N'
     },
     Zamazenta: {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 92, at: 130, df: 115, sa: 80, sd: 115, sp: 138 },
         weightkg: 210,
         abilities: { 0: 'Dauntless Shield' },
@@ -8725,7 +8725,7 @@ var SS_PATCH = {
         otherFormes: ['Zamazenta-Crowned']
     },
     'Zamazenta-Crowned': {
-        types: ['격투', '강철'],
+        types: ['Fighting', 'Steel'],
         bs: { hp: 92, at: 130, df: 145, sa: 80, sd: 145, sp: 128 },
         weightkg: 785,
         abilities: { 0: 'Dauntless Shield' },
@@ -8733,7 +8733,7 @@ var SS_PATCH = {
         gender: 'N'
     },
     'Zapdos-Galar': {
-        types: ['격투', '비행'],
+        types: ['Fighting', 'Flying'],
         bs: { hp: 90, at: 125, df: 90, sa: 85, sd: 90, sp: 100 },
         weightkg: 58.2,
         abilities: { 0: 'Defiant' },
@@ -8741,7 +8741,7 @@ var SS_PATCH = {
         baseSpecies: 'Zapdos'
     },
     Zarude: {
-        types: ['악', '풀'],
+        types: ['Dark', 'Grass'],
         bs: { hp: 105, at: 120, df: 105, sa: 70, sd: 95, sp: 105 },
         weightkg: 70,
         abilities: { 0: 'Leaf Guard' },
@@ -8749,7 +8749,7 @@ var SS_PATCH = {
         otherFormes: ['Zarude-Dada']
     },
     'Zarude-Dada': {
-        types: ['악', '풀'],
+        types: ['Dark', 'Grass'],
         bs: { hp: 105, at: 120, df: 105, sa: 70, sd: 95, sp: 105 },
         weightkg: 70,
         abilities: { 0: 'Leaf Guard' },
@@ -8757,7 +8757,7 @@ var SS_PATCH = {
         gender: 'N'
     },
     'Zigzagoon-Galar': {
-        types: ['악', '노말'],
+        types: ['Dark', 'Normal'],
         bs: { hp: 38, at: 30, df: 41, sa: 30, sd: 41, sp: 60 },
         weightkg: 17.5,
         abilities: { 0: 'Pickup' },
@@ -8791,35 +8791,35 @@ var PLA_PATCH = {
     Zoroark: { otherFormes: ['Zoroark-Hisui'] },
     Zorua: { otherFormes: ['Zorua-Hisui'] },
     'Arcanine-Hisui': {
-        types: ['불꽃', '바위'],
+        types: ['Fire', 'Rock'],
         bs: { hp: 95, at: 115, df: 80, sa: 95, sd: 80, sp: 90 },
         weightkg: 168,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Arcanine'
     },
     'Avalugg-Hisui': {
-        types: ['얼음', '바위'],
+        types: ['Ice', 'Rock'],
         bs: { hp: 95, at: 127, df: 184, sa: 34, sd: 36, sp: 38 },
         weightkg: 262.4,
         abilities: { 0: 'Strong Jaw' },
         baseSpecies: 'Avalugg'
     },
     Basculegion: {
-        types: ['물', '고스트'],
+        types: ['Water', 'Ghost'],
         bs: { hp: 120, at: 112, df: 65, sa: 80, sd: 75, sp: 78 },
         weightkg: 110,
         abilities: { 0: 'Swift Swim' },
         otherFormes: ['Basculegion-F']
     },
     'Basculegion-F': {
-        types: ['물', '고스트'],
+        types: ['Water', 'Ghost'],
         bs: { hp: 120, at: 92, df: 65, sa: 100, sd: 75, sp: 78 },
         weightkg: 110,
         abilities: { 0: 'Swift Swim' },
         baseSpecies: 'Basculegion'
     },
     'Basculin-White-Striped': {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 70, at: 92, df: 65, sa: 80, sd: 55, sp: 98 },
         weightkg: 18,
         abilities: { 0: 'Rattled' },
@@ -8827,21 +8827,21 @@ var PLA_PATCH = {
         nfe: true
     },
     'Braviary-Hisui': {
-        types: ['에스퍼', '비행'],
+        types: ['Psychic', 'Flying'],
         bs: { hp: 110, at: 83, df: 70, sa: 112, sd: 70, sp: 65 },
         weightkg: 43.4,
         abilities: { 0: 'Keen Eye' },
         baseSpecies: 'Braviary'
     },
     'Decidueye-Hisui': {
-        types: ['풀', '격투'],
+        types: ['Grass', 'Fighting'],
         bs: { hp: 88, at: 112, df: 80, sa: 95, sd: 95, sp: 60 },
         weightkg: 37,
         abilities: { 0: 'Overgrow' },
         baseSpecies: 'Decidueye'
     },
     'Dialga-Origin': {
-        types: ['강철', '드래곤'],
+        types: ['Steel', 'Dragon'],
         bs: { hp: 100, at: 100, df: 120, sa: 150, sd: 120, sp: 90 },
         weightkg: 850,
         gender: 'N',
@@ -8849,7 +8849,7 @@ var PLA_PATCH = {
         baseSpecies: 'Dialga'
     },
     'Electrode-Hisui': {
-        types: ['전기', '풀'],
+        types: ['Electric', 'Grass'],
         bs: { hp: 60, at: 50, df: 70, sa: 80, sd: 80, sp: 150 },
         weightkg: 71,
         gender: 'N',
@@ -8857,28 +8857,28 @@ var PLA_PATCH = {
         baseSpecies: 'Electrode'
     },
     Enamorus: {
-        types: ['페어리', '비행'],
+        types: ['Fairy', 'Flying'],
         bs: { hp: 74, at: 115, df: 70, sa: 135, sd: 80, sp: 106 },
         weightkg: 48,
         abilities: { 0: 'Cute Charm' },
         otherFormes: ['Enamorus-Therian']
     },
     'Enamorus-Therian': {
-        types: ['페어리', '비행'],
+        types: ['Fairy', 'Flying'],
         bs: { hp: 74, at: 115, df: 110, sa: 135, sd: 100, sp: 46 },
         weightkg: 48,
         abilities: { 0: 'Overcoat' },
         baseSpecies: 'Enamorus'
     },
     'Goodra-Hisui': {
-        types: ['강철', '드래곤'],
+        types: ['Steel', 'Dragon'],
         bs: { hp: 80, at: 100, df: 100, sa: 110, sd: 150, sp: 60 },
         weightkg: 334.1,
         abilities: { 0: 'Sap Sipper' },
         baseSpecies: 'Goodra'
     },
     'Growlithe-Hisui': {
-        types: ['불꽃', '바위'],
+        types: ['Fire', 'Rock'],
         bs: { hp: 60, at: 75, df: 45, sa: 65, sd: 50, sp: 55 },
         weightkg: 22.7,
         abilities: { 0: 'Intimidate' },
@@ -8886,26 +8886,26 @@ var PLA_PATCH = {
         nfe: true
     },
     Kleavor: {
-        types: ['벌레', '바위'],
+        types: ['Bug', 'Rock'],
         bs: { hp: 70, at: 130, df: 95, sa: 45, sd: 75, sp: 85 },
         weightkg: 89,
         abilities: { 0: 'Swarm' }
     },
     'Lilligant-Hisui': {
-        types: ['풀', '격투'],
+        types: ['Grass', 'Fighting'],
         bs: { hp: 70, at: 105, df: 75, sa: 50, sd: 75, sp: 105 },
         weightkg: 19.2,
         abilities: { 0: 'Chlorophyll' },
         baseSpecies: 'Lilligant'
     },
     Overqwil: {
-        types: ['악', '독'],
+        types: ['Dark', 'Poison'],
         bs: { hp: 85, at: 115, df: 95, sa: 65, sd: 65, sp: 85 },
         weightkg: 3.9,
         abilities: { 0: 'Poison Point' }
     },
     'Palkia-Origin': {
-        types: ['물', '드래곤'],
+        types: ['Water', 'Dragon'],
         bs: { hp: 90, at: 100, df: 100, sa: 150, sd: 120, sp: 120 },
         weightkg: 660,
         gender: 'N',
@@ -8913,7 +8913,7 @@ var PLA_PATCH = {
         baseSpecies: 'Palkia'
     },
     'Qwilfish-Hisui': {
-        types: ['악', '독'],
+        types: ['Dark', 'Poison'],
         bs: { hp: 65, at: 95, df: 85, sa: 55, sd: 55, sp: 85 },
         weightkg: 3.9,
         abilities: { 0: 'Poison Point' },
@@ -8921,14 +8921,14 @@ var PLA_PATCH = {
         nfe: true
     },
     'Samurott-Hisui': {
-        types: ['물', '악'],
+        types: ['Water', 'Dark'],
         bs: { hp: 90, at: 108, df: 80, sa: 100, sd: 65, sp: 85 },
         weightkg: 58.2,
         abilities: { 0: 'Torrent' },
         baseSpecies: 'Samurott'
     },
     'Sliggoo-Hisui': {
-        types: ['강철', '드래곤'],
+        types: ['Steel', 'Dragon'],
         bs: { hp: 58, at: 75, df: 83, sa: 83, sd: 113, sp: 40 },
         weightkg: 68.5,
         abilities: { 0: 'Sap Sipper' },
@@ -8936,7 +8936,7 @@ var PLA_PATCH = {
         nfe: true
     },
     'Sneasel-Hisui': {
-        types: ['격투', '독'],
+        types: ['Fighting', 'Poison'],
         bs: { hp: 55, at: 95, df: 55, sa: 35, sd: 75, sp: 115 },
         weightkg: 27,
         abilities: { 0: 'Inner Focus' },
@@ -8944,26 +8944,26 @@ var PLA_PATCH = {
         nfe: true
     },
     Sneasler: {
-        types: ['격투', '독'],
+        types: ['Fighting', 'Poison'],
         bs: { hp: 80, at: 130, df: 60, sa: 40, sd: 80, sp: 120 },
         weightkg: 43,
         abilities: { 0: 'Pressure' }
     },
     'Typhlosion-Hisui': {
-        types: ['불꽃', '고스트'],
+        types: ['Fire', 'Ghost'],
         bs: { hp: 73, at: 84, df: 78, sa: 119, sd: 85, sp: 95 },
         weightkg: 69.8,
         abilities: { 0: 'Blaze' },
         baseSpecies: 'Typhlosion'
     },
     Ursaluna: {
-        types: ['땅', '노말'],
+        types: ['Ground', 'Normal'],
         bs: { hp: 130, at: 140, df: 105, sa: 45, sd: 80, sp: 50 },
         weightkg: 290,
         abilities: { 0: 'Guts' }
     },
     'Voltorb-Hisui': {
-        types: ['전기', '풀'],
+        types: ['Electric', 'Grass'],
         bs: { hp: 40, at: 30, df: 50, sa: 55, sd: 55, sp: 100 },
         weightkg: 13,
         gender: 'N',
@@ -8972,20 +8972,20 @@ var PLA_PATCH = {
         nfe: true
     },
     Wyrdeer: {
-        types: ['노말', '에스퍼'],
+        types: ['Normal', 'Psychic'],
         bs: { hp: 103, at: 105, df: 72, sa: 105, sd: 75, sp: 65 },
         weightkg: 95.1,
         abilities: { 0: 'Intimidate' }
     },
     'Zoroark-Hisui': {
-        types: ['노말', '고스트'],
+        types: ['Normal', 'Ghost'],
         bs: { hp: 60, at: 105, df: 60, sa: 120, sd: 60, sp: 105 },
         weightkg: 73,
         abilities: { 0: 'Illusion' },
         baseSpecies: 'Zoroark'
     },
     'Zorua-Hisui': {
-        types: ['노말', '고스트'],
+        types: ['Normal', 'Ghost'],
         bs: { hp: 35, at: 60, df: 40, sa: 85, sd: 40, sp: 70 },
         weightkg: 12.5,
         abilities: { 0: 'Illusion' },
@@ -9006,249 +9006,249 @@ var SV_PATCH = {
     Zamazenta: { bs: { at: 120 } },
     'Zamazenta-Crowned': { bs: { at: 120, df: 140, sd: 140 } },
     Annihilape: {
-        types: ['격투', '고스트'],
+        types: ['Fighting', 'Ghost'],
         bs: { hp: 110, at: 115, df: 80, sa: 50, sd: 90, sp: 90 },
         weightkg: 56,
         abilities: { 0: 'Vital Spirit' }
     },
     Arboliva: {
-        types: ['풀', '노말'],
+        types: ['Grass', 'Normal'],
         bs: { hp: 78, at: 69, df: 90, sa: 125, sd: 109, sp: 39 },
         weightkg: 48.2,
         abilities: { 0: 'Seed Sower' }
     },
     Arctibax: {
-        types: ['드래곤', '얼음'],
+        types: ['Dragon', 'Ice'],
         bs: { hp: 90, at: 95, df: 66, sa: 45, sd: 65, sp: 62 },
         weightkg: 30,
         abilities: { 0: 'Thermal Exchange' },
         nfe: true
     },
     Armarouge: {
-        types: ['불꽃', '에스퍼'],
+        types: ['Fire', 'Psychic'],
         bs: { hp: 85, at: 60, df: 100, sa: 125, sd: 80, sp: 75 },
         weightkg: 85,
         abilities: { 0: 'Flash Fire' }
     },
     Baxcalibur: {
-        types: ['드래곤', '얼음'],
+        types: ['Dragon', 'Ice'],
         bs: { hp: 115, at: 145, df: 92, sa: 75, sd: 86, sp: 87 },
         weightkg: 210,
         abilities: { 0: 'Thermal Exchange' }
     },
     Bellibolt: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 109, at: 64, df: 91, sa: 103, sd: 83, sp: 45 },
         weightkg: 113,
         abilities: { 0: 'Electromorphosis' }
     },
     Bombirdier: {
-        types: ['비행', '악'],
+        types: ['Flying', 'Dark'],
         bs: { hp: 70, at: 103, df: 85, sa: 60, sd: 85, sp: 82 },
         weightkg: 42.9,
         abilities: { 0: 'Big Pecks' }
     },
     Brambleghast: {
-        types: ['풀', '고스트'],
+        types: ['Grass', 'Ghost'],
         bs: { hp: 55, at: 115, df: 70, sa: 80, sd: 70, sp: 90 },
         weightkg: 6,
         abilities: { 0: 'Wind Rider' }
     },
     Bramblin: {
-        types: ['풀', '고스트'],
+        types: ['Grass', 'Ghost'],
         bs: { hp: 40, at: 65, df: 30, sa: 45, sd: 35, sp: 60 },
         weightkg: 0.6,
         abilities: { 0: 'Wind Rider' },
         nfe: true
     },
     'Brute Bonnet': {
-        types: ['풀', '악'],
+        types: ['Grass', 'Dark'],
         bs: { hp: 111, at: 127, df: 99, sa: 79, sd: 99, sp: 55 },
         weightkg: 21,
         gender: 'N',
         abilities: { 0: 'Protosynthesis' }
     },
     Capsakid: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 52, at: 62, df: 40, sa: 62, sd: 40, sp: 50 },
         weightkg: 3,
         abilities: { 0: 'Chlorophyll' },
         nfe: true
     },
     Ceruledge: {
-        types: ['불꽃', '고스트'],
+        types: ['Fire', 'Ghost'],
         bs: { hp: 75, at: 125, df: 80, sa: 60, sd: 100, sp: 85 },
         weightkg: 62,
         abilities: { 0: 'Flash Fire' }
     },
     Cetitan: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 170, at: 113, df: 65, sa: 45, sd: 55, sp: 73 },
         weightkg: 700,
         abilities: { 0: 'Thick Fat' }
     },
     Cetoddle: {
-        types: ['얼음'],
+        types: ['Ice'],
         bs: { hp: 108, at: 68, df: 45, sa: 30, sd: 40, sp: 43 },
         weightkg: 45,
         abilities: { 0: 'Thick Fat' },
         nfe: true
     },
     Charcadet: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 40, at: 50, df: 40, sa: 50, sd: 40, sp: 35 },
         weightkg: 10.5,
         abilities: { 0: 'Flash Fire' },
         nfe: true
     },
     'Chi-Yu': {
-        types: ['악', '불꽃'],
+        types: ['Dark', 'Fire'],
         bs: { hp: 55, at: 80, df: 80, sa: 135, sd: 120, sp: 100 },
         weightkg: 4.9,
         gender: 'N',
         abilities: { 0: 'Beads of Ruin' }
     },
     'Chien-Pao': {
-        types: ['악', '얼음'],
+        types: ['Dark', 'Ice'],
         bs: { hp: 80, at: 120, df: 80, sa: 90, sd: 65, sp: 135 },
         weightkg: 152.2,
         gender: 'N',
         abilities: { 0: 'Sword of Ruin' }
     },
     Clodsire: {
-        types: ['독', '땅'],
+        types: ['Poison', 'Ground'],
         bs: { hp: 130, at: 75, df: 60, sa: 45, sd: 100, sp: 20 },
         weightkg: 223,
         abilities: { 0: 'Poison Point' }
     },
     Crocalor: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 81, at: 55, df: 78, sa: 90, sd: 58, sp: 49 },
         weightkg: 30.7,
         abilities: { 0: 'Blaze' },
         nfe: true
     },
     Cyclizar: {
-        types: ['드래곤', '노말'],
+        types: ['Dragon', 'Normal'],
         bs: { hp: 70, at: 95, df: 65, sa: 85, sd: 65, sp: 121 },
         weightkg: 63,
         abilities: { 0: 'Shed Skin' }
     },
     Dachsbun: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 57, at: 80, df: 115, sa: 50, sd: 80, sp: 95 },
         weightkg: 14.9,
         abilities: { 0: 'Well-Baked Body' }
     },
     Dolliv: {
-        types: ['풀', '노말'],
+        types: ['Grass', 'Normal'],
         bs: { hp: 52, at: 53, df: 60, sa: 78, sd: 78, sp: 33 },
         weightkg: 11.9,
         abilities: { 0: 'Early Bird' },
         nfe: true
     },
     Dondozo: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 150, at: 100, df: 115, sa: 65, sd: 65, sp: 35 },
         weightkg: 220,
         abilities: { 0: 'Unaware' }
     },
     Dudunsparce: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 125, at: 100, df: 80, sa: 85, sd: 75, sp: 55 },
         weightkg: 39.2,
         abilities: { 0: 'Serene Grace' },
         otherFormes: ['Dudunsparce-Three-Segment']
     },
     'Dudunsparce-Three-Segment': {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 125, at: 100, df: 80, sa: 85, sd: 75, sp: 55 },
         weightkg: 47.4,
         abilities: { 0: 'Serene Grace' },
         baseSpecies: 'Dudunsparce'
     },
     Espathra: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 95, at: 60, df: 60, sa: 101, sd: 60, sp: 105 },
         weightkg: 90,
         abilities: { 0: 'Opportunist' }
     },
     Farigiraf: {
-        types: ['노말', '에스퍼'],
+        types: ['Normal', 'Psychic'],
         bs: { hp: 120, at: 90, df: 70, sa: 110, sd: 70, sp: 60 },
         weightkg: 160,
         abilities: { 0: 'Cud Chew' }
     },
     Fidough: {
-        types: ['페어리'],
+        types: ['Fairy'],
         bs: { hp: 37, at: 55, df: 70, sa: 30, sd: 55, sp: 65 },
         weightkg: 10.9,
         abilities: { 0: 'Own Tempo' },
         nfe: true
     },
     Finizen: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 70, at: 45, df: 40, sa: 45, sd: 40, sp: 75 },
         weightkg: 60.2,
         abilities: { 0: 'Water Veil' },
         nfe: true
     },
     Flamigo: {
-        types: ['비행', '격투'],
+        types: ['Flying', 'Fighting'],
         bs: { hp: 82, at: 115, df: 74, sa: 75, sd: 64, sp: 90 },
         weightkg: 37,
         abilities: { 0: 'Scrappy' }
     },
     Flittle: {
-        types: ['에스퍼'],
+        types: ['Psychic'],
         bs: { hp: 30, at: 35, df: 30, sa: 55, sd: 40, sp: 75 },
         weightkg: 1.5,
         abilities: { 0: 'Anticipation' },
         nfe: true
     },
     Floragato: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 61, at: 80, df: 63, sa: 60, sd: 63, sp: 83 },
         weightkg: 12.2,
         abilities: { 0: 'Overgrow' },
         nfe: true
     },
     'Flutter Mane': {
-        types: ['고스트', '페어리'],
+        types: ['Ghost', 'Fairy'],
         bs: { hp: 55, at: 55, df: 55, sa: 135, sd: 135, sp: 135 },
         weightkg: 4,
         gender: 'N',
         abilities: { 0: 'Protosynthesis' }
     },
     Frigibax: {
-        types: ['드래곤', '얼음'],
+        types: ['Dragon', 'Ice'],
         bs: { hp: 65, at: 75, df: 45, sa: 35, sd: 45, sp: 55 },
         weightkg: 17,
         abilities: { 0: 'Thermal Exchange' },
         nfe: true
     },
     Fuecoco: {
-        types: ['불꽃'],
+        types: ['Fire'],
         bs: { hp: 67, at: 45, df: 59, sa: 63, sd: 40, sp: 36 },
         weightkg: 9.8,
         abilities: { 0: 'Blaze' },
         nfe: true
     },
     Garganacl: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 100, at: 100, df: 130, sa: 45, sd: 90, sp: 35 },
         weightkg: 240,
         abilities: { 0: 'Purifying Salt' }
     },
     Gholdengo: {
-        types: ['강철', '고스트'],
+        types: ['Steel', 'Ghost'],
         bs: { hp: 87, at: 60, df: 95, sa: 133, sd: 91, sp: 84 },
         weightkg: 30,
         gender: 'N',
         abilities: { 0: 'Good as Gold' }
     },
     Gimmighoul: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 45, at: 30, df: 70, sa: 75, sd: 70, sp: 10 },
         weightkg: 5,
         gender: 'N',
@@ -9256,146 +9256,146 @@ var SV_PATCH = {
         nfe: true
     },
     Glimmet: {
-        types: ['바위', '독'],
+        types: ['Rock', 'Poison'],
         bs: { hp: 48, at: 35, df: 42, sa: 105, sd: 60, sp: 60 },
         weightkg: 8,
         abilities: { 0: 'Toxic Debris' },
         nfe: true
     },
     Glimmora: {
-        types: ['바위', '독'],
+        types: ['Rock', 'Poison'],
         bs: { hp: 83, at: 55, df: 90, sa: 130, sd: 81, sp: 86 },
         weightkg: 45,
         abilities: { 0: 'Toxic Debris' }
     },
     Grafaiai: {
-        types: ['독', '노말'],
+        types: ['Poison', 'Normal'],
         bs: { hp: 63, at: 95, df: 65, sa: 80, sd: 72, sp: 110 },
         weightkg: 27.2,
         abilities: { 0: 'Unburden' }
     },
     'Great Tusk': {
-        types: ['땅', '격투'],
+        types: ['Ground', 'Fighting'],
         bs: { hp: 115, at: 131, df: 131, sa: 53, sd: 53, sp: 87 },
         weightkg: 320,
         gender: 'N',
         abilities: { 0: 'Protosynthesis' }
     },
     Greavard: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 50, at: 61, df: 60, sa: 30, sd: 55, sp: 34 },
         weightkg: 35,
         abilities: { 0: 'Pickup' },
         nfe: true
     },
     Houndstone: {
-        types: ['고스트'],
+        types: ['Ghost'],
         bs: { hp: 72, at: 101, df: 100, sa: 50, sd: 97, sp: 68 },
         weightkg: 15,
         abilities: { 0: 'Sand Rush' }
     },
     'Iron Bundle': {
-        types: ['얼음', '물'],
+        types: ['Ice', 'Water'],
         bs: { hp: 56, at: 80, df: 114, sa: 124, sd: 60, sp: 136 },
         weightkg: 11,
         gender: 'N',
         abilities: { 0: 'Quark Drive' }
     },
     'Iron Hands': {
-        types: ['격투', '전기'],
+        types: ['Fighting', 'Electric'],
         bs: { hp: 154, at: 140, df: 108, sa: 50, sd: 68, sp: 50 },
         weightkg: 380.7,
         gender: 'N',
         abilities: { 0: 'Quark Drive' }
     },
     'Iron Jugulis': {
-        types: ['악', '비행'],
+        types: ['Dark', 'Flying'],
         bs: { hp: 94, at: 80, df: 86, sa: 122, sd: 80, sp: 108 },
         weightkg: 111,
         gender: 'N',
         abilities: { 0: 'Quark Drive' }
     },
     'Iron Moth': {
-        types: ['불꽃', '독'],
+        types: ['Fire', 'Poison'],
         bs: { hp: 80, at: 70, df: 60, sa: 140, sd: 110, sp: 110 },
         weightkg: 36,
         gender: 'N',
         abilities: { 0: 'Quark Drive' }
     },
     'Iron Thorns': {
-        types: ['바위', '전기'],
+        types: ['Rock', 'Electric'],
         bs: { hp: 100, at: 134, df: 110, sa: 70, sd: 84, sp: 72 },
         weightkg: 303,
         gender: 'N',
         abilities: { 0: 'Quark Drive' }
     },
     'Iron Treads': {
-        types: ['땅', '강철'],
+        types: ['Ground', 'Steel'],
         bs: { hp: 90, at: 112, df: 120, sa: 72, sd: 70, sp: 106 },
         weightkg: 240,
         gender: 'N',
         abilities: { 0: 'Quark Drive' }
     },
     'Iron Valiant': {
-        types: ['페어리', '격투'],
+        types: ['Fairy', 'Fighting'],
         bs: { hp: 74, at: 130, df: 90, sa: 120, sd: 60, sp: 116 },
         weightkg: 35,
         gender: 'N',
         abilities: { 0: 'Quark Drive' }
     },
     Kilowattrel: {
-        types: ['전기', '비행'],
+        types: ['Electric', 'Flying'],
         bs: { hp: 70, at: 70, df: 60, sa: 105, sd: 60, sp: 125 },
         weightkg: 38.6,
         abilities: { 0: 'Wind Power' }
     },
     Kingambit: {
-        types: ['악', '강철'],
+        types: ['Dark', 'Steel'],
         bs: { hp: 100, at: 135, df: 120, sa: 60, sd: 85, sp: 50 },
         weightkg: 120,
         abilities: { 0: 'Defiant' }
     },
     Klawf: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 70, at: 100, df: 115, sa: 35, sd: 55, sp: 75 },
         weightkg: 79,
         abilities: { 0: 'Anger Shell' }
     },
     Koraidon: {
-        types: ['격투', '드래곤'],
+        types: ['Fighting', 'Dragon'],
         bs: { hp: 100, at: 135, df: 115, sa: 85, sd: 100, sp: 135 },
         weightkg: 303,
         gender: 'N',
         abilities: { 0: 'Orichalcum Pulse' }
     },
     Lechonk: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 54, at: 45, df: 40, sa: 35, sd: 45, sp: 35 },
         weightkg: 10.2,
         abilities: { 0: 'Aroma Veil' },
         nfe: true
     },
     Lokix: {
-        types: ['벌레', '악'],
+        types: ['Bug', 'Dark'],
         bs: { hp: 71, at: 102, df: 78, sa: 52, sd: 55, sp: 92 },
         weightkg: 17.5,
         abilities: { 0: 'Swarm' }
     },
     Mabosstiff: {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 80, at: 120, df: 90, sa: 60, sd: 70, sp: 85 },
         weightkg: 61,
         abilities: { 0: 'Intimidate' }
     },
     Maschiff: {
-        types: ['악'],
+        types: ['Dark'],
         bs: { hp: 60, at: 78, df: 60, sa: 40, sd: 51, sp: 51 },
         weightkg: 16,
         abilities: { 0: 'Intimidate' },
         nfe: true
     },
     Maushold: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 74, at: 75, df: 70, sa: 65, sd: 75, sp: 111 },
         weightkg: 2.3,
         gender: 'N',
@@ -9403,7 +9403,7 @@ var SV_PATCH = {
         otherFormes: ['Maushold-Four']
     },
     'Maushold-Four': {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 74, at: 75, df: 70, sa: 65, sd: 75, sp: 111 },
         weightkg: 2.8,
         gender: 'N',
@@ -9411,236 +9411,236 @@ var SV_PATCH = {
         baseSpecies: 'Maushold'
     },
     Meowscarada: {
-        types: ['풀', '악'],
+        types: ['Grass', 'Dark'],
         bs: { hp: 76, at: 110, df: 70, sa: 81, sd: 70, sp: 123 },
         weightkg: 31.2,
         abilities: { 0: 'Overgrow' }
     },
     Miraidon: {
-        types: ['전기', '드래곤'],
+        types: ['Electric', 'Dragon'],
         bs: { hp: 100, at: 85, df: 100, sa: 135, sd: 115, sp: 135 },
         weightkg: 240,
         gender: 'N',
         abilities: { 0: 'Hadron Engine' }
     },
     Nacli: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 55, at: 55, df: 75, sa: 35, sd: 35, sp: 25 },
         weightkg: 16,
         abilities: { 0: 'Purifying Salt' },
         nfe: true
     },
     Naclstack: {
-        types: ['바위'],
+        types: ['Rock'],
         bs: { hp: 60, at: 60, df: 100, sa: 35, sd: 65, sp: 35 },
         weightkg: 105,
         abilities: { 0: 'Purifying Salt' },
         nfe: true
     },
     Nymble: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 33, at: 46, df: 40, sa: 21, sd: 25, sp: 45 },
         weightkg: 1,
         abilities: { 0: 'Swarm' },
         nfe: true
     },
     Oinkologne: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 110, at: 100, df: 75, sa: 59, sd: 80, sp: 65 },
         weightkg: 120,
         abilities: { 0: 'Lingering Aroma' },
         otherFormes: ['Oinkologne-F']
     },
     'Oinkologne-F': {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 115, at: 90, df: 70, sa: 59, sd: 90, sp: 65 },
         weightkg: 120,
         abilities: { 0: 'Aroma Veil' },
         baseSpecies: 'Oinkologne'
     },
     Orthworm: {
-        types: ['강철'],
+        types: ['Steel'],
         bs: { hp: 70, at: 85, df: 145, sa: 60, sd: 55, sp: 65 },
         weightkg: 310,
         abilities: { 0: 'Earth Eater' }
     },
     Palafin: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 100, at: 70, df: 72, sa: 53, sd: 62, sp: 100 },
         weightkg: 60.2,
         abilities: { 0: 'Zero to Hero' },
         otherFormes: ['Palafin-Hero']
     },
     'Palafin-Hero': {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 100, at: 160, df: 97, sa: 106, sd: 87, sp: 100 },
         weightkg: 97.4,
         abilities: { 0: 'Zero to Hero' },
         baseSpecies: 'Palafin'
     },
     Pawmi: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 45, at: 50, df: 20, sa: 40, sd: 25, sp: 60 },
         weightkg: 2.5,
         abilities: { 0: 'Static' },
         nfe: true
     },
     Pawmo: {
-        types: ['전기', '격투'],
+        types: ['Electric', 'Fighting'],
         bs: { hp: 60, at: 75, df: 40, sa: 50, sd: 40, sp: 85 },
         weightkg: 6.5,
         abilities: { 0: 'Volt Absorb' },
         nfe: true
     },
     Pawmot: {
-        types: ['전기', '격투'],
+        types: ['Electric', 'Fighting'],
         bs: { hp: 70, at: 115, df: 70, sa: 70, sd: 60, sp: 105 },
         weightkg: 41,
         abilities: { 0: 'Volt Absorb' }
     },
     Quaquaval: {
-        types: ['물', '격투'],
+        types: ['Water', 'Fighting'],
         bs: { hp: 85, at: 120, df: 80, sa: 85, sd: 75, sp: 85 },
         weightkg: 61.9,
         abilities: { 0: 'Torrent' }
     },
     Quaxly: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 55, at: 65, df: 45, sa: 50, sd: 45, sp: 50 },
         weightkg: 6.1,
         abilities: { 0: 'Torrent' },
         nfe: true
     },
     Quaxwell: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 70, at: 85, df: 65, sa: 65, sd: 60, sp: 65 },
         weightkg: 21.5,
         abilities: { 0: 'Torrent' },
         nfe: true
     },
     Rabsca: {
-        types: ['벌레', '에스퍼'],
+        types: ['Bug', 'Psychic'],
         bs: { hp: 75, at: 50, df: 85, sa: 115, sd: 100, sp: 45 },
         weightkg: 3.5,
         abilities: { 0: 'Synchronize' }
     },
     Rellor: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 41, at: 50, df: 60, sa: 31, sd: 58, sp: 30 },
         weightkg: 1,
         abilities: { 0: 'Compound Eyes' },
         nfe: true
     },
     Revavroom: {
-        types: ['강철', '독'],
+        types: ['Steel', 'Poison'],
         bs: { hp: 80, at: 119, df: 90, sa: 54, sd: 67, sp: 90 },
         weightkg: 120,
         abilities: { 0: 'Overcoat' }
     },
     'Roaring Moon': {
-        types: ['드래곤', '악'],
+        types: ['Dragon', 'Dark'],
         bs: { hp: 105, at: 139, df: 71, sa: 55, sd: 101, sp: 119 },
         weightkg: 380,
         gender: 'N',
         abilities: { 0: 'Protosynthesis' }
     },
     'Sandy Shocks': {
-        types: ['전기', '땅'],
+        types: ['Electric', 'Ground'],
         bs: { hp: 85, at: 81, df: 97, sa: 121, sd: 85, sp: 101 },
         weightkg: 60,
         gender: 'N',
         abilities: { 0: 'Protosynthesis' }
     },
     Scovillain: {
-        types: ['풀', '불꽃'],
+        types: ['Grass', 'Fire'],
         bs: { hp: 65, at: 108, df: 65, sa: 108, sd: 65, sp: 75 },
         weightkg: 15,
         abilities: { 0: 'Chlorophyll' }
     },
     'Scream Tail': {
-        types: ['페어리', '에스퍼'],
+        types: ['Fairy', 'Psychic'],
         bs: { hp: 115, at: 65, df: 99, sa: 65, sd: 115, sp: 111 },
         weightkg: 8,
         gender: 'N',
         abilities: { 0: 'Protosynthesis' }
     },
     Shroodle: {
-        types: ['독', '노말'],
+        types: ['Poison', 'Normal'],
         bs: { hp: 40, at: 65, df: 35, sa: 40, sd: 35, sp: 75 },
         weightkg: 0.7,
         abilities: { 0: 'Unburden' },
         nfe: true
     },
     Skeledirge: {
-        types: ['불꽃', '고스트'],
+        types: ['Fire', 'Ghost'],
         bs: { hp: 104, at: 75, df: 100, sa: 110, sd: 75, sp: 66 },
         weightkg: 326.5,
         abilities: { 0: 'Blaze' }
     },
     'Slither Wing': {
-        types: ['벌레', '격투'],
+        types: ['Bug', 'Fighting'],
         bs: { hp: 85, at: 135, df: 79, sa: 85, sd: 105, sp: 81 },
         weightkg: 92,
         gender: 'N',
         abilities: { 0: 'Protosynthesis' }
     },
     Smoliv: {
-        types: ['풀', '노말'],
+        types: ['Grass', 'Normal'],
         bs: { hp: 41, at: 35, df: 45, sa: 58, sd: 51, sp: 30 },
         weightkg: 6.5,
         abilities: { 0: 'Early Bird' },
         nfe: true
     },
     Spidops: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 60, at: 79, df: 92, sa: 52, sd: 86, sp: 35 },
         weightkg: 16.5,
         abilities: { 0: 'Insomnia' }
     },
     Sprigatito: {
-        types: ['풀'],
+        types: ['Grass'],
         bs: { hp: 40, at: 61, df: 54, sa: 45, sd: 45, sp: 65 },
         weightkg: 4.1,
         abilities: { 0: 'Overgrow' },
         nfe: true
     },
     Squawkabilly: {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 82, at: 96, df: 51, sa: 45, sd: 51, sp: 92 },
         weightkg: 2.4,
         abilities: { 0: 'Intimidate' },
         otherFormes: ['Squawkabilly-Blue', 'Squawkabilly-White', 'Squawkabilly-Yellow']
     },
     'Squawkabilly-Blue': {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 82, at: 96, df: 51, sa: 45, sd: 51, sp: 92 },
         weightkg: 2.4,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Squawkabilly'
     },
     'Squawkabilly-White': {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 82, at: 96, df: 51, sa: 45, sd: 51, sp: 92 },
         weightkg: 2.4,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Squawkabilly'
     },
     'Squawkabilly-Yellow': {
-        types: ['노말', '비행'],
+        types: ['Normal', 'Flying'],
         bs: { hp: 82, at: 96, df: 51, sa: 45, sd: 51, sp: 92 },
         weightkg: 2.4,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Squawkabilly'
     },
     Tadbulb: {
-        types: ['전기'],
+        types: ['Electric'],
         bs: { hp: 61, at: 31, df: 41, sa: 59, sd: 35, sp: 45 },
         weightkg: 0.4,
         abilities: { 0: 'Own Tempo' },
         nfe: true
     },
     Tandemaus: {
-        types: ['노말'],
+        types: ['Normal'],
         bs: { hp: 50, at: 50, df: 45, sa: 40, sd: 45, sp: 75 },
         weightkg: 1.8,
         gender: 'N',
@@ -9648,115 +9648,115 @@ var SV_PATCH = {
         nfe: true
     },
     Tarountula: {
-        types: ['벌레'],
+        types: ['Bug'],
         bs: { hp: 35, at: 41, df: 45, sa: 29, sd: 40, sp: 20 },
         weightkg: 4,
         abilities: { 0: 'Insomnia' },
         nfe: true
     },
     Tatsugiri: {
-        types: ['드래곤', '물'],
+        types: ['Dragon', 'Water'],
         bs: { hp: 68, at: 50, df: 60, sa: 120, sd: 95, sp: 82 },
         weightkg: 8,
         abilities: { 0: 'Commander' }
     },
     'Tauros-Paldea': {
-        types: ['격투'],
+        types: ['Fighting'],
         bs: { hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100 },
         weightkg: 88.4,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Tauros'
     },
     'Tauros-Paldea-Fire': {
-        types: ['격투', '불꽃'],
+        types: ['Fighting', 'Fire'],
         bs: { hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100 },
         weightkg: 88.4,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Tauros'
     },
     'Tauros-Paldea-Water': {
-        types: ['격투', '물'],
+        types: ['Fighting', 'Water'],
         bs: { hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100 },
         weightkg: 88.4,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Tauros'
     },
     'Ting-Lu': {
-        types: ['악', '땅'],
+        types: ['Dark', 'Ground'],
         bs: { hp: 155, at: 110, df: 125, sa: 55, sd: 80, sp: 45 },
         weightkg: 699.7,
         gender: 'N',
         abilities: { 0: 'Vessel of Ruin' }
     },
     Tinkatink: {
-        types: ['페어리', '강철'],
+        types: ['Fairy', 'Steel'],
         bs: { hp: 50, at: 45, df: 45, sa: 35, sd: 64, sp: 58 },
         weightkg: 8.9,
         abilities: { 0: 'Mold Breaker' },
         nfe: true
     },
     Tinkaton: {
-        types: ['페어리', '강철'],
+        types: ['Fairy', 'Steel'],
         bs: { hp: 85, at: 75, df: 77, sa: 70, sd: 105, sp: 94 },
         weightkg: 112.8,
         abilities: { 0: 'Mold Breaker' }
     },
     Tinkatuff: {
-        types: ['페어리', '강철'],
+        types: ['Fairy', 'Steel'],
         bs: { hp: 65, at: 55, df: 55, sa: 45, sd: 82, sp: 78 },
         weightkg: 59.1,
         abilities: { 0: 'Mold Breaker' },
         nfe: true
     },
     Toedscool: {
-        types: ['땅', '풀'],
+        types: ['Ground', 'Grass'],
         bs: { hp: 40, at: 40, df: 35, sa: 50, sd: 100, sp: 70 },
         weightkg: 33,
         abilities: { 0: 'Mycelium Might' },
         nfe: true
     },
     Toedscruel: {
-        types: ['땅', '풀'],
+        types: ['Ground', 'Grass'],
         bs: { hp: 80, at: 70, df: 65, sa: 80, sd: 120, sp: 100 },
         weightkg: 58,
         abilities: { 0: 'Mycelium Might' }
     },
     Varoom: {
-        types: ['강철', '독'],
+        types: ['Steel', 'Poison'],
         bs: { hp: 45, at: 70, df: 63, sa: 30, sd: 45, sp: 47 },
         weightkg: 35,
         abilities: { 0: 'Overcoat' },
         nfe: true
     },
     Veluza: {
-        types: ['물', '에스퍼'],
+        types: ['Water', 'Psychic'],
         bs: { hp: 90, at: 102, df: 73, sa: 78, sd: 65, sp: 70 },
         weightkg: 90,
         abilities: { 0: 'Mold Breaker' }
     },
     Wattrel: {
-        types: ['전기', '비행'],
+        types: ['Electric', 'Flying'],
         bs: { hp: 40, at: 40, df: 35, sa: 55, sd: 40, sp: 70 },
         weightkg: 3.6,
         abilities: { 0: 'Wind Power' },
         nfe: true
     },
     Wiglett: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 10, at: 55, df: 25, sa: 35, sd: 25, sp: 95 },
         weightkg: 1.8,
         abilities: { 0: 'Gooey' },
         nfe: true
     },
     'Wo-Chien': {
-        types: ['악', '풀'],
+        types: ['Dark', 'Grass'],
         bs: { hp: 85, at: 85, df: 100, sa: 95, sd: 135, sp: 70 },
         weightkg: 74.2,
         gender: 'N',
         abilities: { 0: 'Tablets of Ruin' }
     },
     'Wooper-Paldea': {
-        types: ['독', '땅'],
+        types: ['Poison', 'Ground'],
         bs: { hp: 55, at: 45, df: 45, sa: 25, sd: 25, sp: 15 },
         weightkg: 8.5,
         abilities: { 0: 'Poison Point' },
@@ -9764,7 +9764,7 @@ var SV_PATCH = {
         nfe: true
     },
     Wugtrio: {
-        types: ['물'],
+        types: ['Water'],
         bs: { hp: 35, at: 100, df: 50, sa: 50, sd: 70, sp: 120 },
         weightkg: 5.4,
         abilities: { 0: 'Gooey' }
