@@ -349,7 +349,7 @@ function checkExeptions(poke) {
 }
 
 $(allPokemon("#clearSets")).click(function () {
-	if (confirm("Are you sure you want to delete your custom sets? This action cannot be undone.")) {
+	if (confirm("정말 삭제하시겠습니까? 이 결정은 되돌릴 수 없습니다.")) {
 		localStorage.removeItem("customsets");
 		alert("Custom Sets successfully cleared. Please refresh the page.");
 		$(allPokemon("#importedSetsOptions")).hide();
