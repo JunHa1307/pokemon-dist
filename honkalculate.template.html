@@ -44,7 +44,7 @@
 
     <div>
         <span class="title-text">Pok&eacute;mon Damage Calculator</span>
-        <span class="genSelection" aria-labelledby="selectGenInstruction" role="radiogroup" title="Select the generation.">
+        <span class="genSelection" aria-labelledby="selectGenInstruction" role="radiogroup" title="세대(포켓몬 버젼)를 선택할 수 있습니다.">
             <input class="gen visually-hidden" type="radio" name="gen" value="1" id="gen1" /><label class="btn btn-small btn-left" for="gen1">RBY</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="2" id="gen2" /><label class="btn btn-small btn-mid" for="gen2">GSC</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="3" id="gen3" /><label class="btn btn-small btn-mid" for="gen3">ADV</label>
@@ -65,7 +65,7 @@
     <hr />
     <div>
         <span class="title-text">Tier(s)/Format: </span>
-        <span class="tiers" title="Select the tier(s)/format.">
+        <span class="tiers" title="배틀 형식을 선택할 수 있습니다.">
             <input class="visually-hidden" type="radio" name="tier" id="VGC17" /><label class="btn btn-left gen-specific g7" for="VGC19">VGC 19</label>
             <input class="visually-hidden" type="radio" name="tier" id="Doubles" /><label class="btn btn-mid gen-specific g5 g6 g7 g8 g9" for="Doubles">더블배틀</label>
             <input class="visually-hidden" type="radio" name="tier" id="LC" /><label class="btn btn-mid gen-specific g4 g5 g6 g7 g8 g9" for="LC">LC</label>
@@ -83,27 +83,27 @@
     <div class="panel-group" id="accordion">
         <fieldset class="panel panel-default poke-info" id="p1">
             <legend class="panel-heading panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">>  Pokemon</a>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">>  포켓몬</a>
             </legend>
             <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
                     <input type="text" class="set-selector" />
                     <div class="info-group top">
                         <div>
-                            <label>Type</label>
+                            <label>타입</label>
                             <select class="type1 terrain-trigger"></select>
                             <select class="type2 terrain-trigger"></select>
                         </div>
                         <div class="hide">
-                            <label>Forme</label>
+                            <label>폼</label>
                             <select class="forme calc-trigger"></select>
                         </div>
                         <div class="hide">
-                            <label>Gender</label>
+                            <label>성별</label>
                             <select class="gender calc-trigger"><option></option><option selected="selected">남</option><option>여</option></select>
                         </div>
                         <div>
-                            <label>Level</label>
+                            <label>레벨</label>
                             <input class="level" value="100" />
                         </div>
                         <div class="hide">
@@ -115,16 +115,16 @@
                         <table>
                             <tr>
                                 <th></th>
-                                <th>Base</th>
-                                <th class="gen-specific g3 g4 g5 g6 g7 g8 g9">IVs</th>
-                                <th class="gen-specific g3 g4 g5 g6 g7 g8 g9">EVs</th>
+                                <th>종족값</th>
+                                <th class="gen-specific g3 g4 g5 g6 g7 g8 g9">개체값</th>
+                                <th class="gen-specific g3 g4 g5 g6 g7 g8 g9">노력치</th>
                                 <th class="gen-specific g1 g2 hide">DVs</th>
                                 <th></th>
                                 <th></th>
                             </tr>
                             <tr class="hp">
                                 <td>
-                                    <label>HP</label>
+                                    <label>체력(HP)</label>
                                 </td>
                                 <td>
                                     <input class="base" value="100" />
@@ -144,7 +144,7 @@
                             </tr>
                             <tr class="at">
                                 <td>
-                                    <label>Attack</label>
+                                    <label>공격(Atk)</label>
                                 </td>
                                 <td>
                                     <input class="base" value="100" />
@@ -180,7 +180,7 @@
                             </tr>
                             <tr class="df">
                                 <td>
-                                    <label>Defense</label>
+                                    <label>방어(Def)</label>
                                 </td>
                                 <td>
                                     <input class="base" value="100" />
@@ -216,7 +216,7 @@
                             </tr>
                             <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                                 <td>
-                                    <label>Sp. Atk</label>
+                                    <label>특수공격(SpA)</label>
                                 </td>
                                 <td>
                                     <input class="base" value="100" />
@@ -252,7 +252,7 @@
                             </tr>
                             <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                                 <td>
-                                    <label>Sp. Def</label>
+                                    <label>특수방어(SpD)</label>
                                 </td>
                                 <td>
                                     <input class="base" value="100" />
@@ -318,7 +318,7 @@
                             </tr>
                             <tr class="sp">
                                 <td>
-                                    <label>Speed</label>
+                                    <label>스피드(Spe)</label>
                                 </td>
                                 <td>
                                     <input class="base" value="100" />
@@ -358,7 +358,7 @@
                     </div>
                     <div class="info-group info-selectors">
                         <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                            <label>Nature</label>
+                            <label>성격</label>
                             <select class="nature">
                                 <option value="Adamant">고집 (+Atk, -SpA)</option>
                                 <option value="Bashful">수줍음</option>
@@ -388,7 +388,7 @@
                             </select>
                         </div>
                         <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                            <label>Ability</label>
+                            <label>특성</label>
                             <select class="ability terrain-trigger"></select>
                             <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle">
 									 <select hidden aria-label="Allies fainted" class="alliesFainted calc-trigger">
@@ -401,11 +401,11 @@
 									 </select>
                         </div>
                         <div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
-                            <label>Item</label>
+                            <label>아이템</label>
                             <select class="item terrain-trigger"></select>
                         </div>
                         <div>
-                            <label>Status</label>
+                            <label>상태이상</label>
                             <select class="status">
                                 <option value="Healthy">없음</option>
                                 <option value="Poisoned">독</option>
@@ -435,13 +435,13 @@
                         </div>
                     </div>
                     <div class="info-group">
-                        <label>Current HP</label>
+                        <label>현재 체력</label>
                         <input class="current-hp" value="341" />/<span class="max-hp">341</span> (
                         <input class="percent-hp" value="100" />%)
-						 <input class="max calc-trigger btn-input" type="checkbox" id="maxL" /><label class="btn btn-wide gen-specific g8 g9" for="maxL" title="Use the corresponding Max Move?">Dynamax</label>
+						 <input class="max calc-trigger btn-input" type="checkbox" id="maxL" /><label class="btn btn-wide gen-specific g8 g9" for="maxL" title="Use the corresponding Max Move?">다이맥스</label>
                         <br />
                         <br />
-                        Health <div class="hpbar"></div>
+                        체력 <div class="hpbar"></div>
                     </div>
                     <div class="move1">
                         <select class="move-selector small-select"></select>
@@ -584,7 +584,7 @@
         </fieldset>
         <fieldset class="panel panel-default field-info">
             <legend class="panel-heading panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">>  Field</a>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">>  필드</a>
             </legend>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
@@ -624,7 +624,7 @@
                         <input class="visually-hidden" type="radio" name="weather" value="Sand" id="sand" />
                         <label class="btn btn-small btn-mid" for="sand">모래바람</label>
                         <input class="visually-hidden" type="radio" name="weather" value="Hail" id="hail" />
-                        <label class="btn btn-small btn-right" for="hail">Hail</label>
+                        <label class="btn btn-small btn-right" for="hail">싸라기눈</label>
                     </div>
                     <div class="gen-specific g6 g7 g8 g9" title="필드 날씨를 선택할 수 있습니다.">
                         <input class="visually-hidden" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
@@ -831,7 +831,7 @@
     </div>
     <div>
         <fieldset class="panel holder-0">
-            <legend class="panel-heading panel-title">Damage Results</legend>
+            <legend class="panel-heading panel-title">데미지 결과</legend>
             <table class="hide display" id="holder-2">
                 <thead>
                     <tr>

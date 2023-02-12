@@ -221,13 +221,13 @@ function constructDataTable() {
 }
 
 function placeBsBtn() {
-	var honkalculator = "<button style='position:absolute' class='bs-btn bs-btn-default'>Honkalculate</button>";
+	var honkalculator = "<button style='position:absolute' class='bs-btn bs-btn-default'>Honkalculate<클릭</button>";
 	$("#holder-2_wrapper").prepend(honkalculator);
 	$(".bs-btn").click(function () {
 		var formats = getSelectedTiers();
 		if (!formats.length) {
 			$(".bs-btn").popover({
-				content: "No format selected",
+				content: "배틀형식이 선택되지 않았습니다.(ex.더블배틀)",
 				placement: "right"
 			}).popover('show');
 			setTimeout(function () { $(".bs-btn").popover('destroy'); }, 1350);

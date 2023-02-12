@@ -299,10 +299,10 @@ function addSets(pokes, name) {
 		}
 	}
 	if (addedpokes > 0) {
-		alert("Successfully imported " + addedpokes + " set(s)");
+		alert(addedpokes + " 세트를 성공적으로 import하였습니다.");
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {
-		alert("No sets imported, please check your syntax and try again");
+		alert("import되지 않았습니다. 텍스트를 확인하시고 다시 시도하세요.");
 	}
 }
 

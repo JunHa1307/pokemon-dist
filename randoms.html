@@ -42,8 +42,8 @@
 
     <div aria-label="Settings" role="region">
         <span class="title-text">Pok&eacute;mon Damage Calculator</span>
-        <span class="genSelection" aria-labelledby="selectGenInstruction" role="radiogroup" title="Select the generation.">
-            <span class="visually-hidden" id="selectGenInstruction">Select the generation.</span>
+        <span class="genSelection" aria-labelledby="selectGenInstruction" role="radiogroup" title="세대(포켓몬 버젼)를 선택할 수 있습니다.">
+            <span class="visually-hidden" id="selectGenInstruction">세대(포켓몬 버젼)를 선택할 수 있습니다.</span>
             <input class="gen visually-hidden" type="radio" name="gen" value="1" id="gen1" /><label class="btn btn-small btn-left" for="gen1">RBY</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="2" id="gen2" /><label class="btn btn-small btn-mid" for="gen2">GSC</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="3" id="gen3" /><label class="btn btn-small btn-mid" for="gen3">ADV</label>
@@ -68,9 +68,9 @@
         </span>
     </div>
     <hr />
-    <div aria-label="Move selection" class="move-result-group" role="region" title="Select a move to show detailed results.">
+    <div aria-label="Move selection" class="move-result-group" role="region" title="선택하면 기술에 따른 계산 결과가 화면에 출력됩니다.">
         <div  aria-labelledby="resultHeaderL" class="move-result-subgroup" role="radiogroup">
-            <div class="result-move-header"><span id="resultHeaderL">Pok&eacute;mon 1's Moves (select one to show detailed results)</span>
+            <div class="result-move-header"><span id="resultHeaderL">Pok&eacute;mon 1이(가) 지닌 기술들 (클릭하면 결과가 계산됩니다.)</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveL1" checked="checked" aria-describedby="resultDamageL1" />
@@ -94,7 +94,7 @@
             </div>
         </div>
         <div aria-labelledby="resultHeaderR" class="move-result-subgroup" role="radiogroup">
-            <div class="result-move-header"><span id="resultHeaderR">Pok&eacute;mon 2's Moves (select one to show detailed results)</span>
+            <div class="result-move-header"><span id="resultHeaderR">Pok&eacute;mon 2이(가) 지닌 기술들 (클릭하면 결과가 계산됩니다.)</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR1" aria-describedby="resultDamageR1" />
@@ -137,25 +137,25 @@
             </span>
             <div class="info-group top">
                 <div>
-                    <label>Type</label>
+                    <label>타입</label>
                     <select aria-label="type1" class="type1 terrain-trigger calc-trigger"></select>
                     <select aria-label="type2" class="type2 terrain-trigger calc-trigger"></select>
                 </div>
                 <div class="gen-specific g9">
-                    <label>Tera Type</label>
+                    <label>테라스탈</label>
                     <select class="teraType terrain-trigger calc-trigger"></select>
                     <input type="checkbox" title= "Has this Pok&eacute;mon terastalized?" class="teraToggle terrain-trigger calc-trigger">
                 </div>
                 <div class="hide">
-                    <label>Forme</label>
+                    <label>폼</label>
                     <select class="forme calc-trigger"></select>
                 </div>
                 <div class="hide">
-                    <label>Gender</label>
+                    <label>성별</label>
                     <select class="gender calc-trigger"><option></option><option selected="selected">남</option><option>여</option></select>
                 </div>
                 <div>
-                    <label for="levelL1">Level</label>
+                    <label for="levelL1">레벨</label>
                     <input class="level calc-trigger" id="levelL1" value="100" />
                 </div>
                 <div class="hide">
@@ -168,9 +168,9 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th scope="col">Base</th>
-                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">IVs</th>
-                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">EVs</th>
+                            <th scope="col">종족값</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">개체값</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">노력치</th>
                             <th class="gen-specific g1 g2 hide" scope="col">DVs</th>
                             <th></th>
                             <th></th>
@@ -179,7 +179,7 @@
                     <tbody>
                         <tr class="hp">
                             <th scope="row">
-                                <label>HP</label>
+                                <label>체력(HP)</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -199,7 +199,7 @@
                         </tr>
                         <tr class="at">
                             <th scope="row">
-                                <label>Attack</label>
+                                <label>공격(Atk)</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -235,7 +235,7 @@
                         </tr>
                         <tr class="df">
                             <th scope="row">
-                                <label>Defense</label>
+                                <label>방어(Def)</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -271,7 +271,7 @@
                         </tr>
                         <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
-                                <label>Sp. Atk</label>
+                                <label>특수공격(SpA)</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -307,7 +307,7 @@
                         </tr>
                         <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
-                                <label>Sp. Def</label>
+                                <label>특수방어(SpD)</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -373,7 +373,7 @@
                         </tr>
                         <tr class="sp">
                             <th scope="row">
-                                <label>Speed</label>
+                                <label>스피드(Spe)</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -414,7 +414,7 @@
             </div>
             <div class="info-group info-selectors">
                 <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                    <label for="natureL1">Nature</label>
+                    <label for="natureL1">성격</label>
                     <select class="nature calc-trigger" id="natureL1">
                         <option value="Adamant">고집 (+Atk, -SpA)</option>
                         <option value="Bashful">수줍음</option>
@@ -444,7 +444,7 @@
                     </select>
                 </div>
                 <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                    <label for="abilityL1">Ability</label>
+                    <label for="abilityL1">특성</label>
                     <select class="ability terrain-trigger calc-trigger" id="abilityL1"></select>
                     <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle calc-trigger">
 						  <select hidden aria-label="Allies fainted" class="alliesFainted calc-trigger">
@@ -457,7 +457,7 @@
 						  </select>
                 </div>
                 <div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
-                    <label for="itemL1">Item</label>
+                    <label for="itemL1">아이템</label>
                     <select class="item terrain-trigger calc-trigger" id="itemL1"></select>
                 </div>
                 <div class="pool">
@@ -479,7 +479,7 @@
                     </div>
                 </div>
                 <div>
-                    <label for="statusL1">Status</label>
+                    <label for="statusL1">상태이상</label>
                     <select class="status calc-trigger" id="statusL1">
                         <option value="Healthy">없음</option>
                         <option value="Poisoned">독</option>
@@ -517,15 +517,15 @@
                 <br />
             </div>
             <div class="info-group">
-                <label for="currentHpL1">Current HP</label>
+                <label for="currentHpL1">현재 체력</label>
                 <input class="current-hp calc-trigger" id="currentHpL1" value="341" />/<span class="max-hp">341</span> (
                 <input class="percent-hp calc-trigger" value="100" />%)
 					 <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxL" />
 					 <label class="btn btn-xwide gen-specific g8 hide" for="maxL"
-					 title="Use the corresponding Max Move?">Dynamax</label>
+					 title="Use the corresponding Max Move?">다이맥스</label>
 					 <br />
                 <br />
-                Health <div class="hpbar"></div>
+                체력 <div class="hpbar"></div>
             </div>
             <div hidden id="criticalHitInstruction">크리티컬 공격으로 만들기</div>
             <div hidden id="zMoveInstruction">Z-기술로 만들기</div>
@@ -675,7 +675,7 @@
     <div class="panel">
         <div aria-label="Field information" role="region">
             <fieldset class="field-info">
-                <legend align="center">Field</legend>
+                <legend align="center">필드</legend>
                 <div aria-labelledby="selectBattleFormatInstruction" class="gen-specific g3 g4 g5 g6 g7 g8 g9" role="radiogroup" style="width: 10.6em; margin: 0 auto 5px;" title="배틀 형식을 선택할 수 있습니다.">
                     <span class="visually-hidden" id="selectBattleFormatInstruction">배틀 형식을 선택할 수 있습니다.</span>
                     <input class="visually-hidden calc-trigger" type="radio" name="format" value="Singles" id="singles-format" />
@@ -720,7 +720,7 @@
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sand" id="sand" />
                         <label class="btn btn-small btn-mid" for="sand">모래바람</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Hail" id="hail" />
-                        <label class="btn btn-small btn-right" for="hail">Hail</label>
+                        <label class="btn btn-small btn-right" for="hail">싸라기눈</label>
                     </div>
                     <div  class="gen-specific g9" style="width: 22.2em; margin: 5px auto;" title="필드 날씨를 선택할 수 있습니다.">
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="" id="clear" checked="checked" />
@@ -989,25 +989,25 @@
             <input type="text" class="set-selector calc-trigger" />
             <div class="info-group top">
                 <div>
-                    <label>Type</label>
+                    <label>타입</label>
                     <select aria-label="Type 1" class="type1 terrain-trigger calc-trigger"></select>
                     <select aria-label="Type 2" class="type2 terrain-trigger calc-trigger"></select>
                 </div>
                 <div class="gen-specific g9">
-                    <label>Tera Type</label>
+                    <label>테라스탈</label>
                     <select class="teraType terrain-trigger calc-trigger"></select>
                     <input type="checkbox" title= "Has this Pok&eacute;mon terastalized?" class="teraToggle terrain-trigger calc-trigger">
                 </div>
                 <div class="hide">
-                    <label>Forme</label>
+                    <label>폼</label>
                     <select class="forme calc-trigger"></select>
                 </div>
                 <div class="hide">
-                    <label>Gender</label>
+                    <label>성별</label>
                     <select class="gender calc-trigger"><option></option><option selected="selected">남</option><option>여</option></select>
                 </div>
                 <div>
-                    <label for="levelR1">Level</label>
+                    <label for="levelR1">레벨</label>
                     <input class="level calc-trigger" id="levelR1" value="100" />
                 </div>
                 <div class="hide">
@@ -1020,9 +1020,9 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th scope="col">Base</th>
-                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">IVs</th>
-                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">EVs</th>
+                            <th scope="col">종족값</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">개체값</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">노력치</th>
                             <th class="gen-specific g1 g2 hide" scope="col">DVs</th>
                             <th></th>
                             <th></th>
@@ -1031,7 +1031,7 @@
                     <tbody>
                         <tr class="hp">
                             <th scope="row">
-                                <label>HP</label>
+                                <label>체력(HP)</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -1051,7 +1051,7 @@
                         </tr>
                         <tr class="at">
                             <th scope="row">
-                                <label>Attack</label>
+                                <label>공격(Atk)</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -1087,7 +1087,7 @@
                         </tr>
                         <tr class="df">
                             <th scope="row">
-                                <label>Defense</label>
+                                <label>방어(Def)</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -1123,7 +1123,7 @@
                         </tr>
                         <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
-                                <label>Sp. Atk</label>
+                                <label>특수공격(SpA)</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -1159,7 +1159,7 @@
                         </tr>
                         <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
-                                <label>Sp. Def</label>
+                                <label>특수방어(SpD)</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -1225,7 +1225,7 @@
                         </tr>
                         <tr class="sp">
                             <th scope="row">
-                                <label>Speed</label>
+                                <label>스피드(Spe)</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -1266,7 +1266,7 @@
             </div>
             <div class="info-group info-selectors">
                 <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                    <label for="natureR1">Nature</label>
+                    <label for="natureR1">성격</label>
                     <select class="nature calc-trigger" id="natureR1">
                         <option value="Adamant">고집 (+Atk, -SpA)</option>
                         <option value="Bashful">수줍음</option>
@@ -1296,7 +1296,7 @@
                     </select>
                 </div>
                 <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                    <label for="abilityR1">Ability</label>
+                    <label for="abilityR1">특성</label>
                     <select class="ability terrain-trigger calc-trigger" id="abilityR1"></select>
                     <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle calc-trigger">
 						  <select hidden aria-label="Allies fainted" class="alliesFainted calc-trigger">
@@ -1309,7 +1309,7 @@
 						  </select>
                 </div>
                          <div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
-                    <label for="itemR1">Item</label>
+                    <label for="itemR1">아이템</label>
                     <select class="item terrain-trigger calc-trigger" id="itemR1"></select>
                 </div>
                 <div class="pool">
@@ -1331,7 +1331,7 @@
                     </div>
                 </div>
                 <div>
-                    <label for="statusR1">Status</label>
+                    <label for="statusR1">상태이상</label>
                     <select class="status calc-trigger" id="statusR1">
                         <option value="Healthy">없음</option>
                         <option value="Poisoned">독</option>
@@ -1369,15 +1369,15 @@
                 <br />
             </div>
             <div class="info-group">
-                <label for="currentHpR1">Current HP</label>
+                <label for="currentHpR1">현재 체력</label>
                 <input class="current-hp calc-trigger" id="currentHpR1" value="341" />/<span class="max-hp">341</span> (
                 <input class="percent-hp calc-trigger" value="100" />%)
 					 <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxR" />
 					 <label class="btn btn-xwide gen-specific g8 hide" for="maxR"
-					 title="Use the corresponding Max Move?">Dynamax</label>
+					 title="Use the corresponding Max Move?">다이맥스</label>
 					 <br />
                 <br />
-                Health <div class="hpbar"></div>
+                체력 <div class="hpbar"></div>
             </div>
             <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>

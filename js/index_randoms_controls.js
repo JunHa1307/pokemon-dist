@@ -93,8 +93,8 @@ function performCalculations() {
 	}
 	bestResult.prop("checked", true);
 	bestResult.change();
-	$("#resultHeaderL").text(p1.name + "'s Moves (select one to show detailed results)");
-	$("#resultHeaderR").text(p2.name + "'s Moves (select one to show detailed results)");
+	$("#resultHeaderL").text(p1.name + "이(가) 지닌 기술들 (클릭하면 결과가 계산됩니다.)");
+	$("#resultHeaderR").text(p2.name + "이(가) 지닌 기술들 (클릭하면 결과가 계산됩니다.)");
 }
 
 $(".result-move").change(function () {
@@ -104,7 +104,7 @@ $(".result-move").change(function () {
 			var desc = result.fullDesc(notation, false);
 			if (desc.indexOf('--') === -1) desc += ' -- possibly the worst move ever';
 			$("#mainResult").text(desc);
-			$("#damageValues").text("Possible damage amounts: (" + displayDamageHits(result.damage) + ")");
+			$("#damageValues").text("가능한 데미지: (" + displayDamageHits(result.damage) + ")");
 		}
 	}
 });
