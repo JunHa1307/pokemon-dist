@@ -201,8 +201,8 @@ var Pokemon = (function () {
         var i = 0;
         if ((item &&
             ((item.includes('ite') && !item.includes('ite Y')) ||
-                (speciesName === 'Groudon' && item === 'Red Orb') ||
-                (speciesName === 'Kyogre' && item === 'Blue Orb'))) ||
+                (speciesName === 'Groudon' && item === '주홍구슬') ||
+                (speciesName === 'Kyogre' && item === '쪽빛구슬'))) ||
             (moveName && speciesName === 'Meloetta' && moveName === 'Relic Song') ||
             (speciesName === 'Rayquaza' && moveName === 'Dragon Ascent')) {
             i = 1;

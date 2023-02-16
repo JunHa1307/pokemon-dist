@@ -13,7 +13,8 @@ function ExportPokemon(pokeInfo) {
 	var pokemon = createPokemon(pokeInfo);
 	var EV_counter = 0;
 	var finalText = "";
-	finalText = pokemon.name + (pokemon.item ? " @ " + pokemon.item : "") + "\n";
+	var namechange = keyofnameKR.find((key) => nameKR[key] === pokemon.name)
+	finalText = ((keyofnameKR.find((key) => nameKR[key] === pokemon.name))==undefined? pokemon.name : namechange) + (pokemon.item ? " @ " + itemKR[pokemon.item] : "") + "\n";
 	finalText += "Level: " + pokemon.level + "\n";
 	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
 	finalText += pokemon.teraType && gen > 8 ? "Tera Type: " + pokemon.teraType : "";
@@ -162,7 +163,7 @@ function getStats(currentPoke, rows, offset) {
 
 function getItem(currentRow, j) {
 	for (;j < currentRow.length; j++) {
-		var item = currentRow[j].trim();
+		var item = keyofitemKR.find((key) => itemKR[key] === currentRow[j].trim());
 		if (calc.ITEMS[9].indexOf(item) != -1) {
 			return item;
 		}

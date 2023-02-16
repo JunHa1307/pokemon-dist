@@ -40,19 +40,19 @@ exports.__esModule = true;
 var util_1 = require("../util");
 var stats_1 = require("../stats");
 var EV_ITEMS = [
-    'Macho Brace',
-    'Power Anklet',
-    'Power Band',
-    'Power Belt',
-    'Power Bracer',
-    'Power Lens',
-    'Power Weight',
+    '교정깁스',
+    '파워앵클릿',
+    '파워밴드',
+    '파워벨트',
+    '파워리스트',
+    '파워렌즈',
+    '파워웨이트',
 ];
 function isGrounded(pokemon, field) {
-    return (field.isGravity || pokemon.hasItem('Iron Ball') ||
+    return (field.isGravity || pokemon.hasItem('검은철구') ||
         (!pokemon.hasType('Flying') &&
             !pokemon.hasAbility('Levitate') &&
-            !pokemon.hasItem('Air Balloon')));
+            !pokemon.hasItem('풍선')));
 }
 exports.isGrounded = isGrounded;
 function getModifiedStat(stat, mod, gen) {
@@ -151,18 +151,18 @@ function getFinalSpeed(gen, pokemon, field, side) {
     }
     else if (getMostProficientStat(pokemon, gen) === 'spe' &&
         ((pokemon.hasAbility('Protosynthesis') &&
-            (weather.includes('Sun') || pokemon.hasItem('Booster Energy'))) ||
+            (weather.includes('Sun') || pokemon.hasItem('부스트에너지'))) ||
             (pokemon.hasAbility('Quark Drive') &&
-                (terrain === 'Electric' || pokemon.hasItem('Booster Energy'))))) {
+                (terrain === 'Electric' || pokemon.hasItem('부스트에너지'))))) {
         speedMods.push(6144);
     }
-    if (pokemon.hasItem('Choice Scarf')) {
+    if (pokemon.hasItem('구애스카프')) {
         speedMods.push(6144);
     }
-    else if (pokemon.hasItem.apply(pokemon, __spreadArray(['Iron Ball'], __read(EV_ITEMS), false))) {
+    else if (pokemon.hasItem.apply(pokemon, __spreadArray(['검은철구'], __read(EV_ITEMS), false))) {
         speedMods.push(2048);
     }
-    else if (pokemon.hasItem('Quick Powder') && pokemon.named('Ditto')) {
+    else if (pokemon.hasItem('스피드파우더') && pokemon.named('Ditto')) {
         speedMods.push(8192);
     }
     speed = OF32(pokeRound((speed * chainMods(speedMods, 410, 131172)) / 4096));
@@ -236,7 +236,7 @@ exports.checkWonderRoom = checkWonderRoom;
 function checkIntimidate(gen, source, target) {
     var blocked = target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body') ||
         (gen.num >= 8 && target.hasAbility('Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy')) ||
-        target.hasItem('Clear Amulet');
+        target.hasItem('클리어참');
     if (source.hasAbility('Intimidate') && source.abilityOn && !blocked) {
         if (target.hasAbility('Contrary', 'Defiant', 'Guard Dog')) {
             target.boosts.atk = Math.min(6, target.boosts.atk + 1);
@@ -312,7 +312,7 @@ exports.checkSeedBoost = checkSeedBoost;
 function checkMultihitBoost(gen, attacker, defender, move, field, desc, usedWhiteHerb) {
     if (usedWhiteHerb === void 0) { usedWhiteHerb = false; }
     if (move.named('Gyro Ball', 'Electro Ball') && defender.hasAbility('Gooey', 'Tangling Hair')) {
-        if (attacker.hasItem('White Herb') && !usedWhiteHerb) {
+        if (attacker.hasItem('하양허브') && !usedWhiteHerb) {
             desc.attackerItem = attacker.item;
             usedWhiteHerb = true;
         }
@@ -341,7 +341,7 @@ function checkMultihitBoost(gen, attacker, defender, move, field, desc, usedWhit
             desc.attackerAbility = attacker.ability;
         }
         else {
-            if (defender.hasItem('White Herb') && !usedWhiteHerb) {
+            if (defender.hasItem('하양허브') && !usedWhiteHerb) {
                 desc.defenderItem = defender.item;
                 usedWhiteHerb = true;
             }
@@ -371,7 +371,7 @@ function checkMultihitBoost(gen, attacker, defender, move, field, desc, usedWhit
                 if (simple > 1)
                     desc.attackerAbility = attacker.ability;
             }
-            if (attacker.hasItem('White Herb') && attacker.boosts[stat] < 0 && !usedWhiteHerb) {
+            if (attacker.hasItem('하양허브') && attacker.boosts[stat] < 0 && !usedWhiteHerb) {
                 boosts += move.dropsStats * simple;
                 desc.attackerItem = attacker.item;
                 usedWhiteHerb = true;
@@ -450,7 +450,7 @@ function getShellSideArmCategory(source, target) {
 exports.getShellSideArmCategory = getShellSideArmCategory;
 function getWeightFactor(pokemon) {
     return pokemon.hasAbility('Heavy Metal') ? 2
-        : (pokemon.hasAbility('Light Metal') || pokemon.hasItem('Float Stone')) ? 0.5 : 1;
+        : (pokemon.hasAbility('Light Metal') || pokemon.hasItem('가벼운돌')) ? 0.5 : 1;
 }
 exports.getWeightFactor = getWeightFactor;
 function countBoosts(gen, boosts) {

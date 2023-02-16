@@ -150,8 +150,8 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
             desc.isLightScreen = true;
         }
     }
-    if ((attacker.named('Pikachu') && attacker.hasItem('Light Ball') && !isPhysical) ||
-        (attacker.named('Cubone', 'Marowak') && attacker.hasItem('Thick Club') && isPhysical)) {
+    if ((attacker.named('Pikachu') && attacker.hasItem('전기구슬') && !isPhysical) ||
+        (attacker.named('Cubone', 'Marowak') && attacker.hasItem('굵은뼈') && isPhysical)) {
         at *= 2;
         desc.attackerItem = attacker.item;
     }
@@ -161,7 +161,7 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
     }
     if (move.named('Present')) {
         var lookup = {
-            Normal: 0, Fighting: 1, Flying: 2, Poison: 3, Ground: 4, Rock: 5, Bug: 7,
+            Normal:  0, Fighting: 1, Flying: 2, Poison: 3, Ground: 4, Rock: 5, Bug: 7,
             Ghost: 8, Steel: 9, '???': 19, Fire: 20, Water: 21, Grass: 22, Electric: 23,
             Psychic: 24, Ice: 25, Dragon: 26, Dark: 27
         };
@@ -169,7 +169,7 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
         df = Math.max(lookup[attacker.types[1] ? attacker.types[1] : attacker.types[0]], 1);
         lv = Math.max(lookup[defender.types[1] ? defender.types[1] : defender.types[0]], 1);
     }
-    if (defender.named('Ditto') && defender.hasItem('Metal Powder')) {
+    if (defender.named('Ditto') && defender.hasItem('금속파우더')) {
         df = Math.floor(df * 1.5);
         desc.defenderItem = defender.item;
     }
@@ -182,9 +182,9 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
         baseDamage = Math.floor(baseDamage * 2);
         desc.isSwitching = 'out';
     }
-    var itemBoostType = attacker.hasItem('Dragon Fang')
+    var itemBoostType = attacker.hasItem('용의이빨')
         ? undefined
-        : (0, items_1.getItemBoostType)(attacker.hasItem('Dragon Scale') ? 'Dragon Fang' : attacker.item);
+        : (0, items_1.getItemBoostType)(attacker.hasItem('용의비늘') ? '용의이빨' : attacker.item);
     if (move.hasType(itemBoostType)) {
         baseDamage = Math.floor(baseDamage * 1.1);
         desc.attackerItem = attacker.item;

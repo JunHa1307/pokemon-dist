@@ -80,7 +80,7 @@ var Move = (function () {
         this.mindBlownRecoil = !!data.mindBlownRecoil;
         this.struggleRecoil = !!data.struggleRecoil;
         this.isCrit = !!options.isCrit || !!data.willCrit ||
-            gen.num === 1 && ['crabhammer', 'razorleaf', 'slash', 'karate chop'].includes(data.id);
+            gen.num === 1 && ['crabhammer', 'razorleaf', 'slash', 'Karate Chop'].includes(data.id);
         this.drain = data.drain;
         this.flags = data.flags;
         this.priority = data.priority || 0;
@@ -133,40 +133,40 @@ function getZMoveName(moveName, moveType, item) {
     item = item || '';
     if (moveName.includes('Hidden Power'))
         return 'Breakneck Blitz';
-    if (moveName === 'Clanging Scales' && item === 'Kommonium Z')
+    if (moveName === 'Clanging Scales' && item === '짜랑고우거Z')
         return 'Clangorous Soulblaze';
-    if (moveName === 'Darkest Lariat' && item === 'Incinium Z')
+    if (moveName === 'Darkest Lariat' && item === '어흥염Z')
         return 'Malicious Moonsault';
-    if (moveName === 'Giga Impact' && item === 'Snorlium Z')
+    if (moveName === 'Giga Impact' && item === '잠만보Z')
         return 'Pulverizing Pancake';
-    if (moveName === 'Moongeist Beam' && item === 'Lunalium Z')
+    if (moveName === 'Moongeist Beam' && item === '루나아라Z')
         return 'Menacing Moonraze Maelstrom';
-    if (moveName === 'Photon Geyser' && item === 'Ultranecrozium Z') {
+    if (moveName === 'Photon Geyser' && item === '울트라네크로Z') {
         return 'Light That Burns the Sky';
     }
-    if (moveName === 'Play Rough' && item === 'Mimikium Z')
+    if (moveName === 'Play Rough' && item === '따라큐Z')
         return 'Let\'s Snuggle Forever';
-    if (moveName === 'Psychic' && item === 'Mewnium Z')
+    if (moveName === 'Psychic' && item === '뮤Z')
         return 'Genesis Supernova';
-    if (moveName === 'Sparkling Aria' && item === 'Primarium Z')
+    if (moveName === 'Sparkling Aria' && item === '누리레느Z')
         return 'Oceanic Operetta';
-    if (moveName === 'Spectral Thief' && item === 'Marshadium Z') {
+    if (moveName === 'Spectral Thief' && item === '마샤도Z') {
         return 'Soul-Stealing 7-Star Strike';
     }
-    if (moveName === 'Spirit Shackle' && item === 'Decidium Z')
+    if (moveName === 'Spirit Shackle' && item === '모크나이퍼Z')
         return 'Sinister Arrow Raid';
-    if (moveName === 'Stone Edge' && item === 'Lycanium Z')
+    if (moveName === 'Stone Edge' && item === '루가루암Z')
         return 'Splintered Stormshards';
-    if (moveName === 'Sunsteel Strike' && item === 'Solganium Z')
+    if (moveName === 'Sunsteel Strike' && item === '솔가레오Z')
         return 'Searing Sunraze Smash';
-    if (moveName === 'Volt Tackle' && item === 'Pikanium Z')
+    if (moveName === 'Volt Tackle' && item === '피카츄Z')
         return 'Catastropika';
-    if (moveName === 'Nature\'s Madness' && item === 'Tapunium Z')
+    if (moveName === 'Nature\'s Madness' && item === '카푸Z')
         return 'Guardian of Alola';
     if (moveName === 'Thunderbolt') {
-        if (item === 'Aloraichium Z')
+        if (item === '알로라이Z')
             return 'Stoked Sparksurfer';
-        if (item === 'Pikashunium Z')
+        if (item === '지우피카Z')
             return '10,000,000 Volt Thunderbolt';
     }
     return ZMOVES_TYPING[moveType];
@@ -177,7 +177,7 @@ var ZMOVES_TYPING = {
     Dark: 'Black Hole Eclipse',
     Dragon: 'Devastating Drake',
     Electric: 'Gigavolt Havoc',
-    Fairy: 'Twinkle Tackle',
+    Fairy: 'Twinkle_Tackle',
     Fighting: 'All-Out Pummeling',
     Fire: 'Inferno Overdrive',
     Flying: 'Supersonic Skystrike',
@@ -185,7 +185,7 @@ var ZMOVES_TYPING = {
     Grass: 'Bloom Doom',
     Ground: 'Tectonic Rage',
     Ice: 'Subzero Slammer',
-    Normal: 'Breakneck Blitz',
+    Normal:  'Breakneck Blitz',
     Poison: 'Acid Downpour',
     Psychic: 'Shattered Psyche',
     Rock: 'Continental Crush',
@@ -247,7 +247,7 @@ function getMaxMoveName(moveType, pokemonSpecies, isStatus, pokemonAbility) {
             return 'G-Max Tartness';
         if (pokemonSpecies === 'Rillaboom-Gmax')
             return 'G-Max Drum Solo';
-        if (pokemonSpecies === 'Venusaur-Gmax')
+        if (pokemonSpecies === '거다이이상해꽃')
             return 'G-Max Vine Lash';
     }
     if (moveType === 'Water') {
@@ -304,7 +304,7 @@ var MAXMOVES_TYPING = {
     Grass: 'Overgrowth',
     Ground: 'Quake',
     Ice: 'Hailstorm',
-    Normal: 'Strike',
+    Normal:  'Strike',
     Poison: 'Ooze',
     Psychic: 'Mindstorm',
     Rock: 'Rockfall',

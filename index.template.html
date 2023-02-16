@@ -145,7 +145,7 @@
                 <div class="gen-specific g9">
                     <label>테라스탈</label>
                     <select class="teraType terrain-trigger calc-trigger"></select>
-                    <input type="checkbox" title= "Has this Pok&eacute;mon terastalized?" class="teraToggle terrain-trigger calc-trigger">
+                    <input type="checkbox" title= "테라스탈을 사용했습니까?" class="teraToggle terrain-trigger calc-trigger">
                 </div>
                 <div class="hide">
                     <label>폼</label>
@@ -704,8 +704,8 @@
                         <label class="btn btn-small btn-mid" for="rain">비</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sand" id="sand" />
                         <label class="btn btn-small btn-mid" for="sand">모래바람</label>
-                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="눈" id="눈" />
-                        <label class="btn btn-small btn-right" for="눈">눈</label>
+                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="snow" id="snow" />
+                        <label class="btn btn-small btn-right" for="snow">눈</label>
                     </div>
                     <div class="gen-specific g6 g7 g8 g9" title="필드 날씨를 선택할 수 있습니다.">
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
@@ -761,44 +761,44 @@
                             </div></td>
                         </tr>
                         <tr class="gen-specific g8 hide">
-                            <div hidden id="selectSteelsurgeInstruction">Is Steelsurge affecting this side of the field?</div>
-                            <td><div class="left" title="Is Steelsurge affecting this side of the field?">
+                            <div hidden id="selectSteelsurgeInstruction">이쪽 필드에 거다이강철진효과가 적용되고있습니까?</div>
+                            <td><div class="left" title="이쪽 필드에 거다이강철진효과가 적용되고있습니까?">
                                 <input aria-describedby="selectSteelsurgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="steelsurgeL" />
-                                <label class="btn btn-xwide" for="steelsurgeL">Steelsurge</label>
+                                <label class="btn btn-xwide" for="steelsurgeL">거다이강철진</label>
                             </div></td>
-                            <td><div class="right" title="Is Steelsurge affecting this side of the field?">
+                            <td><div class="right" title="이쪽 필드에 거다이강철진효과가 적용되고있습니까?">
                                 <input aria-describedby="selectSteelsurgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="steelsurgeR" />
-                                <label class="btn btn-xwide" for="steelsurgeR">Steelsurge</label>
+                                <label class="btn btn-xwide" for="steelsurgeR">거다이강철진</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g8 hide">
                             <div hidden id="selectVinefireInstruction">Is Vine Lash and/or Wildfire affecting this side of the field?</div>
-                            <td><div class="left" title="Is Vine Lash/Wildfire affecting this side of the field?">
+                            <td><div class="left" title="이쪽 필드가 거다이편달/옥염 효과를 받고 있습니까?">
                                 <input aria-describedby="selectVinefireInstruction" class="visually-hidden calc-trigger" type="checkbox" id="vinelashL" />
-                                <label class="btn btn-wide btn-left" for="vinelashL">Vine Lash</label>
+                                <label class="btn btn-wide btn-left" for="vinelashL">거다이편달</label>
                                 <input aria-describedby="selectVinefireInstruction" class="visually-hidden calc-trigger" type="checkbox" id="wildfireL" />
-                                <label class="btn btn-right" for="wildfireL">Wildfire</label>
+                                <label class="btn btn-right" for="wildfireL">거다이옥염</label>
                             </div></td>
-                            <td><div class="right" title="Is Vine Lash/Wildfire affecting this side of the field?">
+                            <td><div class="right" title="이쪽 필드가 거다이편달/옥염 효과를 받고 있습니까?">
                                 <input aria-describedby="selectVinefireInstruction" class="visually-hidden calc-trigger" type="checkbox" id="wildfireR" />
-                                <label class="btn btn-left" for="wildfireR">Wildfire</label>
+                                <label class="btn btn-left" for="wildfireR">거다이옥염</label>
                                 <input aria-describedby="selectVinefireInstruction" class="visually-hidden calc-trigger" type="checkbox" id="vinelashR" />
-                                <label class="btn btn-wide btn-right" for="vinelashR">Vine Lash</label>
+                                <label class="btn btn-wide btn-right" for="vinelashR">거다이편달</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g8 hide">
                             <div hidden id="selectCannonlithInstruction">Is Cannonade and/or Volcalith affecting this side of the field?</div>
-                            <td><div class="left" title="Is Cannonade/Volcalith affecting this side of the field?">
+                            <td><div class="left" title="이쪽 필드가 거다이분석/포격 효과를 받고 있습니까?">
                                 <input aria-describedby="selectCannonlithInstruction" class="visually-hidden calc-trigger" type="checkbox" id="cannonadeL" />
-                                <label class="btn btn-wide btn-left" for="cannonadeL">Cannonade</label>
+                                <label class="btn btn-wide btn-left" for="cannonadeL">거다이포격</label>
                                 <input aria-describedby="selectCannonlithInstruction" class="visually-hidden calc-trigger" type="checkbox" id="volcalithL" />
-                                <label class="btn btn-right" for="volcalithL">Volcalith</label>
+                                <label class="btn btn-right" for="volcalithL">거다이분석</label>
                             </div></td>
-                            <td><div class="right" title="Is Cannonade/Volcalith affecting this side of the field?">
+                            <td><div class="right" title="이쪽 필드가 거다이분석/포격 효과를 받고 있습니까?">
                                 <input aria-describedby="selectCannonlithInstruction" class="visually-hidden calc-trigger" type="checkbox" id="volcalithR" />
-                                <label class="btn btn-left" for="volcalithR">Volcalith</label>
+                                <label class="btn btn-left" for="volcalithR">거다이분석</label>
                                 <input aria-describedby="selectCannonlithInstruction" class="visually-hidden calc-trigger" type="checkbox" id="cannonadeR" />
-                                <label class="btn btn-wide btn-right" for="cannonadeR">Cannonade</label>
+                                <label class="btn btn-wide btn-right" for="cannonadeR">거다이포격</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g3 g4 g5 g6 g7 g8 g9">
@@ -1024,7 +1024,7 @@
                 <div class="gen-specific g9">
                     <label>테라스탈</label>
                     <select class="teraType terrain-trigger calc-trigger"></select>
-                    <input type="checkbox" title= "Has this Pok&eacute;mon terastalized?" class="teraToggle terrain-trigger calc-trigger">
+                    <input type="checkbox" title= "테라스탈을 사용했습니까?" class="teraToggle terrain-trigger calc-trigger">
                 </div>
                 <div class="hide">
                     <label>폼</label>
@@ -1575,6 +1575,7 @@
     <script type="text/javascript" src="./calc/index.js?"></script>
     <script type="text/javascript" src="./js/shared_controls.js?"></script>
     <script type="text/javascript" src="./js/index_randoms_controls.js?"></script>
+    <script type="text/javascript" src="./js/translation.js"></script>
     <script type="text/javascript" src="./js/moveset_import.js?"></script>
 </div>
 

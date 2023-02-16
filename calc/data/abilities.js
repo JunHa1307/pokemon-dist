@@ -116,7 +116,7 @@ var ADV = [
     'Truant',
     'Vital Spirit',
     'Volt Absorb',
-    'Water Absorb',
+    '저수',
     'Water Veil',
     'White Smoke',
     'Wonder Guard',

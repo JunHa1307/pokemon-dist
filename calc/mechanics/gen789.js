@@ -5,6 +5,7 @@ var util_1 = require("../util");
 var items_1 = require("../items");
 var result_1 = require("../result");
 var util_2 = require("./util");
+const { Generations } = require("../data");
 function calculateSMSSSV(gen, attacker, defender, move, field) {
     (0, util_2.checkAirLock)(attacker, field);
     (0, util_2.checkAirLock)(defender, field);
@@ -54,7 +55,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         (attackerIgnoresAbility || moveIgnoresAbility)) {
         if (attackerIgnoresAbility)
             desc.attackerAbility = attacker.ability;
-        if (defender.hasItem('Ability Shield')) {
+        if (defender.hasItem('특성가드')) {
             desc.defenderItem = defender.item;
         }
         else {
@@ -66,7 +67,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         move.timesUsed === 1;
     var type = move.type;
     if (move.named('Weather Ball')) {
-        var holdingUmbrella = attacker.hasItem('Utility Umbrella');
+        var holdingUmbrella = attacker.hasItem('만능우산');
         type =
             field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? 'Fire'
                 : field.hasWeather('Rain', 'Heavy Rain') && !holdingUmbrella ? 'Water'
@@ -172,7 +173,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         desc.attackerAbility = attacker.ability;
     }
     var isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
-    var isRingTarget = defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
+    var isRingTarget = defender.hasItem('겨냥표적') && !defender.hasAbility('Klutz');
     var type1Effectiveness = (0, util_2.getMoveEffectiveness)(gen, move, defender.types[0], isGhostRevealed, field.isGravity, isRingTarget);
     var type2Effectiveness = defender.types[1]
         ? (0, util_2.getMoveEffectiveness)(gen, move, defender.types[1], isGhostRevealed, field.isGravity, isRingTarget)
@@ -182,7 +183,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         typeEffectiveness = (0, util_2.getMoveEffectiveness)(gen, move, defender.teraType, isGhostRevealed, field.isGravity, isRingTarget);
     }
     if (typeEffectiveness === 0 && move.hasType('Ground') &&
-        defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz')) {
+        defender.hasItem('검은철구') && !defender.hasAbility('Klutz')) {
         typeEffectiveness = 1;
     }
     if (typeEffectiveness === 0 && move.named('Thousand Arrows')) {
@@ -214,12 +215,12 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
         (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
         (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) ||
-        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) ||
+        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', '저수')) ||
         (move.hasType('Electric') &&
             defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
         (move.hasType('Ground') &&
             !field.isGravity && !move.named('Thousand Arrows') &&
-            !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
+            !defender.hasItem('검은철구') && defender.hasAbility('Levitate')) ||
         (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
         (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
         (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
@@ -229,7 +230,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         return result;
     }
     if (move.hasType('Ground') && !move.named('Thousand Arrows') &&
-        !field.isGravity && defender.hasItem('Air Balloon')) {
+        !field.isGravity && defender.hasItem('풍선')) {
         desc.defenderItem = defender.item;
         return result;
     }
@@ -319,7 +320,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     if (attacker.hasAbility('Parental Bond (Child)')) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 1024) / 4096);
     }
-    var noWeatherBoost = defender.hasItem('Utility Umbrella');
+    var noWeatherBoost = defender.hasItem('만능우산');
     if (!noWeatherBoost &&
         ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
             (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water')))) {
@@ -387,7 +388,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     if (move.dropsStats && move.timesUsed > 1) {
         var simpleMultiplier = attacker.hasAbility('Simple') ? 2 : 1;
         desc.moveTurns = "over ".concat(move.timesUsed, " turns");
-        var hasWhiteHerb = attacker.hasItem('White Herb');
+        var hasWhiteHerb = attacker.hasItem('하양허브');
         var usedWhiteHerb = false;
         var dropCount = attacker.boosts[attackStat];
         var _loop_1 = function (times) {
@@ -425,6 +426,11 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     desc.attackBoost =
         move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
     result.damage = childDamage ? [damage, childDamage] : damage;
+    if(result.move.category=='Physical' && gen.num ==9){
+        for(let i = 0; i < result.damage.length; i++){
+            result.damage[i] = Math.floor(result.damage[i] / 1.5);
+        }
+    }
     return result;
 }
 exports.calculateSMSSSV = calculateSMSSSV;
@@ -494,7 +500,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             desc.moveBP = basePower;
             break;
         case 'Acrobatics':
-            basePower = move.bp * (attacker.hasItem('Flying Gem') || !attacker.item ? 2 : 1);
+            basePower = move.bp * (attacker.hasItem('Flying주얼') || !attacker.item ? 2 : 1);
             desc.moveBP = basePower;
             break;
         case 'Assurance':
@@ -511,7 +517,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
         case 'Weather Ball':
             basePower = move.bp * (field.weather && !field.hasWeather('Strong Winds') ? 2 : 1);
             if (field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') &&
-                attacker.hasItem('Utility Umbrella'))
+                attacker.hasItem('만능우산'))
                 basePower = move.bp;
             desc.moveBP = basePower;
             break;
@@ -600,7 +606,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
     if (basePower === 0) {
         return 0;
     }
-    if (move.named('Breakneck Blitz', 'Bloom Doom', 'Inferno Overdrive', 'Hydro Vortex', 'Gigavolt Havoc', 'Subzero Slammer', 'Supersonic Skystrike', 'Savage Spin-Out', 'Acid Downpour', 'Tectonic Rage', 'Continental Crush', 'All-Out Pummeling', 'Shattered Psyche', 'Never-Ending Nightmare', 'Devastating Drake', 'Black Hole Eclipse', 'Corkscrew Crash', 'Twinkle Tackle')) {
+    if (move.named('Breakneck Blitz', 'Bloom Doom', 'Inferno Overdrive', 'Hydro Vortex', 'Gigavolt Havoc', 'Subzero Slammer', 'Supersonic Skystrike', 'Savage Spin-Out', 'Acid Downpour', 'Tectonic Rage', 'Continental Crush', 'All-Out Pummeling', 'Shattered Psyche', 'Never-Ending Nightmare', 'Devastating Drake', 'Black Hole Eclipse', 'Corkscrew Crash', 'Twinkle_Tackle')) {
         desc.moveBP = move.bp;
     }
     var bpMods = calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, basePower, hasAteAbilityTypeChange, turnOrder);
@@ -618,17 +624,17 @@ exports.calculateBasePowerSMSSSV = calculateBasePowerSMSSSV;
 function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, basePower, hasAteAbilityTypeChange, turnOrder) {
     var bpMods = [];
     var resistedKnockOffDamage = !defender.item ||
-        (defender.named('Dialga-Origin') && defender.hasItem('Adamant Crystal')) ||
-        (defender.named('Palkia-Origin') && defender.hasItem('Lustrous Globe')) ||
+        (defender.named('Dialga-Origin') && defender.hasItem('큰금강옥')) ||
+        (defender.named('Palkia-Origin') && defender.hasItem('큰백옥')) ||
         (defender.name.includes('Giratina-Origin') && defender.item.includes('Griseous')) ||
         (defender.name.includes('Arceus') && defender.item.includes('Plate')) ||
         (defender.name.includes('Genesect') && defender.item.includes('Drive')) ||
-        (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('Red Orb')) ||
-        (defender.named('Kyogre', 'Kyogre-Primal') && defender.hasItem('Blue Orb')) ||
+        (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('주홍구슬')) ||
+        (defender.named('Kyogre', 'Kyogre-Primal') && defender.hasItem('쪽빛구슬')) ||
         (defender.name.includes('Silvally') && defender.item.includes('Memory')) ||
         defender.item.includes(' Z') ||
-        (defender.named('Zacian') && defender.hasItem('Rusted Sword')) ||
-        (defender.named('Zamazenta') && defender.hasItem('Rusted Shield') ||
+        (defender.named('Zacian') && defender.hasItem('녹슨검')) ||
+        (defender.named('Zamazenta') && defender.hasItem('녹슨방패') ||
             (defender.named('Venomicon-Epilogue') && defender.hasItem('Vile Vial')));
     if (!resistedKnockOffDamage && defender.item) {
         var item = gen.items.get((0, util_1.toID)(defender.item));
@@ -660,7 +666,7 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
     }
     else if (move.named('Collision Course', 'Electro Drift')) {
         var isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
-        var isRingTarget = defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
+        var isRingTarget = defender.hasItem('겨냥표적') && !defender.hasAbility('Klutz');
         var types = defender.teraType ? [defender.teraType] : defender.types;
         var type1Effectiveness = (0, util_2.getMoveEffectiveness)(gen, move, types[0], isGhostRevealed, field.isGravity, isRingTarget);
         var type2Effectiveness = types[1] ? (0, util_2.getMoveEffectiveness)(gen, move, types[1], isGhostRevealed, field.isGravity, isRingTarget) : 1;
@@ -762,7 +768,7 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
         bpMods.push(4915);
         desc.attackerAbility = attacker.ability;
     }
-    if (attacker.hasItem('Punching Glove') && move.flags.punch) {
+    if (attacker.hasItem('펀치글러브') && move.flags.punch) {
         bpMods.push(4506);
         desc.attackerItem = attacker.item;
     }
@@ -780,32 +786,32 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
         desc.attackerAbility = attacker.ability;
         desc.alliesFainted = attacker.alliesFainted;
     }
-    if (attacker.hasItem("".concat(move.type, " Gem"))) {
+    if (attacker.hasItem("".concat(move.type, "주얼"))) {
         bpMods.push(5325);
         desc.attackerItem = attacker.item;
     }
-    else if (((attacker.hasItem('Adamant Crystal') && attacker.named('Dialga-Origin')) ||
-        (attacker.hasItem('Adamant Orb') && attacker.named('Dialga')) &&
+    else if (((attacker.hasItem('큰금강옥') && attacker.named('Dialga-Origin')) ||
+        (attacker.hasItem('금강옥') && attacker.named('Dialga')) &&
             move.hasType('Steel', 'Dragon')) ||
-        ((attacker.hasItem('Lustrous Orb') &&
+        ((attacker.hasItem('백옥') &&
             attacker.named('Palkia')) ||
-            (attacker.hasItem('Lustrous Globe') && attacker.named('Palkia-Origin')) &&
+            (attacker.hasItem('큰백옥') && attacker.named('Palkia-Origin')) &&
                 move.hasType('Water', 'Dragon')) ||
-        ((attacker.hasItem('Griseous Orb') || attacker.hasItem('Griseous Core')) &&
+        ((attacker.hasItem('백금옥') || attacker.hasItem('큰백금옥')) &&
             (attacker.named('Giratina-Origin') || attacker.named('Giratina')) &&
             move.hasType('Ghost', 'Dragon')) ||
         (attacker.hasItem('Vile Vial') &&
             attacker.named('Venomicon-Epilogue') &&
             move.hasType('Poison', 'Flying')) ||
-        (attacker.hasItem('Soul Dew') &&
+        (attacker.hasItem('마음의물방울') &&
             attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega') &&
             move.hasType('Psychic', 'Dragon')) ||
         attacker.item && move.hasType((0, items_1.getItemBoostType)(attacker.item))) {
         bpMods.push(4915);
         desc.attackerItem = attacker.item;
     }
-    else if ((attacker.hasItem('Muscle Band') && move.category === 'Physical') ||
-        (attacker.hasItem('Wise Glasses') && move.category === 'Special')) {
+    else if ((attacker.hasItem('힘의머리띠') && move.category === 'Physical') ||
+        (attacker.hasItem('박식안경') && move.category === 'Special')) {
         bpMods.push(4505);
         desc.attackerItem = attacker.item;
     }
@@ -930,9 +936,9 @@ function calculateAtModsSMSSSV(gen, attacker, defender, move, field, desc) {
         atMods.push(3072);
     }
     if ((attacker.hasAbility('Protosynthesis') &&
-        (field.hasWeather('Sun') || attacker.hasItem('Booster Energy'))) ||
+        (field.hasWeather('Sun') || attacker.hasItem('부스트에너지'))) ||
         (attacker.hasAbility('Quark Drive') &&
-            (field.hasTerrain('Electric') || attacker.hasItem('Booster Energy')))) {
+            (field.hasTerrain('Electric') || attacker.hasItem('부스트에너지')))) {
         if ((move.category === 'Physical' &&
             (0, util_2.getMostProficientStat)(attacker) === 'atk') ||
             (move.category === 'Special' && (0, util_2.getMostProficientStat)(attacker) === 'spa')) {
@@ -943,23 +949,23 @@ function calculateAtModsSMSSSV(gen, attacker, defender, move, field, desc) {
     if ((attacker.hasAbility('Hadron Engine') && move.category === 'Special' &&
         field.hasTerrain('Electric') && (0, util_2.isGrounded)(attacker, field)) ||
         (attacker.hasAbility('Orichalcum Pulse') && move.category === 'Physical' &&
-            field.hasWeather('Sun', 'Harsh Sunshine') && !attacker.hasItem('Utility Umbrella'))) {
+            field.hasWeather('Sun', 'Harsh Sunshine') && !attacker.hasItem('만능우산'))) {
         atMods.push(5461);
         desc.attackerAbility = attacker.ability;
     }
-    if ((attacker.hasItem('Thick Club') &&
+    if ((attacker.hasItem('굵은뼈') &&
         attacker.named('Cubone', 'Marowak', 'Marowak-Alola', 'Marowak-Alola-Totem') &&
         move.category === 'Physical') ||
-        (attacker.hasItem('Deep Sea Tooth') &&
+        (attacker.hasItem('심해의이빨') &&
             attacker.named('Clamperl') &&
             move.category === 'Special') ||
-        (attacker.hasItem('Light Ball') && attacker.name.includes('Pikachu') && !move.isZ)) {
+        (attacker.hasItem('전기구슬') && attacker.name.includes('Pikachu') && !move.isZ)) {
         atMods.push(8192);
         desc.attackerItem = attacker.item;
     }
     else if (!move.isZ && !move.isMax &&
-        ((attacker.hasItem('Choice Band') && move.category === 'Physical') ||
-            (attacker.hasItem('Choice Specs') && move.category === 'Special'))) {
+        ((attacker.hasItem('구애머리띠') && move.category === 'Physical') ||
+            (attacker.hasItem('구애안경') && move.category === 'Special'))) {
         atMods.push(6144);
         desc.attackerItem = attacker.item;
     }
@@ -1045,22 +1051,22 @@ function calculateDfModsSMSSSV(gen, attacker, defender, move, field, desc, isCri
         dfMods.push(3072);
     }
     if ((defender.hasAbility('Protosynthesis') &&
-        (field.hasWeather('Sun') || attacker.hasItem('Booster Energy'))) ||
+        (field.hasWeather('Sun') || attacker.hasItem('부스트에너지'))) ||
         (defender.hasAbility('Quark Drive') &&
-            (field.hasTerrain('Electric') || attacker.hasItem('Booster Energy')))) {
+            (field.hasTerrain('Electric') || attacker.hasItem('부스트에너지')))) {
         if ((hitsPhysical && (0, util_2.getMostProficientStat)(defender) === 'def') ||
             (!hitsPhysical && (0, util_2.getMostProficientStat)(defender) === 'spd')) {
             desc.defenderAbility = defender.ability;
             dfMods.push(5324);
         }
     }
-    if ((defender.hasItem('Eviolite') && ((_a = gen.species.get((0, util_1.toID)(defender.name))) === null || _a === void 0 ? void 0 : _a.nfe)) ||
-        (!hitsPhysical && defender.hasItem('Assault Vest'))) {
+    if ((defender.hasItem('진화의휘석') && ((_a = gen.species.get((0, util_1.toID)(defender.name))) === null || _a === void 0 ? void 0 : _a.nfe)) ||
+        (!hitsPhysical && defender.hasItem('돌격조끼'))) {
         dfMods.push(6144);
         desc.defenderItem = defender.item;
     }
-    else if ((defender.hasItem('Metal Powder') && defender.named('Ditto') && hitsPhysical) ||
-        (defender.hasItem('Deep Sea Scale') && defender.named('Clamperl') && !hitsPhysical)) {
+    else if ((defender.hasItem('금속파우더') && defender.named('Ditto') && hitsPhysical) ||
+        (defender.hasItem('심해의비늘') && defender.named('Clamperl') && !hitsPhysical)) {
         dfMods.push(8192);
         desc.defenderItem = defender.item;
     }
@@ -1102,7 +1108,7 @@ function calculateFinalModsSMSSSV(gen, attacker, defender, move, field, desc, is
     if (defender.hasAbility('Multiscale', 'Shadow Shield') &&
         defender.curHP() === defender.maxHP() &&
         (!field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) ||
-            defender.hasItem('Heavy-Duty Boots')) && !attacker.hasAbility('Parental Bond (Child)')) {
+            defender.hasItem('통굽부츠')) && !attacker.hasAbility('Parental Bond (Child)')) {
         finalMods.push(2048);
         desc.defenderAbility = defender.ability;
     }
@@ -1127,15 +1133,15 @@ function calculateFinalModsSMSSSV(gen, attacker, defender, move, field, desc, is
         finalMods.push(8192);
         desc.defenderAbility = defender.ability;
     }
-    if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1 && !move.isZ) {
+    if (attacker.hasItem('달인의띠') && typeEffectiveness > 1 && !move.isZ) {
         finalMods.push(4915);
         desc.attackerItem = attacker.item;
     }
-    else if (attacker.hasItem('Life Orb')) {
+    else if (attacker.hasItem('생명의구슬')) {
         finalMods.push(5324);
         desc.attackerItem = attacker.item;
     }
-    else if (attacker.hasItem('Metronome') && move.timesUsedWithMetronome >= 1) {
+    else if (attacker.hasItem('메트로놈') && move.timesUsedWithMetronome >= 1) {
         var timesUsedWithMetronome = Math.floor(move.timesUsedWithMetronome);
         if (timesUsedWithMetronome <= 4) {
             finalMods.push(4096 + timesUsedWithMetronome * 819);
@@ -1160,6 +1166,6 @@ function calculateFinalModsSMSSSV(gen, attacker, defender, move, field, desc, is
 }
 exports.calculateFinalModsSMSSSV = calculateFinalModsSMSSSV;
 function hasTerrainSeed(pokemon) {
-    return pokemon.hasItem('Electric Seed', 'Misty Seed', 'Grassy Seed', 'Psychic Seed');
+    return pokemon.hasItem('일렉트릭시드', '미스트시드', '그래스시드', '사이코시드');
 }
 //# sourceMappingURL=gen789.js.map

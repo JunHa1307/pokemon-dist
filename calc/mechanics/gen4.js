@@ -135,7 +135,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         ? (0, util_1.getMoveEffectiveness)(gen, move, secondDefenderType, isGhostRevealed, field.isGravity)
         : 1;
     var typeEffectiveness = type1Effectiveness * type2Effectiveness;
-    if (typeEffectiveness === 0 && move.hasType('Ground') && defender.hasItem('Iron Ball')) {
+    if (typeEffectiveness === 0 && move.hasType('Ground') && defender.hasItem('검은철구')) {
         if (type1Effectiveness === 0) {
             type1Effectiveness = 1;
         }
@@ -150,10 +150,10 @@ function calculateDPP(gen, attacker, defender, move, field) {
     var ignoresWonderGuard = move.hasType('???') || move.named('Fire Fang');
     if ((!ignoresWonderGuard && defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
         (move.hasType('Fire') && defender.hasAbility('Flash Fire')) ||
-        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Water Absorb')) ||
+        (move.hasType('Water') && defender.hasAbility('Dry Skin', '저수')) ||
         (move.hasType('Electric') && defender.hasAbility('Motor Drive', 'Volt Absorb')) ||
         (move.hasType('Ground') && !field.isGravity &&
-            !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
+            !defender.hasItem('검은철구') && defender.hasAbility('Levitate')) ||
         (move.flags.sound && defender.hasAbility('Soundproof'))) {
         desc.defenderAbility = defender.ability;
         return result;
@@ -245,19 +245,19 @@ function calculateDPP(gen, attacker, defender, move, field) {
         desc.isHelpingHand = true;
     }
     var isPhysical = move.category === 'Physical';
-    if ((attacker.hasItem('Muscle Band') && isPhysical) ||
-        (attacker.hasItem('Wise Glasses') && !isPhysical)) {
+    if ((attacker.hasItem('힘의머리띠') && isPhysical) ||
+        (attacker.hasItem('박식안경') && !isPhysical)) {
         basePower = Math.floor(basePower * 1.1);
         desc.attackerItem = attacker.item;
     }
     else if (move.hasType((0, items_1.getItemBoostType)(attacker.item)) ||
-        (attacker.hasItem('Adamant Orb') &&
+        (attacker.hasItem('금강옥') &&
             attacker.named('Dialga') &&
             move.hasType('Steel', 'Dragon')) ||
-        (attacker.hasItem('Lustrous Orb') &&
+        (attacker.hasItem('백옥') &&
             attacker.named('Palkia') &&
             move.hasType('Water', 'Dragon')) ||
-        (attacker.hasItem('Griseous Orb') &&
+        (attacker.hasItem('백금옥') &&
             attacker.named('Giratina-Origin') &&
             move.hasType('Ghost', 'Dragon'))) {
         basePower = Math.floor(basePower * 1.2);
@@ -332,14 +332,14 @@ function calculateDPP(gen, attacker, defender, move, field) {
         attack = Math.floor(attack / 2);
         desc.attackerAbility = attacker.ability;
     }
-    if ((isPhysical ? attacker.hasItem('Choice Band') : attacker.hasItem('Choice Specs')) ||
-        (!isPhysical && attacker.hasItem('Soul Dew') && attacker.named('Latios', 'Latias'))) {
+    if ((isPhysical ? attacker.hasItem('구애머리띠') : attacker.hasItem('구애안경')) ||
+        (!isPhysical && attacker.hasItem('마음의물방울') && attacker.named('Latios', 'Latias'))) {
         attack = Math.floor(attack * 1.5);
         desc.attackerItem = attacker.item;
     }
-    else if ((attacker.hasItem('Light Ball') && attacker.named('Pikachu')) ||
-        (attacker.hasItem('Thick Club') && attacker.named('Cubone', 'Marowak') && isPhysical) ||
-        (attacker.hasItem('Deep Sea Tooth') && attacker.named('Clamperl') && !isPhysical)) {
+    else if ((attacker.hasItem('전기구슬') && attacker.named('Pikachu')) ||
+        (attacker.hasItem('굵은뼈') && attacker.named('Cubone', 'Marowak') && isPhysical) ||
+        (attacker.hasItem('심해의이빨') && attacker.named('Clamperl') && !isPhysical)) {
         attack *= 2;
         desc.attackerItem = attacker.item;
     }
@@ -378,12 +378,12 @@ function calculateDPP(gen, attacker, defender, move, field) {
         desc.weather = field.weather;
         desc.isFlowerGiftDefender = true;
     }
-    if (defender.hasItem('Soul Dew') && defender.named('Latios', 'Latias') && !isPhysical) {
+    if (defender.hasItem('마음의물방울') && defender.named('Latios', 'Latias') && !isPhysical) {
         defense = Math.floor(defense * 1.5);
         desc.defenderItem = defender.item;
     }
-    else if ((defender.hasItem('Deep Sea Scale') && defender.named('Clamperl') && !isPhysical) ||
-        (defender.hasItem('Metal Powder') && defender.named('Ditto') && isPhysical)) {
+    else if ((defender.hasItem('심해의비늘') && defender.named('Clamperl') && !isPhysical) ||
+        (defender.hasItem('금속파우더') && defender.named('Ditto') && isPhysical)) {
         defense *= 2;
         desc.defenderItem = defender.item;
     }
@@ -443,7 +443,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         }
         desc.isCritical = isCritical;
     }
-    if (attacker.hasItem('Life Orb')) {
+    if (attacker.hasItem('생명의구슬')) {
         baseDamage = Math.floor(baseDamage * 1.3);
         desc.attackerItem = attacker.item;
     }
@@ -472,7 +472,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         desc.defenderAbility = defender.ability;
     }
     var ebeltMod = 1;
-    if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1) {
+    if (attacker.hasItem('달인의띠') && typeEffectiveness > 1) {
         ebeltMod = 1.2;
         desc.attackerItem = attacker.item;
     }

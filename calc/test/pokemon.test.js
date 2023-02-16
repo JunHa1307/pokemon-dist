@@ -28,7 +28,7 @@ describe('Pokemon', function () {
         var p = new index_1.Pokemon(7, 'Suicune', {
             level: 50,
             ability: 'Inner Focus',
-            item: 'Leftovers',
+            item: '먹다남은음식',
             nature: 'Bold',
             ivs: { spa: 30 },
             evs: { spd: 4, def: 252, hp: 252 },
@@ -43,7 +43,7 @@ describe('Pokemon', function () {
         expect(p.weightkg).toBe(187.0);
         expect(p.level).toBe(50);
         expect(p.gender).toBe('N');
-        expect(p.item).toBe('Leftovers');
+        expect(p.item).toBe('먹다남은음식');
         expect(p.ability).toBe('Inner Focus');
         expect(p.nature).toBe('Bold');
         expect(p.status).toBe('tox');
@@ -69,20 +69,20 @@ describe('Pokemon', function () {
     });
     test('getForme', function () {
         expect(index_1.Pokemon.getForme(1, 'Gengar')).toBe('Gengar');
-        expect(index_1.Pokemon.getForme(7, 'Gengar', 'Black Sludge', 'Hypnosis')).toBe('Gengar');
-        expect(index_1.Pokemon.getForme(7, 'Gengar', 'Gengarite', 'Hypnosis')).toBe('Gengar-Mega');
+        expect(index_1.Pokemon.getForme(7, 'Gengar', '검은오물', 'Hypnosis')).toBe('Gengar');
+        expect(index_1.Pokemon.getForme(7, 'Gengar', '팬텀나이트', 'Hypnosis')).toBe('Gengar-Mega');
         expect(index_1.Pokemon.getForme(7, 'Charizard')).toBe('Charizard');
-        expect(index_1.Pokemon.getForme(7, 'Charizard', 'Charizardite X')).toBe('Charizard-Mega-X');
-        expect(index_1.Pokemon.getForme(7, 'Charizard', 'Charizardite Y')).toBe('Charizard-Mega-Y');
-        expect(index_1.Pokemon.getForme(7, 'Mewtwo', 'Choice Specs', 'Psystrike')).toBe('Mewtwo');
-        expect(index_1.Pokemon.getForme(7, 'Mewtwo', 'Mewtwonite X', 'Psystrike')).toBe('Mewtwo-Mega-X');
-        expect(index_1.Pokemon.getForme(7, 'Mewtwo', 'Mewtwonite Y', 'Psystrike')).toBe('Mewtwo-Mega-Y');
-        expect(index_1.Pokemon.getForme(7, 'Groudon', 'Choice Band', 'Earthquake')).toBe('Groudon');
-        expect(index_1.Pokemon.getForme(7, 'Groudon', 'Red Orb', 'Earthquake')).toBe('Groudon-Primal');
-        expect(index_1.Pokemon.getForme(7, 'Kyogre', 'Choice Specs', 'Surf')).toBe('Kyogre');
-        expect(index_1.Pokemon.getForme(7, 'Kyogre', 'Blue Orb', 'Surf')).toBe('Kyogre-Primal');
-        expect(index_1.Pokemon.getForme(7, 'Meloetta', 'Leftovers', 'Psychic')).toBe('Meloetta');
-        expect(index_1.Pokemon.getForme(7, 'Meloetta', 'Leftovers', 'Relic Song')).toBe('Meloetta-Pirouette');
+        expect(index_1.Pokemon.getForme(7, 'Charizard', '리자몽나이트X')).toBe('Charizard-Mega-X');
+        expect(index_1.Pokemon.getForme(7, 'Charizard', '리자몽나이트Y')).toBe('Charizard-Mega-Y');
+        expect(index_1.Pokemon.getForme(7, 'Mewtwo', '구애안경', 'Psystrike')).toBe('Mewtwo');
+        expect(index_1.Pokemon.getForme(7, 'Mewtwo', '뮤츠나이트X', 'Psystrike')).toBe('Mewtwo-Mega-X');
+        expect(index_1.Pokemon.getForme(7, 'Mewtwo', '뮤츠나이트Y', 'Psystrike')).toBe('Mewtwo-Mega-Y');
+        expect(index_1.Pokemon.getForme(7, 'Groudon', '구애머리띠', 'Earthquake')).toBe('Groudon');
+        expect(index_1.Pokemon.getForme(7, 'Groudon', '주홍구슬', 'Earthquake')).toBe('Groudon-Primal');
+        expect(index_1.Pokemon.getForme(7, 'Kyogre', '구애안경', 'Surf')).toBe('Kyogre');
+        expect(index_1.Pokemon.getForme(7, 'Kyogre', '쪽빛구슬', 'Surf')).toBe('Kyogre-Primal');
+        expect(index_1.Pokemon.getForme(7, 'Meloetta', '먹다남은음식', 'Psychic')).toBe('Meloetta');
+        expect(index_1.Pokemon.getForme(7, 'Meloetta', '먹다남은음식', 'Relic Song')).toBe('Meloetta-Pirouette');
         expect(index_1.Pokemon.getForme(7, 'Rayquaza', undefined, 'Earthquake')).toBe('Rayquaza');
         expect(index_1.Pokemon.getForme(7, 'Rayquaza', undefined, 'Dragon Ascent')).toBe('Rayquaza-Mega');
     });
@@ -94,9 +94,9 @@ describe('Pokemon', function () {
         expect(p.hasType('Ice')).toBe(false);
     });
     test('Gigantamx weights', function () {
-        expect(new index_1.Pokemon(8, 'Venusaur-Gmax').weightkg).toBe(100);
-        expect(new index_1.Pokemon(8, 'Venusaur-Gmax', { isDynamaxed: true }).weightkg).toBe(0);
-        expect(new index_1.Pokemon(8, 'Venusaur-Gmax', { overrides: { weightkg: 50 } }).weightkg).toBe(50);
+        expect(new index_1.Pokemon(8, '거다이이상해꽃').weightkg).toBe(100);
+        expect(new index_1.Pokemon(8, '거다이이상해꽃', { isDynamaxed: true }).weightkg).toBe(0);
+        expect(new index_1.Pokemon(8, '거다이이상해꽃', { overrides: { weightkg: 50 } }).weightkg).toBe(50);
     });
 });
 //# sourceMappingURL=pokemon.test.js.map

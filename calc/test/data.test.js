@@ -353,12 +353,12 @@ describe('Adaptable', function () {
     test('usage', function () {
         var gen = pkmn.Generations.get(5);
         var result = (0, adaptable_1.calculate)(gen, new adaptable_1.Pokemon(gen, 'Gengar', {
-            item: 'Choice Specs',
+            item: '구애안경',
             nature: 'Timid',
             evs: { spa: 252 },
             boosts: { spa: 1 }
         }), new adaptable_1.Pokemon(gen, 'Chansey', {
-            item: 'Eviolite',
+            item: '진화의휘석',
             nature: 'Calm',
             evs: { hp: 252, spd: 252 }
         }), new adaptable_1.Move(gen, 'Focus Blast'));

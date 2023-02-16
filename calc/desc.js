@@ -57,7 +57,7 @@ function getRecovery(gen, attacker, defender, move, damage, notation) {
     var recovery = [0, 0];
     var text = '';
     var ignoresShellBell = gen.num === 3 && move.named('Doom Desire', 'Future Sight');
-    if (attacker.hasItem('Shell Bell') && !ignoresShellBell) {
+    if (attacker.hasItem('조개껍질방울') && !ignoresShellBell) {
         var max = Math.round(defender.maxHP() / 8);
         for (var i = 0; i < minD.length; i++) {
             recovery[0] += Math.min(Math.round(minD[i] * move.hits / 8), max);
@@ -74,7 +74,7 @@ function getRecovery(gen, attacker, defender, move, damage, notation) {
             var range = [minD[i], maxD[i]];
             for (var j in recovery) {
                 var drained = Math.round(range[j] * percentHealed);
-                if (attacker.hasItem('Big Root'))
+                if (attacker.hasItem('큰뿌리'))
                     drained = Math.trunc(drained * 5324 / 4096);
                 recovery[j] += Math.min(drained * move.hits, max);
             }
@@ -305,7 +305,7 @@ var TRAPPING = [
 function getHazards(gen, defender, defenderSide) {
     var damage = 0;
     var texts = [];
-    if (defender.hasItem('Heavy-Duty Boots')) {
+    if (defender.hasItem('통굽부츠')) {
         return { damage: damage, texts: texts };
     }
     if (defenderSide.isSR && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
@@ -324,7 +324,7 @@ function getHazards(gen, defender, defenderSide) {
     }
     if (!defender.hasType('Flying') &&
         !defender.hasAbility('Magic Guard', 'Levitate') &&
-        !defender.hasItem('Air Balloon')) {
+        !defender.hasItem('풍선')) {
         if (defenderSide.spikes === 1) {
             damage += Math.floor(defender.maxHP() / 8);
             if (gen.num === 2) {
@@ -370,7 +370,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
     else if (field.hasWeather('Sand')) {
         if (!defender.hasType('Rock', 'Ground', 'Steel') &&
             !defender.hasAbility('Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil') &&
-            !defender.hasItem('Safety Goggles')) {
+            !defender.hasItem('방진고글')) {
             damage -= Math.floor(defender.maxHP() / (gen.num === 2 ? 8 : 16));
             texts.push('sandstorm damage');
         }
@@ -382,30 +382,30 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         }
         else if (!defender.hasType('Ice') &&
             !defender.hasAbility('Magic Guard', 'Overcoat', 'Snow Cloak') &&
-            !defender.hasItem('Safety Goggles') &&
+            !defender.hasItem('방진고글') &&
             field.hasWeather('Hail')) {
             damage -= Math.floor(defender.maxHP() / 16);
             texts.push('hail damage');
         }
     }
     var loseItem = move.named('Knock Off') && !defender.hasAbility('Sticky Hold');
-    if (defender.hasItem('Leftovers') && !loseItem) {
+    if (defender.hasItem('먹다남은음식') && !loseItem) {
         damage += Math.floor(defender.maxHP() / 16);
-        texts.push('Leftovers recovery');
+        texts.push('먹다남은음식 recovery');
     }
-    else if (defender.hasItem('Black Sludge') && !loseItem) {
+    else if (defender.hasItem('검은오물') && !loseItem) {
         if (defender.hasType('Poison')) {
             damage += Math.floor(defender.maxHP() / 16);
-            texts.push('Black Sludge recovery');
+            texts.push('검은오물 recovery');
         }
         else if (!defender.hasAbility('Magic Guard', 'Klutz')) {
             damage -= Math.floor(defender.maxHP() / 8);
-            texts.push('Black Sludge damage');
+            texts.push('검은오물 damage');
         }
     }
-    else if (defender.hasItem('Sticky Barb')) {
+    else if (defender.hasItem('끈적끈적바늘')) {
         damage -= Math.floor(defender.maxHP() / 8);
-        texts.push('Sticky Barb damage');
+        texts.push('끈적끈적바늘 damage');
     }
     if (field.defenderSide.isSeeded) {
         if (!defender.hasAbility('Magic Guard')) {
@@ -415,7 +415,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
     }
     if (field.attackerSide.isSeeded && !attacker.hasAbility('Magic Guard')) {
         var recovery = Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
-        if (defender.hasItem('Big Root'))
+        if (defender.hasItem('큰뿌리'))
             recovery = Math.trunc(recovery * 5324 / 4096);
         if (attacker.hasAbility('Liquid Ooze')) {
             damage -= recovery;
@@ -468,7 +468,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         texts.push('Bad Dreams');
     }
     if (!defender.hasAbility('Magic Guard') && TRAPPING.includes(move.name)) {
-        if (attacker.hasItem('Binding Band')) {
+        if (attacker.hasItem('조임밴드')) {
             damage -= gen.num > 5 ? Math.floor(defender.maxHP() / 6) : Math.floor(defender.maxHP() / 8);
             texts.push('trapping damage');
         }
