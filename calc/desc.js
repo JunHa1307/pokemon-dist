@@ -111,7 +111,7 @@ function getRecoil(gen, attacker, defender, move, damage, notation) {
         }
         if (!attacker.hasAbility('Rock Head')) {
             recoil = [minRecoilDamage, maxRecoilDamage];
-            text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " 반동 데미지");
+            text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " 반동 대미지");
         }
     }
     else if (move.hasCrashDamage) {
@@ -140,31 +140,31 @@ function getRecoil(gen, attacker, defender, move, damage, notation) {
                     if (gen.num === 4) {
                         var gen4CrashDamage = Math.floor(((defender.maxHP() * 0.5) / attacker.maxHP()) * 100);
                         recoil = notation === '%' ? gen4CrashDamage : Math.floor((gen4CrashDamage / 100) * 48);
-                        text = "".concat(gen4CrashDamage, "% 반동 데미지");
+                        text = "".concat(gen4CrashDamage, "% 반동 대미지");
                     }
                     else {
                         recoil = 0;
-                        text = '고스트타입에는 반동데미지 없음';
+                        text = '고스트타입에는 반동대미지 없음';
                     }
                 }
                 else {
-                    text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, "감나빗 반동 데미지");
+                    text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, "감나빗 반동 대미지");
                 }
                 break;
             default:
                 recoil = notation === '%' ? 24 : 50;
-                text = '50% 반동 데미지';
+                text = '50% 반동 대미지';
         }
     }
     else if (move.struggleRecoil) {
         recoil = notation === '%' ? 12 : 25;
-        text = '25% 발버둥 데미지';
+        text = '25% 발버둥 대미지';
         if (gen.num === 4)
             text += ' (rounded down)';
     }
     else if (move.mindBlownRecoil) {
         recoil = notation === '%' ? 24 : 50;
-        text = '50% 반동 데미지';
+        text = '50% 반동 대미지';
     }
     return { recoil: recoil, text: text };
 }
@@ -331,16 +331,16 @@ function getHazards(gen, defender, defenderSide) {
                 texts.push('Spikes');
             }
             else {
-                texts.push('압정 1번 데미지');
+                texts.push('압정 1번 대미지');
             }
         }
         else if (defenderSide.spikes === 2) {
             damage += Math.floor(defender.maxHP() / 6);
-            texts.push('압정 2번 데미지');
+            texts.push('압정 2번 대미지');
         }
         else if (defenderSide.spikes === 3) {
             damage += Math.floor(defender.maxHP() / 4);
-            texts.push('압정 3번 데미지');
+            texts.push('압정 3번 대미지');
         }
     }
     if (isNaN(damage)) {
@@ -354,7 +354,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
     if (field.hasWeather('Sun', 'Harsh Sunshine')) {
         if (defender.hasAbility('Dry Skin', 'Solar Power')) {
             damage -= Math.floor(defender.maxHP() / 8);
-            texts.push(abilityKR[defender.ability] + ' 데미지');
+            texts.push(abilityKR[defender.ability] + ' 대미지');
         }
     }
     else if (field.hasWeather('Rain', 'Heavy Rain')) {
@@ -372,7 +372,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             !defender.hasAbility('Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil') &&
             !defender.hasItem('방진고글')) {
             damage -= Math.floor(defender.maxHP() / (gen.num === 2 ? 8 : 16));
-            texts.push('모래바람 데미지');
+            texts.push('모래바람 대미지');
         }
     }
     else if (field.hasWeather('Hail', 'Snow')) {
@@ -385,7 +385,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             !defender.hasItem('방진고글') &&
             field.hasWeather('Hail')) {
             damage -= Math.floor(defender.maxHP() / 16);
-            texts.push('싸라기눈 데미지');
+            texts.push('싸라기눈 대미지');
         }
     }
     var loseItem = move.named('Knock Off') && !defender.hasAbility('Sticky Hold');
@@ -400,17 +400,17 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         }
         else if (!defender.hasAbility('Magic Guard', 'Klutz')) {
             damage -= Math.floor(defender.maxHP() / 8);
-            texts.push('검은오물 데미지');
+            texts.push('검은오물 대미지');
         }
     }
     else if (defender.hasItem('끈적끈적바늘')) {
         damage -= Math.floor(defender.maxHP() / 8);
-        texts.push('끈적끈적바늘 데미지');
+        texts.push('끈적끈적바늘 대미지');
     }
     if (field.defenderSide.isSeeded) {
         if (!defender.hasAbility('Magic Guard')) {
             damage -= Math.floor(defender.maxHP() / (gen.num >= 2 ? 8 : 16));
-            texts.push('씨뿌리기 데미지');
+            texts.push('씨뿌리기 대미지');
         }
     }
     if (field.attackerSide.isSeeded && !attacker.hasAbility('Magic Guard')) {
@@ -419,7 +419,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             recovery = Math.trunc(recovery * 5324 / 4096);
         if (attacker.hasAbility('Liquid Ooze')) {
             damage -= recovery;
-            texts.push('해감액 데미지');
+            texts.push('해감액 대미지');
         }
         else {
             damage += recovery;
@@ -439,7 +439,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         }
         else if (!defender.hasAbility('Magic Guard')) {
             damage -= Math.floor(defender.maxHP() / (gen.num === 1 ? 16 : 8));
-            texts.push('독 데미지');
+            texts.push('독 대미지');
         }
     }
     else if (defender.hasStatus('tox')) {
@@ -448,17 +448,17 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             texts.push('포이즌 힐');
         }
         else if (!defender.hasAbility('Magic Guard')) {
-            texts.push('맹독 데미지');
+            texts.push('맹독 대미지');
         }
     }
     else if (defender.hasStatus('brn')) {
         if (defender.hasAbility('Heatproof')) {
             damage -= Math.floor(defender.maxHP() / (gen.num > 6 ? 32 : 16));
-            texts.push('화상데미지 반감');
+            texts.push('화상대미지 반감');
         }
         else if (!defender.hasAbility('Magic Guard')) {
             damage -= Math.floor(defender.maxHP() / (gen.num === 1 || gen.num > 6 ? 16 : 8));
-            texts.push('화상 데미지');
+            texts.push('화상 대미지');
         }
     }
     else if ((defender.hasStatus('slp') || defender.hasAbility('Comatose')) &&
@@ -470,11 +470,11 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
     if (!defender.hasAbility('Magic Guard') && TRAPPING.includes(move.name)) {
         if (attacker.hasItem('조임밴드')) {
             damage -= gen.num > 5 ? Math.floor(defender.maxHP() / 6) : Math.floor(defender.maxHP() / 8);
-            texts.push('조이기 데미지');
+            texts.push('조이기 대미지');
         }
         else {
             damage -= gen.num > 5 ? Math.floor(defender.maxHP() / 8) : Math.floor(defender.maxHP() / 16);
-            texts.push('조이기 데미지');
+            texts.push('조이기 대미지');
         }
     }
     if (defender.isSaltCure && !defender.hasAbility('Magic Guard')) {
@@ -491,12 +491,12 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
     if (!defender.hasAbility('Magic Guard') && !defender.hasType('Grass') &&
         (field.defenderSide.vinelash || move.named('G-Max Vine Lash'))) {
         damage -= Math.floor(defender.maxHP() / 6);
-        texts.push('거다이편달 데미지');
+        texts.push('거다이편달 대미지');
     }
     if (!defender.hasAbility('Magic Guard') && !defender.hasType('Fire') &&
         (field.defenderSide.wildfire || move.named('G-Max Wildfire'))) {
         damage -= Math.floor(defender.maxHP() / 6);
-        texts.push('거다이옥염 데미지');
+        texts.push('거다이옥염 대미지');
     }
     if (!defender.hasAbility('Magic Guard') && !defender.hasType('Water') &&
         (field.defenderSide.cannonade || move.named('G-Max Cannonade'))) {

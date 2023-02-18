@@ -1179,7 +1179,7 @@ function getSetOptions(sets) {
 				setOptions.push({
 					pokemon: pokeName,
 					set: 'Randoms Set',
-					text: nameKR[pokeName]?nameKR[pokeName]:pokeName + " (Randoms)",
+					text: (nameKR[pokeName]?nameKR[pokeName]:pokeName) + " (Randoms)",
 					id: pokeName + " (Randoms)"
 				});
 			}
@@ -1191,7 +1191,7 @@ function getSetOptions(sets) {
 					setOptions.push({
 						pokemon: pokeName,
 						set: setName,
-						text: nameKR[pokeName]?nameKR[pokeName]:pokeName + " (" + setName + ")",
+						text: (nameKR[pokeName]?nameKR[pokeName]:pokeName) + " (" + setName + ")",
 						id: pokeName + " (" + setName + ")",
 						isCustom: setdex[pokeName][setName].isCustomSet,
 						nickname: setdex[pokeName][setName].nickname || ""
@@ -1201,7 +1201,7 @@ function getSetOptions(sets) {
 			setOptions.push({
 				pokemon: pokeName,
 				set: "Blank Set",
-				text: nameKR[pokeName]?nameKR[pokeName]:pokeName + " (Blank Set)",
+				text: (nameKR[pokeName]?nameKR[pokeName]:pokeName) + " (Blank Set)",
 				id: pokeName + " (Blank Set)"
 			});
 		}
@@ -1426,7 +1426,13 @@ function allPokemon(selector) {
 function loadCustomList(id) {
 	$("#" + id + " .set-selector").select2({
 		formatResult: function (set) {
-			return (set.nickname ? nameKR[set.pokemon] + " (" + set.nickname + ")" : set.id);
+			let name;
+			if(nameKR[set.pokemon] != undefined){
+				name = nameKR[set.pokemon]
+			}else{
+				name = set.pokemon;
+			}
+			return (set.nickname ? name + " (" + set.nickname + ")" : "(" + name + ")" + set.id);
 		},
 		query: function (query) {
 			var pageSize = 30;
@@ -1436,6 +1442,7 @@ function loadCustomList(id) {
 				var option = options[i];
 				var pokeName = option.pokemon.toUpperCase();
 				var setName = option.set ? option.set.toUpperCase() : option.set;
+				console.log(option.set);
 				if (option.isCustom && option.set && (!query.term || query.term.toUpperCase().split(" ").every(function (term) {
 					return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0 || pokeName.indexOf(" " + term) >= 0 || setName.indexOf(term) === 0 || setName.indexOf("-" + term) >= 0 || setName.indexOf(" " + term) >= 0;
 				}))) {

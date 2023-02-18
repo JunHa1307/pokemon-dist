@@ -1,5 +1,5 @@
 const nameKR = {
-    "Bulbasaur" :	"이상해씨",
+    "Bulbasaur":"이상해씨",
     "Ivysaur" :	"이상해풀",
     "Venusaur" :	"이상해꽃",
     "Charmander" :	"파이리",
@@ -2908,7 +2908,9 @@ const abilityKR = {
     'Toxic Debris' :	'독치장',
     'Armor Tail' :	'테일아머',
     'Earth Eater' :	'흙먹기',
-    'Mycelium Might' :	'균사의힘'
+    'Mycelium Might' :	'균사의힘',
+    'As One (Glastrier)':'혼연일체(블리자포스)',
+    'As One (Spectrier)':'혼연일체(레이스포스)'
 }
 const typeKR = {
     'Normal':'노말' ,
