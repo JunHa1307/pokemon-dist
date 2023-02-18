@@ -400,7 +400,7 @@ exports.MEGA_STONES = {
     강철톤나이트: 'Steelix',
     대짱이나이트: 'Swampert',
     마기라스나이트: 'Tyranitar',
-    이상해꽃나이트: '이상해꽃'
+    이상해꽃나이트: 'Venusaur'
 };
 var XY = BW.concat(__spreadArray(__spreadArray([], __read(Object.keys(exports.MEGA_STONES)), false), [
     '돌격조끼',

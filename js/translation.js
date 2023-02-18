@@ -27,10 +27,10 @@ const nameKR = {
     "Raichu" :	"라이츄",
     "Sandshrew" :	"모래두지",
     "Sandslash" :	"고지",
-    "Nidoran♀" :	"니드런♀",
+    "Nidoran-F" :	"니드런♀",
     "Nidorina" :	"니드리나",
     "Nidoqueen" :	"니드퀸",
-    "Nidoran♂" :	"니드런♂",
+    "Nidoran-M" :	"니드런♂",
     "Nidorino" :	"니드리노",
     "Nidoking" :	"니드킹",
     "Clefairy" :	"삐삐",
@@ -1186,7 +1186,7 @@ const nameKR = {
     "Weezing-Galar" :	"가라르또도가스",
     "Yamask-Galar" :	"가라르데스마스",
     "Zacian-Crowned" :	"검왕자시안",
-    "Zamazenta-Crowned" :	"방패왕자시안",
+    "Zamazenta-Crowned" :	"방패왕자마젠타",
     "Zapdos-Galar" :	"가라르썬더",
     "Zigzagoon-Galar" :	"가라르지그제구리",
     "Oinkologne-F" :	"암컷퍼퓨돈",
@@ -1214,7 +1214,72 @@ const nameKR = {
     "Typhlosion-Hisui" :	"히스이블레이범",
     "Voltorb-Hisui" :	"히스이찌리리공",
     "Zoroark-Hisui" :	"히스이조로아크",
-    "Zorua-Hisui" :	"히스이조로아"
+    "Zorua-Hisui" :	"히스이조로아",
+    'Blastoise-Gmax' : '거다이거북왕',
+    'Grimmsnarl-Gmax':'거다이오롱털',
+    'Hatterene-Gmax':'거다이브리무음',
+    'Rillaboom-Gmax':'거다이고릴타',
+    'Kommo-o-Totem':'주인-짜랑고우거',
+    'Lurantis-Totem' : '주인-라란티스',
+    'Maushold-Four' : '파밀리쥐-네식구',
+    'Ribombee-Totem' : '주인에리본',
+    'Urshifu-Gmax':'거다이우라오스',
+    'Urshifu-Rapid-Strike-Gmax':'거다이우라오스-연격',
+    'Appletun-Gmax':'거다이단지래플',
+    'Centiskorch-Gmax':'거다이다태우지네',
+    'Charizard-Gmax':'거다이리자몽',
+    'Araquanid-Totem':'주인깨비물거미',
+    'Coalossal-Gmax':'거다이석탄산',
+    'Copperajah-Gmax':'거다이대왕끼리동',
+    'Corviknight-Gmax':'거다이아머까오',
+    'Drednaw-Gmax':'거다이갈가부기',
+    'Duraludon-Gmax':'거다이두랄루돈',
+    'Flapple-Gmax':'애프룡',
+    'Garbodor-Gmax':'더스트나',
+    'Gengar-Gmax':'거다이팬텀',
+    'Inteleon-Gmax':'인텔리레온',
+    'Keldeo-Resolute':'케르디오-각오의모습',
+    'Marowak-Alola-Totem':'주인알로라텅구리',
+    'Melmetal-Gmax':'거다이멜메탈',
+    'Mimikyu-Totem':'주인따라큐',
+    'Pikachu-Gmax':'거다이피카츄',
+    'Salazzle-Totem':'주인염뉴트',
+    'Sandaconda-Gmax':'거다이사다이사',
+    'Snorlax-Gmax':'거다이잠만보',
+    'Togedemaru-Totem':'주인토게데마루',
+    'Toxtricity-Gmax':'거다이스트린더',
+    'Vikavolt-Totem':'주인투구뿌논',
+    'Zarude-Dada':'자루도-아빠',
+    'Eevee-Gmax':'거다이이브이',
+    'Meowth-Gmax':'거다이나옹',
+    'Butterfree-Gmax':'거다이버터플',
+    'Venusaur-Gmax':'거다이이상해꽃',
+    'Cherrim-Sunshine':'체리꼬-포지',
+    'Basculin-Blue-Striped':'베쓰나이-청색근',
+    'Basculin-White-Striped':'베쓰나이-백색근',
+    'Cinderace-Gmax':'거다이에이스번',
+    'Eevee-Starter':'이브이-파트너(레츠고이브이)',
+    'Pikachu-Alola':'피카츄-알로라캡',
+    'Pikachu-Hoenn':'피카츄-호연캡',
+    'Pikachu-Kalos':'피카츄-칼로스캡',
+    'Pikachu-Original':'피카츄-오리지널캡',
+    'Pikachu-Partner':'피카츄-파트너캡',
+    'Pikachu-Unova':'피카츄-하나캡',
+    'Pikachu-Sinnoh':'피카츄-신오캡',
+    'Pikachu-Starter':'피카츄-파트너(레츠고피카츄)',
+    'Vivillon-Pokeball':'비비용-볼의모양',
+    'Vivillon-Fancy':'비비용-팬시한모양',
+    'Raticate-Alola-Totem':'주인알로라레트라',
+    'Mimikyu-Busted':'따라큐-들킨모습',
+    'Mimikyu-Busted-Totem':'주인따라큐-들킨모습',
+    'Gumshoos-Totem':'주인형사구스',
+    'Flabébé':'플라베베',
+
+
+
+
+
+
 }
 const moveKR = {
     "막치기" :	"Pound",
@@ -2070,7 +2135,67 @@ const moveKR = {
     '전력무쌍격렬권':'All-Out Pummeling',
     '레이디얼에지스톰':'Splintered Stormshards',
     '칠성탈혼퇴':'Soul-Stealing 7-Star Strike',
-    '맥시멈사이브레이커':'Shattered Psyche'
+    '맥시멈사이브레이커':'Shattered Psyche',
+    '블랙홀이클립스':'Black Hole Eclipse',
+    '블룸샤인엑스트라':'Bloom Doom',
+    '울트라대시어택':'Breakneck Blitz',
+    '필살피카슛':'Catastropika',
+    '브레이징소울비트':'Clangorous Soulblaze',
+    '월즈엔드폴':'Continental Crush',
+    '초월나선연격':'Corkscrew Crash',
+    '얼티메이트드래곤번':'Devastating Drake',
+    '나인이볼부스트':'Extreme Evoboost',
+    '오리진즈슈퍼노바':'Genesis Supernova',
+    '스파킹기가볼트':'Gigavolt Havoc',
+    '알로라의수호자':'Guardian of Alola',
+    '슈퍼아쿠아토네이도':'Hydro Vortex',
+    '다이내믹풀플레임':'Inferno Overdrive',
+    '투닥투닥프렌드타임':'Let\'s Snuggle Forever',
+    '하늘을태우는멸망의빛':'Light That Burns the Sky',
+    '하이퍼다크크러셔':'Malicious Moonsault',
+    '무한암야로의유인':'Never-Ending Nightmare',
+    '바다의심포니':'Oceanic Operetta',
+    '진심의공격':'Pulverizing Pancake',
+    '절대포식회전참':'Savage Spin-Out',
+    '선샤인스매셔':'Searing Sunraze Smash',
+    '문라이트블래스터':'Menacing Moonraze Maelstrom',
+    '매지컬액셀':'Magical Torque',
+    '포이즌액셀':'Noxious Torque',
+    '번액셀':'Blazing Torque',
+    '파이트액셀':'Combat Torque',
+    '거다이고혹':'G-Max Befuddle',
+    '거다이포격':'G-Max Cannonade',
+    '거다이백화':'G-Max Centiferno',
+    '거다이회심격':'G-Max Chi Strike',
+    '거다이포옹':'G-Max Cuddle',
+    '거다이감쇠':'G-Max Depletion',
+    '거다이난타':'G-Max Drum Solo',
+    '거다이단원':'G-Max Finale',
+    '거다이화염구':'G-Max Fireball',
+    '거다이포말':'G-Max Foam Burst',
+    '거다이금화':'G-Max Gold Rush',
+    '거다이천도':'G-Max Gravitas',
+    '거다이저격':'G-Max Hydrosnipe',
+    '거다이악취':'G-Max Malodor',
+    '거다이융격':'G-Max Meltdown',
+    '거다이일격':'G-Max One Blow',
+    '거다이연격':'G-Max Rapid Flow',
+    '거다이재생':'G-Max Replenish',
+    '거다이선율':'G-Max Resonance',
+    '거다이사진':'G-Max Sandblast',
+    '거다이천벌':'G-Max Smite',
+    '거다이수마':'G-Max Snooze',
+    '거다이강철진':'G-Max Steelsurge',
+    '거다이암진':'G-Max Stonesurge',
+    '거다이감전':'G-Max Stun Shock',
+    '거다이감로':'G-Max Sweetness',
+    '거다이산격':'G-Max Tartness',
+    '거다이환영':'G-Max Terror',
+    '거다이편달':'G-Max Vine Lash',
+    '거다이분석':'G-Max Volcalith',
+    '거다이만뢰':'G-Max Volt Crash',
+    '거다이옥염':'G-Max Wildfire',
+    '거다이풍격':'G-Max Wind Rage'
 }
 
 const itemKR = {
@@ -2785,8 +2910,45 @@ const abilityKR = {
     'Earth Eater' :	'흙먹기',
     'Mycelium Might' :	'균사의힘'
 }
-
+const typeKR = {
+    'Normal':'노말' ,
+     'Fighting':'격투' ,
+     'Flying':'비행' ,
+     'Poison':'독' ,
+     'Ground':'땅' ,
+     'Rock':'바위' ,
+     'Bug':'벌레' ,
+     'Ghost':'고스트' ,
+     'Steel' :'강철',
+     'Fire':'불꽃' ,
+     'Water':'물' ,
+     'Grass':'풀' ,
+     'Electric':'전기' ,
+     'Psychic':'에스퍼' ,
+     'Ice':'얼음' ,
+     'Dragon':'드래곤' ,
+     'Dark':'악' ,
+     'Fairy':'페어리' ,
+     '???':'???'
+}
 keyofnameKR = Object.keys(nameKR);
 keyofmoveKR = Object.keys(moveKR);
 keyofitemKR = Object.keys(itemKR);
 keyofabilityKR = Object.keys(abilityKR);
+
+function findKeyofname(name){
+    let enName = keyofnameKR.find((key) => nameKR[key] === name);
+    return enName;
+}
+function findKeyofmove(enmove){
+    let Move = keyofmoveKR.find((key) => moveKR[key] === enmove);
+    return Move;
+}
+function findKeyofitem(enitem){
+    let item = keyofitemKR.find((key) => itemKR[key] === enitem);
+    return item;
+}
+function findKeyofability(ability){
+    let enability = keyofabilityKR.find((key) => abilityKR[key] === ability);
+    return enability;
+}

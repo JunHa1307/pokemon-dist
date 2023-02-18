@@ -84,7 +84,7 @@ function getRecovery(gen, attacker, defender, move, damage, notation) {
         return { recovery: recovery, text: text };
     var minHealthRecovered = toDisplay(notation, recovery[0], attacker.maxHP());
     var maxHealthRecovered = toDisplay(notation, recovery[1], attacker.maxHP());
-    text = "".concat(minHealthRecovered, " - ").concat(maxHealthRecovered).concat(notation, " recovered");
+    text = "".concat(minHealthRecovered, " - ").concat(maxHealthRecovered).concat(notation, " 회복가능");
     return { recovery: recovery, text: text };
 }
 exports.getRecovery = getRecovery;
@@ -111,7 +111,7 @@ function getRecoil(gen, attacker, defender, move, damage, notation) {
         }
         if (!attacker.hasAbility('Rock Head')) {
             recoil = [minRecoilDamage, maxRecoilDamage];
-            text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " recoil damage");
+            text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " 반동 데미지");
         }
     }
     else if (move.hasCrashDamage) {
@@ -140,31 +140,31 @@ function getRecoil(gen, attacker, defender, move, damage, notation) {
                     if (gen.num === 4) {
                         var gen4CrashDamage = Math.floor(((defender.maxHP() * 0.5) / attacker.maxHP()) * 100);
                         recoil = notation === '%' ? gen4CrashDamage : Math.floor((gen4CrashDamage / 100) * 48);
-                        text = "".concat(gen4CrashDamage, "% crash damage");
+                        text = "".concat(gen4CrashDamage, "% 반동 데미지");
                     }
                     else {
                         recoil = 0;
-                        text = 'no crash damage on Ghost types';
+                        text = '고스트타입에는 반동데미지 없음';
                     }
                 }
                 else {
-                    text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " crash damage on miss");
+                    text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, "감나빗 반동 데미지");
                 }
                 break;
             default:
                 recoil = notation === '%' ? 24 : 50;
-                text = '50% crash damage';
+                text = '50% 반동 데미지';
         }
     }
     else if (move.struggleRecoil) {
         recoil = notation === '%' ? 12 : 25;
-        text = '25% struggle damage';
+        text = '25% 발버둥 데미지';
         if (gen.num === 4)
             text += ' (rounded down)';
     }
     else if (move.mindBlownRecoil) {
         recoil = notation === '%' ? 24 : 50;
-        text = '50% recoil damage';
+        text = '50% 반동 데미지';
     }
     return { recoil: recoil, text: text };
 }
@@ -185,58 +185,58 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
     if (move.timesUsedWithMetronome === undefined)
         move.timesUsedWithMetronome = 1;
     if (damage[0] >= defender.maxHP() && move.timesUsed === 1 && move.timesUsedWithMetronome === 1) {
-        return { chance: 1, n: 1, text: 'guaranteed OHKO' };
+        return { chance: 1, n: 1, text: '확정 1타!!' };
     }
     var hazards = getHazards(gen, defender, field.defenderSide);
     var eot = getEndOfTurn(gen, attacker, defender, move, field);
     var toxicCounter = defender.hasStatus('tox') && !defender.hasAbility('Magic Guard') ? defender.toxicCounter : 0;
     var qualifier = '';
     if (move.hits > 1) {
-        qualifier = 'approx. ';
+        qualifier = '약 ';
         damage = squashMultihit(gen, damage, move.hits, err);
     }
     var hazardsText = hazards.texts.length > 0
-        ? ' after ' + serializeText(hazards.texts)
+        ? ' ( ' + serializeText(hazards.texts) + ' ) '
         : '';
     var afterText = hazards.texts.length > 0 || eot.texts.length > 0
-        ? ' after ' + serializeText(hazards.texts.concat(eot.texts))
+        ? ' ( ' + serializeText(hazards.texts.concat(eot.texts)) + ' ) '
         : '';
     if ((move.timesUsed === 1 && move.timesUsedWithMetronome === 1) || move.isZ) {
         var chance = computeKOChance(damage, defender.curHP() - hazards.damage, 0, 1, 1, defender.maxHP(), toxicCounter);
         if (chance === 1) {
-            return { chance: chance, n: 1, text: "guaranteed OHKO".concat(hazardsText) };
+            return { chance: chance, n: 1, text: "확정 1타!!".concat(hazardsText) };
         }
         else if (chance > 0) {
             return {
                 chance: chance,
                 n: 1,
-                text: qualifier + Math.round(chance * 1000) / 10 + "% chance to OHKO".concat(hazardsText)
+                text: qualifier + Math.round(chance * 1000) / 10 + "% 난수 1타".concat(hazardsText)
             };
         }
         if (damage.length === 256) {
-            qualifier = 'approx. ';
+            qualifier = '약 ';
         }
         for (var i = 2; i <= 4; i++) {
             var chance_1 = computeKOChance(damage, defender.curHP() - hazards.damage, eot.damage, i, 1, defender.maxHP(), toxicCounter);
             if (chance_1 === 1) {
-                return { chance: chance_1, n: i, text: "".concat(qualifier || 'guaranteed ').concat(i, "HKO").concat(afterText) };
+                return { chance: chance_1, n: i, text: "".concat(qualifier || '확정 ').concat(i, "타").concat(afterText) };
             }
             else if (chance_1 > 0) {
                 return {
                     chance: chance_1,
                     n: i,
-                    text: qualifier + Math.round(chance_1 * 1000) / 10 + "% chance to ".concat(i, "HKO").concat(afterText)
+                    text: qualifier + Math.round(chance_1 * 1000) / 10 + "% 난수 ".concat(i, "타").concat(afterText)
                 };
             }
         }
         for (var i = 5; i <= 9; i++) {
             if (predictTotal(damage[0], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
                 defender.curHP() - hazards.damage) {
-                return { chance: 1, n: i, text: "".concat(qualifier || 'guaranteed ').concat(i, "HKO").concat(afterText) };
+                return { chance: 1, n: i, text: "".concat(qualifier || '확정 ').concat(i, "타").concat(afterText) };
             }
             else if (predictTotal(damage[damage.length - 1], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
                 defender.curHP() - hazards.damage) {
-                return { n: i, text: qualifier + "possible ".concat(i, "HKO").concat(afterText) };
+                return { n: i, text: qualifier + "".concat(i, "타 가능성 있음").concat(afterText) };
             }
         }
     }
@@ -246,7 +246,7 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
             return {
                 chance: chance,
                 n: move.timesUsed,
-                text: "".concat(qualifier || 'guaranteed ', "KO in ").concat(move.timesUsed, " turns").concat(afterText)
+                text: "".concat(move.timesUsed, " 턴 내 ").concat(qualifier || '확정 ', "1타 ").concat(afterText)
             };
         }
         else if (chance > 0) {
@@ -255,7 +255,7 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
                 n: move.timesUsed,
                 text: qualifier +
                     Math.round(chance * 1000) / 10 +
-                    "% chance to ".concat(move.timesUsed, "HKO").concat(afterText)
+                    "% 난수 ".concat(move.timesUsed, "타").concat(afterText)
             };
         }
         if (predictTotal(damage[0], eot.damage, move.hits, move.timesUsed, toxicCounter, defender.maxHP()) >=
@@ -263,17 +263,17 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
             return {
                 chance: 1,
                 n: move.timesUsed,
-                text: "".concat(qualifier || 'guaranteed ', "KO in ").concat(move.timesUsed, " turns").concat(afterText)
+                text: "".concat(move.timesUsed, " 턴 안에").concat(qualifier || '확정 ', "1타 ").concat(afterText)
             };
         }
         else if (predictTotal(damage[damage.length - 1], eot.damage, move.hits, move.timesUsed, toxicCounter, defender.maxHP()) >=
             defender.curHP() - hazards.damage) {
             return {
                 n: move.timesUsed,
-                text: qualifier + "possible KO in ".concat(move.timesUsed, " turns").concat(afterText)
+                text: qualifier + "".concat(move.timesUsed, " turns")+"턴 안에 쓰러질 가능성 있음".concat(afterText)
             };
         }
-        return { n: move.timesUsed, text: qualifier + 'not a KO' };
+        return { n: move.timesUsed, text: qualifier + '1타 불가' };
     }
     return { chance: 0, n: 0, text: '' };
 }
@@ -331,16 +331,16 @@ function getHazards(gen, defender, defenderSide) {
                 texts.push('Spikes');
             }
             else {
-                texts.push('1 layer of Spikes');
+                texts.push('압정 1번 데미지');
             }
         }
         else if (defenderSide.spikes === 2) {
             damage += Math.floor(defender.maxHP() / 6);
-            texts.push('2 layers of Spikes');
+            texts.push('압정 2번 데미지');
         }
         else if (defenderSide.spikes === 3) {
             damage += Math.floor(defender.maxHP() / 4);
-            texts.push('3 layers of Spikes');
+            texts.push('압정 3번 데미지');
         }
     }
     if (isNaN(damage)) {
@@ -354,17 +354,17 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
     if (field.hasWeather('Sun', 'Harsh Sunshine')) {
         if (defender.hasAbility('Dry Skin', 'Solar Power')) {
             damage -= Math.floor(defender.maxHP() / 8);
-            texts.push(defender.ability + ' damage');
+            texts.push(abilityKR[defender.ability] + ' 데미지');
         }
     }
     else if (field.hasWeather('Rain', 'Heavy Rain')) {
         if (defender.hasAbility('Dry Skin')) {
             damage += Math.floor(defender.maxHP() / 8);
-            texts.push('Dry Skin recovery');
+            texts.push('건조 피부 회복');
         }
         else if (defender.hasAbility('Rain Dish')) {
             damage += Math.floor(defender.maxHP() / 16);
-            texts.push('Rain Dish recovery');
+            texts.push('젖은 접시 회복');
         }
     }
     else if (field.hasWeather('Sand')) {
@@ -372,45 +372,45 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             !defender.hasAbility('Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil') &&
             !defender.hasItem('방진고글')) {
             damage -= Math.floor(defender.maxHP() / (gen.num === 2 ? 8 : 16));
-            texts.push('sandstorm damage');
+            texts.push('모래바람 데미지');
         }
     }
     else if (field.hasWeather('Hail', 'Snow')) {
         if (defender.hasAbility('Ice Body')) {
             damage += Math.floor(defender.maxHP() / 16);
-            texts.push('Ice Body recovery');
+            texts.push('아이스 바디 회복');
         }
         else if (!defender.hasType('Ice') &&
             !defender.hasAbility('Magic Guard', 'Overcoat', 'Snow Cloak') &&
             !defender.hasItem('방진고글') &&
             field.hasWeather('Hail')) {
             damage -= Math.floor(defender.maxHP() / 16);
-            texts.push('hail damage');
+            texts.push('싸라기눈 데미지');
         }
     }
     var loseItem = move.named('Knock Off') && !defender.hasAbility('Sticky Hold');
     if (defender.hasItem('먹다남은음식') && !loseItem) {
         damage += Math.floor(defender.maxHP() / 16);
-        texts.push('먹다남은음식 recovery');
+        texts.push('먹다남은음식 회복');
     }
     else if (defender.hasItem('검은오물') && !loseItem) {
         if (defender.hasType('Poison')) {
             damage += Math.floor(defender.maxHP() / 16);
-            texts.push('검은오물 recovery');
+            texts.push('검은오물 회복');
         }
         else if (!defender.hasAbility('Magic Guard', 'Klutz')) {
             damage -= Math.floor(defender.maxHP() / 8);
-            texts.push('검은오물 damage');
+            texts.push('검은오물 데미지');
         }
     }
     else if (defender.hasItem('끈적끈적바늘')) {
         damage -= Math.floor(defender.maxHP() / 8);
-        texts.push('끈적끈적바늘 damage');
+        texts.push('끈적끈적바늘 데미지');
     }
     if (field.defenderSide.isSeeded) {
         if (!defender.hasAbility('Magic Guard')) {
             damage -= Math.floor(defender.maxHP() / (gen.num >= 2 ? 8 : 16));
-            texts.push('Leech Seed damage');
+            texts.push('씨뿌리기 데미지');
         }
     }
     if (field.attackerSide.isSeeded && !attacker.hasAbility('Magic Guard')) {
@@ -419,94 +419,94 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             recovery = Math.trunc(recovery * 5324 / 4096);
         if (attacker.hasAbility('Liquid Ooze')) {
             damage -= recovery;
-            texts.push('Liquid Ooze damage');
+            texts.push('해감액 데미지');
         }
         else {
             damage += recovery;
-            texts.push('Leech Seed recovery');
+            texts.push('씨뿌리기 회복');
         }
     }
     if (field.hasTerrain('Grassy')) {
         if ((0, util_2.isGrounded)(defender, field)) {
             damage += Math.floor(defender.maxHP() / 16);
-            texts.push('Grassy Terrain recovery');
+            texts.push('그래스필드 회복');
         }
     }
     if (defender.hasStatus('psn')) {
         if (defender.hasAbility('Poison Heal')) {
             damage += Math.floor(defender.maxHP() / 8);
-            texts.push('Poison Heal');
+            texts.push('포이즌 힐');
         }
         else if (!defender.hasAbility('Magic Guard')) {
             damage -= Math.floor(defender.maxHP() / (gen.num === 1 ? 16 : 8));
-            texts.push('poison damage');
+            texts.push('독 데미지');
         }
     }
     else if (defender.hasStatus('tox')) {
         if (defender.hasAbility('Poison Heal')) {
             damage += Math.floor(defender.maxHP() / 8);
-            texts.push('Poison Heal');
+            texts.push('포이즌 힐');
         }
         else if (!defender.hasAbility('Magic Guard')) {
-            texts.push('toxic damage');
+            texts.push('맹독 데미지');
         }
     }
     else if (defender.hasStatus('brn')) {
         if (defender.hasAbility('Heatproof')) {
             damage -= Math.floor(defender.maxHP() / (gen.num > 6 ? 32 : 16));
-            texts.push('reduced burn damage');
+            texts.push('화상데미지 반감');
         }
         else if (!defender.hasAbility('Magic Guard')) {
             damage -= Math.floor(defender.maxHP() / (gen.num === 1 || gen.num > 6 ? 16 : 8));
-            texts.push('burn damage');
+            texts.push('화상 데미지');
         }
     }
     else if ((defender.hasStatus('slp') || defender.hasAbility('Comatose')) &&
         attacker.hasAbility('isBadDreams') &&
         !defender.hasAbility('Magic Guard')) {
         damage -= Math.floor(defender.maxHP() / 8);
-        texts.push('Bad Dreams');
+        texts.push('악몽');
     }
     if (!defender.hasAbility('Magic Guard') && TRAPPING.includes(move.name)) {
         if (attacker.hasItem('조임밴드')) {
             damage -= gen.num > 5 ? Math.floor(defender.maxHP() / 6) : Math.floor(defender.maxHP() / 8);
-            texts.push('trapping damage');
+            texts.push('조이기 데미지');
         }
         else {
             damage -= gen.num > 5 ? Math.floor(defender.maxHP() / 8) : Math.floor(defender.maxHP() / 16);
-            texts.push('trapping damage');
+            texts.push('조이기 데미지');
         }
     }
     if (defender.isSaltCure && !defender.hasAbility('Magic Guard')) {
         var isWaterOrSteel = defender.hasType('Water', 'Steel') ||
             (defender.teraType && ['Water', 'Steel'].includes(defender.teraType));
         damage -= Math.floor(defender.maxHP() / (isWaterOrSteel ? 4 : 8));
-        texts.push('Salt Cure');
+        texts.push('소금절이');
     }
     if (!defender.hasType('Fire') && !defender.hasAbility('Magic Guard') &&
         (move.named('Fire Pledge (Grass Pledge Boosted)', 'Grass Pledge (Fire Pledge Boosted)'))) {
         damage -= Math.floor(defender.maxHP() / 8);
-        texts.push('Sea of Fire damage');
+        texts.push('불바다 damage');
     }
     if (!defender.hasAbility('Magic Guard') && !defender.hasType('Grass') &&
         (field.defenderSide.vinelash || move.named('G-Max Vine Lash'))) {
         damage -= Math.floor(defender.maxHP() / 6);
-        texts.push('Vine Lash damage');
+        texts.push('거다이편달 데미지');
     }
     if (!defender.hasAbility('Magic Guard') && !defender.hasType('Fire') &&
         (field.defenderSide.wildfire || move.named('G-Max Wildfire'))) {
         damage -= Math.floor(defender.maxHP() / 6);
-        texts.push('Wildfire damage');
+        texts.push('거다이옥염 데미지');
     }
     if (!defender.hasAbility('Magic Guard') && !defender.hasType('Water') &&
         (field.defenderSide.cannonade || move.named('G-Max Cannonade'))) {
         damage -= Math.floor(defender.maxHP() / 6);
-        texts.push('Cannonade damage');
+        texts.push('거다이포격 damage');
     }
     if (!defender.hasAbility('Magic Guard') && !defender.hasType('Rock') &&
         (field.defenderSide.volcalith || move.named('G-Max Volcalith'))) {
         damage -= Math.floor(defender.maxHP() / 6);
-        texts.push('Volcalith damage');
+        texts.push('거다이분석 damage');
     }
     return { damage: damage, texts: texts };
 }
@@ -690,27 +690,31 @@ function buildDescription(description, attacker, defender) {
     output = appendIfSet(output, description.attackerAbility);
     output = appendIfSet(output, description.rivalry);
     if (description.isBurned) {
-        output += 'burned ';
+        output += '화상 ';
     }
     if (description.alliesFainted) {
         output += Math.min(5, description.alliesFainted) +
-            " ".concat(description.alliesFainted === 1 ? 'ally' : 'allies', " fainted ");
+            " ".concat(description.alliesFainted === 1 ? '마리' : '마리', " 쓰러짐 ");
     }
     if (description.attackerTera) {
-        output += "Tera ".concat(description.attackerTera, " ");
+        output += typeKR[description.attackerTera] + " 테라 ";
     }
     if (description.isBeadsOfRuin) {
-        output += 'Beads of Ruin ';
+        output += '재앙의구슬 적용 ';
     }
     if (description.isSwordOfRuin) {
-        output += 'Sword of Ruin ';
+        output += '재앙의검 적용 ';
     }
-    output += description.attackerName + ' ';
+    if(nameKR[description.attackerName] === undefined){
+        output += description.attackerName + ' ';
+    }else{
+        output += nameKR[description.attackerName] + ' ';
+    }
     if (description.isHelpingHand) {
-        output += 'Helping Hand ';
+        output += '도우미 ';
     }
     if (description.isFlowerGiftAttacker) {
-        output += ' with an ally\'s Flower Gift ';
+        output += ' 플라워기프트 ';
     }
     if (description.isBattery) {
         output += ' Battery boosted ';
@@ -721,9 +725,9 @@ function buildDescription(description, attacker, defender) {
     if (description.isSwitching) {
         output += ' switching boosted ';
     }
-    output += description.moveName + ' ';
+    output += findKeyofmove(description.moveName) + ' ';
     if (description.moveBP && description.moveType) {
-        output += '(' + description.moveBP + ' BP ' + description.moveType + ') ';
+        output += '(' + description.moveBP + ' BP ' + typeKR[description.moveType] + ') ';
     }
     else if (description.moveBP) {
         output += '(' + description.moveBP + ' BP) ';
@@ -732,7 +736,7 @@ function buildDescription(description, attacker, defender) {
         output += '(' + description.moveType + ') ';
     }
     if (description.hits) {
-        output += '(' + description.hits + ' hits) ';
+        output += '(' + description.hits + ' 번공격) ';
     }
     output = appendIfSet(output, description.moveTurns);
     output += 'vs. ';
@@ -750,49 +754,53 @@ function buildDescription(description, attacker, defender) {
     output = appendIfSet(output, description.defenderItem);
     output = appendIfSet(output, description.defenderAbility);
     if (description.isTabletsOfRuin) {
-        output += 'Tablets of Ruin ';
+        output += ' 재앙의 목간 적용';
     }
     if (description.isVesselOfRuin) {
-        output += 'Vessel of Ruin ';
+        output += ' 재앙의 그릇 적용 ';
     }
     if (description.isProtected) {
         output += 'protected ';
     }
     if (description.isDefenderDynamaxed) {
-        output += 'Dynamax ';
+        output += '다이맥스 ';
     }
     if (description.defenderTera) {
-        output += "Tera ".concat(description.defenderTera, " ");
+        output += typeKR[description.defenderTera] + " 테라 ";
     }
-    output += description.defenderName;
+    if(nameKR[description.defenderName] === undefined){
+        output += description.defenderName + ' ';
+    }else{
+        output += nameKR[description.defenderName] + ' ';
+    }
     if (description.weather && description.terrain) {
     }
     else if (description.weather) {
-        output += ' in ' + description.weather;
+        output += ' ,날씨 : ' + description.weather;
     }
     else if (description.terrain) {
-        output += ' in ' + description.terrain + ' Terrain';
+        output += ' ,' + description.terrain + ' 필드';
     }
     if (description.isReflect) {
-        output += ' through Reflect';
+        output += ' 리플렉터 적용됨';
     }
     else if (description.isLightScreen) {
-        output += ' through Light Screen';
+        output += ' ,빛의 장막 적용됨';
     }
     if (description.isFlowerGiftDefender) {
-        output += ' with an ally\'s Flower Gift';
+        output += ' ,플라워 기프트 효과 적용됨';
     }
     if (description.isFriendGuard) {
-        output += ' with an ally\'s Friend Guard';
+        output += ' ,프렌드 가드로 방어됨';
     }
     if (description.isAuroraVeil) {
-        output += ' with an ally\'s Aurora Veil';
+        output += ' ,오로라 베일로 방어됨';
     }
     if (description.isCritical) {
-        output += ' on a critical hit';
+        output += ' ,급소에 맞음!';
     }
     if (description.isWonderRoom) {
-        output += ' in Wonder Room';
+        output += ' ,원더룸 효과 적용됨';
     }
     return output;
 }
@@ -815,14 +823,14 @@ function serializeText(arr) {
         return arr[0];
     }
     else if (arr.length === 2) {
-        return arr[0] + ' and ' + arr[1];
+        return arr[0] + ' , ' + arr[1];
     }
     else {
         var text = '';
         for (var i = 0; i < arr.length - 1; i++) {
             text += arr[i] + ', ';
         }
-        return text + 'and ' + arr[arr.length - 1];
+        return text + ' , ' + arr[arr.length - 1];
     }
 }
 function appendIfSet(str, toAppend) {

@@ -93,8 +93,8 @@ function performCalculations() {
 	}
 	bestResult.prop("checked", true);
 	bestResult.change();
-	$("#resultHeaderL").text(p1.name + "이(가) 지닌 기술들 (클릭하면 결과가 계산됩니다.)");
-	$("#resultHeaderR").text(p2.name + "이(가) 지닌 기술들 (클릭하면 결과가 계산됩니다.)");
+	$("#resultHeaderL").text((nameKR[p1.name]?nameKR[p1.name]:p1.name) + "이(가) 지닌 기술들 (클릭하면 결과가 계산됩니다.)");
+	$("#resultHeaderR").text((nameKR[p2.name]?nameKR[p2.name]:p2.name) + "이(가) 지닌 기술들 (클릭하면 결과가 계산됩니다.)");
 }
 
 $(".result-move").change(function () {
@@ -102,7 +102,7 @@ $(".result-move").change(function () {
 		var result = findDamageResult($(this));
 		if (result) {
 			var desc = result.fullDesc(notation, false);
-			if (desc.indexOf('--') === -1) desc += ' -- possibly the worst move ever';
+			if (desc.indexOf('--') === -1) desc += ' <-- 이게.. 데미지...?(효과가 별로인 듯하다..)';
 			$("#mainResult").text(desc);
 			$("#damageValues").text("가능한 데미지: (" + displayDamageHits(result.damage) + ")");
 		}

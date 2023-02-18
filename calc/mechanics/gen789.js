@@ -426,11 +426,6 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     desc.attackBoost =
         move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
     result.damage = childDamage ? [damage, childDamage] : damage;
-    if(result.move.category=='Physical' && gen.num ==9){
-        for(let i = 0; i < result.damage.length; i++){
-            result.damage[i] = Math.floor(result.damage[i] / 1.5);
-        }
-    }
     return result;
 }
 exports.calculateSMSSSV = calculateSMSSSV;
@@ -610,7 +605,11 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
         desc.moveBP = move.bp;
     }
     var bpMods = calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, basePower, hasAteAbilityTypeChange, turnOrder);
-    basePower = (0, util_2.OF16)(Math.max(1, (0, util_2.pokeRound)((basePower * (0, util_2.chainMods)(bpMods, 41, 2097152)) / 4096)));
+    if(move.category=='Physical' && gen.num ==9 && (attacker.name == 'Abomasnow' || defender.name == 'Abomasnow')){
+        basePower = (0, util_2.OF16)(Math.max(1, (0, util_2.pokeRound)((basePower * (0, util_2.chainMods)(bpMods, 41, 2097152))/1.5 / 4096)));
+    }else{
+        basePower = (0, util_2.OF16)(Math.max(1, (0, util_2.pokeRound)((basePower * (0, util_2.chainMods)(bpMods, 41, 2097152)) / 4096)));
+    }
     if (attacker.teraType && move.type === attacker.teraType &&
         attacker.hasType(attacker.teraType) && move.hits === 1 &&
         move.priority <= 0 && move.bp > 0 && !move.named('Dragon Energy', 'Eruption', 'Water Spout') &&

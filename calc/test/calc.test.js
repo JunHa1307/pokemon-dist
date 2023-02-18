@@ -223,9 +223,9 @@ describe('calc', function () {
                         var _b = weathers_1_1.value, weather = _b.weather, type = _b.type, damage = _b.damage;
                         var dmg = gen === 3 ? damage.adv : gen === 4 ? damage.dpp : damage.modern;
                         var _c = __read(gen === 3 && type === 'Rock' ? ['Atk', 'Def'] : ['SpA', 'SpD'], 2), atk = _c[0], def = _c[1];
-                        var result = calculate(Pokemon('Castform'), Pokemon('이상해씨'), Move('Weather Ball'), Field({ weather: weather }));
+                        var result = calculate(Pokemon('Castform'), Pokemon('Bulbasaur'), Move('Weather Ball'), Field({ weather: weather }));
                         expect(result.range()).toEqual(dmg.range);
-                        expect(result.desc()).toBe("0 ".concat(atk, " Castform Weather Ball (100 BP ").concat(type, ") vs. 0 HP / 0 ").concat(def, " 이상해씨 in ").concat(weather, ": ").concat(dmg.range[0], "-").concat(dmg.range[1], " ").concat(dmg.desc));
+                        expect(result.desc()).toBe("0 ".concat(atk, " Castform Weather Ball (100 BP ").concat(type, ") vs. 0 HP / 0 ").concat(def, " Bulbasaur in ").concat(weather, ": ").concat(dmg.range[0], "-").concat(dmg.range[1], " ").concat(dmg.desc));
                     }
                 }
                 catch (e_2_1) { e_2 = { error: e_2_1 }; }

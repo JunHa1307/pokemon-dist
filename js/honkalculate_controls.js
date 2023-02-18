@@ -93,7 +93,11 @@ function performCalculations() {
 				defender = damageResults[0].defender;
 				var result, minMaxDamage, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
 				var highestDamage = -1;
-				var data = [setOptions[i].id];
+				krName = setOptions[i].id.substring(0,setOptions[i].id.indexOf("(")-1);
+				if(nameKR[krName] != undefined){	
+					krName = nameKR[krName];
+				}
+				var data = [krName + ' ' + setOptions[i].id.substring(setOptions[i].id.indexOf("("))];
 				for (var n = 0; n < 4; n++) {
 					result = damageResults[n];
 					minMaxDamage = result.range();
@@ -108,15 +112,15 @@ function performCalculations() {
 						while (data.length > 1) {
 							data.pop();
 						}
-						data.push(attacker.moves[n].name.replace("Hidden Power", "HP"));
+						data.push(findKeyofmove(attacker.moves[n].name));//.replace("Hidden Power", "HP")]);
 						data.push(minPercentage + " - " + maxPercentage + "%");
 						data.push(minPixels + " - " + maxPixels + "px");
-						data.push(attacker.moves[n].bp === 0 ? 'nice move' : (result.kochance(false).text || 'possibly the worst move ever'));
+						data.push(attacker.moves[n].bp === 0 ? 'nice move' : (result.kochance(false).text || '효과가 별로인 듯하다..'));
 					}
 				}
-				data.push((mode === "one-vs-all") ? defender.types[0] : attacker.types[0]);
-				data.push(((mode === "one-vs-all") ? defender.types[1] : attacker.types[1]) || "");
-				data.push(((mode === "one-vs-all") ? defender.ability : attacker.ability) || "");
+				data.push((mode === "one-vs-all") ? typeKR[defender.types[0]] : typeKR[attacker.types[0]]);
+				data.push(((mode === "one-vs-all") ? typeKR[defender.types[1]] : typeKR[attacker.types[1]]) || "");
+				data.push(((mode === "one-vs-all") ? abilityKR[defender.ability] === undefined ? defender.ability : abilityKR[defender.ability] : abilityKR[defender.ability] === undefined ? defender.ability : abilityKR[defender.ability]) || "");
 				data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
 				dataSet.push(data);
 			}

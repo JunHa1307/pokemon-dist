@@ -110,7 +110,7 @@ var RBY = {
         bs: { hp: 79, at: 83, df: 100, sp: 78, sl: 85 },
         weightkg: 85.5
     },
-    이상해씨: {
+    Bulbasaur: {
         types: ['Grass', 'Poison'],
         bs: { hp: 45, at: 49, df: 49, sp: 45, sl: 65 },
         weightkg: 6.9,
@@ -137,13 +137,13 @@ var RBY = {
         bs: { hp: 78, at: 84, df: 78, sp: 100, sl: 85 },
         weightkg: 90.5
     },
-    파이리: {
+    Charmander: {
         types: ['Fire'],
         bs: { hp: 39, at: 52, df: 43, sp: 65, sl: 50 },
         weightkg: 8.5,
         nfe: true
     },
-    리자드: {
+    Charmeleon: {
         types: ['Fire'],
         bs: { hp: 58, at: 64, df: 58, sp: 80, sl: 65 },
         weightkg: 19,
@@ -352,7 +352,7 @@ var RBY = {
         bs: { hp: 85, at: 73, df: 70, sp: 67, sl: 115 },
         weightkg: 75.6
     },
-    이상해Grass: {
+    Ivysaur: {
         types: ['Grass', 'Poison'],
         bs: { hp: 60, at: 62, df: 63, sp: 60, sl: 80 },
         weightkg: 13,
@@ -774,7 +774,7 @@ var RBY = {
         weightkg: 30,
         nfe: true
     },
-    이상해꽃: {
+    Venusaur: {
         types: ['Grass', 'Poison'],
         bs: { hp: 80, at: 82, df: 83, sp: 80, sl: 100 },
         weightkg: 100
@@ -851,13 +851,13 @@ var GSC_PATCH = {
     Beedrill: { bs: { sa: 45, sd: 80 } },
     Bellsprout: { bs: { sa: 70, sd: 30 } },
     Blastoise: { bs: { sa: 85, sd: 105 } },
-    이상해씨: { bs: { sa: 65, sd: 65 } },
+    Bulbasaur: { bs: { sa: 65, sd: 65 } },
     Butterfree: { bs: { sa: 80, sd: 80 } },
     Caterpie: { bs: { sa: 20, sd: 20 } },
     Chansey: { bs: { sa: 35, sd: 105 }, nfe: true },
     Charizard: { bs: { sa: 109, sd: 85 } },
-    파이리: { bs: { sa: 60, sd: 50 } },
-    리자드: { bs: { sa: 80, sd: 65 } },
+    Charmander: { bs: { sa: 60, sd: 50 } },
+    Charmeleon: { bs: { sa: 80, sd: 65 } },
     Clefable: { bs: { sa: 85, sd: 90 } },
     Clefairy: { bs: { sa: 60, sd: 65 } },
     Cloyster: { bs: { sa: 85, sd: 45 } },
@@ -898,7 +898,7 @@ var GSC_PATCH = {
     Hitmonlee: { bs: { sa: 35, sd: 110 } },
     Horsea: { bs: { sa: 70, sd: 25 } },
     Hypno: { bs: { sa: 73, sd: 115 } },
-    이상해Grass: { bs: { sa: 80, sd: 80 } },
+    Ivysaur: { bs: { sa: 80, sd: 80 } },
     Jigglypuff: { bs: { sa: 45, sd: 25 } },
     Jolteon: { bs: { sa: 110, sd: 95 } },
     Jynx: { bs: { sa: 115, sd: 95 } },
@@ -981,7 +981,7 @@ var GSC_PATCH = {
     Vaporeon: { bs: { sa: 110, sd: 95 } },
     Venomoth: { bs: { sa: 90, sd: 75 } },
     Venonat: { bs: { sa: 40, sd: 55 } },
-    이상해꽃: { bs: { sa: 100, sd: 100 } },
+    Venusaur: { bs: { sa: 100, sd: 100 } },
     Victreebel: { bs: { sa: 100, sd: 60 } },
     Vileplume: { bs: { sa: 100, sd: 90 } },
     Voltorb: { bs: { sa: 55, sd: 55 }, gender: 'N' },
@@ -1534,13 +1534,13 @@ var ADV_PATCH = {
     Beedrill: { abilities: { 0: 'Swarm' } },
     Bellsprout: { abilities: { 0: 'Chlorophyll' } },
     Blastoise: { abilities: { 0: 'Torrent' } },
-    이상해씨: { abilities: { 0: 'Overgrow' } },
+    Bulbasaur: { abilities: { 0: 'Overgrow' } },
     Butterfree: { abilities: { 0: 'Compound Eyes' } },
     Caterpie: { abilities: { 0: 'Shield Dust' } },
     Chansey: { abilities: { 0: 'Natural Cure' } },
     Charizard: { abilities: { 0: 'Blaze' } },
-    파이리: { abilities: { 0: 'Blaze' } },
-    리자드: { abilities: { 0: 'Blaze' } },
+    Charmander: { abilities: { 0: 'Blaze' } },
+    Charmeleon: { abilities: { 0: 'Blaze' } },
     Clefable: { abilities: { 0: 'Cute Charm' } },
     Clefairy: { abilities: { 0: 'Cute Charm' } },
     Cloyster: { abilities: { 0: 'Shell Armor' } },
@@ -1581,7 +1581,7 @@ var ADV_PATCH = {
     Hitmonlee: { abilities: { 0: 'Limber' } },
     Horsea: { abilities: { 0: 'Swift Swim' } },
     Hypno: { abilities: { 0: 'Insomnia' } },
-    이상해Grass: { abilities: { 0: 'Overgrow' } },
+    Ivysaur: { abilities: { 0: 'Overgrow' } },
     Jigglypuff: { abilities: { 0: 'Cute Charm' } },
     Jolteon: { abilities: { 0: 'Volt Absorb' } },
     Jynx: { abilities: { 0: 'Oblivious' } },
@@ -1664,7 +1664,7 @@ var ADV_PATCH = {
     Vaporeon: { abilities: { 0: '저수' } },
     Venomoth: { abilities: { 0: 'Shield Dust' } },
     Venonat: { abilities: { 0: 'Compound Eyes' } },
-    이상해꽃: { abilities: { 0: 'Overgrow' } },
+    Venusaur: { abilities: { 0: 'Overgrow' } },
     Victreebel: { abilities: { 0: 'Chlorophyll' } },
     Vileplume: { abilities: { 0: 'Chlorophyll' } },
     Voltorb: { abilities: { 0: 'Soundproof' } },
@@ -5142,7 +5142,7 @@ var XY_PATCH = {
     Togetic: { types: ['Fairy', 'Flying'] },
     Tyranitar: { otherFormes: ['Tyranitar-Mega'] },
     Unfezant: { bs: { at: 115 } },
-    이상해꽃: { otherFormes: ['이상해꽃-Mega'] },
+    Venusaur: { otherFormes: ['Venusaur-Mega'] },
     Victreebel: { bs: { sd: 70 } },
     Vileplume: { bs: { sa: 110 } },
     Whimsicott: { types: ['Grass', 'Fairy'] },
@@ -5872,12 +5872,12 @@ var XY_PATCH = {
         abilities: { 0: 'Sand Stream' },
         baseSpecies: 'Tyranitar'
     },
-    '이상해꽃-Mega': {
+    'Venusaur-Mega': {
         types: ['Grass', 'Poison'],
         bs: { hp: 80, at: 100, df: 123, sa: 122, sd: 120, sp: 80 },
         weightkg: 155.5,
         abilities: { 0: 'Thick Fat' },
-        baseSpecies: '이상해꽃'
+        baseSpecies: 'Venusaur'
     },
     Meowstic: {
         types: ['Psychic'],
@@ -7560,7 +7560,7 @@ var SS_PATCH = {
     Slowpoke: { otherFormes: ['Slowpoke-Galar'] },
     Snorlax: { otherFormes: ['Snorlax-Gmax'] },
     Stunfisk: { otherFormes: ['Stunfisk-Galar'] },
-    이상해꽃: { otherFormes: ['거다이이상해꽃', '이상해꽃-Mega'] },
+    Venusaur: { otherFormes: ['Venusaur-Gmax', 'Venusaur-Mega'] },
     Voodoom: { bs: { sa: 130 } },
     Weezing: { otherFormes: ['Weezing-Galar'] },
     Yamask: { otherFormes: ['Yamask-Galar'] },
@@ -8664,12 +8664,12 @@ var SS_PATCH = {
         baseSpecies: 'Venomicon',
         gender: 'N'
     },
-    '거다이이상해꽃': {
+    'Venusaur-Gmax': {
         types: ['Grass', 'Poison'],
         bs: { hp: 80, at: 82, df: 83, sa: 100, sd: 100, sp: 80 },
         weightkg: 0,
         abilities: { 0: 'Overgrow' },
-        baseSpecies: '이상해꽃'
+        baseSpecies: 'Venusaur'
     },
     'Weezing-Galar': {
         types: ['Poison', 'Fairy'],

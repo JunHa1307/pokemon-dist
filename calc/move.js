@@ -247,7 +247,7 @@ function getMaxMoveName(moveType, pokemonSpecies, isStatus, pokemonAbility) {
             return 'G-Max Tartness';
         if (pokemonSpecies === 'Rillaboom-Gmax')
             return 'G-Max Drum Solo';
-        if (pokemonSpecies === '거다이이상해꽃')
+        if (pokemonSpecies === 'Venusaur-Gmax')
             return 'G-Max Vine Lash';
     }
     if (moveType === 'Water') {

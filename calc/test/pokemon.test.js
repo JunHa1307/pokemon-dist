@@ -94,9 +94,9 @@ describe('Pokemon', function () {
         expect(p.hasType('Ice')).toBe(false);
     });
     test('Gigantamx weights', function () {
-        expect(new index_1.Pokemon(8, '거다이이상해꽃').weightkg).toBe(100);
-        expect(new index_1.Pokemon(8, '거다이이상해꽃', { isDynamaxed: true }).weightkg).toBe(0);
-        expect(new index_1.Pokemon(8, '거다이이상해꽃', { overrides: { weightkg: 50 } }).weightkg).toBe(50);
+        expect(new index_1.Pokemon(8, 'Venusaur-Gmax').weightkg).toBe(100);
+        expect(new index_1.Pokemon(8, 'Venusaur-Gmax', { isDynamaxed: true }).weightkg).toBe(0);
+        expect(new index_1.Pokemon(8, 'Venusaur-Gmax', { overrides: { weightkg: 50 } }).weightkg).toBe(50);
     });
 });
 //# sourceMappingURL=pokemon.test.js.map
