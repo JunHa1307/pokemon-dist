@@ -116,10 +116,10 @@ function displayDamageHits(damage) {
 	if (damage.length > 2) return damage.join(', ');
 	// Fixed Parental Bond Damage
 	if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
-		return '1st Hit: ' + damage[0] + '; 2nd Hit: ' + damage[1];
+		return '첫 번째 공격: ' + damage[0] + '; 두 번째 공격: ' + damage[1];
 	}
 	// Parental Bond Damage
-	return '1st Hit: ' + damage[0].join(', ') + '; 2nd Hit: ' + damage[1].join(', ');
+	return '첫 번째 공격: ' + damage[0].join(', ') + '; 두 번째 공격: ' + damage[1].join(', ');
 }
 
 function findDamageResult(resultMoveObj) {
