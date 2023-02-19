@@ -292,7 +292,7 @@ th {
 .visually-hidden:checked + .btn {
     font-weight: bold;
     color: #111111;
-    background: lightblue/*#f5f5f5;*/
+    background: rgb(133, 181, 199);/*#f5f5f5;*/
 }
 .visually-hidden[type="radio"]:checked + .btn {
     cursor: default;

@@ -102,7 +102,7 @@ $(".result-move").change(function () {
 		var result = findDamageResult($(this));
 		if (result) {
 			var desc = result.fullDesc(notation, false);
-			if (desc.indexOf('--') === -1) desc += ' <-- 이게.. 대미지...?(효과가 별로인 듯하다..)';
+			if (desc.indexOf('--') === -1) desc += ' 효과가 별로인 듯하다...';
 			$("#mainResult").text(desc);
 			$("#damageValues").text("가능한 대미지: (" + displayDamageHits(result.damage) + ")");
 		}

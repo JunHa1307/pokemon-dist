@@ -1105,7 +1105,7 @@ function getFirstValidSetOption() {
 	var sets = getSetOptions();
 	// NB: The first set is never valid, so we start searching after it.
 	for (var i = 1; i < sets.length; i++) {
-		if (sets[i].id && sets[i].id.indexOf('(Blank Set)') === -1) return sets[i];
+		if (sets[i].id && sets[i].id.indexOf('(비어있는 샘플)') === -1) return sets[i];
 	}
 	return undefined;
 }
@@ -1200,9 +1200,9 @@ function getSetOptions(sets) {
 			}
 			setOptions.push({
 				pokemon: pokeName,
-				set: "Blank Set",
-				text: (nameKR[pokeName]?nameKR[pokeName]:pokeName) + " (Blank Set)",
-				id: pokeName + " (Blank Set)"
+				set: "비어있는 샘플",
+				text: (nameKR[pokeName]?nameKR[pokeName]:pokeName) + " (비어있는 샘플)",
+				id: pokeName + " (비어있는 샘플)"
 			});
 		}
 	}
