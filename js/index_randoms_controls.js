@@ -49,7 +49,7 @@ function performCalculations() {
 		result = damageResults[0][i];
 		maxDamage = result.range()[1] * p1.moves[i].hits;
 		if (!zProtectAlerted && maxDamage > 0 && p1.item.indexOf(" Z") === -1 && p1field.defenderSide.isProtected && p1.moves[i].isZ) {
-			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
+			alert('해킹을 통해서만 가능하지만, Z 크리스탈 없이도 Z 기술을 사용하면 방어를 관통하여 상대 포켓몬에게 데미지를 입힐 수 있습니다.');
 			zProtectAlerted = true;
 		}
 		p1.maxDamages.push({moveOrder: i, maxDamage: maxDamage});
@@ -63,7 +63,7 @@ function performCalculations() {
 		result = damageResults[1][i];
 		maxDamage = result.range()[1] * p2.moves[i].hits;
 		if (!zProtectAlerted && maxDamage > 0 && p2.item.indexOf(" Z") === -1 && p2field.defenderSide.isProtected && p2.moves[i].isZ) {
-			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
+			alert('해킹을 통해서만 가능하지만, Z 크리스탈 없이도 Z 기술을 사용하면 방어를 관통하여 상대 포켓몬에게 데미지를 입힐 수 있습니다.');
 			zProtectAlerted = true;
 		}
 		p2.maxDamages.push({moveOrder: i, maxDamage: maxDamage});
