@@ -141,6 +141,10 @@ html, body {
     padding: 0;
     min-width: 100em;
 }
+select,option{
+    font-family: 'IBMPlexSansKR-Light';
+    font-weight: 600;
+}
 .wrapper {
     padding: 0 1em;
     max-width: 1285px;
