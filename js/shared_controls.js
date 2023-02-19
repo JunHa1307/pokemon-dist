@@ -1068,7 +1068,7 @@ $(".gen").change(function () {
 			params.sort();
 			var path = window.location.pathname + '?' + params;
 			window.history.pushState({}, document.title, path);
-			gtag('config', 'G-1QCXJSP88G', {'page_path': path});
+			gtag('config', 'G-QB7QER3T3B', {'page_path': path});
 		}
 	}
 	genWasChanged = true;
