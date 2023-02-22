@@ -137,9 +137,9 @@ html, body {
     font-weight: 700;
     background-color: rgb(214,230,240);
     color: black;
-    margin: 0;
-    padding: 0;
-    min-width: 1em;
+    margin: auto;
+    padding: auto;
+    min-width: 1em; 
 }
 select,option{
     font-family: 'IBMPlexSansKR-Light';
@@ -149,6 +149,10 @@ select,option{
     padding: 0 0 0 1em;
     max-width: 100%;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
 }
 .credits {
     clear: both;
@@ -509,4 +513,14 @@ table.field {
 .extraSetItems,
 .extraSetMoves {
     width: 100%;
+}
+summary{
+    text-align:center;
+}
+.minimum{
+    overflow: hidden;
+    height: 3.5em;
+}
+.maximum{
+    height: 610.667px;
 }

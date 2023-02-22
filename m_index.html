@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=10.0, user-scalable=1;">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=10.0, user-scalable=1">
     <title>포키컬 포켓몬 데미지 계산기</title>
     <meta name="description" content="포켓몬스터 스칼렛/바이올렛 + 모든 세대 포켓몬 데미지 계산기">
     <meta name="keyword" content="포켓몬, 9세대, 계산기">
@@ -31,15 +31,15 @@
         <div class="header">
             <div class="header-inner">
                 <!-- <ul class="nav">
-        <li><a class="button nav-first" href="//pokemonshowdown.com"><img src="./img/pokemonshowdownbeta.png" alt="Pok&eacute;mon Showdown! (beta)" /> Home</a></li>
-        <li><a class="button" href="//dex.pokemonshowdown.com">Pok&eacute;dex</a></li>-->
+                    <li><a class="button nav-first" href="//pokemonshowdown.com"><img src="./img/pokemonshowdownbeta.png" alt="Pok&eacute;mon Showdown! (beta)" /> Home</a></li>
+                    <li><a class="button" href="//dex.pokemonshowdown.com">Pok&eacute;dex</a></li>-->
                 <!--<li><a class="button" href="//replay.pokemonshowdown.com/">Replays</a></li>-->
                 <!--<li><a class="button" href="//pokemonshowdown.com/ladder/">Ladder</a></li>-->
                 <!--<li><a class="button nav-last" href="//pokemonshowdown.com/forums/">Forum</a></li>
-    </ul>
-    <ul class="nav nav-play">
-        <li><a class="button greenbutton nav-first nav-last" href="//play.pokemonshowdown.com/">Play</a></li>
-    </ul> -->
+                </ul>
+                <ul class="nav nav-play">
+                    <li><a class="button greenbutton nav-first nav-last" href="//play.pokemonshowdown.com/">Play</a></li>
+                </ul> -->
                 <div style="clear:both"></div>
             </div>
         </div>
@@ -71,28 +71,7 @@
                 <input class="gen visually-hidden" type="radio" name="gen" value="9" id="gen9"
                     checked="checked" /><label class="btn btn-small btn-right" for="gen9">S/V</label>
             </span>
-            <br>현재 One Vs One 을 제외한 모드는 PC버전으로만 이용하실 수 있습니다.<br>
-            <span class="notationSelection" aria-labelledby="selectNotationInstruction" role="radiogroup"
-                title="Select the output notation.">
-                <span class="visually-hidden" id="selectNotationInstruction">Select the output notation.</span>
-                <input class="notation visually-hidden" type="radio" name="notation" id="pixels" value="px" /><label
-                    class="btn btn-small btn-left" for="pixels">48th</label>
-                <input class="notation visually-hidden" type="radio" name="notation" id="percentage" value="%" /><label
-                    class="btn btn-small btn-right" for="percentage">100%</label>
-            </span>
-            <span class="modeSelection" aria-labelledby="selectModeInstruction" role="radiogroup"
-                title="Select the calculator's mode of function.">
-                <span class="visually-hidden" id="selectModeInstruction">Select the calculator's mode of
-                    function.</span>
-                <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-one" checked="checked" /><label
-                    class="btn btn-left" for="one-vs-one">One vs One</label>
-                <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-all" /><label
-                    class="btn btn-mid gen-specific g3 g4 g5 g6 g7 g8 g9" for="one-vs-all">One vs All</label>
-                <input class="mode visually-hidden" type="radio" name="mode" id="all-vs-one" /><label
-                    class="btn btn-mid gen-specific g3 g4 g5 g6 g7 g8 g9" for="all-vs-one">All vs One</label>
-                <input class="mode visually-hidden" type="radio" name="mode" id="randoms" /><label class="btn btn-right"
-                    for="randoms">Random Battles</label>
-            </span>
+            현재 One Vs One 을 제외한 모드는 PC버전으로만 이용하실 수 있습니다.
         </div>
         <hr />
         <div aria-label="Move selection" class="move-result-group" role="region" title="선택하면 기술에 따른 계산 결과가 화면에 출력됩니다.">
@@ -164,6 +143,7 @@
                     enabling JavaScript.)</span>
             </div>
         </div>
+        <br>
         <div aria-label="Pok&eacute;mon 1" class="panel" role="region">
             <details open>
                 <summary>>포켓몬1 접기/보이기</summary>
@@ -1834,6 +1814,29 @@
                     </form>
                 </div>
             </fieldset>
+        </div><br>
+        <div aria-label="Settings" role="region">
+            <span class="notationSelection" aria-labelledby="selectNotationInstruction" role="radiogroup"
+                title="Select the output notation.">
+                <span class="visually-hidden" id="selectNotationInstruction">Select the output notation.</span>
+                <input class="notation visually-hidden" type="radio" name="notation" id="pixels" value="px" /><label
+                    class="btn btn-small btn-left" for="pixels">48th</label>
+                <input class="notation visually-hidden" type="radio" name="notation" id="percentage" value="%" /><label
+                    class="btn btn-small btn-right" for="percentage">100%</label>
+            </span><br>
+            <span class="modeSelection" aria-labelledby="selectModeInstruction" role="radiogroup"
+                title="Select the calculator's mode of function.">
+                <span class="visually-hidden" id="selectModeInstruction">Select the calculator's mode of
+                    function.</span>
+                <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-one" checked="checked" /><label
+                    class="btn btn-left" for="one-vs-one">One vs One</label>
+                <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-all" /><label
+                    class="btn btn-mid gen-specific g3 g4 g5 g6 g7 g8 g9" for="one-vs-all">One vs All</label>
+                <input class="mode visually-hidden" type="radio" name="mode" id="all-vs-one" /><label
+                    class="btn btn-mid gen-specific g3 g4 g5 g6 g7 g8 g9" for="all-vs-one">All vs One</label>
+                <input class="mode visually-hidden" type="radio" name="mode" id="randoms" /><label class="btn btn-right"
+                    for="randoms">Random Battles</label>
+            </span>
         </div>
     </div>
     </div>
@@ -1899,7 +1902,8 @@
         <div class="ads">
         </div>
         <div class="ads">
-            <button type="btn" onclick="location.href='https:/\/pokical.com/index.html'" style="width:100%;height:100%;">PC버전으로 보기</button>
+            <button type="btn" onclick="location.href='https:/\/pokical.com/index.html'"
+                style="width:100%;height:100%;">PC버전으로 보기</button>
         </div>
     </div>
 </body>

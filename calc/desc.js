@@ -676,6 +676,11 @@ function squashMultihit(gen, d, hits, err) {
     }
 }
 function buildDescription(description, attacker, defender) {
+    gtag('event', buildDescription, {
+        'event_category': 'engagement',
+        'event_label': '결과값변경',
+        'value': '값변경'
+    });
     var _a = __read(getDescriptionLevels(attacker, defender), 2), attackerLevel = _a[0], defenderLevel = _a[1];
     var output = '';
     if (description.attackBoost) {
