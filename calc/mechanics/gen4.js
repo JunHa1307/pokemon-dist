@@ -150,7 +150,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
     var ignoresWonderGuard = move.hasType('???') || move.named('Fire Fang');
     if ((!ignoresWonderGuard && defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
         (move.hasType('Fire') && defender.hasAbility('Flash Fire')) ||
-        (move.hasType('Water') && defender.hasAbility('Dry Skin', '저수')) ||
+        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Water Absorb')) ||
         (move.hasType('Electric') && defender.hasAbility('Motor Drive', 'Volt Absorb')) ||
         (move.hasType('Ground') && !field.isGravity &&
             !defender.hasItem('검은철구') && defender.hasAbility('Levitate')) ||

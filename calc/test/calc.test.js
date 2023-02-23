@@ -436,7 +436,7 @@ describe('calc', function () {
                 expect(result.range()).toEqual([346, 408]);
                 expect(result.desc()).toBe('100 Atk Gengar Focus Punch vs. 252 HP / 252+ Def Chansey: 346-408 (49.1 - 57.9%) -- 59% chance to 2HKO after 먹다남은음식 recovery');
             });
-            test('저수', function () {
+            test('Water Absorb', function () {
                 var cacturne = Pokemon('Cacturne', {
                     ability: 'Sand Veil'
                 });
@@ -447,7 +447,7 @@ describe('calc', function () {
                 var result = calculate(blastoise, cacturne, surf);
                 expect(result.range()).toEqual([88, 104]);
                 expect(result.desc()).toBe('252 SpA Blastoise Surf vs. 0 HP / 0 SpD Cacturne: 88-104 (31.3 - 37%) -- 76.6% chance to 3HKO');
-                cacturne.ability = '저수';
+                cacturne.ability = 'Water Absorb';
                 result = calculate(blastoise, cacturne, surf);
                 expect(result.damage).toBe(0);
             });

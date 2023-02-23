@@ -1593,7 +1593,7 @@ var ADV_PATCH = {
     Kingler: { abilities: { 0: 'Hyper Cutter' } },
     Koffing: { abilities: { 0: 'Levitate' } },
     Krabby: { abilities: { 0: 'Hyper Cutter' } },
-    Lapras: { abilities: { 0: '저수' } },
+    Lapras: { abilities: { 0: 'Water Absorb' } },
     Lickitung: { abilities: { 0: 'Own Tempo' } },
     Machamp: { abilities: { 0: 'Guts' } },
     Machoke: { abilities: { 0: 'Guts' } },
@@ -1630,9 +1630,9 @@ var ADV_PATCH = {
     Pidgey: { abilities: { 0: 'Keen Eye' } },
     Pikachu: { abilities: { 0: 'Static' } },
     Pinsir: { abilities: { 0: 'Hyper Cutter' } },
-    Poliwag: { abilities: { 0: '저수' } },
-    Poliwhirl: { abilities: { 0: '저수' } },
-    Poliwrath: { abilities: { 0: '저수' } },
+    Poliwag: { abilities: { 0: 'Water Absorb' } },
+    Poliwhirl: { abilities: { 0: 'Water Absorb' } },
+    Poliwrath: { abilities: { 0: 'Water Absorb' } },
     Ponyta: { abilities: { 0: 'Run Away' } },
     Porygon: { abilities: { 0: 'Trace' } },
     Primeape: { abilities: { 0: 'Vital Spirit' } },
@@ -1661,7 +1661,7 @@ var ADV_PATCH = {
     Tauros: { abilities: { 0: 'Intimidate' } },
     Tentacool: { abilities: { 0: 'Clear Body' } },
     Tentacruel: { abilities: { 0: 'Clear Body' } },
-    Vaporeon: { abilities: { 0: '저수' } },
+    Vaporeon: { abilities: { 0: 'Water Absorb' } },
     Venomoth: { abilities: { 0: 'Shield Dust' } },
     Venonat: { abilities: { 0: 'Compound Eyes' } },
     Venusaur: { abilities: { 0: 'Overgrow' } },
@@ -1735,7 +1735,7 @@ var ADV_PATCH = {
     Pichu: { abilities: { 0: 'Static' } },
     Piloswine: { abilities: { 0: 'Oblivious' } },
     Pineco: { abilities: { 0: 'Sturdy' } },
-    Politoed: { abilities: { 0: '저수' } },
+    Politoed: { abilities: { 0: 'Water Absorb' } },
     Porygon2: { abilities: { 0: 'Trace' } },
     Pupitar: { abilities: { 0: 'Shed Skin' } },
     Quagsire: { abilities: { 0: 'Damp' } },
@@ -4195,7 +4195,7 @@ var BW_PATCH = {
         bs: { hp: 55, at: 40, df: 50, sa: 65, sd: 85, sp: 40 },
         weightkg: 33,
         nfe: true,
-        abilities: { 0: '저수' }
+        abilities: { 0: 'Water Absorb' }
     },
     Galvantula: {
         types: ['Bug', 'Electric'],
@@ -4326,7 +4326,7 @@ var BW_PATCH = {
         types: ['Water', 'Ghost'],
         bs: { hp: 100, at: 60, df: 70, sa: 85, sd: 105, sp: 60 },
         weightkg: 135,
-        abilities: { 0: '저수' }
+        abilities: { 0: 'Water Absorb' }
     },
     Joltik: {
         types: ['Bug', 'Electric'],
@@ -4494,7 +4494,7 @@ var BW_PATCH = {
         types: ['Grass'],
         bs: { hp: 75, at: 86, df: 67, sa: 106, sd: 67, sp: 60 },
         weightkg: 28,
-        abilities: { 0: '저수' }
+        abilities: { 0: 'Water Absorb' }
     },
     Meloetta: {
         types: ['Normal', 'Psychic'],
@@ -6167,7 +6167,7 @@ var XY_PATCH = {
         bs: { hp: 80, at: 110, df: 120, sa: 130, sd: 90, sp: 70 },
         weightkg: 195,
         gender: 'N',
-        abilities: { 0: '저수' }
+        abilities: { 0: 'Water Absorb' }
     },
     Volkraken: {
         types: ['Water', 'Fire'],
@@ -7605,7 +7605,7 @@ var SS_PATCH = {
         types: ['Water', 'Ice'],
         bs: { hp: 90, at: 90, df: 100, sa: 80, sd: 90, sp: 55 },
         weightkg: 175,
-        abilities: { 0: '저수' },
+        abilities: { 0: 'Water Absorb' },
         gender: 'N'
     },
     Arctozolt: {
@@ -7880,7 +7880,7 @@ var SS_PATCH = {
         types: ['Water', 'Dragon'],
         bs: { hp: 90, at: 90, df: 100, sa: 70, sd: 80, sp: 75 },
         weightkg: 215,
-        abilities: { 0: '저수' },
+        abilities: { 0: 'Water Absorb' },
         gender: 'N'
     },
     Dracozolt: {
@@ -8171,7 +8171,7 @@ var SS_PATCH = {
         types: ['Water', 'Ice'],
         bs: { hp: 130, at: 85, df: 80, sa: 85, sd: 95, sp: 60 },
         weightkg: 0,
-        abilities: { 0: '저수' },
+        abilities: { 0: 'Water Absorb' },
         baseSpecies: 'Lapras'
     },
     'Linoone-Galar': {
@@ -8427,13 +8427,13 @@ var SS_PATCH = {
         types: ['Ground'],
         bs: { hp: 70, at: 112, df: 105, sa: 65, sd: 123, sp: 78 },
         weightkg: 303.9,
-        abilities: { 0: '저수' }
+        abilities: { 0: 'Water Absorb' }
     },
     Saharascal: {
         types: ['Ground'],
         bs: { hp: 50, at: 80, df: 65, sa: 45, sd: 90, sp: 70 },
         weightkg: 48,
-        abilities: { 0: '저수' },
+        abilities: { 0: 'Water Absorb' },
         nfe: true
     },
     Sandaconda: {

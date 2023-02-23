@@ -103,7 +103,7 @@ function calculateADV(gen, attacker, defender, move, field) {
     if ((defender.hasAbility('Flash Fire') && move.hasType('Fire')) ||
         (defender.hasAbility('Levitate') && move.hasType('Ground')) ||
         (defender.hasAbility('Volt Absorb') && move.hasType('Electric')) ||
-        (defender.hasAbility('저수') && move.hasType('Water')) ||
+        (defender.hasAbility('Water Absorb') && move.hasType('Water')) ||
         (defender.hasAbility('Wonder Guard') && !move.hasType('???') && typeEffectiveness <= 1) ||
         (defender.hasAbility('Soundproof') && move.flags.sound)) {
         desc.defenderAbility = defender.ability;

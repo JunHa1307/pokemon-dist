@@ -162,7 +162,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
         (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
         (move.hasType('Fire') && defender.hasAbility('Flash Fire')) ||
-        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', '저수')) ||
+        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) ||
         (move.hasType('Electric') &&
             defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
         (move.hasType('Ground') &&
