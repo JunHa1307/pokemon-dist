@@ -2406,7 +2406,16 @@
             </fieldset>
         </div>
         <div class="credits">
-            <button style="width:15em;height: 5em;" onclick="partyAnalys()"><b>분석하기</b></button>
+            분석할 포켓몬 수&nbsp;&nbsp;
+            <select class="pokemonCount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6" selected>6</option>
+            </select><br>
+            <button style="width:15em;height: 5em;" onclick="partyAnalysis()"><b>분석하기</b></button>
         </div>
         <div aria-label="Import team" role="region">
             <fieldset class="poke-import">
