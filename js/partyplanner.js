@@ -435,41 +435,41 @@ function partyAnalysis(){
 
     let attackResult = checkTypeStrength(type);
     let defenceResult = checkTypeWeekness(type,list);
-    console.log(defenceResult);
+    console.log(attackResult);
 }
 
 
 function checkTypeStrength(type){
-    typeChart = calc.TYPE_CHART[9];
+    let typeChart = calc.TYPE_CHART[9];
     let typeResultList = {
         '???': 0, Normal:  0, Grass: 0, Fire: 0, Water: 0, Electric: 0, Ice: 0, Flying: 0, Bug: 0,
         Poison: 0, Ground: 0, Rock: 0, Fighting: 0, Psychic: 0, Ghost: 0, Dragon: 0, Dark: 0, Steel: 0, Fairy: 0
     };
-
     for(let i = 0; i < type.length; i++){
-        type1 = typeChart[type[i][0]];
-        type2 = {};
-
+        let type1 = typeChart[type[i][0]];
+        let type2 = {};
+        let type1Keys = Object.keys(type1);
         let typeResult = {};
+
         if(type[i][1] != ""){
             type2 = typeChart[type[i][1]];
 
-            for(let j = 0; j < Object.values(type1).length; j++){
+            for(let j = 0; j < type1Keys.length; j++){
                 let type1Val = Object.values(type1)[j];
                 let type2Val = Object.values(type2)[j];
                 if(type1Val == 0 || type2Val == 0){
-                    typeResult[Object.keys(type1)[j]] = type1Val + type2Val;
+                    typeResult[type1Keys[j]] = type1Val + type2Val;
                 }else if((type1Val * type2Val) == 0.5){
-                    typeResult[Object.keys(type1)[j]] = 0.75;
+                    typeResult[type1Keys[j]] = 0.75;
                 }else{
-                    typeResult[Object.keys(type1)[j]] = type1Val * type2Val;
+                    typeResult[type1Keys[j]] = type1Val * type2Val;
                 }
-                typeResultList[Object.keys(type1)[j]] += typeResult[Object.keys(type1)[j]];
+                typeResultList[type1Keys[j]] += typeResult[type1Keys[j]];
             }
         }else{
-            for(let k = 0; k < Object.values(type1).length; k++){
-                typeResult[Object.keys(type1)[k]] = Object.values(type1)[k];
-                typeResultList[Object.keys(type1)[k]] += typeResult[Object.keys(type1)[k]];
+            for(let k = 0; k < type1Keys.length; k++){
+                typeResult[type1Keys[k]] = Object.values(type1)[k];
+                typeResultList[type1Keys[k]] += typeResult[type1Keys[k]];
             }
         }
     }
@@ -477,28 +477,29 @@ function checkTypeStrength(type){
 }
 
 function checkTypeWeekness(type,list){
-    typeChart = TYPE_CHART_DEFENCE_SV;
+    let typeChart = TYPE_CHART_DEFENCE_SV;
     let typeResultList = {
         '???': 0, Normal:  0, Grass: 0, Fire: 0, Water: 0, Electric: 0, Ice: 0, Flying: 0, Bug: 0,
         Poison: 0, Ground: 0, Rock: 0, Fighting: 0, Psychic: 0, Ghost: 0, Dragon: 0, Dark: 0, Steel: 0, Fairy: 0
     };
     for(let i = 0; i < type.length; i++){
-        type1 = typeChart[type[i][0]];
-        type2 = {};
-
+        let type1 = typeChart[type[i][0]];
+        let type2 = {};
+        let type1Keys = Object.keys(type1);
         let typeResult = {};
+
         if(type[i][1] != ""){
             type2 = typeChart[type[i][1]];
 
-            for(let j = 0; j < Object.values(type1).length; j++){
+            for(let j = 0; j < type1Keys.length; j++){
                 let type1Val = Object.values(type1)[j];
                 let type2Val = Object.values(type2)[j];
                 
-                typeResult[Object.keys(type1)[j]] = type1Val * type2Val;
+                typeResult[type1Keys[j]] = type1Val * type2Val;
             }
         }else{
-            for(let k = 0; k < Object.values(type1).length; k++){
-                typeResult[Object.keys(type1)[k]] = Object.values(type1)[k];
+            for(let k = 0; k < type1Keys.length; k++){
+                typeResult[type1Keys[k]] = Object.values(type1)[k];
             }
         }
 
@@ -524,8 +525,8 @@ function checkTypeWeekness(type,list){
             typeResult.Fire *= 2;
         }
 
-        for(let j = 0; j < Object.values(type1).length; j++){
-            typeResultList[Object.keys(type1)[j]] += typeResult[Object.keys(type1)[j]];
+        for(let j = 0; j < type1Keys.length; j++){
+            typeResultList[type1Keys[j]] += typeResult[type1Keys[j]];
         }
     }
     return typeResultList;

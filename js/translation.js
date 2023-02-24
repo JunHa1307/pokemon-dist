@@ -2933,24 +2933,20 @@ const typeKR = {
      'Fairy':'페어리' ,
      '???':'???'
 }
-keyofnameKR = Object.keys(nameKR);
-keyofmoveKR = Object.keys(moveKR);
-keyofitemKR = Object.keys(itemKR);
-keyofabilityKR = Object.keys(abilityKR);
 
 function findKeyofname(name){
-    let enName = keyofnameKR.find((key) => nameKR[key] === name);
+    let enName = Object.keys(nameKR).find((key) => nameKR[key] === name);
     return enName;
 }
 function findKeyofmove(enmove){
-    let Move = keyofmoveKR.find((key) => moveKR[key] === enmove);
+    let Move = Object.keys(moveKR).find((key) => moveKR[key] === enmove);
     return Move;
 }
 function findKeyofitem(enitem){
-    let item = keyofitemKR.find((key) => itemKR[key] === enitem);
+    let item = Object.keys(itemKR).find((key) => itemKR[key] === enitem);
     return item;
 }
 function findKeyofability(ability){
-    let enability = keyofabilityKR.find((key) => abilityKR[key] === ability);
+    let enability = Object.keys(abilityKR).find((key) => abilityKR[key] === ability);
     return enability;
 }
