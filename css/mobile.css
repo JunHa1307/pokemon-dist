@@ -524,3 +524,8 @@ summary{
 .maximum{
     height: 610.667px;
 }
+.levelChange{
+    width: 2.5em;
+    padding: auto 0;
+    margin: 0;
+}

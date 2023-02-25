@@ -512,3 +512,9 @@ table.field {
 .extraSetMoves {
     width: 100%;
 }
+
+.levelChange{
+    width: 2.5em;
+    padding: auto 0;
+    margin: 0;
+}

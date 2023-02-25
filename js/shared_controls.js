@@ -101,10 +101,15 @@ $("input:radio[name='format']").change(function () {
 });
 
 // auto-calc stats and current HP on change
-$(".level").keyup(function () {
+$(".level").bind("keyup change", function () {
 	var poke = $(this).closest(".poke-info");
 	calcHP(poke);
 	calcStats(poke);
+});
+$(".levelChange").click(function () {
+	let level = $(this).closest(".info-group").children().children(".level");
+	level.val($(this).val());
+	level.change();
 });
 $(".nature").bind("keyup change", function () {
 	calcStats($(this).closest(".poke-info"));
