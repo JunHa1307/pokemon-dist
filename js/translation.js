@@ -982,6 +982,7 @@ const nameKR = {
     "Clodsire" :	"토오",
     "Farigiraf" :	"키키링",
     "Dudunsparce" :	"노고고치",
+    "Dudunsparce-Three-Segment":"노고고치-세마디",
     "Kingambit" :	"대도각참",
     "Great Tusk" :	"위대한엄니",
     "Scream Tail" :	"우렁찬꼬리",

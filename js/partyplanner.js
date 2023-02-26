@@ -1,3 +1,18 @@
+const { SPECIES } = require("../calc/data/species");
+let pokemonsKey = Object.keys(SPECIES[9]);
+let pokemonsVal = Object.values(SPECIES[9]);
+let SPECIES_2 = {};
+for(let i = 0; i < pokemonsKey.length; i ++){
+
+    let bs = 0;
+    for(let j = 0; j < 6; j++){
+        bs += Object.values(SPECIES[9][pokemonsKey[i]].bs)[j];
+    }
+    if(bs >= 420 && nameKR[pokemonsKey[i]] != undefined){
+        SPECIES_2[pokemonsKey[i]] = pokemonsVal[i];
+    }
+}
+console.log(SPECIES_2);
 $(function(){
     $("legend").click(function(){
         if($(this).closest(".poke-info").attr("class") != "poke-info maximum"){
@@ -6,6 +21,19 @@ $(function(){
             $(this).closest(".poke-info").removeClass("maximum").addClass("minimum");
         }
     });
+});
+
+field = createField();
+
+$(".set-selector").change(function () {
+    pokeinfo = $(this).closest(".poke-info");
+    pokemon = createPokemon(pokeinfo);
+    pokeinfo.find(".sp .totalMod").text(getFinalSpeed(9,pokemon,field,field.attackerSide));
+});
+
+$(".sp .evs, .sp .ivs, .sp .base, #itemL1").bind("change keyup",function(){
+    let totalSpeed = getFinalSpeed(9,createPokemon($(this).closest(".poke-info")),field,field.attackerSide);
+    $(this).parents(".sp").find(".totalMod").text(totalSpeed);
 });
 
 
@@ -419,13 +447,17 @@ const TYPE_CHART_DEFENCE_SV = {
 //     console.log(`${key}: ${value}`);
 // }
 // type =[[Grass,Ice],[Grass,Ice],...]
+// 가장 높은 스탯 / 물리내구 / 특내구 / 스피드 
+// 내구력 = HP * 물방 or 특방 / (0.00822 * LV)
+// 카운터 포켓몬 보여주기= 1보다 작은 타입은 빼고 거기서 1보다 큰 타입들이면 배열에 추가
 function partyAnalysis(){
-
-    let list = [];
-
+    $(".sp .evs").change();
+    let list = []; 
     for(let i = 0 ; i < $(".pokemonCount").val(); i++){
         list[i] = createPokemon($(`#p${i+1}`));
+        list[i].stats.spe =getFinalSpeed(9,list[i],field,field.attackerSide);
         list[i].teraType = $(`#p${i+1} .teraType`).val();
+        console.log(list[i]);
     }
     let type = [];
     for(let i = 0; i < list.length; i++){
@@ -435,16 +467,17 @@ function partyAnalysis(){
 
     let attackResult = checkTypeStrength(type);
     let defenceResult = checkTypeWeekness(type,list);
-    console.log(attackResult);
+    console.log(defenceResult);
 }
 
 
 function checkTypeStrength(type){
     let typeChart = calc.TYPE_CHART[9];
-    let typeResultList = {
+    let totalTypeResult = {
         '???': 0, Normal:  0, Grass: 0, Fire: 0, Water: 0, Electric: 0, Ice: 0, Flying: 0, Bug: 0,
         Poison: 0, Ground: 0, Rock: 0, Fighting: 0, Psychic: 0, Ghost: 0, Dragon: 0, Dark: 0, Steel: 0, Fairy: 0
     };
+    let typeResultList = [];
     for(let i = 0; i < type.length; i++){
         let type1 = typeChart[type[i][0]];
         let type2 = {};
@@ -464,24 +497,27 @@ function checkTypeStrength(type){
                 }else{
                     typeResult[type1Keys[j]] = type1Val * type2Val;
                 }
-                typeResultList[type1Keys[j]] += typeResult[type1Keys[j]];
+                totalTypeResult[type1Keys[j]] += typeResult[type1Keys[j]];
             }
         }else{
             for(let k = 0; k < type1Keys.length; k++){
                 typeResult[type1Keys[k]] = Object.values(type1)[k];
-                typeResultList[type1Keys[k]] += typeResult[type1Keys[k]];
+                totalTypeResult[type1Keys[k]] += typeResult[type1Keys[k]];
             }
         }
+        typeResultList[i] = typeResult;
     }
+    typeResultList[type.length] = totalTypeResult;
     return typeResultList;
 }
 
 function checkTypeWeekness(type,list){
     let typeChart = TYPE_CHART_DEFENCE_SV;
-    let typeResultList = {
+    let totalTypeResult = {
         '???': 0, Normal:  0, Grass: 0, Fire: 0, Water: 0, Electric: 0, Ice: 0, Flying: 0, Bug: 0,
         Poison: 0, Ground: 0, Rock: 0, Fighting: 0, Psychic: 0, Ghost: 0, Dragon: 0, Dark: 0, Steel: 0, Fairy: 0
     };
+    let typeResultList = [];
     for(let i = 0; i < type.length; i++){
         let type1 = typeChart[type[i][0]];
         let type2 = {};
@@ -524,10 +560,11 @@ function checkTypeWeekness(type,list){
         }else if(list[i].hasAbility('Fluffy')){
             typeResult.Fire *= 2;
         }
-
         for(let j = 0; j < type1Keys.length; j++){
-            typeResultList[type1Keys[j]] += typeResult[type1Keys[j]];
+            totalTypeResult[type1Keys[j]] += typeResult[type1Keys[j]];
         }
+        typeResultList[i] = typeResult;
     }
+    typeResultList[type.length] = totalTypeResult;
     return typeResultList;
 }
