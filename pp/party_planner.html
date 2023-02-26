@@ -14,7 +14,7 @@
     <link type="text/css" rel="stylesheet" href="/css/mobile.css" />
     <link type="text/css" rel="stylesheet" href="/css/vendor/bootstrap.css" />
     <!-- Google tag (gtag.js) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB7QER3T3B"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB7QER3T3B"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -23,8 +23,9 @@
         gtag('config', 'G-QB7QER3T3B');
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894734166446106"
-        crossorigin="anonymous"></script> -->
+        crossorigin="anonymous"></script>
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <style>
         fieldset{
             border-radius: 10px;
@@ -42,17 +43,10 @@
     <nav>
         <div class="header">
             <div class="header-inner">
-                <!-- <ul class="nav">
-                    <li><a class="button nav-first" href="//pokemonshowdown.com"><img src="./img/pokemonshowdownbeta.png" alt="Pok&eacute;mon Showdown! (beta)" /> Home</a></li>
-                    <li><a class="button" href="//dex.pokemonshowdown.com">Pok&eacute;dex</a></li>-->
-                <!--<li><a class="button" href="//replay.pokemonshowdown.com/">Replays</a></li>-->
-                <!--<li><a class="button" href="//pokemonshowdown.com/ladder/">Ladder</a></li>-->
-                <!--<li><a class="button nav-last" href="//pokemonshowdown.com/forums/">Forum</a></li>
+                <ul>
+                    <li><a href="./m_index.html">데미지 계산기</a></li>
+                    <li><a href="./pp/party_planner.html">파티 플래너</a></li>
                 </ul>
-                <ul class="nav nav-play">
-                    <li><a class="button greenbutton nav-first nav-last" href="//play.pokemonshowdown.com/">Play</a></li>
-                </ul> -->
-                <div style="clear:both"></div>
             </div>
         </div>
     </nav>
@@ -2432,6 +2426,29 @@
             </select><br>
             <button class= "btn btn-xxxwide calc-trigger" style="width:15em;height: 5em;" onclick="partyAnalysis()"><b>분석하기</b></button>
         </div>
+        <div class="analysisResult" style="background-color: white;border: 2px solid black;border-radius: 8px; width: 25em;">
+            <div class="totalResult">
+                <h2 align="center">팀 분석 결과</h2>
+                &nbsp; 공격 상성 분석 (분석한 포켓몬 수가 6이면 평균 = 6)
+                <canvas id="attackChart"></canvas>
+                &nbsp; 방어 상성 분석
+                <canvas id="defenceChart"></canvas>
+                &nbsp; 주요 능력치
+                <div align="center">
+                    <table border="1" style="border-radius: 8px;" class="pokemonStatView"> 
+                        
+                    </table>
+                </div>
+            </div><br><br>
+            &nbsp; 개인 능력치 분석
+            <div class="pokemonResult">
+            </div>
+            <div>
+                &nbsp; 파티에 강할 것으로 예상되는 포켓몬 리스트 (!!Beta!!)<br>
+                <span style="color: red;" class="counterPoke">
+                </span>
+            </div>
+        </div> 
         <div aria-label="Import team" role="region">
             <fieldset class="poke-import">
                 <legend align="center">Import / Export</legend>
@@ -2444,6 +2461,7 @@
                 </div>
             </fieldset>
         </div>
+        <button class="upScrollBtn" onclick="upScroll()">UP</button>
     </div>
 
 

@@ -16,8 +16,23 @@ a img {
     min-height: 50px;
 }
 .header-inner {
-    max-width: 605px;
+    display: flex;
+    justify-content:center;
+    align-content: center;
     margin: 0 auto;
+}
+.header-inner ul{
+    padding: 0;
+}
+.header-inner li{
+    float: left;
+    list-style: none;
+    padding:0 1em 0 1em;
+}
+.header-inner a{
+    font-size:larger;
+    text-decoration: none;
+    color: blue;
 }
 .nav, .nav li, .nav-play, .nav-play li {
     display: block;
@@ -528,4 +543,35 @@ summary{
     width: 2.5em;
     padding: auto 0;
     margin: 0;
+}
+.pokemonStatView td, .pokemonStatView th {
+    padding: 3px;
+    border-radius: 4px;
+}
+.upScrollBtn{
+    width: 4em;
+    height: 4em;
+    border: #cfcfcf;
+    border-radius: 10em;
+    position: fixed;
+    bottom: 10px;
+    left: 7px;
+    cursor: pointer;
+    background-color: #6a9488; 
+    color: #ffffff;
+}
+
+.pokemonResult{
+    margin: 1em;
+    border: 2px solid #6a9488;
+    border-radius: 8px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pokemonResult img{
+    width: 15em;
+    height: 15em;
 }
