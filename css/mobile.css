@@ -27,7 +27,10 @@ a img {
 .header-inner li{
     float: left;
     list-style: none;
+    border-left: 1px solid #AAA;
+    border-right: 1px solid #AAA;
     padding:0 1em 0 1em;
+    margin-right: 1em;
 }
 .header-inner a{
     font-size:larger;

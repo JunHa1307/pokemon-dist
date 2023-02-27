@@ -524,7 +524,11 @@ table.field {
 .header-inner li{
     float: left;
     list-style: none;
-    padding:1em 3em 0 3em;
+    border-left: 1px solid #AAA;
+    border-right: 1px solid #AAA;
+    padding:1em 3em 1em 3em;
+    margin-right: 1em ;
+    background-color:#e3e3e3;
 }
 .header-inner a{
     font-size:larger;
