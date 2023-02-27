@@ -471,9 +471,8 @@ function partyAnalysis(){
 
     pokeAnalysis(list,type);
     counterPokeAnalysis(defenceResult,list);
-
+    
     console.log(defenceResult);
-    console.log(list[0]);
 
     $('.analysisResult').slideDown(function(){
         window.scrollTo({top:document.querySelector(".analysisResult").offsetTop,behavior:'smooth'});
@@ -507,12 +506,12 @@ function checkTypeStrength(type){
                 }else{
                     typeResult[type1Keys[j]] = type1Val * type2Val;
                 }
-                totalTypeResult[type1Keys[j]] += typeResult[type1Keys[j]];
+                totalTypeResult[type1Keys[j]] += typeResult[type1Keys[j]]/type.length;
             }
         }else{
             for(let k = 0; k < type1Keys.length; k++){
                 typeResult[type1Keys[k]] = Object.values(type1)[k];
-                totalTypeResult[type1Keys[k]] += typeResult[type1Keys[k]];
+                totalTypeResult[type1Keys[k]] += typeResult[type1Keys[k]]/type.length;
             }
         }
         typeResultList[i] = typeResult;
@@ -579,7 +578,7 @@ function checkTypeWeekness(type,list){
             typeResult.Fire *= 2;
         }
         for(let j = 0; j < type1Keys.length; j++){
-            totalTypeResult[type1Keys[j]] += typeResult[type1Keys[j]];
+            totalTypeResult[type1Keys[j]] += typeResult[type1Keys[j]]/type.length;
         }
         typeResultList[i] = typeResult;
     }
@@ -801,25 +800,37 @@ function pokePosition(pokemon){
 
     if(list[1] == null && pokemon.hasAbility("Snow Warning") || pokemon.hasAbility("Drought") || pokemon.hasAbility("Drizzle")){
         list.push("첫턴 날씨요원 ");
+    }else if(list[1] == null && pokemon.hasAbility("Swift Swim") || pokemon.hasAbility("Sand Rush") || pokemon.hasAbility("Slush Rush") || pokemon.hasAbility("Solar Power")){
+        list.push("날씨팟 에이스");
     }
 
-    if(list[0] == '방어' || list[0] == '특수방어' || list[0] == '체력'){
+    if(list[0] == '체력' && (pokemon.stats.atk > pokemon.stats.def || pokemon.stats.spa > pokemon.stats.spd)){
+        list.push("딜탱");
+    }else if(list[0] == '방어' || list[0] == '특수방어' || list[0] == '체력'){
         list.push("막이");
     }else if(list[0] == '공격'){
         list.push("물리 어태커");
     }else if(list[0] == '특수공격'){
-        list.push("특수공격 어태커");
+        list.push("특수 어태커");
+    }else if(list[0] == '스피드'){
+        if(pokemon.stats.atk > pokemon.stats.spa){
+            list.push("빠른 물리 어태커");
+        }else if(pokemon.stats.atk < pokemon.stats.spa){
+            list.push("빠른 특수 어태커");
+        }else{
+            list.push("빠른 쌍두 어태커");
+        }
     }
-    console.log(list);
     return list;
 }
 
 function counterPokeAnalysis(defenceResult,list){
     document.querySelector(".counterPoke").innerHTML = '';
     let weekType = [];
+    let counterPokeList = [];
     for(let i = 0; i < Object.keys(defenceResult[list.length]).length; i++){
         let defence = defenceResult[list.length];
-        if(defence[Object.keys(defence)[i]] > list.length){
+        if(defence[Object.keys(defence)[i]] > 1){
             weekType.push(Object.keys(defence)[i]); 
         }
     }
@@ -832,8 +843,12 @@ function counterPokeAnalysis(defenceResult,list){
             }
         }
         if(isWeek){
-            document.querySelector(".counterPoke").innerHTML += nameKR[Object.keys(SPECIES_2)[i]] + " / "
+            counterPokeList.push(nameKR[Object.keys(SPECIES_2)[i]]);
         }
+    }
+    counterPokeList.sort();
+    for(let i = 0; i<counterPokeList.length; i++){
+        document.querySelector(".counterPoke").innerHTML += "<span>"+counterPokeList[i] +"</span>" + " / ";
     }
 }
 

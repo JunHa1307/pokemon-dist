@@ -573,7 +573,14 @@ summary{
     align-items: center;
     flex-direction: column;
 }
-
+.counterPokeDiv{
+    margin: 1em;
+    border: 2px solid #6a9488;
+    border-radius: 8px;
+}
+.counterPoke>span{
+    color: black;
+}
 .pokemonResult img{
     width: 15em;
     height: 15em;
