@@ -202,7 +202,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         (move.named('Poltergeist') && !defender.item)) {
         return result;
     }
-    if ((field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
+    if ((field.hasWeather('Harsh Sunshine') && move.hasType('Water') /*자체 업데이트*/&& !move.named('Hydro Steam')) ||
         (field.hasWeather('Heavy Rain') && move.hasType('Fire'))) {
         desc.weather = field.weather;
         return result;
@@ -322,13 +322,13 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     }
     var noWeatherBoost = defender.hasItem('만능우산');
     if (!noWeatherBoost &&
-        ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
+        ((field.hasWeather('Sun', 'Harsh Sunshine') && (move.hasType('Fire')|| move.named('Hydro Steam'))) ||
             (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water')))) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 6144) / 4096);
         desc.weather = field.weather;
     }
     else if (!noWeatherBoost &&
-        ((field.hasWeather('Sun') && move.hasType('Water')) ||
+        ((field.hasWeather('Sun') && move.hasType('Water')) /*자체 업데이트*/&& !move.named('Hydro Steam') ||
             (field.hasWeather('Rain') && move.hasType('Fire')))) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 2048) / 4096);
         desc.weather = field.weather;
@@ -680,7 +680,7 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
     }
     var terrainMultiplier = gen.num > 7 ? 5325 : 6144;
     if ((0, util_2.isGrounded)(attacker, field)) {
-        if ((field.hasTerrain('Electric') && move.hasType('Electric')) ||
+        if ((field.hasTerrain('Electric') && (move.hasType('Electric') /*자체 업데이트*/|| move.named('Psychic Blade'))) ||
             (field.hasTerrain('Grassy') && move.hasType('Grass')) ||
             (field.hasTerrain('Psychic') && move.hasType('Psychic'))) {
             bpMods.push(terrainMultiplier);

@@ -1275,7 +1275,8 @@ const nameKR = {
     'Mimikyu-Busted-Totem':'주인따라큐-들킨모습',
     'Gumshoos-Totem':'주인형사구스',
     'Flabébé':'플라베베',
-
+    'Walking Wake':'굽이치는물결',
+    'Iron Leaves' : '무쇠잎새'
 
 
 
@@ -2196,7 +2197,9 @@ const moveKR = {
     '거다이분석':'G-Max Volcalith',
     '거다이만뢰':'G-Max Volt Crash',
     '거다이옥염':'G-Max Wildfire',
-    '거다이풍격':'G-Max Wind Rage'
+    '거다이풍격':'G-Max Wind Rage',
+    '하이드로스팀':'Hydro Steam',
+    '사이코블레이드':'Psychic Blade'
 }
 
 const itemKR = {
