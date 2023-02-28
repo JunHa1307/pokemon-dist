@@ -471,8 +471,7 @@ function partyAnalysis(){
 
     pokeAnalysis(list,type);
     counterPokeAnalysis(defenceResult,list);
-    
-    console.log(defenceResult);
+
 
     $('.analysisResult').slideDown(function(){
         window.scrollTo({top:document.querySelector(".analysisResult").offsetTop,behavior:'smooth'});
