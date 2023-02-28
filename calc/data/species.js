@@ -9778,7 +9778,7 @@ var SV_PATCH = {
         abilities: { 0: 'Protosynthesis' }
     },
     'Iron Leaves' : {
-        types: ['Grass', 'Phychic'],
+        types: ['Grass', 'Psychic'],
         bs: { hp: 90, at: 130, df: 88, sa: 70, sd: 108, sp: 104 },
         weightkg: 125,
         gender: 'N',
