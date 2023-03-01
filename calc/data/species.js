@@ -8999,7 +8999,7 @@ var SV_PATCH = {
     Dunsparce: { nfe: true },
     Girafarig: { nfe: true },
     Primeape: { nfe: true },
-    Tauros: {otherFormes: ['Tauros-Paldea-Combat', 'Tauros-Paldea-Blaze', 'Tauros-Paldea-Aqua']},
+    Tauros: {otherFormes: ['Tauros-Paldea-Aqua', 'Tauros-Paldea-Blaze', 'Tauros-Paldea-Combat']},
     Wooper: { otherFormes: ['Wooper-Paldea'] },
     Zacian: { bs: { at: 120 } },
     'Zacian-Crowned': { bs: { at: 150 } },
@@ -9253,15 +9253,17 @@ var SV_PATCH = {
         weightkg: 5,
         gender: 'N',
         abilities: { 0: 'Rattled' },
-        nfe: true
+        nfe: true,
+        otherFormes:['Gimmighoul-Roaming']
     },
     'Gimmighoul-Roaming': {
         types: ['Ghost'],
         bs: {hp: 45, at: 30, df: 25, sa: 75, sd: 45, sp: 80},
-        weightkg: 5,
+        weightkg: 0.1,
         gender: 'N',
         abilities: {0: 'Run Away'},
         nfe: true,
+        baseSpecies: 'Gimmighoul'
     },
     Glimmet: {
         types: ['Rock', 'Poison'],
