@@ -8979,7 +8979,7 @@ var PLA_PATCH = {
     },
     'Zoroark-Hisui': {
         types: ['Normal', 'Ghost'],
-        bs: { hp: 60, at: 105, df: 60, sa: 120, sd: 60, sp: 105 },
+        bs: {hp: 55, at: 100, df: 60, sa: 125, sd: 60, sp: 110},
         weightkg: 73,
         abilities: { 0: 'Illusion' },
         baseSpecies: 'Zoroark'
@@ -8999,7 +8999,7 @@ var SV_PATCH = {
     Dunsparce: { nfe: true },
     Girafarig: { nfe: true },
     Primeape: { nfe: true },
-    Tauros: { otherFormes: ['Tauros-Paldea', 'Tauros-Paldea-Fire', 'Tauros-Paldea-Water'] },
+    Tauros: {otherFormes: ['Tauros-Paldea-Combat', 'Tauros-Paldea-Blaze', 'Tauros-Paldea-Aqua']},
     Wooper: { otherFormes: ['Wooper-Paldea'] },
     Zacian: { bs: { at: 120 } },
     'Zacian-Crowned': { bs: { at: 150 } },
@@ -9201,7 +9201,7 @@ var SV_PATCH = {
     },
     Flittle: {
         types: ['Psychic'],
-        bs: { hp: 30, at: 35, df: 30, sa: 55, sd: 40, sp: 75 },
+        bs: { hp: 30, at: 35, df: 30, sa: 55, sd: 30, sp: 75 },
         weightkg: 1.5,
         abilities: { 0: 'Anticipation' },
         nfe: true
@@ -9254,6 +9254,14 @@ var SV_PATCH = {
         gender: 'N',
         abilities: { 0: 'Rattled' },
         nfe: true
+    },
+    'Gimmighoul-Roaming': {
+        types: ['Ghost'],
+        bs: {hp: 45, at: 30, df: 25, sa: 75, sd: 45, sp: 80},
+        weightkg: 5,
+        gender: 'N',
+        abilities: {0: 'Run Away'},
+        nfe: true,
     },
     Glimmet: {
         types: ['Rock', 'Poison'],
@@ -9314,6 +9322,13 @@ var SV_PATCH = {
         weightkg: 111,
         gender: 'N',
         abilities: { 0: 'Quark Drive' }
+    },
+    'Iron Leaves': {
+        types: ['Grass', 'Psychic'],
+        bs: {hp: 90, at: 130, df: 88, sa: 70, sd: 108, sp: 104},
+        weightkg: 125,
+        gender: 'N',
+        abilities: {0: 'Quark Drive'},
     },
     'Iron Moth': {
         types: ['Fire', 'Poison'],
@@ -9660,22 +9675,22 @@ var SV_PATCH = {
         weightkg: 8,
         abilities: { 0: 'Commander' }
     },
-    'Tauros-Paldea': {
-        types: ['Fighting'],
+    'Tauros-Paldea-Aqua': {
+        types: ['Fighting', 'Water'],
         bs: { hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100 },
         weightkg: 88.4,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Tauros'
     },
-    'Tauros-Paldea-Fire': {
+    'Tauros-Paldea-Blaze': {
         types: ['Fighting', 'Fire'],
         bs: { hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100 },
         weightkg: 88.4,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Tauros'
     },
-    'Tauros-Paldea-Water': {
-        types: ['Fighting', 'Water'],
+    'Tauros-Paldea-Combat': {
+        types: ['Fighting'],
         bs: { hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100 },
         weightkg: 88.4,
         abilities: { 0: 'Intimidate' },
@@ -9734,6 +9749,13 @@ var SV_PATCH = {
         weightkg: 90,
         abilities: { 0: 'Mold Breaker' }
     },
+    'Walking Wake': {
+        types: ['Water', 'Dragon'],
+        bs: {hp: 99, at: 83, df: 91, sa: 125, sd: 83, sp: 109},
+        weightkg: 280,
+        gender: 'N',
+        abilities: {0: 'Protosynthesis'},
+    },
     Wattrel: {
         types: ['Electric', 'Flying'],
         bs: { hp: 40, at: 40, df: 35, sa: 55, sd: 40, sp: 70 },
@@ -9768,21 +9790,6 @@ var SV_PATCH = {
         bs: { hp: 35, at: 100, df: 50, sa: 50, sd: 70, sp: 120 },
         weightkg: 5.4,
         abilities: { 0: 'Gooey' }
-    },
-    // 자체 업데이트 
-    'Walking Wake' : {
-        types: ['Water', 'Dragon'],
-        bs: { hp: 99, at: 83, df: 91, sa: 125, sd: 83, sp: 109 },
-        weightkg: 280,
-        gender: 'N',
-        abilities: { 0: 'Protosynthesis' }
-    },
-    'Iron Leaves' : {
-        types: ['Grass', 'Psychic'],
-        bs: { hp: 90, at: 130, df: 88, sa: 70, sd: 108, sp: 104 },
-        weightkg: 125,
-        gender: 'N',
-        abilities: { 0: 'Quark Drive' }
     }
 };
 var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH, PLA_PATCH);

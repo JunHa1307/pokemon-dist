@@ -688,7 +688,7 @@ function buildDescription(description, attacker, defender) {
     output = appendIfSet(output, attackerLevel);
     output = appendIfSet(output, description.attackEVs);
     output = appendIfSet(output, description.attackerItem);
-    output = appendIfSet(output, description.attackerAbility);
+    output = appendIfSet(output, abilityKR[description.attackerAbility]);
     output = appendIfSet(output, description.rivalry);
     if (description.isBurned) {
         output += '화상 ';
@@ -753,7 +753,7 @@ function buildDescription(description, attacker, defender) {
         output += '/ ' + description.defenseEVs + ' ';
     }
     output = appendIfSet(output, description.defenderItem);
-    output = appendIfSet(output, description.defenderAbility);
+    output = appendIfSet(output, abilityKR[description.defenderAbility]);
     if (description.isTabletsOfRuin) {
         output += ' 재앙의 목간 적용';
     }
@@ -761,7 +761,7 @@ function buildDescription(description, attacker, defender) {
         output += ' 재앙의 그릇 적용 ';
     }
     if (description.isProtected) {
-        output += 'protected ';
+        output += '방어사용 ';
     }
     if (description.isDefenderDynamaxed) {
         output += '다이맥스 ';

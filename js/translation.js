@@ -1192,9 +1192,9 @@ const nameKR = {
     "Zigzagoon-Galar" :	"가라르지그제구리",
     "Oinkologne-F" :	"암컷퍼퓨돈",
     "Palafin-Hero" :	"마이티폼돌핀맨",
-    "Tauros-Paldea" :	"팔데아켄타로스",
-    "Tauros-Paldea-Fire" :	"블레이즈팔데아켄타로스",
-    "Tauros-Paldea-Water" :	"워터팔데아켄타로스",
+    "Tauros-Paldea-Combat" :	"팔데아켄타로스",
+    "Tauros-Paldea-Blaze" :	"블레이즈팔데아켄타로스",
+    "Tauros-Paldea-Aqua" :	"워터팔데아켄타로스",
     "Wooper-Paldea" :	"팔데아우파",
     "Arcanine-Hisui" :	"히스이윈디",
     "Avalugg-Hisui" :	"히스이크레베이스",
@@ -1276,8 +1276,8 @@ const nameKR = {
     'Gumshoos-Totem':'주인형사구스',
     'Flabébé':'플라베베',
     'Walking Wake':'굽이치는물결',
-    'Iron Leaves' : '무쇠잎새'
-
+    'Iron Leaves' : '무쇠잎새',
+    'Gimmighoul-Roaming' : '모으령도보폼'
 
 
 
@@ -2199,7 +2199,7 @@ const moveKR = {
     '거다이옥염':'G-Max Wildfire',
     '거다이풍격':'G-Max Wind Rage',
     '하이드로스팀':'Hydro Steam',
-    '사이코블레이드':'Psychic Blade'
+    '사이코블레이드':'Psyblade'
 }
 
 const itemKR = {

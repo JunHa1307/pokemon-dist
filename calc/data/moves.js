@@ -4380,6 +4380,13 @@ var SV_PATCH = {
         makesContact: true,
         isPunch: true
     },
+    'Hydro Steam': {
+        bp: 80,
+        type: 'Water',
+        category: 'Special',
+        zp: 160,
+        maxPower: 130,
+    },
     'Hyper Drill': {
         bp: 100,
         type: 'Normal',
@@ -4526,6 +4533,15 @@ var SV_PATCH = {
         bp: 0,
         type: 'Normal',
         category: 'Status'
+    },
+    'Psyblade':{
+        bp: 80,
+        type: 'Psychic',
+        category: 'Physical',
+        zp: 160,
+        maxPower: 130,
+        makesContact: true,
+        isSlicing: true,
     },
     'Psyshield Bash': {
         bp: 70,
@@ -4735,22 +4751,6 @@ var SV_PATCH = {
         secondaries: true,
         isWind: true,
         target: 'allAdjacentFoes'
-    },
-    // 자체 업데이트
-    'Psychic Blade':{
-        bp: 80,
-        type: 'Psychic',
-        makesContact: true,
-        category: 'Physical',
-        zp: 160,
-        maxPower: 130
-    },
-    'Hydro Steam':{
-        bp: 80,
-        type: 'Water',
-        category: 'Special',
-        zp: 160,
-        maxPower: 130
     }
 };
 var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH);

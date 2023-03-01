@@ -115,13 +115,11 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         }
     }
     else if (move.named('Raging Bull')) {
-        if (attacker.named('Tauros-Paldea')) {
+        if (attacker.named('Tauros-Paldea-Combat')) {
             type = 'Fighting';
-        }
-        else if (attacker.named('Tauros-Paldea-Fire')) {
+        } else if (attacker.named('Tauros-Paldea-Blaze')) {
             type = 'Fire';
-        }
-        else if (attacker.named('Tauros-Paldea-Water')) {
+        } else if (attacker.named('Tauros-Paldea-Aqua')) {
             type = 'Water';
         }
     }
@@ -202,7 +200,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         (move.named('Poltergeist') && !defender.item)) {
         return result;
     }
-    if ((field.hasWeather('Harsh Sunshine') && move.hasType('Water') /*자체 업데이트*/&& !move.named('Hydro Steam')) ||
+    if ((field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
         (field.hasWeather('Heavy Rain') && move.hasType('Fire'))) {
         desc.weather = field.weather;
         return result;
@@ -322,13 +320,13 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     }
     var noWeatherBoost = defender.hasItem('만능우산');
     if (!noWeatherBoost &&
-        ((field.hasWeather('Sun', 'Harsh Sunshine') && (move.hasType('Fire')|| move.named('Hydro Steam'))) ||
+        ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
             (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water')))) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 6144) / 4096);
         desc.weather = field.weather;
     }
     else if (!noWeatherBoost &&
-        ((field.hasWeather('Sun') && move.hasType('Water')) /*자체 업데이트*/&& !move.named('Hydro Steam') ||
+        ((field.hasWeather('Sun') && move.hasType('Water') && !move.named('Hydro Steam')) ||
             (field.hasWeather('Rain') && move.hasType('Fire')))) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 2048) / 4096);
         desc.weather = field.weather;
@@ -516,6 +514,13 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
                 basePower = move.bp;
             desc.moveBP = basePower;
             break;
+        case 'Hydro Steam':
+            basePower = move.bp * (field.hasWeather('Sun') ? 1.5 : 1);
+            if (field.hasWeather('Sun') && !attacker.hasItem('Utility Umbrella')) {
+                desc.moveBP = basePower;
+                desc.weather = field.weather;
+            }
+            break;
         case 'Terrain Pulse':
             basePower = move.bp * ((0, util_2.isGrounded)(attacker, field) && field.terrain ? 2 : 1);
             desc.moveBP = basePower;
@@ -523,6 +528,14 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
         case 'Rising Voltage':
             basePower = move.bp * (((0, util_2.isGrounded)(defender, field) && field.hasTerrain('Electric')) ? 2 : 1);
             desc.moveBP = basePower;
+            break;
+        case 'Psyblade':
+            // TODO check how being grounded interacts
+            basePower = move.bp * ((isGrounded(attacker, field) && field.hasTerrain('Electric')) ? 1.5 : 1);
+            if (field.hasTerrain('Electric') && isGrounded(attacker, field)) {
+                desc.moveBP = basePower;
+                desc.terrain = field.terrain;
+            }
             break;
         case 'Fling':
             basePower = (0, items_1.getFlingPower)(attacker.item);
@@ -680,7 +693,7 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
     }
     var terrainMultiplier = gen.num > 7 ? 5325 : 6144;
     if ((0, util_2.isGrounded)(attacker, field)) {
-        if ((field.hasTerrain('Electric') && (move.hasType('Electric') /*자체 업데이트*/|| move.named('Psychic Blade'))) ||
+        if ((field.hasTerrain('Electric') && move.hasType('Electric')) ||
             (field.hasTerrain('Grassy') && move.hasType('Grass')) ||
             (field.hasTerrain('Psychic') && move.hasType('Psychic'))) {
             bpMods.push(terrainMultiplier);
