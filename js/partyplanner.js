@@ -759,7 +759,7 @@ function pokeAnalysis(list,type){
                                                             "<br>최속(spe+ 252) "+((((list[i].stats.spe/1.1-5)*100/list[i].level-(252/4)-31)/2) %1 != 0 ? Math.floor(((list[i].stats.spe/1.1-5)*100/list[i].level-(252/4)-31)/2) : ((list[i].stats.spe/1.1-5)*100/list[i].level-(252/4)-31)/2-1)+"족 추월<br>"+
                                                             "준속(spe 252) "+((((list[i].stats.spe/1.0-5)*100/list[i].level-(252/4)-31)/2) %1 != 0 ? Math.floor(((list[i].stats.spe/1.0-5)*100/list[i].level-(252/4)-31)/2) : ((list[i].stats.spe/1.0-5)*100/list[i].level-(252/4)-31)/2-1)+"족 추월<br>"+
                                                             "스카프 최속 "+(((((list[i].stats.spe/1.5)/1.1-5)*100/list[i].level-(252/4)-31)/2-1) %1 !=0 ? Math.floor((((list[i].stats.spe/1.5)/1.1-5)*100/list[i].level-(252/4)-31)/2) : (((list[i].stats.spe/1.5)/1.1-5)*100/list[i].level-(252/4)-31)/2-1)+"족 추월<br>"+
-                                                            "스카프 준속 "+(((((list[i].stats.spe/1.5)/1.0-5)*100/list[i].level-(252/4)-31)/2-1) %1 !=0 ? Math.floor((((list[i].stats.spe/1.5)/1.0-5)*100/list[i].level-(252/4)-31)/2) : (((list[i].stats.spe/1.5)/1.0-5)*100/list[i].level-(252/4)-31)/2-1)+"족 추월";
+                                                            "스카프 준속 "+(((((list[i].stats.spe/1.5)/1.0-5)*100/list[i].level-(252/4)-31)/2-1) %1 !=0 ? Math.floor((((list[i].stats.spe/1.5)/1.0-5)*100/list[i].level-(252/4)-31)/2) : (((list[i].stats.spe/1.5)/1.0-5)*100/list[i].level-(252/4)-31)/2-1)+"족 추월"
                                                         +"</div>";
     }
 }
