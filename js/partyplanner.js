@@ -755,7 +755,11 @@ function pokeAnalysis(list,type){
                                                             "<div>"+ nameKR[list[i].name] +"</div>"+
                                                             "<div>타입 : "+typeKR[type[i][0]] + (type[i][1] ? " / "+typeKR[type[i][1]] : '')+"</div>"+
                                                             "<div>가장 강한 능력치 : "+  position[0]+"</div>"+
-                                                            "<div>예상 역할 : " + position[1] + (position[2]?position[2]:'') + "</div>"
+                                                            "<div>예상 역할 : " + position[1] + (position[2]?position[2]:'') + "</div>"+
+                                                            "<br>최속(spe+ 252) "+((((list[i].stats.spe/1.1-5)*100/list[i].level-(252/4)-31)/2) %1 != 0 ? Math.floor(((list[i].stats.spe/1.1-5)*100/list[i].level-(252/4)-31)/2) : ((list[i].stats.spe/1.1-5)*100/list[i].level-(252/4)-31)/2-1)+"족 추월<br>"+
+                                                            "준속(spe 252) "+((((list[i].stats.spe/1.0-5)*100/list[i].level-(252/4)-31)/2) %1 != 0 ? Math.floor(((list[i].stats.spe/1.0-5)*100/list[i].level-(252/4)-31)/2) : ((list[i].stats.spe/1.0-5)*100/list[i].level-(252/4)-31)/2-1)+"족 추월<br>"+
+                                                            "스카프 최속 "+(((((list[i].stats.spe/1.5)/1.1-5)*100/list[i].level-(252/4)-31)/2-1) %1 !=0 ? Math.floor((((list[i].stats.spe/1.5)/1.1-5)*100/list[i].level-(252/4)-31)/2) : (((list[i].stats.spe/1.5)/1.1-5)*100/list[i].level-(252/4)-31)/2-1)+"족 추월<br>"+
+                                                            "스카프 준속 "+(((((list[i].stats.spe/1.5)/1.0-5)*100/list[i].level-(252/4)-31)/2-1) %1 !=0 ? Math.floor((((list[i].stats.spe/1.5)/1.0-5)*100/list[i].level-(252/4)-31)/2) : (((list[i].stats.spe/1.5)/1.0-5)*100/list[i].level-(252/4)-31)/2-1)+"족 추월";
                                                         +"</div>";
     }
 }
