@@ -15,14 +15,16 @@ var __read = (this && this.__read) || function (o, n) {
     }
     return ar;
 };
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
+var __values = (this && this.__values) || function(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
         }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 };
 exports.__esModule = true;
 
@@ -41,11 +43,8 @@ var Result = (function () {
         return this.fullDesc();
     };
     Result.prototype.range = function () {
-        var range = damageRange(this.damage);
-        if (typeof range[0] === 'number')
-            return range;
-        var d = range;
-        return [d[0][0] + d[0][1], d[1][0] + d[1][1]];
+        var _a = __read(damageRange(this.damage), 2), min = _a[0], max = _a[1];
+        return [min, max];
     };
     Result.prototype.fullDesc = function (notation, err) {
         if (notation === void 0) { notation = '%'; }
@@ -72,23 +71,46 @@ var Result = (function () {
 }());
 exports.Result = Result;
 function damageRange(damage) {
-    if (typeof damage === 'number')
-        return [damage, damage];
-    if (damage.length > 2) {
-        var d_1 = damage;
-        if (d_1[0] > d_1[d_1.length - 1])
-            return [Math.min.apply(Math, __spreadArray([], __read(d_1), false)), Math.max.apply(Math, __spreadArray([], __read(d_1), false))];
-        return [d_1[0], d_1[d_1.length - 1]];
+    var range = multiDamageRange(damage);
+    if (typeof range[0] === 'number')
+        return range;
+    var d = range;
+    var summedRange = [0, 0];
+    for (var i = 0; i < d[0].length; i++) {
+        summedRange[0] += d[0][i];
+        summedRange[1] += d[1][i];
     }
-    if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
-        return [[damage[0], damage[1]], [damage[0], damage[1]]];
-    }
-    var d = damage;
-    if (d[0][0] > d[0][d[0].length - 1])
-        d[0] = d[0].slice().sort();
-    if (d[1][0] > d[1][d[1].length - 1])
-        d[1] = d[1].slice().sort();
-    return [[d[0][0], d[1][0]], [d[0][d[0].length - 1], d[1][d[1].length - 1]]];
+    return summedRange;
 }
 exports.damageRange = damageRange;
+function multiDamageRange(damage) {
+    var e_1, _a;
+    if (typeof damage === 'number')
+        return [damage, damage];
+    if (typeof damage[0] !== 'number') {
+        damage = damage;
+        var ranges = [[], []];
+        try {
+            for (var damage_1 = __values(damage), damage_1_1 = damage_1.next(); !damage_1_1.done; damage_1_1 = damage_1.next()) {
+                var damageList = damage_1_1.value;
+                ranges[0].push(damageList[0]);
+                ranges[1].push(damageList[damageList.length - 1]);
+            }
+        }
+        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        finally {
+            try {
+                if (damage_1_1 && !damage_1_1.done && (_a = damage_1["return"])) _a.call(damage_1);
+            }
+            finally { if (e_1) throw e_1.error; }
+        }
+        return ranges;
+    }
+    var d = damage;
+    if (d.length < 16) {
+        return [d, d];
+    }
+    return [d[0], d[d.length - 1]];
+}
+exports.multiDamageRange = multiDamageRange;
 //# sourceMappingURL=result.js.map

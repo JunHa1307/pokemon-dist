@@ -45,6 +45,12 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
         desc.isProtected = true;
         return result;
     }
+    if (move.name === 'Pain Split') {
+        var average = Math.floor((attacker.curHP() + defender.curHP()) / 2);
+        var damage_1 = Math.max(0, defender.curHP() - average);
+        result.damage = damage_1;
+        return result;
+    }
     if (gen.num === 1) {
         var fixedDamage = (0, util_1.handleFixedDamageMoves)(attacker, move);
         if (fixedDamage) {
@@ -98,6 +104,10 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
     if (move.hits > 1) {
         desc.hits = move.hits;
     }
+    if (move.name === 'Triple Kick') {
+        move.bp = move.hits === 2 ? 15 : move.hits === 3 ? 20 : 10;
+        desc.moveBP = move.bp;
+    }
     if (move.named('Flail', 'Reversal')) {
         move.isCrit = false;
         var p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
@@ -150,8 +160,8 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
             desc.isLightScreen = true;
         }
     }
-    if ((attacker.named('Pikachu') && attacker.hasItem('전기구슬') && !isPhysical) ||
-        (attacker.named('Cubone', 'Marowak') && attacker.hasItem('굵은뼈') && isPhysical)) {
+    if ((attacker.named('Pikachu') && attacker.hasItem('Light Ball') && !isPhysical) ||
+        (attacker.named('Cubone', 'Marowak') && attacker.hasItem('Thick Club') && isPhysical)) {
         at *= 2;
         desc.attackerItem = attacker.item;
     }
@@ -161,7 +171,7 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
     }
     if (move.named('Present')) {
         var lookup = {
-            Normal:  0, Fighting: 1, Flying: 2, Poison: 3, Ground: 4, Rock: 5, Bug: 7,
+            Normal: 0, Fighting: 1, Flying: 2, Poison: 3, Ground: 4, Rock: 5, Bug: 7,
             Ghost: 8, Steel: 9, '???': 19, Fire: 20, Water: 21, Grass: 22, Electric: 23,
             Psychic: 24, Ice: 25, Dragon: 26, Dark: 27
         };
@@ -169,7 +179,7 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
         df = Math.max(lookup[attacker.types[1] ? attacker.types[1] : attacker.types[0]], 1);
         lv = Math.max(lookup[defender.types[1] ? defender.types[1] : defender.types[0]], 1);
     }
-    if (defender.named('Ditto') && defender.hasItem('금속파우더')) {
+    if (defender.named('Ditto') && defender.hasItem('Metal Powder')) {
         df = Math.floor(df * 1.5);
         desc.defenderItem = defender.item;
     }
@@ -182,9 +192,9 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
         baseDamage = Math.floor(baseDamage * 2);
         desc.isSwitching = 'out';
     }
-    var itemBoostType = attacker.hasItem('용의이빨')
+    var itemBoostType = attacker.hasItem('Dragon Fang')
         ? undefined
-        : (0, items_1.getItemBoostType)(attacker.hasItem('용의비늘') ? '용의이빨' : attacker.item);
+        : (0, items_1.getItemBoostType)(attacker.hasItem('Dragon Scale') ? 'Dragon Fang' : attacker.item);
     if (move.hasType(itemBoostType)) {
         baseDamage = Math.floor(baseDamage * 1.1);
         desc.attackerItem = attacker.item;
@@ -214,19 +224,43 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
         result.damage = baseDamage;
         return result;
     }
-    result.damage = [];
+    var damage = [];
     for (var i = 217; i <= 255; i++) {
         if (gen.num === 2) {
-            result.damage[i - 217] = Math.max(1, Math.floor((baseDamage * i) / 255));
+            damage[i - 217] = Math.max(1, Math.floor((baseDamage * i) / 255));
         }
         else {
             if (baseDamage === 1) {
-                result.damage[i - 217] = 1;
+                damage[i - 217] = 1;
             }
             else {
-                result.damage[i - 217] = Math.floor((baseDamage * i) / 255);
+                damage[i - 217] = Math.floor((baseDamage * i) / 255);
             }
         }
+    }
+    result.damage = damage;
+    if (move.hits > 1) {
+        var damageMatrix = [damage];
+        for (var times = 1; times < move.hits; times++) {
+            var damage_2 = [];
+            for (var damageMultiplier = 217; damageMultiplier <= 255; damageMultiplier++) {
+                var newFinalDamage = 0;
+                if (gen.num === 2) {
+                    newFinalDamage = Math.max(1, Math.floor((baseDamage * damageMultiplier) / 255));
+                }
+                else {
+                    if (baseDamage === 1) {
+                        newFinalDamage = 1;
+                    }
+                    else {
+                        newFinalDamage = Math.floor((baseDamage * damageMultiplier) / 255);
+                    }
+                }
+                damage_2[damageMultiplier - 217] = newFinalDamage;
+            }
+            damageMatrix[times] = damage_2;
+        }
+        result.damage = damageMatrix;
     }
     return result;
 }

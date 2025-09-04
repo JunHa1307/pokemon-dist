@@ -3,71 +3,72 @@ exports.__esModule = true;
 
 var util_1 = require("./util");
 exports.SEED_BOOSTED_STAT = {
-    '일렉트릭시드': 'def',
-    '그래스시드': 'def',
-    '미스트시드': 'spd',
-    '사이코시드': 'spd'
+    'Electric Seed': 'def',
+    'Grassy Seed': 'def',
+    'Misty Seed': 'spd',
+    'Psychic Seed': 'spd'
 };
 function getItemBoostType(item) {
     switch (item) {
-        case '용의플레이트':
-        case '용의이빨':
+        case 'Draco Plate':
+        case 'Dragon Fang':
             return 'Dragon';
-        case '공포플레이트':
-        case '검은안경':
+        case 'Dread Plate':
+        case 'Black Glasses':
             return 'Dark';
-        case '대지플레이트':
-        case '부드러운모래':
+        case 'Earth Plate':
+        case 'Soft Sand':
             return 'Ground';
-        case '주먹플레이트':
-        case '검은띠':
+        case 'Fist Plate':
+        case 'Black Belt':
             return 'Fighting';
-        case '불구슬플레이트':
-        case '목탄':
+        case 'Flame Plate':
+        case 'Charcoal':
             return 'Fire';
-        case '고드름플레이트':
-        case '녹지않는얼음':
+        case 'Icicle Plate':
+        case 'Never-Melt Ice':
             return 'Ice';
-        case '비단벌레플레이트':
-        case '은빛가루':
+        case 'Insect Plate':
+        case 'Silver Powder':
             return 'Bug';
-        case '강철플레이트':
-        case '금속코트':
+        case 'Iron Plate':
+        case 'Metal Coat':
             return 'Steel';
-        case '초록플레이트':
-        case '꽃향로':
-        case '기적의씨':
+        case 'Meadow Plate':
+        case 'Rose Incense':
+        case 'Miracle Seed':
             return 'Grass';
-        case '이상한플레이트':
-        case '괴상한향로':
-        case '휘어진스푼':
+        case 'Mind Plate':
+        case 'Odd Incense':
+        case 'Twisted Spoon':
             return 'Psychic';
-        case '정령플레이트':
+        case 'Fairy Feather':
+        case 'Pixie Plate':
             return 'Fairy';
-        case '푸른하늘플레이트':
-        case '예리한부리':
+        case 'Sky Plate':
+        case 'Sharp Beak':
             return 'Flying';
-        case '물방울플레이트':
-        case '바닷물향로':
-        case '잔물결향로':
-        case '신비의물방울':
+        case 'Splash Plate':
+        case 'Sea Incense':
+        case 'Wave Incense':
+        case 'Mystic Water':
             return 'Water';
-        case '원령플레이트':
-        case '저주의부적':
+        case 'Spooky Plate':
+        case 'Spell Tag':
             return 'Ghost';
-        case '암석플레이트':
-        case '암석향로':
-        case '딱딱한돌':
+        case 'Stone Plate':
+        case 'Rock Incense':
+        case 'Hard Stone':
             return 'Rock';
-        case '맹독플레이트':
-        case '독바늘':
+        case 'Toxic Plate':
+        case 'Poison Barb':
             return 'Poison';
-        case '우뢰플레이트':
-        case '자석':
+        case 'Zap Plate':
+        case 'Magnet':
             return 'Electric';
-        case '실크스카프':
-        case '핑크빛리본':
-        case '물방울리본':
+        case 'Silk Scarf':
+        case 'Pink Bow':
+        case 'Polkadot Bow':
             return 'Normal';
         default:
             return undefined;
@@ -76,41 +77,41 @@ function getItemBoostType(item) {
 exports.getItemBoostType = getItemBoostType;
 function getBerryResistType(berry) {
     switch (berry) {
-        case '카리열매':
+        case 'Chilan Berry':
             return 'Normal';
-        case '오카열매':
+        case 'Occa Berry':
             return 'Fire';
-        case '꼬시개열매':
+        case 'Passho Berry':
             return 'Water';
-        case '초나열매':
+        case 'Wacan Berry':
             return 'Electric';
-        case '린드열매':
+        case 'Rindo Berry':
             return 'Grass';
-        case '플카열매':
+        case 'Yache Berry':
             return 'Ice';
-        case '로플열매':
+        case 'Chople Berry':
             return 'Fighting';
-        case '으름열매':
+        case 'Kebia Berry':
             return 'Poison';
-        case '슈캐열매':
+        case 'Shuca Berry':
             return 'Ground';
-        case '바코열매':
+        case 'Coba Berry':
             return 'Flying';
-        case '야파열매':
+        case 'Payapa Berry':
             return 'Psychic';
-        case '리체열매':
+        case 'Tanga Berry':
             return 'Bug';
-        case '루미열매':
+        case 'Charti Berry':
             return 'Rock';
-        case '수불열매':
+        case 'Kasib Berry':
             return 'Ghost';
-        case '하반열매':
+        case 'Haban Berry':
             return 'Dragon';
-        case '마코열매':
+        case 'Colbur Berry':
             return 'Dark';
-        case '바리비열매':
+        case 'Babiri Berry':
             return 'Steel';
-        case '로셀열매':
+        case 'Roseli Berry':
             return 'Fairy';
         default:
             return undefined;
@@ -130,8 +131,8 @@ var FLING_120 = new Set([
     'TR73',
 ]);
 var FLING_100 = new Set([
-    '딱딱한돌',
-    '룸서비스',
+    'Hard Stone',
+    'Room Service',
     'Claw Fossil',
     'Dome Fossil',
     'Helix Fossil',
@@ -154,8 +155,8 @@ var FLING_100 = new Set([
     'TR75',
 ]);
 var FLING_90 = new Set([
-    '심해의이빨',
-    '굵은뼈',
+    'Deep Sea Tooth',
+    'Thick Club',
     'TR02',
     'TR04',
     'TR05',
@@ -175,22 +176,22 @@ var FLING_90 = new Set([
 ]);
 var FLING_85 = new Set(['TR01', 'TR41', 'TR62', 'TR93', 'TR97', 'TR98']);
 var FLING_80 = new Set([
-    '돌격조끼',
-    '허탕보험',
-    '이빠진포트',
-    '깨진포트',
-    '통굽부츠',
-    '약점보험',
-    '선제공격손톱',
+    'Assault Vest',
+    'Blunder Policy',
+    'Chipped Pot',
+    'Cracked Pot',
+    'Heavy-Duty Boots',
+    'Weakness Policy',
+    'Quick Claw',
     'Dawn Stone',
     'Dusk Stone',
-    '에레키부스터',
-    '마그마부스터',
-    '동글동글돌',
-    '프로텍터',
-    '향기주머니',
-    '휘핑팝',
-    '예리한손톱',
+    'Electirizer',
+    'Magmarizer',
+    'Oval Stone',
+    'Protector',
+    'Sachet',
+    'Whipped Dream',
+    'Razor Claw',
     'Shiny Stone',
     'TR16',
     'TR18',
@@ -215,55 +216,55 @@ var FLING_80 = new Set([
     'TR99',
 ]);
 var FLING_70 = new Set([
-    '독바늘',
-    '용의이빨',
-    '파워앵클릿',
-    '파워밴드',
-    '파워벨트',
-    '파워리스트',
-    '파워렌즈',
-    '파워웨이트',
+    'Poison Barb',
+    'Dragon Fang',
+    'Power Anklet',
+    'Power Band',
+    'Power Belt',
+    'Power Bracer',
+    'Power Lens',
+    'Power Weight',
 ]);
 var FLING_60 = new Set([
-    '금강옥',
-    '축축한바위',
-    '뜨거운바위',
-    '대파',
-    '백옥',
-    '교정깁스',
-    '울퉁불퉁멧',
+    'Adamant Orb',
+    'Damp Rock',
+    'Heat Rock',
+    'Leek',
+    'Lustrous Orb',
+    'Macho Brace',
+    'Rocky Helmet',
     'Stick',
-    '만능우산',
-    '그라운드코트',
+    'Utility Umbrella',
+    'Terrain Extender',
 ]);
 var FLING_30 = new Set([
-    '구근',
-    '검은띠',
-    '검은오물',
-    '검은안경',
-    '충전지',
-    '목탄',
-    '심해의비늘',
-    '화염구슬',
-    '왕의징표석',
-    '생명의구슬',
-    '전기구슬',
-    '빛의점토',
-    '자석',
-    '금속코트',
-    '기적의씨',
-    '신비의물방울',
-    '녹지않는얼음',
-    '예리한이빨',
-    '초점렌즈',
-    '마음의물방울',
-    '저주의부적',
-    '달콤한사과',
-    '새콤한사과',
-    '목스프레이',
-    '맹독구슬',
-    '휘어진스푼',
-    '용의비늘',
+    'Absorb Bulb',
+    'Black Belt',
+    'Black Sludge',
+    'Black Glasses',
+    'Cell Battery',
+    'Charcoal',
+    'Deep Sea Scale',
+    'Flame Orb',
+    'King\'s Rock',
+    'Life Orb',
+    'Light Ball',
+    'Light Clay',
+    'Magnet',
+    'Metal Coat',
+    'Miracle Seed',
+    'Mystic Water',
+    'Never-Melt Ice',
+    'Razor Fang',
+    'Scope Lens',
+    'Soul Dew',
+    'Spell Tag',
+    'Sweet Apple',
+    'Tart Apple',
+    'Throat Spray',
+    'Toxic Orb',
+    'Twisted Spoon',
+    'Dragon Scale',
     'Energy Powder',
     'Fire Stone',
     'Leaf Stone',
@@ -272,67 +273,67 @@ var FLING_30 = new Set([
     'Thunder Stone',
     'Up-Grade',
     'Water Stone',
-    '나무열매주스',
-    '검은오물',
-    '고운비늘',
+    'Berry Juice',
+    'Black Sludge',
+    'Prism Scale',
     'Ice Stone',
-    '금왕관',
-    '빛이끼',
-    '탈출버튼',
-    '눈덩이',
-    '은왕관',
+    'Gold Bottle Cap',
+    'Luminous Moss',
+    'Eject Button',
+    'Snowball',
+    'Bottle Cap',
 ]);
 var FLING_10 = new Set([
-    '풍선',
-    '베리사탕공예',
-    '구애머리띠',
-    '구애스카프',
-    '구애안경',
-    '네잎사탕공예',
-    '빨간실',
-    '일렉트릭시드',
-    '달인의띠',
-    '꽃사탕공예',
-    '기합의머리띠',
-    '기합의띠',
-    '만복향로',
-    '그래스시드',
-    '느림보꼬리',
-    '무사태평향로',
-    '먹다남은음식',
-    '하트사탕공예',
-    '멘탈허브',
-    '금속파우더',
-    '박하열매',
-    '기적의열매',
-    '미스트시드',
-    '힘의머리띠',
-    '파워Grass허브',
-    '사이코시드',
-    '괴상한향로',
-    '스피드파우더',
-    '영계의천',
-    '레드카드',
-    '리본사탕공예',
-    '겨냥표적',
-    '암석향로',
-    '꽃향로',
-    '바닷물향로',
-    '아름다운허물',
-    '실크스카프',
-    '은빛가루',
-    '보송보송바위',
-    '부드러운모래',
-    '평온의방울',
-    '스타사탕공예',
-    '딸기사탕공예',
-    '잔물결향로',
-    '하양허브',
-    '광각렌즈',
-    '박식안경',
-    '포커스렌즈',
-    '은빛가루',
-    '파워Grass허브',
+    'Air Balloon',
+    'Berry Sweet',
+    'Choice Band',
+    'Choice Scarf',
+    'Choice Specs',
+    'Clover Sweet',
+    'Destiny Knot',
+    'Electric Seed',
+    'Expert Belt',
+    'Flower Sweet',
+    'Focus Band',
+    'Focus Sash',
+    'Full Incense',
+    'Grassy Seed',
+    'Lagging Tail',
+    'Lax Incense',
+    'Leftovers',
+    'Love Sweet',
+    'Mental Herb',
+    'Metal Powder',
+    'Mint Berry',
+    'Miracle Berry',
+    'Misty Seed',
+    'Muscle Band',
+    'Power Herb',
+    'Psychic Seed',
+    'Odd Incense',
+    'Quick Powder',
+    'Reaper Cloth',
+    'Red Card',
+    'Ribbon Sweet',
+    'Ring Target',
+    'Rock Incense',
+    'Rose Incense',
+    'Sea Incense',
+    'Shed Shell',
+    'Silk Scarf',
+    'Silver Powder',
+    'Smooth Rock',
+    'Soft Sand',
+    'Soothe Bell',
+    'Star Sweet',
+    'Strawberry Sweet',
+    'Wave Incense',
+    'White Herb',
+    'Wide Lens',
+    'Wise Glasses',
+    'Zoom Lens',
+    'Silver Powder',
+    'Power Herb',
     'TR00',
     'TR07',
     'TR12',
@@ -369,7 +370,7 @@ var FLING_10 = new Set([
 function getFlingPower(item) {
     if (!item)
         return 0;
-    if (['검은철구', 'TR43', 'TR71'].includes(item))
+    if (['Big Nugget', 'Iron Ball', 'TR43', 'TR71'].includes(item))
         return 130;
     if (FLING_120.has(item))
         return 85;
@@ -389,9 +390,9 @@ function getFlingPower(item) {
         return 70;
     if (FLING_60.has(item))
         return 60;
-    if (['탈출팩', '예리한부리', '괴상한패치'].includes(item))
+    if (['Eject Pack', 'Sharp Beak', 'Dubious Disc'].includes(item))
         return 50;
-    if (['차가운바위', '진화의휘석', '럭키펀치'].includes(item))
+    if (['Icy Rock', 'Eviolite', 'Lucky Punch'].includes(item))
         return 40;
     if (FLING_30.has(item))
         return 30;
@@ -410,13 +411,13 @@ function getNaturalGift(gen, item) {
 exports.getNaturalGift = getNaturalGift;
 function getTechnoBlast(item) {
     switch (item) {
-        case '블레이즈카세트':
+        case 'Burn Drive':
             return 'Fire';
-        case '프리즈카세트':
+        case 'Chill Drive':
             return 'Ice';
-        case '아쿠아카세트':
+        case 'Douse Drive':
             return 'Water';
-        case '번개카세트':
+        case 'Shock Drive':
             return 'Electric';
         default:
             return undefined;

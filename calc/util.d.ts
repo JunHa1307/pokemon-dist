@@ -1,4 +1,4 @@
-import { ID } from './data/interface';
+import type { ID } from './data/interface';
 export declare function toID(text: any): ID;
 export declare function error(err: boolean, msg: string): void;
 export declare function assignWithout(a: {

@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>포키컬 포켓몬 데미지 계산기</title>
     <meta name="description" content="포켓몬스터 스칼렛/바이올렛 + 모든 세대 포켓몬 데미지 계산기">
-    <meta name="keyword" content="포켓몬, 9세대, 계산기">
+    <meta name="keyword" content="포켓몬, 데미지, 계산기">
     <meta property="og:title" content="포키컬 포켓몬 데미지 계산기">
     <meta property="og:description" content="포켓몬스터 스칼렛/바이올렛 + 모든 세대 포켓몬 데미지 계산기">
-    <link type="text/css" rel="stylesheet" href="js/vendor/select2/select2.css" />
-    <link type="text/css" rel="stylesheet" href="./css/main.css?" />
+    <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?2f087485" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
-    <!-- Google tag (gtag.js) -->
+    <link type="text/css" rel="stylesheet" href="./css/dark-theme.css?c25b750c" id="dark-theme-styles">
+        <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB7QER3T3B"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -22,33 +24,103 @@
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894734166446106"crossorigin="anonymous"></script>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Immediately loads the dark theme in order to reduce FOIT -->
+    <script>
+        // localStorage will only store strings
+        // This means that if it has the value 'false',
+        // It will be truthy.
+        if ((localStorage.getItem('darkTheme') || '' + window.matchMedia('(prefers-color-scheme: dark)').matches) === 'false') {
+            document.getElementById('dark-theme-styles').disabled = true;
+        }
+    </script>
+    <!-- i18next 및 플러그인 CDN -->
+    <script src="https://unpkg.com/i18next@21.6.14/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@1.4.3/i18nextHttpBackend.min.js"></script>
+    <script src="https://unpkg.com/jquery-i18next@1.2.1/dist/umd/jquery-i18next.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        i18next
+            .use(i18nextHttpBackend)
+            .init({
+                lng: "ko", // 기본 언어
+                fallbackLng: "en",
+                debug: false,
+                backend: {
+                    loadPath: "./locales/{{lng}}/translation.json"
+                }
+            }, function(err, t) {
+                jqueryI18next.init(i18next, $, { useOptionsAttr: true });
+                $('body').localize();
+                // option 태그 강제 번역
+                $('option[data-i18n]').each(function() {
+                    var key = $(this).data('i18n');
+                    $(this).text(i18next.t(key));
+                });
+                // 🔽 <label> 등 title 속성 번역 적용
+                $('[data-i18n-title]').each(function () {
+                    var key = $(this).data('i18n-title');
+                    var translated = i18next.t(key);
+                    if (translated) {
+                        $(this).attr('title', translated);
+                    }
+                });
+                // move-type select의 option에 data-i18n 속성 추가
+                $("select.move-type option").each(function() {
+                    var val = $(this).val();
+                    if (val) {
+                        $(this).attr('data-i18n', val.toLowerCase());
+                        $(this).text(i18next.t(val.toLowerCase()));
+                    }
+                });
+                $(".gen").last().change();
+            });
+        });
+
+        function changeLang(lang) {
+            i18next.changeLanguage(lang, () => {
+                $('body').localize();
+                // option 태그 강제 번역
+                $('option[data-i18n]').each(function() {
+                    var key = $(this).data('i18n');
+                    $(this).text(i18next.t(key));
+                });
+                // 🔽 <label> 등 title 속성 번역 적용
+                $('[data-i18n-title]').each(function () {
+                    var key = $(this).data('i18n-title');
+                    var translated = i18next.t(key);
+                    if (translated) {
+                        $(this).attr('title', translated);
+                    }
+                });
+                // move-type select의 option에 data-i18n 속성 추가
+                $("select.move-type option").each(function() {
+                    var val = $(this).val();
+                    if (val) {
+                        $(this).attr('data-i18n', val.toLowerCase());
+                        $(this).text(i18next.t(val.toLowerCase()));
+                    }
+                });
+            });
+        }
+    </script>
 </head>
 
-<body>
+<body class="dark-theme">
 
-<nav><div class="header"><div class="header-inner">
-    <!-- <ul class="nav">
-        <li><a class="button nav-first" href="//pokemonshowdown.com"><img src="./img/pokemonshowdownbeta.png" alt="Pok&eacute;mon Showdown! (beta)" /> Home</a></li>
-        <li><a class="button" href="//dex.pokemonshowdown.com">Pok&eacute;dex</a></li>-->
-        <!--<li><a class="button" href="//replay.pokemonshowdown.com/">Replays</a></li>-->
-        <!--<li><a class="button" href="//pokemonshowdown.com/ladder/">Ladder</a></li>-->
-        <!--<li><a class="button nav-last" href="//pokemonshowdown.com/forums/">Forum</a></li>
-    </ul>-->
-    <!-- <ul class="nav nav-play">
-        <li><a class="button greenbutton nav-first nav-last" href="//play.pokemonshowdown.com/">Play</a></li>
-    </ul> -->
-    <ul>
-        <li><a href="./m_index.html">데미지 계산기</a></li>
-        <li><a href="./pp/party_planner.html">파티 플래너</a></li>
-    </ul>
-    <div style="clear:both"></div>
-</div></div></nav>
+<header>
+    <div class="nav-wrapper"><ul class="nav">
+        <!-- <li><a class="button nav-first" href="./m_index.html">데미지 계산기</a></li> -->
+        <!-- <li><a class="button greenbutton nav-first nav-last" href="./pp/party_planner.html">파티 플래너</a></li> -->
+    </ul></div>
+</header>
+
+<!-- START WRAPPER -->
 <div class="wrapper">
 
+    <span class="title-text main-title-text">Pok&eacute;mon Damage Calculator</span>
     <div aria-label="Settings" role="region">
-        <span class="title-text">포키컬 포켓몬 데미지 계산기</span>
-        <span class="genSelection" aria-labelledby="selectGenInstruction" role="radiogroup" title="세대(포켓몬 버젼)를 선택할 수 있습니다.">
-            <span class="visually-hidden" id="selectGenInstruction">세대(포켓몬 버젼)를 선택할 수 있습니다.</span>
+        <span class="genSelection" aria-labelledby="selectGenInstruction" role="radiogroup" title="Select the generation.">
+            <span class="visually-hidden" id="selectGenInstruction">Select the generation.</span>
             <input class="gen visually-hidden" type="radio" name="gen" value="1" id="gen1" /><label class="btn btn-small btn-left" for="gen1">RBY</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="2" id="gen2" /><label class="btn btn-small btn-mid" for="gen2">GSC</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="3" id="gen3" /><label class="btn btn-small btn-mid" for="gen3">ADV</label>
@@ -66,16 +138,17 @@
         </span>
         <span class="modeSelection" aria-labelledby="selectModeInstruction" role="radiogroup" title="Select the calculator's mode of function.">
             <span class="visually-hidden" id="selectModeInstruction">Select the calculator's mode of function.</span>
-            <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-one" /><label class="btn btn-left" for="one-vs-one">One vs One</label>
-            <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-all" /><label class="btn btn-mid" for="one-vs-all">One vs All</label>
-            <input class="mode visually-hidden" type="radio" name="mode" id="all-vs-one" /><label class="btn btn-mid" for="all-vs-one">All vs One</label>
-            <input class="mode visually-hidden" type="radio" name="mode" id="randoms" checked="checked" /><label class="btn btn-right" for="randoms">Random Battles</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-one" /><label class="btn btn-left btn-wide" for="one-vs-one">One vs One</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-all" /><label class="btn btn-mid btn-wide gen-specific g3 g4 g5 g6 g7 g8 g9" for="one-vs-all">One vs All</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="all-vs-one" /><label class="btn btn-mid btn-wide gen-specific g3 g4 g5 g6 g7 g8 g9" for="all-vs-one">All vs One</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="randoms" /><label class="btn btn-mid btn-xwide" for="randoms">Random Battles</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="oms" checked="checked" /><label class="btn btn-right btn-xwide" for="oms">Other Metagames</label>
         </span>
     </div>
     <hr />
-    <div aria-label="Move selection" class="move-result-group" role="region" title="선택하면 기술에 따른 계산 결과가 화면에 출력됩니다.">
+    <div aria-label="Move selection" class="move-result-group" role="region" title="Select a move to show detailed results.">
         <div  aria-labelledby="resultHeaderL" class="move-result-subgroup" role="radiogroup">
-            <div class="result-move-header"><span id="resultHeaderL">Pok&eacute;mon 1이(가) 지닌 기술들 (클릭하면 결과가 계산됩니다.)</span>
+            <div class="result-move-header"><span id="resultHeaderL">Pok&eacute;mon 1's Moves (select one to show detailed results)</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveL1" checked="checked" aria-describedby="resultDamageL1" />
@@ -99,7 +172,7 @@
             </div>
         </div>
         <div aria-labelledby="resultHeaderR" class="move-result-subgroup" role="radiogroup">
-            <div class="result-move-header"><span id="resultHeaderR">Pok&eacute;mon 2이(가) 지닌 기술들 (클릭하면 결과가 계산됩니다.)</span>
+            <div class="result-move-header"><span id="resultHeaderR">Pok&eacute;mon 2's Moves (select one to show detailed results)</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR1" aria-describedby="resultDamageR1" />
@@ -124,43 +197,48 @@
         </div>
     </div>
     <div aria-label="Calculation results" class="main-result-group" role="region">
-        <div class="big-text" title="Click to copy.">
-            <span id="mainResult">Loading...</span>
-            <span id="tooltipText">Copied</span>
+        <div class="big-text">
+            <span id="mainResult" title="Click to copy.">Loading...</span>
+            <div id="tooltipText">Copied</div>
         </div>
-        <div class="small-text"><span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript.)</span>
+        <div class="small-text">
+            <details id="damageValues">
+                <summary id="firstDmgValues" style="display: block;">(If you see this message for more than a few seconds, try enabling JavaScript.)</summary>
+                <p id="restDmgValues" style="white-space: pre-wrap"></p>
+            </details>
         </div>
     </div>
 
     <div aria-label="Pok&eacute;mon 1" class="panel" role="region">
         <fieldset class="poke-info" id="p1">
-            <legend align="center">포켓몬 1</legend>
+            <legend align="center">Pok&eacute;mon 1</legend>
             <input type="text" class="set-selector calc-trigger" />
             <span id="importedSetsOptions" style="width:auto; display:none">
-                <input type="checkbox" id="importedSets" /> import한 것들만 보기 <br />
-                <button id="clearSets">Clear Custom Sets</button>
+                <input type="checkbox" id="importedSets" /> Only show imported sets <br />
+                <button id="clearSets">Clear Imported Sets</button>
             </span>
             <div class="info-group top">
                 <div>
-                    <label>타입</label>
+                    <label>Type</label>
                     <select aria-label="type1" class="type1 terrain-trigger calc-trigger"></select>
                     <select aria-label="type2" class="type2 terrain-trigger calc-trigger"></select>
+                    <small class="right">(<a class="analysis links-lighten" target="_blank" href="">Smogon&nbsp;analysis</a>)</small>
                 </div>
                 <div class="gen-specific g9">
-                    <label>테라스탈</label>
+                    <label>Tera Type</label>
                     <select class="teraType terrain-trigger calc-trigger"></select>
-                    <input type="checkbox" title= "테라스탈을 사용했습니까?" class="teraToggle terrain-trigger calc-trigger">
+                    <input type="checkbox" title= "Has this Pok&eacute;mon terastalized?" class="teraToggle terrain-trigger calc-trigger">
                 </div>
                 <div class="hide">
-                    <label>폼</label>
+                    <label>Forme</label>
                     <select class="forme calc-trigger"></select>
                 </div>
                 <div class="hide">
-                    <label>성별</label>
-                    <select class="gender calc-trigger"><option></option><option selected="selected">남</option><option>여</option></select>
+                    <label>Gender</label>
+                    <select class="gender calc-trigger"><option></option><option selected="selected">Male</option><option>Female</option></select>
                 </div>
                 <div>
-                    <label for="levelL1">레벨</label>
+                    <label for="levelL1">Level</label>
                     <input class="level calc-trigger" id="levelL1" value="100" />
                 </div>
                 <div class="hide">
@@ -173,9 +251,9 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th scope="col">종족값</th>
-                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">개체값</th>
-                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">노력치</th>
+                            <th scope="col">Base</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">IVs</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">EVs</th>
                             <th class="gen-specific g1 g2 hide" scope="col">DVs</th>
                             <th></th>
                             <th></th>
@@ -184,7 +262,7 @@
                     <tbody>
                         <tr class="hp">
                             <th scope="row">
-                                <label>체력(HP)</label>
+                                <label>HP</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -204,7 +282,7 @@
                         </tr>
                         <tr class="at">
                             <th scope="row">
-                                <label>공격(Atk)</label>
+                                <label>Attack</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -240,7 +318,7 @@
                         </tr>
                         <tr class="df">
                             <th scope="row">
-                                <label>방어(Def)</label>
+                                <label>Defense</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -276,7 +354,7 @@
                         </tr>
                         <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
-                                <label>특수공격(SpA)</label>
+                                <label>Sp. Atk</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -312,7 +390,7 @@
                         </tr>
                         <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
-                                <label>특방(SpD)</label>
+                                <label>Sp. Def</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -378,7 +456,7 @@
                         </tr>
                         <tr class="sp">
                             <th scope="row">
-                                <label>스피드(Spe)</label>
+                                <label>Speed</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -414,85 +492,88 @@
                             <td><span class="totalMod">---</span>
                             </td>
                         </tr>
+                        <tr class="totalevs">
+                            <th scope="row">
+                                <label>Total</label>
+                            </th>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
+                                <span class="evs calc-trigger">0</span>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <div class="info-group info-selectors">
                 <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                    <label for="natureL1">성격</label>
+                    <label for="natureL1">Nature</label>
                     <select class="nature calc-trigger" id="natureL1">
-                        <option value="Adamant">고집 (+Atk, -SpA)</option>
-                        <option value="Bashful">수줍음</option>
-                        <option value="Bold">대담 (+Def, -Atk)</option>
-                        <option value="Brave">용감 (+Atk, -Spe)</option>
-                        <option value="Calm">차분 (+SpD, -Atk)</option>
-                        <option value="Careful">신중 (+SpD, -SpA)</option>
-                        <option value="Docile">온순</option>
-                        <option value="Gentle">얌전 (+SpD, -Def)</option>
-                        <option value="Hardy" selected="selected">노력</option>
-                        <option value="Hasty">성급 (+Spe, -Def)</option>
-                        <option value="Impish">장난꾸러기 (+Def, -SpA)</option>
-                        <option value="Jolly">명랑 (+Spe, -SpA)</option>
-                        <option value="Lax">촐랑 (+Def, -SpD)</option>
-                        <option value="Lonely">외로움 (+Atk, -Def)</option>
-                        <option value="Mild">의젓 (+SpA, -Def)</option>
-                        <option value="Modest">조심 (+SpA, -Atk)</option>
-                        <option value="Naive">천진난만 (+Spe, -SpD)</option>
-                        <option value="Naughty">개구쟁이 (+Atk, -SpD)</option>
-                        <option value="Quiet">냉정 (+SpA, -Spe)</option>
-                        <option value="Quirky">변덕</option>
-                        <option value="Rash">덜렁 (+SpA, -SpD)</option>
-                        <option value="Relaxed">무사태평 (+Def, -Spe)</option>
-                        <option value="Sassy">건방 (+SpD, -Spe)</option>
-                        <option value="Serious">성실</option>
-                        <option value="Timid">겁쟁이 (+Spe, -Atk)</option>
+                        <option value="Adamant">Adamant (+Atk, -SpA)</option>
+                        <option value="Bashful">Bashful</option>
+                        <option value="Bold">Bold (+Def, -Atk)</option>
+                        <option value="Brave">Brave (+Atk, -Spe)</option>
+                        <option value="Calm">Calm (+SpD, -Atk)</option>
+                        <option value="Careful">Careful (+SpD, -SpA)</option>
+                        <option value="Docile">Docile</option>
+                        <option value="Gentle">Gentle (+SpD, -Def)</option>
+                        <option value="Hardy" selected="selected">Hardy</option>
+                        <option value="Hasty">Hasty (+Spe, -Def)</option>
+                        <option value="Impish">Impish (+Def, -SpA)</option>
+                        <option value="Jolly">Jolly (+Spe, -SpA)</option>
+                        <option value="Lax">Lax (+Def, -SpD)</option>
+                        <option value="Lonely">Lonely (+Atk, -Def)</option>
+                        <option value="Mild">Mild (+SpA, -Def)</option>
+                        <option value="Modest">Modest (+SpA, -Atk)</option>
+                        <option value="Naive">Naive (+Spe, -SpD)</option>
+                        <option value="Naughty">Naughty (+Atk, -SpD)</option>
+                        <option value="Quiet">Quiet (+SpA, -Spe)</option>
+                        <option value="Quirky">Quirky</option>
+                        <option value="Rash">Rash (+SpA, -SpD)</option>
+                        <option value="Relaxed">Relaxed (+Def, -Spe)</option>
+                        <option value="Sassy">Sassy (+SpD, -Spe)</option>
+                        <option value="Serious">Serious</option>
+                        <option value="Timid">Timid (+Spe, -Atk)</option>
                     </select>
                 </div>
                 <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                    <label for="abilityL1">특성</label>
+                    <label for="abilityL1">Ability</label>
                     <select class="ability terrain-trigger calc-trigger" id="abilityL1"></select>
                     <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle calc-trigger">
-						  <select hidden aria-label="Allies fainted" class="alliesFainted calc-trigger">
-								<option value="0">Zero allies fainted</option>
-								<option value="1">One ally fainted</option>
-								<option value="2">Two allies fainted</option>
-								<option value="3">Three allies fainted</option>
-								<option value="4">Four allies fainted</option>
-								<option value="5">Five allies fainted</option>
-						  </select>
+                    <select hidden aria-label="Allies fainted" class="alliesFainted calc-trigger">
+                        <option value="0">Zero allies fainted</option>
+                        <option value="1">One ally fainted</option>
+                        <option value="2">Two allies fainted</option>
+                        <option value="3">Three allies fainted</option>
+                        <option value="4">Four allies fainted</option>
+                        <option value="5">Five allies fainted</option>
+                    </select>
+                    <select hidden aria-label="Boosted Stat" title="What stat is boosted by this ability?" class="boostedStat calc-trigger">
+                        <option value="auto">Auto-Select</option>
+                        <option value="">Inactive</option>
+                        <option value="atk">Attack</option>
+                        <option value="def">Defense</option>
+                        <option value="spa">Special Attack</option>
+                        <option value="spd">Special Defense</option>
+                        <option value="spe">Speed</option>
+                    </select>
                 </div>
                 <div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
-                    <label for="itemL1">아이템</label>
+                    <label for="itemL1">Item</label>
                     <select class="item terrain-trigger calc-trigger" id="itemL1"></select>
                 </div>
-                <div class="pool">
-                    <div class="ability-pool gen-specific g3 g4 g5 g6 g7 g8 g9">
-                        <div>Ability Pool</div>
-                        <small class="extraSetAbilities"></small>
-                    </div>
-                    <div class="item-pool gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
-                        <div>Item Pool</div>
-                        <small class="extraSetItems"></small>
-                    </div>
-                    <div class="tera-type-pool gen-specific g9">
-                        <div>Tera Type Pool</div>
-                        <small class="extraSetTeraTypes"></small>
-                    </div>
-                    <div class="role-pool gen-specific g9">
-                        <div>Role Pool</div>
-                        <small class="extraSetRoles"></small>
-                    </div>
-                </div>
                 <div>
-                    <label for="statusL1">상태이상</label>
+                    <label for="statusL1">Status</label>
                     <select class="status calc-trigger" id="statusL1">
-                        <option value="Healthy">없음</option>
-                        <option value="Poisoned">독</option>
-                        <option value="Badly Poisoned">맹독</option>
-                        <option value="Burned">화상</option>
-                        <option value="Paralyzed">화상</option>
-                        <option value="Asleep">잠듦</option>
-                        <option value="Frozen">얼음</option>
+                        <option value="Healthy">Healthy</option>
+                        <option value="Poisoned">Poisoned</option>
+                        <option value="Badly Poisoned">Badly Poisoned</option>
+                        <option value="Burned">Burned</option>
+                        <option value="Paralyzed">Paralyzed</option>
+                        <option value="Asleep">Asleep</option>
+                        <option value="Frozen">Frozen</option>
                     </select>
                     <select aria-label="Toxic counter" class="toxic-counter calc-trigger hide">
                         <option value="1">1/16</option>
@@ -513,46 +594,40 @@
                     </select>
                 </div>
             </div>
-            <div class="info-group gen-specific g9">
-                <div class="left" title="이쪽 포켓몬이 소금절이 효과를 받고 있습니까?">
-                    <div hidden id="selectRevealInstruction">이쪽 포켓몬이 소금절이 효과를 받고 있습니까?</div>
-                    <input aria-describedby="selectRevealInstruction" class="visually-hidden saltcure calc-trigger" type="checkbox" id="cureL" />
-                    <label class="btn btn-xxwide" for="cureL">소금절이</label>
-                </div>
-                <br />
-            </div>
             <div class="info-group">
-                <label for="currentHpL1">현재 체력</label>
+                <label for="currentHpL1">Current HP</label>
                 <input class="current-hp calc-trigger" id="currentHpL1" value="341" />/<span class="max-hp">341</span> (
                 <input class="percent-hp calc-trigger" value="100" />%)
-					 <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxL" />
-					 <label class="btn btn-xwide gen-specific g8 hide" for="maxL"
-					 title="Use the corresponding Max Move?">다이맥스</label>
-					 <br />
+                <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxL" />
+                <label class="btn btn-xwide gen-specific g8 hide" for="maxL"
+                title="Use the corresponding Max Move?">Dynamax</label>
                 <br />
-                체력 <div class="hpbar"></div>
+                <br />
+                Health <div class="hpbar"></div>
             </div>
-            <div hidden id="criticalHitInstruction">크리티컬 공격으로 만들기</div>
-            <div hidden id="zMoveInstruction">Z-기술로 만들기</div>
+            <div hidden id="criticalHitInstruction">Force this attack to be a critical hit?</div>
+            <div hidden id="zMoveInstruction">Make this attack a Z-move?</div>
             <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
                 <input class="move-bp calc-trigger" value="50" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
-                    <option value="Physical">물리</option>
-                    <option value="Special">특수</option>
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
                 </select>
                 <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critL1" />
-                <label class="btn crit-btn" for="critL1" title="크리티컬 공격으로 만들기">크리</label>
+                <label class="btn crit-btn" for="critL1" title="Force this attack to be a critical hit?">Crit</label>
                 <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zL1"/>
-                <label class="btn z-btn gen-specific g7 hide" for="zL1" title="Z-기술로 만들기">Z</label>
+                <label class="btn z-btn gen-specific g7 g8 g9" for="zL1" title="Make this attack a Z-move?">Z</label>
+                <input aria-describedby="stellarBoostInstruction" class="move-stellar calc-trigger visually-hidden" type="checkbox" id="stellarL1" />
+                <label class="stellar-btn btn" style="display: none;" for="stellarL1" title="Make this attack Stellar boosted?">Stellar</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
                     <option value="3">3 hits</option>
                     <option value="4">4 hits</option>
                     <option value="5">5 hits</option>
                 </select>
-                <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
+                <select class="move-times calc-trigger hide" title="How many times was this move used in a row?">>
                     <option value="1">Once</option>
                     <option value="2">Twice</option>
                     <option value="3">3 times</option>
@@ -573,20 +648,22 @@
                 <input class="move-bp calc-trigger" value="0" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
-                    <option value="Physical">물리</option>
-                    <option value="Special">특수</option>
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
                 </select>
                 <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critL2" />
-                <label class="btn crit-btn" for="critL2" title="크리티컬 공격으로 만들기">크리</label>
+                <label class="btn crit-btn" for="critL2" title="Force this attack to be a critical hit?">Crit</label>
                 <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zL2"/>
-                <label class="btn z-btn gen-specific g7 hide" for="zL2" title="Z-기술로 만들기">Z</label>
+                <label class="btn z-btn gen-specific g7 g8 g9" for="zL2" title="Make this attack a Z-move?">Z</label>
+                <input aria-describedby="stellarBoostInstruction" class="move-stellar calc-trigger visually-hidden" type="checkbox" id="stellarL2" />
+                <label class="stellar-btn btn" style="display: none;" for="stellarL2" title="Make this attack Stellar boosted?">Stellar</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
                     <option value="3">3 hits</option>
                     <option value="4">4 hits</option>
                     <option value="5">5 hits</option>
                 </select>
-                <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
+                <select class="move-times calc-trigger hide" title="How many times was this move used in a row?">>
                     <option value="1">Once</option>
                     <option value="2">Twice</option>
                     <option value="3">3 times</option>
@@ -607,20 +684,22 @@
                 <input class="move-bp calc-trigger" value="0" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
-                    <option value="Physical">물리</option>
-                    <option value="Special">특수</option>
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
                 </select>
                 <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critL3" />
-                <label class="btn crit-btn" for="critL3" title="크리티컬 공격으로 만들기">크리</label>
+                <label class="btn crit-btn" for="critL3" title="Force this attack to be a critical hit?">Crit</label>
                 <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zL3"/>
-                <label class="btn z-btn gen-specific g7 hide" for="zL3" title="Z-기술로 만들기">Z</label>
+                <label class="btn z-btn gen-specific g7 g8 g9" for="zL3" title="Make this attack a Z-move?">Z</label>
+                <input aria-describedby="stellarBoostInstruction" class="move-stellar calc-trigger visually-hidden" type="checkbox" id="stellarL3" />
+                <label class="stellar-btn btn" style="display: none;" for="stellarL3" title="Make this attack Stellar boosted?">Stellar</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
                     <option value="3">3 hits</option>
                     <option value="4">4 hits</option>
                     <option value="5">5 hits</option>
                 </select>
-                <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
+                <select class="move-times calc-trigger hide" title="How many times was this move used in a row?">>
                     <option value="1">Once</option>
                     <option value="2">Twice</option>
                     <option value="3">3 times</option>
@@ -641,20 +720,22 @@
                 <input class="move-bp calc-trigger" value="0" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
-                    <option value="Physical">물리</option>
-                    <option value="Special">특수</option>
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
                 </select>
                 <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critL4" />
-                <label class="btn crit-btn" for="critL4" title="크리티컬 공격으로 만들기">크리</label>
+                <label class="btn crit-btn" for="critL4" title="Force this attack to be a critical hit?">Crit</label>
                 <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zL4"/>
-                <label class="btn z-btn gen-specific g7 hide" for="zL4" title="Z-기술로 만들기">Z</label>
+                <label class="btn z-btn gen-specific g7 g8 g9" for="zL4" title="Make this attack a Z-move?">Z</label>
+                <input aria-describedby="stellarBoostInstruction" class="move-stellar calc-trigger visually-hidden" type="checkbox" id="stellarL4" />
+                <label class="stellar-btn btn" style="display: none;" for="stellarL4" title="Make this attack Stellar boosted?">Stellar</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
                     <option value="3">3 hits</option>
                     <option value="4">4 hits</option>
                     <option value="5">5 hits</option>
                 </select>
-                <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
+                <select class="move-times calc-trigger hide" title="How many times was this move used in a row?">>
                     <option value="1">Once</option>
                     <option value="2">Twice</option>
                     <option value="3">3 times</option>
@@ -670,107 +751,121 @@
                     <option value="5">5 times</option>
                 </select>
             </div>
-            <div class="pool move-pool gen-specific g1 g2 g3 g4 g5 g6 g7 g8 g9">
-                <div>Move Pool</div>
-                <small class="extraSetMoves"></small>
-            </div>
         </fieldset>
     </div>
 
     <div class="panel">
         <div aria-label="Field information" role="region">
             <fieldset class="field-info">
-                <legend align="center">필드</legend>
-                <div aria-labelledby="selectBattleFormatInstruction" class="gen-specific g3 g4 g5 g6 g7 g8 g9" role="radiogroup" style="width: 10.6em; margin: 0 auto 5px;" title="배틀 형식을 선택할 수 있습니다.">
-                    <span class="visually-hidden" id="selectBattleFormatInstruction">배틀 형식을 선택할 수 있습니다.</span>
+                <legend align="center">Field</legend>
+                <div aria-labelledby="selectBattleFormatInstruction" class="gen-specific g3 g4 g5 g6 g7 g8 g9" role="radiogroup" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
+                    <span class="visually-hidden" id="selectBattleFormatInstruction">Select the battle format.</span>
                     <input class="visually-hidden calc-trigger" type="radio" name="format" value="Singles" id="singles-format" />
-                    <label class="btn btn-left" for="singles-format">싱글배틀</label>
+                    <label class="btn btn-left" for="singles-format">Singles</label>
                     <input class="visually-hidden calc-trigger" type="radio" name="format" value="Doubles" id="doubles-format" />
-                    <label class="btn btn-right" for="doubles-format">더블배틀</label>
+                    <label class="btn btn-right" for="doubles-format">Doubles</label>
                 </div>
-                <div aria-labelledby="selectTerrainInstruction" class="gen-specific g6 hide" role="group" title="필드 상황을 선택할 수 있습니다.">
-                    <span class="visually-hidden" id="selectTerrainInstruction">필드 상황을 선택할 수 있습니다.</span>
-                    <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Electric" id="Electric" /><label class="btn btn-xxxwide btn-left" for="Electric">일렉트릭필드</label>
-                    <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Grassy" id="grassy" /><label class="btn btn-xxxwide btn-mid" for="grassy">그래스필드</label>
-                    <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Misty" id="misty" /><label class="btn btn-xxxwide btn-right" for="misty">미스트필드</label>
+                <div aria-labelledby="selectDefaultLevelInstruction" role="radiogroup" style="margin: auto auto 5px;" title="Select the default level.">
+                    <span class="visually-hidden" id="selectDefaultLevelInstruction">Select the default level.</span>
+                    <input class="visually-hidden calc-trigger" type="radio" name="defaultLevel" value="100" id="default-level-100" />
+                    <label class="btn btn-wide btn-left" for="default-level-100">Level 100</label>
+                    <input class="visually-hidden calc-trigger gen-specific g4 g5 g6 g7 g8 g9" type="radio" name="defaultLevel" value="50" id="default-level-50" />
+                    <label class="btn btn-wide btn-mid gen-specific g4 g5 g6 g7 g8 g9" for="default-level-50">Level 50</label>
+                    <input class="visually-hidden calc-trigger" type="radio" name="defaultLevel" value="5" id="default-level-5" />
+                    <label class="btn btn-wide btn-right" for="default-level-5">Level 5</label>
                 </div>
-                <div aria-labelledby="selectTerrainInstruction" class="gen-specific g7 g8 g9" role="group" title="필드 상황을 선택할 수 있습니다.">
-                    <span class="visually-hidden" id="selectTerrainInstruction">필드 상황을 선택할 수 있습니다.</span>
-                    <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Electric" id="Electric" /><label class="btn btn-xxxwide btn-left" for="Electric">일렉트릭필드</label>
-                    <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Grassy" id="grassy" /><label class="btn btn-xxxwide btn-mid" for="grassy">그래스필드</label>
-                    <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Misty" id="misty" /><label class="btn btn-xxxwide btn-right" for="misty">미스트필드</label>
-                    <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Psychic" id="Psychic" /><label class="btn btn-xxxwide btn-mid"  for="Psychic">사이코필드</label>
-					 </div>
-					 <div aria-labelledby="selectRuinInstruction" class="gen-specific g9 format-specific doubles" role="group" style="margin: 5px auto auto;" title="Select the ruin abilities from other Pok&eacute;mon on the field.">
+                <div aria-labelledby="selectTerrainInstruction" class="gen-specific g6 g7 g8 g9" role="group" title="Select the current terrain.">
+                    <span class="visually-hidden" id="selectTerrainInstruction">Select the current terrain.</span>
+                    <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Electric" id="electric" /><label class="btn btn-left" for="electric">Electric</label>
+                    <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Grassy" id="grassy" /><label class="btn btn-mid" for="grassy">Grassy</label>
+                    <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Misty" id="misty" /><label class="btn btn-mid" for="misty">Misty</label>
+                    <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Psychic" id="psychic" /><label class="btn btn-xxxwide btn-right" for="psychic">Psychic Terrain</label>
+                </div>
+                <div aria-labelledby="selectOMModInstruction" role="group" style="margin: 5px auto auto;" title="Select the current Other Metas modifications.">
+                    <span class="visually-hidden" id="selectOMInstruction">Select the current Other Metas modifications.</span>
+                    <input class="visually-hidden ts-trigger calc-trigger om-trigger" type="checkbox" name="ts" value="Tier Shift" id="ts" />
+                    <label class="btn btn-xxxwide btn-left" for="ts">Tier Shift</label>
+                    <input class="visually-hidden mnm-trigger calc-trigger om-trigger"  type="checkbox" name="mnm" value="MnM" id="mnm" />
+                    <label class="btn btn-xxxwide btn-mid gen-specific g6 g7 g8 g9" for="mnm">Mix and Mega</label>
+                    <input class="visually-hidden scale-trigger calc-trigger om-trigger" type="checkbox" name="scale" value="Scalemons" id="scale" />
+                    <label class="btn btn-xxxwide btn-right" for="scale">Scalemons</label>
+                </div>
+                <div aria-labelledby="selectRuinInstruction" class="gen-specific g9 format-specific doubles" role="group" style="margin: 5px auto auto;" title="Select the ruin abilities from other Pok&eacute;mon on the field.">
                     <span class="visually-hidden" id="selectRuinInstruction">Select the active Ruin abilities from other Poke&eacute;mon on the field.</span>
                     <input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Beads" id="beads" />
-						  <label class="btn btn-xxxwide btn-left" for="beads">재앙의 구슬</label>
+                    <label class="btn btn-left" for="beads">Beads</label>
                     <input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Tablets" id="tablets" />
-						  <label class="btn btn-xxxwide btn-mid" for="tablets">재앙의 목간</label>
+                    <label class="btn btn-mid" for="tablets">Tablets</label>
                     <input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Sword" id="sword" />
-						  <label class="btn btn-xxxwide btn-right" for="sword">재앙의 검</label>
+                    <label class="btn btn-mid" for="sword">Sword</label>
                     <input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Vessel" id="vessel" />
-						  <label class="btn btn-xxxwide btn-mid" for="vessel">재앙의 그릇</label>
+                    <label class="btn btn-xxxwide btn-right" for="vessel">Vessel of Ruin</label>
+                </div>
+                <hr>
+                <div aria-labelledby="selectRuinInstruction" class="gen-specific g9 format-specific doubles" role="group" style="margin: 5px auto auto;" title="Select the ruin abilities from other Pok&eacute;mon on the field.">
+                    <span class="visually-hidden" id="selectRuinInstruction">Select the active Ruin abilities from other Poke&eacute;mon on the field.</span>
+                    <input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Beads" id="beads" />
+                    <label class="btn btn-xxxwide btn-left" for="beads">Beads of Ruin</label>
+                    <input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Tablets" id="tablets" />
+                    <label class="btn btn-xxxwide btn-mid" for="tablets">Tablets of Ruin</label>
+                    <input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Sword" id="sword" />
+                    <label class="btn btn-xxxwide btn-right" for="sword">Sword of Ruin</label>
+                    <input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Vessel" id="vessel" />
+                    <label class="btn btn-xxxwide btn-mid" for="vessel">Vessel of Ruin</label>
                 </div>
                 <hr class="gen-specific g6 g7 g8 g9" />
                 <div aria-labelledby="selectWeatherInstruction" role="radiogroup">
-                    <span class="visually-hidden" id="selectWeatherInstruction">필드 날씨를 선택할 수 있습니다.</span>
-                    <div  class="gen-specific g3 g4 g5 g6 g7 g8 hide" style="width: 22.2em; margin: 5px auto;" title="필드 날씨를 선택할 수 있습니다.">
+                    <span class="visually-hidden" id="selectWeatherInstruction">Select the current weather condition.</span>
+                    <div class="gen-specific g3 g4 g5 g6 g7 g8 g9" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="" id="clear" checked="checked" />
-                        <label class="btn btn-small btn-left" for="clear">없음</label>
+                        <label class="btn btn-small btn-left" for="clear">None</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sun" id="sun" />
-                        <label class="btn btn-small btn-mid" for="sun">쾌청</label>
+                        <label class="btn btn-small btn-mid" for="sun">Sun</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Rain" id="rain" />
-                        <label class="btn btn-small btn-mid" for="rain">비</label>
+                        <label class="btn btn-small btn-mid" for="rain">Rain</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sand" id="sand" />
-                        <label class="btn btn-small btn-mid" for="sand">모래바람</label>
-                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Hail" id="hail" />
-                        <label class="btn btn-small btn-right" for="hail">싸라기눈</label>
+                        <label class="btn btn-small btn-mid" for="sand">Sand</label>
+                        <span class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Hail" id="hail" />
+                            <label class="btn btn-small btn-right" for="hail">Hail</label>
+                        </span>
+                        <span class="gen-specific g9">
+                            <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Snow" id="snow" />
+                            <label class="btn btn-small btn-right" for="snow">Snow</label>
+                        </span>
                     </div>
-                    <div  class="gen-specific g9" style="width: 22.2em; margin: 5px auto;" title="필드 날씨를 선택할 수 있습니다.">
-                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="" id="clear" checked="checked" />
-                        <label class="btn btn-small btn-left" for="clear">없음</label>
-                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sun" id="sun" />
-                        <label class="btn btn-small btn-mid" for="sun">쾌청</label>
-                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Rain" id="rain" />
-                        <label class="btn btn-small btn-mid" for="rain">비</label>
-                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sand" id="sand" />
-                        <label class="btn btn-small btn-mid" for="sand">모래바람</label>
-                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="snow" id="snow" />
-                        <label class="btn btn-small btn-right" for="snow">눈</label>
-                    </div>
-                    <div class="gen-specific g6 g7 hide" title="필드 날씨를 선택할 수 있습니다.">
+                    <div class="gen-specific g6 g7 g8 g9" title="Select the current weather condition.">
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
-                        <label class="btn btn-xxxwide btn-left" for="harsh-sunshine">큰가뭄</label>
+                        <label class="btn btn-xxxwide btn-left" for="harsh-sunshine">Harsh Sunshine</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Heavy Rain" id="heavy-rain" />
-                        <label class="btn btn-xxxwide btn-mid" for="heavy-rain">폭우</label>
+                        <label class="btn btn-xxxwide btn-mid" for="heavy-rain">Heavy Rain</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Strong Winds" id="strong-winds" />
-                        <label class="btn btn-xxxwide btn-right" for="strong-winds">난기류</label>
+                        <label class="btn btn-xxxwide btn-right" for="strong-winds">Strong Winds</label>
                     </div>
                   </div>
-                <div aria-labelledby="selectGscWeatherInstruction" class="gen-specific g2 hide" role="radiogroup" style="width: 17.8em; margin: 0 auto 5px;" title="필드 날씨를 선택할 수 있습니다.">
-                    <span class="visually-hidden" id="selectGscWeatherInstruction">필드 날씨를 선택할 수 있습니다.</span>
+                <div aria-labelledby="selectGscWeatherInstruction" class="gen-specific g2 hide" role="radiogroup" style="width: 17.8em; margin: 0 auto 5px;" title="Select the current weather condition.">
+                    <span class="visually-hidden" id="selectGscWeatherInstruction">Select the current weather condition.</span>
                     <input class="visually-hidden calc-trigger" type="radio" name="gscWeather" value="" id="gscClear" checked="checked" />
-                    <label class="btn btn-small btn-left" for="gscClear">없음</label>
+                    <label class="btn btn-small btn-left" for="gscClear">None</label>
                     <input class="visually-hidden calc-trigger" type="radio" name="gscWeather" value="Sun" id="gscSun" />
-                    <label class="btn btn-small btn-mid" for="gscSun">쾌청</label>
+                    <label class="btn btn-small btn-mid" for="gscSun">Sun</label>
                     <input class="visually-hidden calc-trigger" type="radio" name="gscWeather" value="Rain" id="gscRain" />
-                    <label class="btn btn-small btn-mid" for="gscRain">비</label>
+                    <label class="btn btn-small btn-mid" for="gscRain">Rain</label>
                     <input class="visually-hidden calc-trigger" type="radio" name="gscWeather" value="Sand" id="gscSand" />
-                    <label class="btn btn-small btn-right" for="gscSand">모래바람</label>
+                    <label class="btn btn-small btn-right" for="gscSand">Sand</label>
                 </div>
                 <div class="gen-specific g5 g6 g7 g8 g9" style="width: 22.2em; margin: 5px auto; display: inline-block;">
                     <span hidden id="magicRoomInstruction">Is Magic Room in effect?</span>
                     <span hidden id="wonderRoomInstruction">Is Wonder Room in effect?</span>
                     <input aria-describedby="magicRoomInstruction" class="visually-hidden calc-trigger" type="checkbox" id="magicroom" />
-                    <label class="btn btn-xxxwide btn-left" for="magicroom">매직룸</label>
+                    <label class="btn btn-xxxwide btn-left" for="magicroom">Magic Room</label>
                     <input aria-describedby="wonderRoomInstruction" class="visually-hidden calc-trigger" type="checkbox" id="wonderroom" />
-                    <label class="btn btn-xxxwide btn-right" for="wonderroom">원더룸</label>
+                    <label class="btn btn-xxxwide btn-right" for="wonderroom">Wonder Room</label>
                 </div>
-                <div class="gen-specific g4 g5 g6 g7 g8 g9" style="width: 5.3em; margin: 5px auto;" title="필드에 중력이 발동되어있는지 선택하세요.">
-                    <span hidden id="gravityInstruction">필드에 중력이 발동되어있는지 선택하세요.</span>
+                <div class="gen-specific g4 g5 g6 g7 g8 g9" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
+                    <span hidden id="gravityInstruction">Is gravity in effect?</span>
                     <input aria-describedby="gravityInstruction" class="visually-hidden calc-trigger" type="checkbox" id="gravity" />
-                    <label class="btn" for="gravity">중력</label>
+                    <label class="btn" for="gravity">Gravity</label>
                 </div>
                 <hr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9" />
                 <table class="field">
@@ -782,30 +877,60 @@
                     </thead>
                     <tbody>
                         <tr class="gen-specific g4 g5 g6 g7 g8 g9">
-                            <div hidden id="selectStealthRockInstruction">스텔스락이 필드에 깔려 있습니까?</div>
-                            <td><div class="left" title="스텔스락이 필드에 깔려 있습니까?">
+                            <div hidden id="selectStealthRockInstruction">Is Stealth Rock affecting this side of the field?</div>
+                            <td><div class="left" title="Is Stealth Rock affecting this side of the field?">
                                 <input aria-describedby="selectStealthRockInstruction" class="visually-hidden calc-trigger" type="checkbox" id="srL" />
-                                <label class="btn btn-xwide" for="srL">스텔스락</label>
+                                <label class="btn btn-xwide" for="srL">Stealth Rock</label>
                             </div></td>
-                            <td><div class="right" title="스텔스락이 필드에 깔려 있습니까?">
+                            <td><div class="right" title="Is Stealth Rock affecting this side of the field?">
                                 <input aria-describedby="selectStealthRockInstruction" class="visually-hidden calc-trigger" type="checkbox" id="srR" />
-                                <label class="btn btn-xwide" for="srR">스텔스락</label>
+                                <label class="btn btn-xwide" for="srR">Stealth Rock</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g8 hide">
-                            <div hidden id="selectSteelsurgeInstruction">이쪽 필드에 거다이강철진효과가 적용되고있습니까?</div>
-                            <td><div class="left" title="이쪽 필드에 거다이강철진효과가 적용되고있습니까?">
+                            <div hidden id="selectSteelsurgeInstruction">Is Steelsurge affecting this side of the field?</div>
+                            <td><div class="left" title="Is Steelsurge affecting this side of the field?">
                                 <input aria-describedby="selectSteelsurgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="steelsurgeL" />
-                                <label class="btn btn-xwide" for="steelsurgeL">거다이강철진</label>
+                                <label class="btn btn-xwide" for="steelsurgeL">Steelsurge</label>
                             </div></td>
-                            <td><div class="right" title="이쪽 필드에 거다이강철진효과가 적용되고있습니까?">
+                            <td><div class="right" title="Is Steelsurge affecting this side of the field?">
                                 <input aria-describedby="selectSteelsurgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="steelsurgeR" />
-                                <label class="btn btn-xwide" for="steelsurgeR">거다이강철진</label>
+                                <label class="btn btn-xwide" for="steelsurgeR">Steelsurge</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g8 hide">
+                            <div hidden id="selectVinefireInstruction">Is Vine Lash and/or Wildfire affecting this side of the field?</div>
+                            <td><div class="left" title="Is Vine Lash/Wildfire affecting this side of the field?">
+                                <input aria-describedby="selectVinefireInstruction" class="visually-hidden calc-trigger" type="checkbox" id="vinelashL" />
+                                <label class="btn btn-wide btn-left" for="vinelashL">Vine Lash</label>
+                                <input aria-describedby="selectVinefireInstruction" class="visually-hidden calc-trigger" type="checkbox" id="wildfireL" />
+                                <label class="btn btn-right" for="wildfireL">Wildfire</label>
+                            </div></td>
+                            <td><div class="right" title="Is Vine Lash/Wildfire affecting this side of the field?">
+                                <input aria-describedby="selectVinefireInstruction" class="visually-hidden calc-trigger" type="checkbox" id="wildfireR" />
+                                <label class="btn btn-left" for="wildfireR">Wildfire</label>
+                                <input aria-describedby="selectVinefireInstruction" class="visually-hidden calc-trigger" type="checkbox" id="vinelashR" />
+                                <label class="btn btn-wide btn-right" for="vinelashR">Vine Lash</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g8 hide">
+                            <div hidden id="selectCannonlithInstruction">Is Cannonade and/or Volcalith affecting this side of the field?</div>
+                            <td><div class="left" title="Is Cannonade/Volcalith affecting this side of the field?">
+                                <input aria-describedby="selectCannonlithInstruction" class="visually-hidden calc-trigger" type="checkbox" id="cannonadeL" />
+                                <label class="btn btn-wide btn-left" for="cannonadeL">Cannonade</label>
+                                <input aria-describedby="selectCannonlithInstruction" class="visually-hidden calc-trigger" type="checkbox" id="volcalithL" />
+                                <label class="btn btn-right" for="volcalithL">Volcalith</label>
+                            </div></td>
+                            <td><div class="right" title="Is Cannonade/Volcalith affecting this side of the field?">
+                                <input aria-describedby="selectCannonlithInstruction" class="visually-hidden calc-trigger" type="checkbox" id="volcalithR" />
+                                <label class="btn btn-left" for="volcalithR">Volcalith</label>
+                                <input aria-describedby="selectCannonlithInstruction" class="visually-hidden calc-trigger" type="checkbox" id="cannonadeR" />
+                                <label class="btn btn-wide btn-right" for="cannonadeR">Cannonade</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                            <div hidden id="selectSpikeInstruction">이쪽 플레이어 바닥에 압정이 깔려 있습니까?</div>
-                            <td><div aria-labelledby="selectSpikeInstruction" class="left" role="radiogroup" title="이쪽 플레이어 바닥에 압정이 깔려 있습니까?">
+                            <div hidden id="selectSpikeInstruction">Are there Spikes on this side of the field?</div>
+                            <td><div aria-labelledby="selectSpikeInstruction" class="left" role="radiogroup" title="Are there Spikes on this side of the field?">
                                 <input class="visually-hidden calc-trigger" type="radio" name="spikesL" value="0" id="spikesL0" checked="checked" />
                                 <label class="btn btn-xsmall btn-left" for="spikesL0">0</label>
                                 <input class="visually-hidden calc-trigger" type="radio" name="spikesL" value="1" id="spikesL1" />
@@ -813,11 +938,11 @@
                                 <input class="visually-hidden calc-trigger" type="radio" name="spikesL" value="2" id="spikesL2" />
                                 <label class="btn btn-xsmall btn-mid" for="spikesL2">2</label>
                                 <input class="visually-hidden calc-trigger" type="radio" name="spikesL" value="3" id="spikesL3" />
-                                <label class="btn btn-wide btn-right" for="spikesL3">3 압정</label>
+                                <label class="btn btn-wide btn-right" for="spikesL3">3 Spikes</label>
                             </div></td>
-                            <td><div aria-labelledby="selectSpikeInstruction" class="right" role="radiogroup" title="이쪽 플레이어 바닥에 압정이 깔려 있습니까?">
+                            <td><div aria-labelledby="selectSpikeInstruction" class="right" role="radiogroup" title="Are there Spikes on this side of the field?">
                                 <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="3" id="spikesR3" />
-                                <label class="btn btn-wide btn-left" for="spikesR3">3 압정</label>
+                                <label class="btn btn-wide btn-left" for="spikesR3">3 Spikes</label>
                                 <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="2" id="spikesR2" />
                                 <label class="btn btn-xsmall btn-mid" for="spikesR2">2</label>
                                 <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="1" id="spikesR1" />
@@ -826,117 +951,128 @@
                                 <label class="btn btn-xsmall btn-right" for="spikesR0">0</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g2 hide">
-                            <td><div class="left" title="이쪽 플레이어 바닥에 압정이 깔려 있습니까?">
+                        <tr class="gen-specific g2">
+                            <td><div class="left" title="Are there Spikes on this side of the field?">
                                 <input aria-describedby="selectSpikeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="gscSpikesL" />
                                 <label class="btn" for="gscSpikesL">Spikes</label>
                             </div></td>
-                            <td><div class="right" title="이쪽 플레이어 바닥에 압정이 깔려 있습니까?">
+                            <td><div class="right" title="Are there Spikes on this side of the field?">
                                 <input aria-describedby="selectSpikeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="gscSpikesR" />
                                 <label class="btn" for="gscSpikesR">Spikes</label>
                             </div></td>
                         </tr>
                         <tr>
-                            <td><div class="left" title="이쪽 포켓몬을 리플렉터나 빛의 장막으로 보호받게 할 수 있습니다.">
-                                <div hidden id="selectScreenInstruction">이쪽 포켓몬을 리플렉터나 빛의 장막으로 보호받게 할 수 있습니다.</div>
+                            <td><div class="left" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
+                                <div hidden id="selectScreenInstruction">Is this Pok&eacute;mon protected by Reflect and/or Light Screen?</div>
                                 <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="reflectL" />
-                                <label class="btn btn-left" for="reflectL">리플렉터</label>
+                                <label class="btn btn-left" for="reflectL">Reflect</label>
                                 <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="lightScreenL" />
-                                <label class="btn btn-xwide btn-right" for="lightScreenL">빛의 장막</label>
+                                <label class="btn btn-xwide btn-right" for="lightScreenL">Light Screen</label>
                             </div></td>
-                            <td><div class="right" title="이쪽 포켓몬을 리플렉터나 빛의 장막으로 보호받게 할 수 있습니다.">
+                            <td><div class="right" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
                                 <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="lightScreenR" />
-                                <label class="btn btn-xwide btn-left" for="lightScreenR">빛의 장막</label>
+                                <label class="btn btn-xwide btn-left" for="lightScreenR">Light Screen</label>
                                 <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="reflectR" />
-                                <label class="btn btn-right" for="reflectR">리플렉터</label>
+                                <label class="btn btn-right" for="reflectR">Reflect</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
-                            <td><div class="left" title="이쪽 포켓몬이 방어를 썼거나 방어 효과를 받고 있나요?">
-                                <div hidden id="selectProtectInstruction">이쪽 포켓몬이 방어를 썼거나 방어 효과를 받고 있나요?</div>
+                            <td><div class="left" title="Is this Pok&eacute;mon protected?">
+                                <div hidden id="selectProtectInstruction">Is this Pok&eacute;mon protected?</div>
                                 <input aria-describedby="selectProtectInstruction" class="visually-hidden calc-trigger" type="checkbox" id="protectL" />
-                                <label class="btn btn-wide" for="protectL">방어</label>
+                                <label class="btn btn-wide" for="protectL">Protect</label>
                             </div></td>
-                            <td><div class="right" title="이쪽 포켓몬이 방어를 썼거나 방어 효과를 받고 있나요?">
+                            <td><div class="right" title="Is this Pok&eacute;mon protected?">
                                 <input aria-describedby="selectProtectInstruction" class="visually-hidden calc-trigger" type="checkbox" id="protectR" />
-                                <label class="btn btn-wide" for="protectR">방어</label>
+                                <label class="btn btn-wide" for="protectR">Protect</label>
                             </div></td>
                         </tr>
                         <tr>
-                            <td><div class="left" title="이쪽 포켓몬이 씨뿌리기의 영향을 받고 있나요?">
-                                <div hidden id="selectLeechSeedInstruction">이쪽 포켓몬이 씨뿌리기의 영향을 받고 있나요?</div>
+                            <td><div class="left" title="Has this Pok&eacute;mon been affected by Leech Seed?">
+                                <div hidden id="selectLeechSeedInstruction">Has this Pok&eacute;mon been affected by Leech Seed?</div>
                                 <input aria-describedby="selectLeechSeedInstruction" class="visually-hidden calc-trigger" type="checkbox" id="leechSeedL" />
-                                <label class="btn btn-wide" for="leechSeedL">씨뿌리기</label>
+                                <label class="btn btn-wide" for="leechSeedL">Leech Seed</label>
                             </div></td>
-                            <td><div class="right" title="이쪽 포켓몬이 씨뿌리기의 영향을 받고 있나요?">
+                            <td><div class="right" title="Has this Pok&eacute;mon been affected by Leech Seed?">
                                 <input aria-describedby="selectLeechSeedInstruction" class="visually-hidden calc-trigger" type="checkbox" id="leechSeedR" />
-                                <label class="btn btn-wide" for="leechSeedR">씨뿌리기</label>
+                                <label class="btn btn-wide" for="leechSeedR">Leech Seed</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 hide">
-                            <td><div class="left" title="이쪽 포켓몬이 냄새구별이나 꿰뚫어보기의 효과를 받고 있습니까?">
-                                <div hidden id="selectRevealInstruction">이쪽 포켓몬이 냄새구별이나 꿰뚫어보기의 효과를 받고 있습니까?</div>
-                                <input aria-describedby="selectRevealInstruction" class="visually-hidden calc-trigger" type="checkbox" id="foresightL" />
-                                <label class="btn btn-wide" for="foresightL">꿰뚫어보기</label>
+                        <tr>
+                            <td><div class="left" title="Has this Pok&eacute;mon been affected by Salt Cure?">
+                                <div hidden id="selectSaltCureInstruction">Has this Pok&eacute;mon been affected by Salt Cure?</div>
+                                <input aria-describedby="selectSaltCureInstruction" class="visually-hidden calc-trigger" type="checkbox" id="saltCureL" />
+                                <label class="btn btn-wide" for="saltCureL">Salt Cure</label>
                             </div></td>
-                            <td><div class="right" title="이쪽 포켓몬이 냄새구별이나 꿰뚫어보기의 효과를 받고 있습니까?">
+                            <td><div class="right" title="Has this Pok&eacute;mon been affected by Salt Cure?">
+                                <input aria-describedby="selectSaltCureInstruction" class="visually-hidden calc-trigger" type="checkbox" id="saltCureR" />
+                                <label class="btn btn-wide" for="saltCureR">Salt Cure</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
+                            <td><div class="left" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
+                                <div hidden id="selectRevealInstruction">Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?</div>
+                                <input aria-describedby="selectRevealInstruction" class="visually-hidden calc-trigger" type="checkbox" id="foresightL" />
+                                <label class="btn btn-wide" for="foresightL">Foresight</label>
+                            </div></td>
+                            <td><div class="right" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
                                 <input aria-describedby="selectRevealInstruction" class="visually-hidden calc-trigger" type="checkbox" id="foresightR" />
-                                <label class="btn btn-wide" for="foresightR">꿰뚫어보기</label>
+                                <label class="btn btn-wide" for="foresightR">Foresight</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                            <td><div class="left" title="이쪽 포켓몬이 도우미 효과로 강화되었습니까?">
-                                <div hidden id="selectHelpingHandInstruction">이쪽 포켓몬이 도우미 효과로 강화되었습니까?</div>
+                            <td><div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
+                                <div hidden id="selectHelpingHandInstruction">Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?</div>
                                 <input aria-describedby="selectHelpingHandInstruction" class="visually-hidden calc-trigger" type="checkbox" id="helpingHandL" />
-                                <label class="btn btn-xxwide" for="helpingHandL">도우미</label>
+                                <label class="btn btn-xxwide" for="helpingHandL">Helping Hand</label>
                             </div></td>
-                            <td><div class="right" title="이쪽 포켓몬이 도우미 효과로 강화되었습니까?">
+                            <td><div class="right" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
                                 <input aria-describedby="selectHelpingHandInstruction" class="visually-hidden calc-trigger" type="checkbox" id="helpingHandR" />
-                                <label class="btn btn-xxwide" for="helpingHandR">도우미</label>
+                                <label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g4 g5 g6 g7 g8 g9">
-                            <td><div class="left" title="이쪽 포켓몬이 순풍 효과를 받고 있습니까?">
-                                <div hidden id="selectTailwindInstruction">이쪽 포켓몬이 도우미 효과로 강화되었습니까?</div>
+                            <td><div class="left" title="Has this Pok&eacute;mon's speed been boosted by Tailwind?">
+                                <div hidden id="selectTailwindInstruction">Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?</div>
                                 <input aria-describedby="selectTailwindInstruction" class="visually-hidden calc-trigger" type="checkbox" id="tailwindL" />
-                                <label class="btn btn-xxwide" for="tailwindL">순풍</label>
+                                <label class="btn btn-xxwide" for="tailwindL">Tailwind</label>
                             </div></td>
-                            <td><div class="right" title="이쪽 포켓몬이 순풍 효과를 받고 있습니까?">
+                            <td><div class="right" title="Has this Pok&eacute;mon's speed been boosted by Tailwind?">
                                 <input aria-describedby="selectTailwindInstruction" class="visually-hidden calc-trigger" type="checkbox" id="tailwindR" />
-                                <label class="btn btn-xxwide" for="tailwindR">순풍</label>
+                                <label class="btn btn-xxwide" for="tailwindR">Tailwind</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g4 g5 g6 g7 g8 hide">
-                            <td><div class="left" title="이쪽 포켓몬이 같은 편의 플라워 기프트 효과를 받고 있습니까?">
-                                <div hidden id="selectFlowerGiftInstruction">이쪽 포켓몬이 같은 편의 플라워 기프트 효과를 받고 있습니까?</div>
+                        <tr class="gen-specific g4 g5 g6 g7 g8 g9">
+                            <td><div class="left" title="Is the Pok&eacute;mon affected by an ally's Flower Gift?">
+                                <div hidden id="selectFlowerGiftInstruction">Is the Pok&eacute;mon affected by an ally's Flower Gift?</div>
                                 <input aria-describedby="selectFlowerGiftInstruction" class="visually-hidden calc-trigger" type="checkbox" id="flowerGiftL" />
-                                <label class="btn btn-xxwide" for="flowerGiftL">플라워기프트</label>
+                                <label class="btn btn-xxwide" for="flowerGiftL">Flower Gift</label>
                             </div></td>
-                            <td><div class="right" title="이쪽 포켓몬이 같은 편의 플라워 기프트 효과를 받고 있습니까?">
+                            <td><div class="right" title="Is the Pok&eacute;mon affected by an ally's Flower Gift?">
                                 <input aria-describedby="selectFlowerGiftInstruction" class="visually-hidden calc-trigger" type="checkbox" id="flowerGiftR" />
-                                <label class="btn btn-xxwide" for="flowerGiftR">플라워기프트</label>
+                                <label class="btn btn-xxwide" for="flowerGiftR">Flower Gift</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g5 g6 g7 g8 g9">
-                            <td><div class="left" title="이쪽 포켓몬이 같은 편의 프렌드가드 효과를 받고 있습니까?">
-                                <div hidden id="selectFriendGuardInstruction">이쪽 포켓몬이 같은 편의 프렌드가드 효과를 받고 있습니까?</div>
+                            <td><div class="left" title="Is the Pok&eacute;mon protected by an ally's Friend Guard?">
+                                <div hidden id="selectFriendGuardInstruction">Is the Pok&eacute;mon protected by an ally's Friend Guard?</div>
                                 <input aria-describedby="selectFriendGuardInstruction" class="visually-hidden calc-trigger" type="checkbox" id="friendGuardL" />
-                                <label class="btn btn-xxwide" for="friendGuardL">프렌드가드</label>
+                                <label class="btn btn-xxwide" for="friendGuardL">Friend Guard</label>
                             </div></td>
-                            <td><div class="right" title="이쪽 포켓몬이 같은 편의 프렌드가드 효과를 받고 있습니까?">
+                            <td><div class="right" title="Is the Pok&eacute;mon protected by an ally's Friend Guard?">
                                 <input aria-describedby="selectFriendGuardInstruction" class="visually-hidden calc-trigger" type="checkbox" id="friendGuardR" />
-                                <label class="btn btn-xxwide" for="friendGuardR">프렌드가드</label>
+                                <label class="btn btn-xxwide" for="friendGuardR">Friend Guard</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g7 g8 g9">
-                            <td><div class="left" title="이쪽 포켓몬이 같은 편의 오로라베일 효과를 받고 있습니까?">
-                                <div hidden id="selectAuroraVeilInstruction">이쪽 포켓몬이 같은 편의 오로라베일 효과를 받고 있습니까?</div>
+                            <td><div class="left" title="Is the Pok&eacute;mon protected by an ally's Aurora Veil?">
+                                <div hidden id="selectAuroraVeilInstruction">Is the Pok&eacute;mon protected by an ally's Aurora Veil?</div>
                                 <input aria-describedby="selectAuroraVeilInstruction" class="visually-hidden calc-trigger" type="checkbox" id="auroraVeilL" />
-                                <label class="btn btn-xxwide" for="auroraVeilL">오로라베일</label>
+                                <label class="btn btn-xxwide" for="auroraVeilL">Aurora Veil</label>
                             </div></td>
-                            <td><div class="right" title="이쪽 포켓몬이 같은 편의 오로라베일 효과를 받고 있습니까?">
+                            <td><div class="right" title="Is the Pok&eacute;mon protected by an ally's Aurora Veil?">
                                 <input aria-describedby="selectAuroraVeilInstruction" class="visually-hidden calc-trigger" type="checkbox" id="auroraVeilR" />
-                                <label class="btn btn-xxwide" for="auroraVeilR">오로라베일</label>
+                                <label class="btn btn-xxwide" for="auroraVeilR">Aurora Veil</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g7">
@@ -950,71 +1086,94 @@
                                 <label class="btn btn-xxwide" for="StatBoostR">+1 All Stats</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g7 g8 hide">
-                          <td><div class="left" title="이쪽 포켓몬이 같은 편의 배터리 효과를 받고 있습니까?">
-                              <div hidden id="selectBatteryInstruction">이쪽 포켓몬이 같은 편의 배터리 효과를 받고 있습니까?</div>
+                        <tr class="gen-specific g7 g8 g9">
+                          <td><div class="left" title="Is the Pok&eacute;mon boosted by an ally's Battery ability?">
+                              <div hidden id="selectBatteryInstruction">Is the Pok&eacute;mon boosted by an ally's Battery ability?</div>
                                 <input aria-describedby="selectBatteryInstruction" class="visually-hidden calc-trigger" type="checkbox" id="batteryL" />
-                                <label class="btn btn-xxwide" for="batteryL">배터리</label>
+                                <label class="btn btn-xxwide" for="batteryL">Battery</label>
                               </div></td>
-                            <td><div class="right" title="이쪽 포켓몬이 같은 편의 배터리 효과를 받고 있습니까?">
+                            <td><div class="right" title="Is the Pok&eacute;mon boosted by an ally's Battery ability?">
                                 <input aria-describedby="selectBatteryInstruction" class="visually-hidden calc-trigger" type="checkbox" id="batteryR" />
-                                <label class="btn btn-xxwide" for="batteryR">배터리</label>
+                                <label class="btn btn-xxwide" for="batteryR">Battery</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g8 g9">
-                            <td><div class="left" title="이쪽 포켓몬이 같은 편의 파워스폿 효과를 받고 있습니까?">
-                                <div hidden id="selectPowerSpotInstruction">이쪽 포켓몬이 같은 편의 파워스폿 효과를 받고 있습니까?</div>
-                                  <input aria-describedby="selectPowerSpotInstruction" class="visually-hidden calc-trigger" type="checkbox" id="powerSpotL" />
-                                  <label class="btn btn-xxwide" for="powerSpotL">파워스폿</label>
-                                </div></td>
-                              <td><div class="right" title="이쪽 포켓몬이 같은 편의 파워스폿 효과를 받고 있습니까?">
-                                  <input aria-describedby="selectPowerSpotInstruction" class="visually-hidden calc-trigger" type="checkbox" id="powerSpotR" />
-                                  <label class="btn btn-xxwide" for="powerSpotR">파워스폿</label>
+                          <td><div class="left" title="Is the Pok&eacute;mon boosted by an ally's Power Spot ability?">
+                              <div hidden id="selectPowerSpotInstruction">Is the Pok&eacute;mon boosted by an ally's Power Spot ability?</div>
+                                <input aria-describedby="selectPowerSpotInstruction" class="visually-hidden calc-trigger" type="checkbox" id="powerSpotL" />
+                                <label class="btn btn-xxwide" for="powerSpotL">Power Spot</label>
                               </div></td>
-                          </tr>
+                            <td><div class="right" title="Is the Pok&eacute;mon boosted by an ally's Power Spot ability?">
+                                <input aria-describedby="selectPowerSpotInstruction" class="visually-hidden calc-trigger" type="checkbox" id="powerSpotR" />
+                                <label class="btn btn-xxwide" for="powerSpotR">Power Spot</label>
+                            </div></td>
+                        </tr>
                         <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
-                            <td><div class="left" title="방어 포켓몬이 교체아웃합니까?">
-                              <div hidden id="selectSwitchingInstruction">방어 포켓몬이 교체아웃합니까?</div>
+                            <td><div class="left" title="Is the defending Pok&eacute;mon switching out?">
+                              <div hidden id="selectSwitchingInstruction">Is the defending Pok&eacute;mon switching out?</div>
                                 <input aria-describedby="selectSwitchingInstruction" class="visually-hidden calc-trigger" type="checkbox" id="switchingL" />
-                                <label class="btn btn-xxwide" for="switchingL">교체</label>
+                                <label class="btn btn-xxwide" for="switchingL">Switching Out</label>
                               </div></td>
-                            <td><div class="right" title="방어 포켓몬이 교체아웃합니까?">
+                            <td><div class="right" title="Is the defending Pok&eacute;mon switching out?">
                                 <input aria-describedby="selectSwitchingInstruction" class="visually-hidden calc-trigger" type="checkbox" id="switchingR" />
-                                <label class="btn btn-xxwide" for="switchingR">교체</label>
+                                <label class="btn btn-xxwide" for="switchingR">Switching Out</label>
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="left" title="Export the leftmost Pok&eacute;mon set">
+                                <button id="exportL">Export</button>
+                            </div></td>
+                            <td><div class="right" title="Export the rightmost Pok&eacute;mon set">
+                                <button id="exportR">Export</button>
                             </div></td>
                         </tr>
                     </tbody>
                 </table>
-                <div class="ads1">
+            </fieldset>
+        </div>
+        <div aria-label="Import team" role="region">
+            <fieldset class="poke-import">
+                <legend align="center">Import / Export</legend>
+                <div id="import-1_wrapper" class="dataTables_wrapper no-footer">
+                    <form class="import-team">
+                        <input class="import-name-text" value="Custom Set"></input>
+                        <textarea class="import-team-text"></textarea>
+                        <!--<button style='position:absolute' class='bs-btn bs-btn-default'>Import</button>-->
+                    </form>
                 </div>
             </fieldset>
         </div>
     </div>
     <div aria-label="Pok&eacute;mon 2" role="region" class="panel">
         <fieldset class="poke-info" id="p2">
-            <legend align="center">포켓몬 2</legend>
+            <legend align="center">Pok&eacute;mon 2</legend>
             <input type="text" class="set-selector calc-trigger" />
+            <span id="importedSetsOptions" style="width:auto; display:none">
+                <input type="checkbox" id="importedSets" /> Only show imported sets <br />
+                <button id="clearSets">Clear Imported Sets</button>
+            </span>
             <div class="info-group top">
                 <div>
-                    <label>타입</label>
+                    <label>Type</label>
                     <select aria-label="Type 1" class="type1 terrain-trigger calc-trigger"></select>
                     <select aria-label="Type 2" class="type2 terrain-trigger calc-trigger"></select>
+                    <small class="right">(<a class="analysis links-lighten" target="_blank" href="">Smogon&nbsp;analysis</a>)</small>
                 </div>
                 <div class="gen-specific g9">
-                    <label>테라스탈</label>
+                    <label>Tera Type</label>
                     <select class="teraType terrain-trigger calc-trigger"></select>
-                    <input type="checkbox" title= "테라스탈을 사용했습니까?" class="teraToggle terrain-trigger calc-trigger">
+                    <input type="checkbox" title= "Has this Pok&eacute;mon terastalized?" class="teraToggle terrain-trigger calc-trigger">
                 </div>
                 <div class="hide">
-                    <label>폼</label>
+                    <label>Forme</label>
                     <select class="forme calc-trigger"></select>
                 </div>
                 <div class="hide">
-                    <label>성별</label>
-                    <select class="gender calc-trigger"><option></option><option selected="selected">남</option><option>여</option></select>
+                    <label>Gender</label>
+                    <select class="gender calc-trigger"><option></option><option selected="selected">Male</option><option>Female</option></select>
                 </div>
                 <div>
-                    <label for="levelR1">레벨</label>
+                    <label for="levelR1">Level</label>
                     <input class="level calc-trigger" id="levelR1" value="100" />
                 </div>
                 <div class="hide">
@@ -1027,9 +1186,9 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th scope="col">종족값</th>
-                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">개체값</th>
-                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">노력치</th>
+                            <th scope="col">Base</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">IVs</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">EVs</th>
                             <th class="gen-specific g1 g2 hide" scope="col">DVs</th>
                             <th></th>
                             <th></th>
@@ -1038,7 +1197,7 @@
                     <tbody>
                         <tr class="hp">
                             <th scope="row">
-                                <label>체력(HP)</label>
+                                <label>HP</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -1058,7 +1217,7 @@
                         </tr>
                         <tr class="at">
                             <th scope="row">
-                                <label>공격(Atk)</label>
+                                <label>Attack</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -1094,7 +1253,7 @@
                         </tr>
                         <tr class="df">
                             <th scope="row">
-                                <label>방어(Def)</label>
+                                <label>Defense</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -1130,7 +1289,7 @@
                         </tr>
                         <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
-                                <label>특수공격(SpA)</label>
+                                <label>Sp. Atk</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -1166,7 +1325,7 @@
                         </tr>
                         <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
-                                <label>특방(SpD)</label>
+                                <label>Sp. Def</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -1232,7 +1391,7 @@
                         </tr>
                         <tr class="sp">
                             <th scope="row">
-                                <label>스피드(Spe)</label>
+                                <label>Speed</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
@@ -1268,85 +1427,86 @@
                             <td><span class="totalMod">---</span>
                             </td>
                         </tr>
+                        <tr class="totalevs">
+                            <th scope="row">
+                                <label>Total</label>
+                            </th>
+                            <td></td>
+                            <td></td>
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
+                                <span class="evs calc-trigger">0</span>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <div class="info-group info-selectors">
                 <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                    <label for="natureR1">성격</label>
+                    <label for="natureR1">Nature</label>
                     <select class="nature calc-trigger" id="natureR1">
-                        <option value="Adamant">고집 (+Atk, -SpA)</option>
-                        <option value="Bashful">수줍음</option>
-                        <option value="Bold">대담 (+Def, -Atk)</option>
-                        <option value="Brave">용감 (+Atk, -Spe)</option>
-                        <option value="Calm">차분 (+SpD, -Atk)</option>
-                        <option value="Careful">신중 (+SpD, -SpA)</option>
-                        <option value="Docile">온순</option>
-                        <option value="Gentle">얌전 (+SpD, -Def)</option>
-                        <option value="Hardy" selected="selected">노력</option>
-                        <option value="Hasty">성급 (+Spe, -Def)</option>
-                        <option value="Impish">장난꾸러기 (+Def, -SpA)</option>
-                        <option value="Jolly">명랑 (+Spe, -SpA)</option>
-                        <option value="Lax">촐랑 (+Def, -SpD)</option>
-                        <option value="Lonely">외로움 (+Atk, -Def)</option>
-                        <option value="Mild">의젓 (+SpA, -Def)</option>
-                        <option value="Modest">조심 (+SpA, -Atk)</option>
-                        <option value="Naive">천진난만 (+Spe, -SpD)</option>
-                        <option value="Naughty">개구쟁이 (+Atk, -SpD)</option>
-                        <option value="Quiet">냉정 (+SpA, -Spe)</option>
-                        <option value="Quirky">변덕</option>
-                        <option value="Rash">덜렁 (+SpA, -SpD)</option>
-                        <option value="Relaxed">무사태평 (+Def, -Spe)</option>
-                        <option value="Sassy">건방 (+SpD, -Spe)</option>
-                        <option value="Serious">성실</option>
-                        <option value="Timid">겁쟁이 (+Spe, -Atk)</option>
+                        <option value="Adamant">Adamant (+Atk, -SpA)</option>
+                        <option value="Bashful">Bashful</option>
+                        <option value="Bold">Bold (+Def, -Atk)</option>
+                        <option value="Brave">Brave (+Atk, -Spe)</option>
+                        <option value="Calm">Calm (+SpD, -Atk)</option>
+                        <option value="Careful">Careful (+SpD, -SpA)</option>
+                        <option value="Docile">Docile</option>
+                        <option value="Gentle">Gentle (+SpD, -Def)</option>
+                        <option value="Hardy" selected="selected">Hardy</option>
+                        <option value="Hasty">Hasty (+Spe, -Def)</option>
+                        <option value="Impish">Impish (+Def, -SpA)</option>
+                        <option value="Jolly">Jolly (+Spe, -SpA)</option>
+                        <option value="Lax">Lax (+Def, -SpD)</option>
+                        <option value="Lonely">Lonely (+Atk, -Def)</option>
+                        <option value="Mild">Mild (+SpA, -Def)</option>
+                        <option value="Modest">Modest (+SpA, -Atk)</option>
+                        <option value="Naive">Naive (+Spe, -SpD)</option>
+                        <option value="Naughty">Naughty (+Atk, -SpD)</option>
+                        <option value="Quiet">Quiet (+SpA, -Spe)</option>
+                        <option value="Quirky">Quirky</option>
+                        <option value="Rash">Rash (+SpA, -SpD)</option>
+                        <option value="Relaxed">Relaxed (+Def, -Spe)</option>
+                        <option value="Sassy">Sassy (+SpD, -Spe)</option>
+                        <option value="Serious">Serious</option>
+                        <option value="Timid">Timid (+Spe, -Atk)</option>
                     </select>
                 </div>
                 <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                    <label for="abilityR1">특성</label>
+                    <label for="abilityR1">Ability</label>
                     <select class="ability terrain-trigger calc-trigger" id="abilityR1"></select>
                     <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle calc-trigger">
-						  <select hidden aria-label="Allies fainted" class="alliesFainted calc-trigger">
-								<option value="0">Zero allies fainted</option>
-								<option value="1">One ally fainted</option>
-								<option value="2">Two allies fainted</option>
-								<option value="3">Three allies fainted</option>
-								<option value="4">Four allies fainted</option>
-								<option value="5">Five allies fainted</option>
-						  </select>
+                        <select hidden aria-label="Allies fainted" class="alliesFainted calc-trigger">
+                            <option value="0">Zero allies fainted</option>
+                            <option value="1">One ally fainted</option>
+                            <option value="2">Two allies fainted</option>
+                            <option value="3">Three allies fainted</option>
+                            <option value="4">Four allies fainted</option>
+                            <option value="5">Five allies fainted</option>
+                        </select>
+                        <select hidden aria-label="Boosted Stat" title="What stat is boosted by this ability?" class="boostedStat calc-trigger">
+                            <option value="auto">Auto-Select</option>
+                            <option value="">Inactive</option>
+                            <option value="atk">Attack</option>
+                            <option value="def">Defense</option>
+                            <option value="spa">Special Attack</option>
+                            <option value="spd">Special Defense</option>
+                            <option value="spe">Speed</option>
+                        </select>
                 </div>
-                         <div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
-                    <label for="itemR1">아이템</label>
+                <div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
+                    <label for="itemR1">Item</label>
                     <select class="item terrain-trigger calc-trigger" id="itemR1"></select>
                 </div>
-                <div class="pool">
-                    <div class="ability-pool gen-specific g3 g4 g5 g6 g7 g8 g9">
-                        <div>Ability Pool</div>
-                        <small class="extraSetAbilities"></small>
-                    </div>
-                    <div class="item-pool gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
-                        <div>Item Pool</div>
-                        <small class="extraSetItems"></small>
-                    </div>
-                    <div class="tera-type-pool gen-specific g9">
-                        <div>Tera Type Pool</div>
-                        <small class="extraSetTeraTypes"></small>
-                    </div>
-                    <div class="role-pool gen-specific g9">
-                        <div>Role Pool</div>
-                        <small class="extraSetRoles"></small>
-                    </div>
-                </div>
                 <div>
-                    <label for="statusR1">상태이상</label>
+                    <label for="statusR1">Status</label>
                     <select class="status calc-trigger" id="statusR1">
-                        <option value="Healthy">없음</option>
-                        <option value="Poisoned">독</option>
-                        <option value="Badly Poisoned">맹독</option>
-                        <option value="Burned">화상</option>
-                        <option value="Paralyzed">화상</option>
-                        <option value="Asleep">잠듦</option>
-                        <option value="Frozen">얼음</option>
+                        <option value="Healthy">Healthy</option>
+                        <option value="Poisoned">Poisoned</option>
+                        <option value="Badly Poisoned">Badly Poisoned</option>
+                        <option value="Burned">Burned</option>
+                        <option value="Paralyzed">Paralyzed</option>
+                        <option value="Asleep">Asleep</option>
+                        <option value="Frozen">Frozen</option>
                     </select>
                     <select aria-label="Toxic counter" class="toxic-counter calc-trigger hide">
                         <option value="1">1/16</option>
@@ -1367,44 +1527,38 @@
                     </select>
                 </div>
             </div>
-            <div class="info-group gen-specific g9">
-                <div class="left" title="이쪽 포켓몬이 소금절이 효과를 받고 있습니까?">
-                    <div hidden id="selectRevealInstruction">이쪽 포켓몬이 소금절이 효과를 받고 있습니까?</div>
-                    <input aria-describedby="selectRevealInstruction" class="visually-hidden saltcure calc-trigger" type="checkbox" id="cureR" />
-                    <label class="btn btn-xxwide" for="cureR">소금절이</label>
-                </div>
-                <br />
-            </div>
             <div class="info-group">
-                <label for="currentHpR1">현재 체력</label>
+                <label for="currentHpR1">Current HP</label>
                 <input class="current-hp calc-trigger" id="currentHpR1" value="341" />/<span class="max-hp">341</span> (
                 <input class="percent-hp calc-trigger" value="100" />%)
-					 <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxR" />
-					 <label class="btn btn-xwide gen-specific g8 hide" for="maxR"
-					 title="Use the corresponding Max Move?">다이맥스</label>
-					 <br />
+                <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxR" />
+                <label class="btn btn-xwide gen-specific g8 hide" for="maxR"
+                title="Use the corresponding Max Move?">Dynamax</label>
                 <br />
-                체력 <div class="hpbar"></div>
+                <br />
+                Health <div class="hpbar"></div>
             </div>
             <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
                 <input class="move-bp calc-trigger" value="50" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
-                    <option value="Physical">물리</option>
-                    <option value="Special">특수</option>
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
                 </select>
                 <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR1" />
-                <label class="btn crit-btn" for="critR1" title="크리티컬 공격으로 만들기">크리</label>
+                <label class="btn crit-btn" for="critR1" title="Force this attack to be a critical hit?">Crit</label>
                 <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zR1"/>
-                <label class="btn z-btn gen-specific g7 hide" for="zR1" title="Z-기술로 만들기">Z</label>
+                <label class="btn z-btn gen-specific g7 g8 g9" for="zR1" title="Make this attack a Z-move?">Z</label>
+                <input aria-describedby="stellarBoostInstruction" class="move-stellar calc-trigger visually-hidden" type="checkbox" id="stellarR1" />
+                <label class="stellar-btn btn" style="display: none;" for="stellarR1" title="Make this attack Stellar boosted?">Stellar</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
                     <option value="3">3 hits</option>
                     <option value="4">4 hits</option>
                     <option value="5">5 hits</option>
                 </select>
-                <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
+                <select class="move-times calc-trigger hide" title="How many times was this move used in a row?">>
                     <option value="1">Once</option>
                     <option value="2">Twice</option>
                     <option value="3">3 times</option>
@@ -1425,20 +1579,22 @@
                 <input class="move-bp calc-trigger" value="0" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
-                    <option value="Physical">물리</option>
-                    <option value="Special">특수</option>
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
                 </select>
                 <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR2" />
-                <label class="btn crit-btn" for="critR2" title="크리티컬 공격으로 만들기">크리</label>
+                <label class="btn crit-btn" for="critR2" title="Force this attack to be a critical hit?">Crit</label>
                 <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zR2"/>
-                <label class="btn z-btn gen-specific g7 hide" for="zR2" title="Z-기술로 만들기">Z</label>
+                <label class="btn z-btn gen-specific g7 g8 g9" for="zR2" title="Make this attack a Z-move?">Z</label>
+                <input aria-describedby="stellarBoostInstruction" class="move-stellar calc-trigger visually-hidden" type="checkbox" id="stellarR2" />
+                <label class="stellar-btn btn" style="display: none;" for="stellarR2" title="Make this attack Stellar boosted?">Stellar</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
                     <option value="3">3 hits</option>
                     <option value="4">4 hits</option>
                     <option value="5">5 hits</option>
                 </select>
-                <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
+                <select class="move-times calc-trigger hide" title="How many times was this move used in a row?">>
                     <option value="1">Once</option>
                     <option value="2">Twice</option>
                     <option value="3">3 times</option>
@@ -1459,20 +1615,22 @@
                 <input class="move-bp calc-trigger" value="0" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
-                    <option value="Physical">물리</option>
-                    <option value="Special">특수</option>
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
                 </select>
                 <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR3" />
-                <label class="btn crit-btn" for="critR3" title="크리티컬 공격으로 만들기">크리</label>
+                <label class="btn crit-btn" for="critR3" title="Force this attack to be a critical hit?">Crit</label>
                 <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zR3"/>
-                <label class="btn z-btn gen-specific g7 hide" for="zR3" title="Z-기술로 만들기">Z</label>
+                <label class="btn z-btn gen-specific g7 g8 g9" for="zR3" title="Make this attack a Z-move?">Z</label>
+               <input aria-describedby="stellarBoostInstruction" class="move-stellar calc-trigger visually-hidden" type="checkbox" id="stellarR3" />
+                <label class="stellar-btn btn" style="display: none;" for="stellarR3" title="Make this attack Stellar boosted?">Stellar</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
                     <option value="3">3 hits</option>
                     <option value="4">4 hits</option>
                     <option value="5">5 hits</option>
                 </select>
-                <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
+                <select class="move-times calc-trigger hide" title="How many times was this move used in a row?">>
                     <option value="1">Once</option>
                     <option value="2">Twice</option>
                     <option value="3">3 times</option>
@@ -1493,20 +1651,22 @@
                 <input class="move-bp calc-trigger" value="0" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
-                    <option value="Physical">물리</option>
-                    <option value="Special">특수</option>
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
                 </select>
                 <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR4" />
-                <label class="btn crit-btn" for="critR4" title="크리티컬 공격으로 만들기">크리</label>
+                <label class="btn crit-btn" for="critR4" title="Force this attack to be a critical hit?">Crit</label>
                 <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zR4"/>
-                <label class="btn z-btn gen-specific g7 hide" for="zR4" title="Z-기술로 만들기">Z</label>
+                <label class="btn z-btn gen-specific g7 g8 g9" for="zR4" title="Make this attack a Z-move?">Z</label>
+                <input aria-describedby="stellarBoostInstruction" class="move-stellar calc-trigger visually-hidden" type="checkbox" id="stellarR4" />
+                <label class="stellar-btn btn" style="display: none;" for="stellarR4" title="Make this attack Stellar boosted?">Stellar</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
                     <option value="3">3 hits</option>
                     <option value="4">4 hits</option>
                     <option value="5">5 hits</option>
                 </select>
-                <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
+                <select class="move-times calc-trigger hide" title="How many times was this move used in a row?">>
                     <option value="1">Once</option>
                     <option value="2">Twice</option>
                     <option value="3">3 times</option>
@@ -1522,67 +1682,71 @@
                     <option value="5">5 times</option>
                 </select>
             </div>
-            <div class ="move-pool pool gen-specific g1 g2 g3 g4 g5 g6 g7 g8 g9">
-                <div>Move Pool</div>
-                <small class="extraSetMoves"></small>
-            </div>
         </fieldset>
     </div>
-    <script type="text/javascript">
-        var linkExtension = '.template.html';
-    </script>
     <script type="text/javascript" src="./js/vendor/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="./js/vendor/select2/select2.min.js"></script>
     <script type="text/javascript" src="./js/vendor/url-search-params-0.1.2.min.js"></script>
     <script type="text/javascript">
-        this.__createBinding = function(o, m, k, k2) {
-            if (k2 === undefined) k2 = k;
-            o[k2] = m[k];
+        this.__createBinding = function(o, m, k) {
+            o[k] = m[k];
         };
         var calc = exports = {};
         function require() { return exports };
     </script>
-    <script type="text/javascript" src="./calc/util.js?"></script>
-    <script type="text/javascript" src="./calc/stats.js?"></script>
-    <script type="text/javascript" src="./calc/data/species.js?"></script>
-    <script type="text/javascript" src="https://data.pkmn.cc/randbats/js/gen9randombattle.js?"></script>
-    <script type="text/javascript" src="https://data.pkmn.cc/randbats/js/gen8randombattle.js?"></script>
-    <script type="text/javascript" src="https://data.pkmn.cc/randbats/js/gen7randombattle.js?"></script>
-    <script type="text/javascript" src="https://data.pkmn.cc/randbats/js/gen6randombattle.js?"></script>
-    <script type="text/javascript" src="https://data.pkmn.cc/randbats/js/gen5randombattle.js?"></script>
-    <script type="text/javascript" src="https://data.pkmn.cc/randbats/js/gen4randombattle.js?"></script>
-    <script type="text/javascript" src="https://data.pkmn.cc/randbats/js/gen3randombattle.js?"></script>
-    <script type="text/javascript" src="https://data.pkmn.cc/randbats/js/gen2randombattle.js?"></script>
-    <script type="text/javascript" src="https://data.pkmn.cc/randbats/js/gen1randombattle.js?"></script>
-    <script type="text/javascript" src="./calc/data/types.js?"></script>
-    <script type="text/javascript" src="./calc/data/natures.js?"></script>
-    <script type="text/javascript" src="./calc/data/abilities.js?"></script>
-    <script type="text/javascript" src="./calc/data/moves.js?"></script>
-    <script type="text/javascript" src="./calc/data/items.js?"></script>
-    <script type="text/javascript" src="./calc/data/index.js?"></script>
-    <script type="text/javascript" src="./calc/move.js?"></script>
-    <script type="text/javascript" src="./calc/pokemon.js?"></script>
-    <script type="text/javascript" src="./calc/field.js?"></script>
-    <script type="text/javascript" src="./calc/items.js?"></script>
-    <script type="text/javascript" src="./calc/mechanics/util.js?"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen789.js?"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen56.js?"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen4.js?"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen3.js?"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen12.js?"></script>
-    <script type="text/javascript" src="./calc/calc.js?"></script>
-    <script type="text/javascript" src="./calc/desc.js?"></script>
-    <script type="text/javascript" src="./calc/result.js?"></script>
-    <script type="text/javascript" src="./calc/adaptable.js?"></script>
-    <script type="text/javascript" src="./calc/index.js?"></script>
-    <script type="text/javascript" src="./js/shared_controls.js?"></script>
-    <script type="text/javascript" src="./js/index_randoms_controls.js?"></script>
-    <script type="text/javascript" src="./js/translation.js"></script>
-    <script type="text/javascript" src="./js/moveset_import.js?"></script>
+    <script type="text/javascript" src="./calc/util.js?8fa0c7ff"></script>
+    <script type="text/javascript" src="./calc/stats.js?9220179f"></script>
+    <script type="text/javascript" src="./calc/data/species.js?d06ab4ba"></script>
+    <script type="text/javascript" src="./js/data/sets/gen9.js?7e446e1f"></script>
+    <script type="text/javascript" src="./js/data/sets/gen8.js?808f40be"></script>
+    <script type="text/javascript" src="./js/data/sets/gen7.js?df915138"></script>
+    <script type="text/javascript" src="./js/data/sets/gen6.js?726b5da4"></script>
+    <script type="text/javascript" src="./js/data/sets/gen5.js?a34be44f"></script>
+    <script type="text/javascript" src="./js/data/sets/gen4.js?a2ab70d2"></script>
+    <script type="text/javascript" src="./js/data/sets/gen3.js?fa195ad3"></script>
+    <script type="text/javascript" src="./js/data/sets/gen2.js?95c11dea"></script>
+    <script type="text/javascript" src="./js/data/sets/gen1.js?53960680"></script>
+    <script type="text/javascript" src="./calc/data/types.js?6b065b89"></script>
+    <script type="text/javascript" src="./calc/data/natures.js?04f00dc5"></script>
+    <script type="text/javascript" src="./calc/data/abilities.js?3e9fb55e"></script>
+    <script type="text/javascript" src="./calc/data/moves.js?1a94a754"></script>
+    <script type="text/javascript" src="./calc/data/items.js?81a1fe7e"></script>
+    <script type="text/javascript" src="./calc/data/index.js?083d2bc9"></script>
+    <script type="text/javascript" src="./calc/move.js?864109df"></script>
+    <script type="text/javascript" src="./calc/pokemon.js?6b1b476a"></script>
+    <script type="text/javascript" src="./calc/field.js?48c177f0"></script>
+    <script type="text/javascript" src="./calc/items.js?3cbea98f"></script>
+    <script type="text/javascript" src="./calc/mechanics/util.js?ba0d1db8"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen789.js?6443ce18"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen56.js?2f1add60"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen4.js?a3f8e05b"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen3.js?7388d87b"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen12.js?65736439"></script>
+    <script type="text/javascript" src="./calc/calc.js?cd072314"></script>
+    <script type="text/javascript" src="./calc/desc.js?2e19ec99"></script>
+    <script type="text/javascript" src="./calc/result.js?0e97d450"></script>
+    <script type="text/javascript" src="./calc/adaptable.js?afeb3759"></script>
+    <script type="text/javascript" src="./calc/index.js?2377cbc8"></script>
+    <script type="text/javascript" src="./js/shared_controls.js?51d80b27"></script>
+    <script type="text/javascript" src="./js/index_randoms_controls.js?a4461b31"></script>
+    <script type="text/javascript" src="./js/moveset_import.js?dd07b05c"></script>
+    <script type="text/javascript" src="./js/oms_controls.js?8e6d6d96"> </script>
 </div>
+<!-- END WRAPPER -->
 
-<div class="credits">This site is built on the '@smogon/calc (Pokemon Damage Calculator)'<br>이 사이트는 포켓몬 쇼다운 계산기를 기반으로 만들어진 포켓몬 데미지 계산기 사이트입니다.
-    <!-- <ul><li><a href="https://github.com/smogon/damage-calc" target="_blank">GitHub repository</a></li></ul> -->
+<div class="credits">This site is built on the '@smogon/calc (Pokémon Damage Calculator)<br>이 사이트는 포켓몬 쇼다운 계산기를 기반으로 만들어진 포켓몬 데미지 계산기 사이트입니다.
+    <br/>
+
+    <select id="dark-theme-toggle">
+        <option value="">Auto dark theme</option>
+        <option value="false">Light theme</option>
+        <option value="true">Dark theme</option>
+    </select>
+    <select id="lang-toggle" onchange="changeLang(this.value)" style="margin-left:10px">
+        <option value="ko">한국어</option>
+        <option value="en">English</option>
+    </select>
+    <script type="text/javascript" src="./js/dark-theme-toggle.js?9034c9bd"></script>
 </div>
 
 </body>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>포키컬 포켓몬 데미지 계산기</title>
+    <meta name="description" content="포켓몬스터 스칼렛/바이올렛 + 모든 세대 포켓몬 데미지 계산기">
+    <meta name="keyword" content="포켓몬, 데미지, 계산기">
+    <meta property="og:title" content="포키컬 포켓몬 데미지 계산기">
+    <meta property="og:description" content="포켓몬스터 스칼렛/바이올렛 + 모든 세대 포켓몬 데미지 계산기">
+    <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?" />
+    <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="./css/dark-theme.css?" id="dark-theme-styles">
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB7QER3T3B"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QB7QER3T3B');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894734166446106"crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Immediately loads the dark theme in order to reduce FOIT -->
+    <script>
+        // localStorage will only store strings
+        // This means that if it has the value 'false',
+        // It will be truthy.
+        if ((localStorage.getItem('darkTheme') || '' + window.matchMedia('(prefers-color-scheme: dark)').matches) === 'false') {
+            document.getElementById('dark-theme-styles').disabled = true;
+        }
+    </script>
+    <!-- i18next 및 플러그인 CDN -->
+    <script src="https://unpkg.com/i18next@21.6.14/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@1.4.3/i18nextHttpBackend.min.js"></script>
+    <script src="https://unpkg.com/jquery-i18next@1.2.1/dist/umd/jquery-i18next.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        i18next
+            .use(i18nextHttpBackend)
+            .init({
+                lng: "ko", // 기본 언어
+                fallbackLng: "en",
+                debug: false,
+                backend: {
+                    loadPath: "./locales/{{lng}}/translation.json"
+                }
+            }, function(err, t) {
+                jqueryI18next.init(i18next, $, { useOptionsAttr: true });
+                $('body').localize();
+                // option 태그 강제 번역
+                $('option[data-i18n]').each(function() {
+                    var key = $(this).data('i18n');
+                    $(this).text(i18next.t(key));
+                });
+                // 🔽 <label> 등 title 속성 번역 적용
+                $('[data-i18n-title]').each(function () {
+                    var key = $(this).data('i18n-title');
+                    var translated = i18next.t(key);
+                    if (translated) {
+                        $(this).attr('title', translated);
+                    }
+                });
+                // move-type select의 option에 data-i18n 속성 추가
+                $("select.move-type option").each(function() {
+                    var val = $(this).val();
+                    if (val) {
+                        $(this).attr('data-i18n', val.toLowerCase());
+                        $(this).text(i18next.t(val.toLowerCase()));
+                    }
+                });
+                $(".gen").last().change();
+            });
+        });
+
+        function changeLang(lang) {
+            i18next.changeLanguage(lang, () => {
+                $('body').localize();
+                // option 태그 강제 번역
+                $('option[data-i18n]').each(function() {
+                    var key = $(this).data('i18n');
+                    $(this).text(i18next.t(key));
+                });
+                // 🔽 <label> 등 title 속성 번역 적용
+                $('[data-i18n-title]').each(function () {
+                    var key = $(this).data('i18n-title');
+                    var translated = i18next.t(key);
+                    if (translated) {
+                        $(this).attr('title', translated);
+                    }
+                });
+                // move-type select의 option에 data-i18n 속성 추가
+                $("select.move-type option").each(function() {
+                    var val = $(this).val();
+                    if (val) {
+                        $(this).attr('data-i18n', val.toLowerCase());
+                        $(this).text(i18next.t(val.toLowerCase()));
+                    }
+                });
+            });
+        }
+    </script>
+</head>
+
+<body class="dark-theme">
+
+<header>
+    <div class="nav-wrapper"><ul class="nav">
+        <!-- <li><a class="button nav-first" href="./m_index.html">데미지 계산기</a></li> -->
+        <!-- <li><a class="button greenbutton nav-first nav-last" href="./pp/party_planner.html">파티 플래너</a></li> -->
+    </ul></div>
+</header>
+
+[content]
+
+<div class="credits">This site is built on the '@smogon/calc (Pokémon Damage Calculator)<br>이 사이트는 포켓몬 쇼다운 계산기를 기반으로 만들어진 포켓몬 데미지 계산기 사이트입니다.
+    <br/>
+
+    <select id="dark-theme-toggle">
+        <option value="">Auto dark theme</option>
+        <option value="false">Light theme</option>
+        <option value="true">Dark theme</option>
+    </select>
+    <select id="lang-toggle" onchange="changeLang(this.value)" style="margin-left:10px">
+        <option value="ko">한국어</option>
+        <option value="en">English</option>
+    </select>
+    <script type="text/javascript" src="./js/dark-theme-toggle.js?"></script>
+</div>
+
+</body>
+
+</html>

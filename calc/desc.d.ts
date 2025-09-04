@@ -1,8 +1,8 @@
-import { Generation, Weather, Terrain, TypeName } from './data/interface';
-import { Field } from './field';
-import { Move } from './move';
-import { Pokemon } from './pokemon';
-import { Damage } from './result';
+import type { Generation, Weather, Terrain, TypeName } from './data/interface';
+import type { Field } from './field';
+import type { Move } from './move';
+import type { Pokemon } from './pokemon';
+import { type Damage } from './result';
 export interface RawDesc {
     HPEVs?: string;
     attackBoost?: number;
@@ -19,6 +19,7 @@ export interface RawDesc {
     defenseEVs?: string;
     hits?: number;
     alliesFainted?: number;
+    isStellarFirstUse?: boolean;
     isBeadsOfRuin?: boolean;
     isSwordOfRuin?: boolean;
     isTabletsOfRuin?: boolean;
@@ -26,6 +27,7 @@ export interface RawDesc {
     isAuroraVeil?: boolean;
     isFlowerGiftAttacker?: boolean;
     isFlowerGiftDefender?: boolean;
+    isSteelySpiritAttacker?: boolean;
     isFriendGuard?: boolean;
     isHelpingHand?: boolean;
     isCritical?: boolean;
@@ -56,12 +58,8 @@ export declare function getRecoil(gen: Generation, attacker: Pokemon, defender: 
     recoil: number | [number, number];
     text: string;
 };
-export declare function getKOChance(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field, damage: Damage, err?: boolean): {
-    chance: number;
+export declare function getKOChance(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field, damageObj: Damage, err?: boolean): {
+    chance: number | undefined;
     n: number;
     text: string;
-} | {
-    n: number;
-    text: string;
-    chance?: undefined;
 };

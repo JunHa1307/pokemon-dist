@@ -1,4 +1,4 @@
-import * as I from './interface';
+import type * as I from './interface';
 export interface SpeciesData {
     readonly types: [I.TypeName] | [I.TypeName, I.TypeName];
     readonly bs: {

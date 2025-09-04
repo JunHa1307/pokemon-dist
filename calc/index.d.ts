@@ -1,5 +1,5 @@
-import { State } from './state';
-import * as I from './data/interface';
+import type { State } from './state';
+import type * as I from './data/interface';
 import * as A from './adaptable';
 export declare function calculate(gen: I.GenerationNum | I.Generation, attacker: A.Pokemon, defender: A.Pokemon, move: A.Move, field?: A.Field): A.Result;
 export declare class Move extends A.Move {
@@ -31,10 +31,10 @@ export declare class Pokemon extends A.Pokemon {
 export declare function calcStat(gen: I.GenerationNum | I.Generation, stat: I.StatID | 'spc', base: number, iv: number, ev: number, level: number, nature?: string): number;
 export { Field, Side } from './field';
 export { Result } from './result';
-export { GenerationNum, StatsTable, StatID } from './data/interface';
+export { type GenerationNum, type StatsTable, type StatID } from './data/interface';
 export { Generations } from './data/index';
 export { toID } from './util';
-export { State } from './state';
+export { type State } from './state';
 export { ABILITIES } from './data/abilities';
 export { ITEMS, MEGA_STONES } from './data/items';
 export { MOVES } from './data/moves';

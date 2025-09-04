@@ -1,4 +1,4 @@
-import * as I from './interface';
+import type * as I from './interface';
 export declare const ABILITIES: string[][];
 export declare class Abilities implements I.Abilities {
     private readonly gen;

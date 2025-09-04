@@ -1,5 +1,5 @@
-import * as I from '../data/interface';
-import * as D from '@pkmn/dex';
+import type * as I from '../data/interface';
+import type * as D from '@pkmn/dex';
 export declare function toID(s: string): I.ID;
 export declare class Generations implements I.Generations {
     private readonly dex;
@@ -86,6 +86,7 @@ declare class Move implements I.Move {
         basePower: number;
     };
     readonly multihit?: number | number[];
+    readonly multiaccuracy?: boolean;
     constructor(move: D.Move, dex: D.ModdedDex);
 }
 declare class Species implements I.Species {

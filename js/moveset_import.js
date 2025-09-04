@@ -13,11 +13,15 @@ function ExportPokemon(pokeInfo) {
 	var pokemon = createPokemon(pokeInfo);
 	var EV_counter = 0;
 	var finalText = "";
-	var namechange = findKeyofname(pokemon.name);
-	finalText = (findKeyofname(pokemon.name)==undefined? pokemon.name : namechange) + (pokemon.item ? " @ " + itemKR[pokemon.item] : "") + "\n";
+	finalText = pokemon.name + (pokemon.item ? " @ " + pokemon.item : "") + "\n";
 	finalText += "Level: " + pokemon.level + "\n";
 	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
-	finalText += pokemon.teraType && gen > 8 ? "Tera Type: " + pokemon.teraType : "";
+	if (gen === 9) {
+		var teraType = pokeInfo.find(".teraType").val();
+		if (teraType !== undefined && teraType !== pokemon.types[0]) {
+			finalText += "Tera Type: " + teraType + "\n";
+		}
+	}
 	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
 	if (gen > 2) {
 		var EVs_Array = [];
@@ -154,7 +158,7 @@ function getStats(currentPoke, rows, offset) {
 		}
 
 		currentNature = rows[x] ? rows[x].trim().split(" ") : '';
-		if (currentNature[1] == "Nature") {
+		if (currentNature[1] == "Nature" && currentNature[0] != "-") {
 			currentPoke.nature = currentNature[0];
 		}
 	}
@@ -163,7 +167,7 @@ function getStats(currentPoke, rows, offset) {
 
 function getItem(currentRow, j) {
 	for (;j < currentRow.length; j++) {
-		var item = findKeyofitem(currentRow[j].trim());
+		var item = currentRow[j].trim();
 		if (calc.ITEMS[9].indexOf(item) != -1) {
 			return item;
 		}
@@ -278,10 +282,13 @@ function addSets(pokes, name) {
 	var addedpokes = 0;
 	for (var i = 0; i < rows.length; i++) {
 		currentRow = rows[i].split(/[()@]/);
+		// Skip the current row if it contains the ability As One (Spectrier / Glastrier),
+		// so that it is not treated as another distinct set.
+		if (currentRow.length > 0 && currentRow[0].includes('As One')) continue;
 		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
 			if (calc.SPECIES[9][currentRow[j].trim()] !== undefined) {
-				currentPoke = calc.SPECIES[9][currentRow[j].trim()];
+				currentPoke = JSON.parse(JSON.stringify(calc.SPECIES[9][currentRow[j].trim()]));
 				currentPoke.name = currentRow[j].trim();
 				currentPoke.item = getItem(currentRow, j + 1);
 				if (j === 1 && currentRow[0].trim()) {
@@ -300,10 +307,10 @@ function addSets(pokes, name) {
 		}
 	}
 	if (addedpokes > 0) {
-		alert(addedpokes + " 세트를 성공적으로 import하였습니다.");
+		alert("Successfully imported " + addedpokes + (addedpokes === 1 ? " set" : " sets"));
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {
-		alert("import되지 않았습니다. 텍스트를 확인하시고 다시 시도하세요.");
+		alert("No sets imported, please check your syntax and try again");
 	}
 }
 
@@ -344,15 +351,23 @@ function checkExeptions(poke) {
 	case 'Florges-Yellow':
 		poke = "Florges";
 		break;
+	case 'Shellos-East':
+		poke = "Shellos";
+		break;
+	case 'Deerling-Summer':
+	case 'Deerling-Autumn':
+	case 'Deerling-Winter':
+		poke = "Deerling";
+		break;
 	}
 	return poke;
 
 }
 
 $(allPokemon("#clearSets")).click(function () {
-	if (confirm("정말 삭제하시겠습니까? 이 결정은 되돌릴 수 없습니다.")) {
+	if (confirm("Are you sure you want to delete your custom sets? This action cannot be undone.")) {
 		localStorage.removeItem("customsets");
-		alert("성공적으로 삭제되었습니다. 페이지를 새로고침해주세요.");
+		alert("Custom Sets successfully cleared. Please refresh the page.");
 		$(allPokemon("#importedSetsOptions")).hide();
 		loadDefaultLists();
 	}

@@ -93,16 +93,12 @@ function performCalculations() {
 				defender = damageResults[0].defender;
 				var result, minMaxDamage, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
 				var highestDamage = -1;
-				krName = setOptions[i].id.substring(0,setOptions[i].id.indexOf("(")-1);
-				if(nameKR[krName] != undefined){	
-					krName = nameKR[krName];
-				}
-				var data = [krName + ' ' + setOptions[i].id.substring(setOptions[i].id.indexOf("("))];
+				var data = [setOptions[i].id];
 				for (var n = 0; n < 4; n++) {
 					result = damageResults[n];
 					minMaxDamage = result.range();
-					minDamage = minMaxDamage[0] * attacker.moves[n].hits;
-					maxDamage = minMaxDamage[1] * attacker.moves[n].hits;
+					minDamage = minMaxDamage[0];
+					maxDamage = minMaxDamage[1];
 					minPercentage = Math.floor(minDamage * 1000 / defender.maxHP()) / 10;
 					maxPercentage = Math.floor(maxDamage * 1000 / defender.maxHP()) / 10;
 					minPixels = Math.floor(minDamage * 48 / defender.maxHP());
@@ -112,15 +108,15 @@ function performCalculations() {
 						while (data.length > 1) {
 							data.pop();
 						}
-						data.push(findKeyofmove(attacker.moves[n].name));//.replace("Hidden Power", "HP")]);
+						data.push(attacker.moves[n].name.replace("Hidden Power", "HP"));
 						data.push(minPercentage + " - " + maxPercentage + "%");
 						data.push(minPixels + " - " + maxPixels + "px");
-						data.push(attacker.moves[n].bp === 0 ? 'nice move' : (result.kochance(false).text || '효과가 별로인 듯하다..'));
+						data.push(attacker.moves[n].bp === 0 ? 'nice move' : (result.kochance(false).text || 'possibly the worst move ever'));
 					}
 				}
-				data.push((mode === "one-vs-all") ? typeKR[defender.types[0]] : typeKR[attacker.types[0]]);
-				data.push(((mode === "one-vs-all") ? typeKR[defender.types[1]] : typeKR[attacker.types[1]]) || "");
-				data.push(((mode === "one-vs-all") ? abilityKR[defender.ability] === undefined ? defender.ability : abilityKR[defender.ability] : abilityKR[defender.ability] === undefined ? defender.ability : abilityKR[defender.ability]) || "");
+				data.push((mode === "one-vs-all") ? defender.types[0] : attacker.types[0]);
+				data.push(((mode === "one-vs-all") ? defender.types[1] : attacker.types[1]) || "");
+				data.push(((mode === "one-vs-all") ? defender.ability : attacker.ability) || "");
 				data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
 				dataSet.push(data);
 			}
@@ -225,13 +221,13 @@ function constructDataTable() {
 }
 
 function placeBsBtn() {
-	var honkalculator = "<button style='position:absolute' class='bs-btn bs-btn-default'>Honkalculate<클릭</button>";
+	var honkalculator = "<button style='position:absolute' class='bs-btn bs-btn-default'>Honkalculate</button>";
 	$("#holder-2_wrapper").prepend(honkalculator);
 	$(".bs-btn").click(function () {
 		var formats = getSelectedTiers();
 		if (!formats.length) {
 			$(".bs-btn").popover({
-				content: "배틀형식이 선택되지 않았습니다.(ex.더블배틀)",
+				content: "No format selected",
 				placement: "right"
 			}).popover('show');
 			setTimeout(function () { $(".bs-btn").popover('destroy'); }, 1350);
@@ -246,16 +242,21 @@ $(".mode").change(function () {
 		var params = new URLSearchParams(window.location.search);
 		params.delete('mode');
 		params = '' + params;
-		window.location.replace('index' + linkExtension + (params.length ? '?' + params : ''));
+		window.location.replace('index.html' + (params.length ? '?' + params : ''));
 	} else if ($("#randoms").prop("checked")) {
 		var params = new URLSearchParams(window.location.search);
 		params.delete('mode');
 		params = '' + params;
-		window.location.replace('randoms' + linkExtension + (params.length ? '?' + params : ''));
+		window.location.replace('randoms.html' + (params.length ? '?' + params : ''));
+	} else if ($("#oms").prop("checked")) {
+		var params = new URLSearchParams(window.location.search);
+		params.delete('mode');
+		params = '' + params;
+		window.location.replace('oms.html' + (params.length ? '?' + params : ''));
 	} else {
 		var params = new URLSearchParams(window.location.search);
 		params.set('mode', $(this).attr("id"));
-		window.location.replace('honkalculate' + linkExtension + '?' + params);
+		window.location.replace('honkalculate.html?' + params);
 	}
 });
 
@@ -318,9 +319,9 @@ $(document).ready(function () {
 	window.mode = params.get("mode");
 	if (window.mode) {
 		if (window.mode === "randoms") {
-			window.location.replace("randoms" + linkExtension + "?" + params);
+			window.location.replace('randoms.html?' + params);
 		} else if (window.mode !== "one-vs-all" && window.mode !== "all-vs-one") {
-			window.location.replace("index" + linkExtension + "?" + params);
+			window.location.replace('index.html?' + params);
 		}
 	} else {
 		window.mode = "one-vs-all";
@@ -341,10 +342,10 @@ function calcDTDimensions() {
 	});
 
 	var theadBottomOffset = getBottomOffset($(".sorting"));
-	var heightUnderDT = getBottomOffset($(".holder-0")) - getBottomOffset($("#holder-2 tbody"));
+	var heightUnderDT = getBottomOffset($("#holder-0")) - getBottomOffset($("#holder-2 tbody"));
 	dtHeight = $(document).height() - theadBottomOffset - heightUnderDT;
 	dtWidth = $(window).width() - $("#holder-2").offset().left;
-	dtWidth -= 2 * parseFloat($(".holder-0").css("padding-right"));
+	dtWidth -= 2 * parseFloat($("#holder-0").css("padding-right"));
 }
 
 function getBottomOffset(obj) {

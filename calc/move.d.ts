@@ -1,5 +1,5 @@
-import * as I from './data/interface';
-import { State } from './state';
+import type * as I from './data/interface';
+import type { State } from './state';
 export declare class Move implements State.Move {
     gen: I.Generation;
     name: I.MoveName;
@@ -24,6 +24,7 @@ export declare class Move implements State.Move {
     mindBlownRecoil: boolean;
     struggleRecoil: boolean;
     isCrit: boolean;
+    isStellarFirstUse: boolean;
     drain?: [number, number];
     priority: number;
     dropsStats?: number;
@@ -35,6 +36,7 @@ export declare class Move implements State.Move {
     breaksProtect: boolean;
     isZ: boolean;
     isMax: boolean;
+    multiaccuracy: boolean;
     constructor(gen: I.Generation, name: string, options?: Partial<State.Move> & {
         ability?: I.AbilityName;
         item?: I.ItemName;
@@ -45,4 +47,4 @@ export declare class Move implements State.Move {
     clone(): Move;
 }
 export declare function getZMoveName(moveName: string, moveType: I.TypeName, item?: string): string;
-export declare function getMaxMoveName(moveType: I.TypeName, pokemonSpecies?: string, isStatus?: boolean, pokemonAbility?: string): string;
+export declare function getMaxMoveName(moveType: I.TypeName, moveName?: string, pokemonSpecies?: string, isStatus?: boolean, pokemonAbility?: string): string;

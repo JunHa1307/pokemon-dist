@@ -1,3 +1,8 @@
+var PC_HANDLER = function () {
+	setTimeout(performCalculations, 0);
+};
+var damageResults;
+
 $("#p2 .ability").bind("keyup change", function () {
 	autosetWeather($(this).val(), 1);
 	autosetTerrain($(this).val(), 1);
@@ -22,7 +27,6 @@ for (var i = 0; i < 4; i++) {
 	});
 }
 
-var damageResults;
 function performCalculations() {
 	var p1info = $("#p1");
 	var p2info = $("#p2");
@@ -30,7 +34,7 @@ function performCalculations() {
 	var p2 = createPokemon(p2info);
 	var p1field = createField();
 	var p2field = p1field.clone().swap();
-	
+
 	damageResults = calculateAllMoves(gen, p1, p1field, p2, p2field);
 	p1 = damageResults[0][0].attacker;
 	p2 = damageResults[1][0].attacker;
@@ -49,7 +53,7 @@ function performCalculations() {
 		result = damageResults[0][i];
 		maxDamage = result.range()[1] * p1.moves[i].hits;
 		if (!zProtectAlerted && maxDamage > 0 && p1.item.indexOf(" Z") === -1 && p1field.defenderSide.isProtected && p1.moves[i].isZ) {
-			alert('해킹을 통해서만 가능하지만, Z 크리스탈 없이도 Z 기술을 사용하면 방어를 관통하여 상대 포켓몬에게 데미지를 입힐 수 있습니다.');
+			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
 			zProtectAlerted = true;
 		}
 		p1.maxDamages.push({moveOrder: i, maxDamage: maxDamage});
@@ -63,7 +67,7 @@ function performCalculations() {
 		result = damageResults[1][i];
 		maxDamage = result.range()[1] * p2.moves[i].hits;
 		if (!zProtectAlerted && maxDamage > 0 && p2.item.indexOf(" Z") === -1 && p2field.defenderSide.isProtected && p2.moves[i].isZ) {
-			alert('해킹을 통해서만 가능하지만, Z 크리스탈 없이도 Z 기술을 사용하면 방어를 관통하여 상대 포켓몬에게 데미지를 입힐 수 있습니다.');
+			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
 			zProtectAlerted = true;
 		}
 		p2.maxDamages.push({moveOrder: i, maxDamage: maxDamage});
@@ -93,33 +97,117 @@ function performCalculations() {
 	}
 	bestResult.prop("checked", true);
 	bestResult.change();
-	$("#resultHeaderL").text((nameKR[p1.name]?nameKR[p1.name]:p1.name) + "이(가) 지닌 기술들 (클릭하면 결과가 계산됩니다.)");
-	$("#resultHeaderR").text((nameKR[p2.name]?nameKR[p2.name]:p2.name) + "이(가) 지닌 기술들 (클릭하면 결과가 계산됩니다.)");
+	$("#resultHeaderL").text(i18next.t(p1.name) + "의 기술 (선택하시면 결과를 계산합니다)");
+	$("#resultHeaderR").text(i18next.t(p2.name) + "의 기술 (선택하시면 결과를 계산합니다)");
 }
 
 $(".result-move").change(function () {
 	if (damageResults) {
+		// 1) i18next 서비스에서 리소스 스토어에 직접 접근
+		//    v19+ 버전부터는 i18next.services.resourceStore.data 에 저장됩니다.
+
+		// 2) 현재 언어(i18next.language)와 네임스페이스들을 순회하면서
+		//    모든 키를 모아 플래트닝(flatten)합니다.
+		function getAllKeys() {
+			const resourceStore = i18next.services.resourceStore.data;
+			const lang = i18next.language;
+			const namespaces = Object.keys(resourceStore[lang] || {});
+			const keys = [];
+
+			namespaces.forEach(ns => {
+				const bundle = resourceStore[lang][ns];
+				// bundle 이 중첩 객체면 재귀로 키를 뽑아야 합니다:
+				function recurse(obj, prefix = '') {
+				Object.entries(obj).forEach(([k, v]) => {
+					const path = prefix ? `${prefix}.${k}` : k;
+					if (typeof v === 'string') {
+					keys.push(path);
+					} else if (typeof v === 'object') {
+					recurse(v, path);
+					}
+				});
+				}
+				recurse(bundle);
+			});
+
+			// 중복 제거
+			return Array.from(new Set(keys));
+		}
+
+		// 3) 특수문자 이스케이프 헬퍼
+		function escapeRegExp(str) {
+			return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+		}
+		// 4) 모듈 로딩 시 단 한 번 RegExp 빌드
+		const allKeys = getAllKeys().sort((a, b) => b.length - a.length);
+		const pattern = new RegExp(allKeys.map(escapeRegExp).join('|'), 'g');
+
+		// 5) 텍스트 인라인 번역 함수
+		function translateInline(text) {
+			return text.replace(pattern, key => i18next.t(key));
+		}
+
 		var result = findDamageResult($(this));
 		if (result) {
-			var desc = result.fullDesc(notation, false);
-			if (desc.indexOf('--') === -1) desc += ' 효과가 별로인 듯하다...';
+			var desc = translateInline(result.fullDesc(notation, false));
+			if (desc.indexOf('--') === -1) desc += ' -- 최악의 결과가 예상됨';
 			$("#mainResult").text(desc);
-			$("#damageValues").text("가능한 대미지: (" + displayDamageHits(result.damage) + ")");
+			var summary = displayDamageHits(result.damage);
+			var rest = "";
+			var newLine = summary.indexOf('\n');
+			if (newLine > -1) {
+				rest = summary.substring(newLine + 1);
+				summary = summary.substring(0, newLine);
+			}
+			$("#firstDmgValues").text("Possible damage amounts: (" + summary + ")");
+			if (rest !== "") $("#restDmgValues").text("(" + rest + ")");
+
+			if (rest.trim() === "") {
+				$("#firstDmgValues").css("display", "block");
+				$("#restDmgValues").text("");
+			} else {
+				$("#damageValues").removeAttr("open");
+				$("#firstDmgValues").css("display", "revert");
+			}
 		}
 	}
 });
 
 function displayDamageHits(damage) {
 	// Fixed Damage
-	if (typeof damage === 'number') return damage;
+	if (typeof damage === 'number') return damage.toString();
 	// Standard Damage
-	if (damage.length > 2) return damage.join(', ');
+	if (damage.length > 2 && typeof damage[0] === 'number')
+		return damage.join(', ');
 	// Fixed Parental Bond Damage
 	if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
-		return '첫 번째 공격: ' + damage[0] + '; 두 번째 공격: ' + damage[1];
+		return '1st Hit: ' + damage[0] + '; 2nd Hit: ' + damage[1];
 	}
-	// Parental Bond Damage
-	return '첫 번째 공격: ' + damage[0].join(', ') + '; 두 번째 공격: ' + damage[1].join(', ');
+	// Multihit Damage
+	var fullText = "";
+	for (var i = 1; i <= damage.length; i++) {
+		var txt = toOrdinal(i) + " Hit: " + damage[i - 1].join(', ');
+		if (i > 1 && i < damage.length) txt += "; ";
+		fullText += txt;
+		if (i % 2 == 1 && i < damage.length) fullText += "\n";
+	}
+	return fullText;
+}
+
+function toOrdinal(num) {
+	if (typeof num !== "number" || !Number.isInteger(num)) {
+		return "Input must be an integer.";
+	}
+	switch (num) {
+	case 1:
+		return num + "st";
+	case 2:
+		return num + "nd";
+	case 3:
+		return num + "rd";
+	default:
+		return num + "th";
+	}
 }
 
 function findDamageResult(resultMoveObj) {
@@ -163,11 +251,13 @@ $(".mode").change(function () {
 	params.set('mode', $(this).attr("id"));
 	var mode = params.get('mode');
 	if (mode === 'randoms') {
-		window.location.replace('randoms' + linkExtension + '?' + params);
+		window.location.replace('randoms.html?' + params);
 	} else if (mode === 'one-vs-one') {
-		window.location.replace('index' + linkExtension + '?' + params);
+		window.location.replace('index.html?' + params);
+	} else if (mode === "oms") {
+		window.location.replace('oms.html');
 	} else {
-		window.location.replace('honkalculate' + linkExtension + '?' + params);
+		window.location.replace('honkalculate.html?' + params);
 	}
 });
 
@@ -180,22 +270,31 @@ $(document).ready(function () {
 	var m = params.get('mode');
 	if (m) {
 		if (m !== 'one-vs-one' && m !== 'randoms') {
-			window.location.replace('honkalculate' + linkExtension + '?' + params);
+			window.location.replace('honkalculate.html?' + params);
 		} else {
 			if ($('#randoms').prop('checked')) {
 				if (m === 'one-vs-one') {
-					window.location.replace('index' + linkExtension + '?' + params);
+					window.location.replace('index.html?' + params);
 				}
 			} else {
 				if (m === 'randoms') {
-					window.location.replace('randoms' + linkExtension + '?' + params);
+					window.location.replace('randoms.html?' + params);
 				}
 			}
 		}
 	}
-	$(".calc-trigger").bind("change keyup", function () {
-		setTimeout(performCalculations, 0);
-	});
+
+	var importParam = params.get('import');
+	if (importParam) {
+		try {
+			var decodedImport = atob(importParam); // Decode base64
+			$('.import-team-text').val(decodedImport); // Set value to text area
+		} catch (e) {
+			console.error('Failed to decode Import parameter:', e);
+		}
+	}
+
+	$(".calc-trigger").bind("change keyup", PC_HANDLER);
 	performCalculations();
 });
 
@@ -205,6 +304,6 @@ $("#mainResult").click(function () {
 		document.getElementById('tooltipText').style.visibility = 'visible';
 		setTimeout(function () {
 			document.getElementById('tooltipText').style.visibility = 'hidden';
-		}, 2000);
+		}, 1500);
 	});
 });
