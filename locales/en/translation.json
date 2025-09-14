@@ -3516,5 +3516,21 @@
   "Terapagos": "Terapagos",
   "Terapagos-Stellar": "Terapagos-Stellar",
   "Terapagos-Terastal": "Terapagos-Terastal",
-  "Ursaluna-Bloodmoon": "Ursaluna-Bloodmoon"
+  "Ursaluna-Bloodmoon": "Ursaluna-Bloodmoon",
+  "type_Grass": "type_Grass",
+  "type_Fire": "type_Fire",
+  "type_Water": "type_Water",
+  "type_Electric": "type_Electric",
+  "type_Ice": "type_Ice",
+  "type_Dragon": "type_Dragon",
+  "type_Dark": "type_Dark",
+  "type_Steel": "type_Steel",
+  "type_Normal": "type_Normal",
+  "type_Fighting": "type_Fighting",
+  "type_Flying": "type_Flying",
+  "type_Poison": "type_Poison",
+  "type_Ground": "type_Ground",
+  "type_Rock": "type_Rock",
+  "type_Ghost": "type_Ghost",
+  "type_Bug": "type_Bug"
 }
